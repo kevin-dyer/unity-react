@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import UnityButton from './components/UnityButton/UnityButton'
 
 const App = () => {
   return (
@@ -19,6 +20,14 @@ const App = () => {
           Learn React
         </a>
       </header>
+
+      <div>
+        <h3>UnityButton</h3>
+
+        <div>
+          <UnityButton label="Unity" gradient={true}/>
+        </div>
+      </div>
     </div>
   );
 }
