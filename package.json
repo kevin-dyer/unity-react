@@ -4,6 +4,12 @@
   "private": true,
   "dependencies": {
     "@bit/smartworks.unity.unity-button": "^0.0.17",
+    "@bit/smartworks.unity.unity-text-input": "^0.1.28",
+    "@bit/smartworks.unity.unity-table": "^0.2.0",
+    "@bit/smartworks.unity.unity-column-editor": "^0.0.6",
+    "@bit/smartworks.unity.unity-global-nav-base": "^0.1.0",
+    "@bit/smartworks.unity.unity-global-nav-top-item": "^0.1.6",
+    "@bit/smartworks.unity.unity-page-header": "^0.0.20",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -14,6 +20,7 @@
     "@webcomponents/webcomponentsjs": "^2.4.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
+    "react-ace": "^8.0.0",
     "react-dom": "^16.12.0",
     "react-scripts": "3.3.1",
     "typescript": "~3.7.2"
