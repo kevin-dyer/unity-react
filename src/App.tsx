@@ -1,7 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { CSSProperties } from 'react';
 import './App.css';
-import UnityButton from './components/UnityButton/UnityButton'
+import UnityButton from './components/unity-button-react/UnityButton'
+import UnityCodeEditor from './components/unity-code-editor-react/UnityCodeEditor'
+import UnityTextInput from './components/unity-text-input-react/UnityTextInput'
+import UnityTable from './components/unity-table-react/UnityTable'
+import UnityPageHeader from './components/unity-page-header-react/UnityPageHeader'
+
+
+const codeEditorStyle: CSSProperties = {
+  height: "400px",
+  width: "400px",
+  margin: "8px"
+}
 
 const App = () => {
   return (
@@ -16,6 +26,24 @@ const App = () => {
         <div>
           <UnityButton label="Unity" gradient={true}/>
         </div>
+      </div>
+
+      <div style={codeEditorStyle}>
+        <UnityCodeEditor mode="json" label="JSON editor"/>
+      </div>
+
+      <div>
+        <UnityTextInput label="Text Input"/>
+      </div>
+
+      <div>
+        <UnityPageHeader title="I'm a page header"/>
+      </div>
+
+      <div>
+        <h3>UnityTable</h3>
+
+        <UnityTable/>
       </div>
     </div>
   );
