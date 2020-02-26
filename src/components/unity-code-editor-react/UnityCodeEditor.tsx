@@ -12,28 +12,33 @@ import "ace-builds/src-noconflict/mode-html";
 import './UnityCodeEditor.css';
 
 /**
- * A code editor for different languages, based on Ace editor. 
+ * A code editor for different languages, based on Ace editor.
  * @example
  * <CodeEditor mode="javascript" label="JSON editor"/>
  */
 
 export type EditorType = "json" | "javascript" | "python" | "sql" | "dockerfile" | "markdown" | "html";
-export interface CodeEditorProps {mode: EditorType; label: string}
-export interface CodeEditorState {value: string, error: string}
+export interface CodeEditorProps {
+  mode: EditorType,
+  label: string,
+  onChange: Function,
+  value: string
+}
+export interface CodeEditorState {error: string}
 
 class UnityCodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
 
   state = {
-    value: "",
     error: ""
   };
 
 
-  onChange = (newValue: string) => {
-    this.setState({value: newValue});  
+  handleChange = (newValue: string) => {
+    let error = ''
     if (this.props.mode === "json") {
-      this.validateJson(newValue)
+      error = this.validateJson(newValue)
     }
+    this.props.onChange(newValue, error)
   }
 
   validateJson(value: string) {
@@ -44,6 +49,7 @@ class UnityCodeEditor extends React.Component<CodeEditorProps, CodeEditorState> 
       this.setState({error: ""});
     } catch (e) {
       this.setState({error: e.toString()});
+      return e.toString()
     }
   }
 
@@ -64,11 +70,11 @@ class UnityCodeEditor extends React.Component<CodeEditorProps, CodeEditorState> 
 
         <div className="editor-container">
             <AceEditor
-              value={this.state.value}
+              value={this.props.value}
               style={{width: "100%", height: "100%"}}
               mode={this.props.mode}
               editorProps={{ $blockScrolling: true }}
-              onChange={this.onChange}
+              onChange={this.handleChange}
               enableSnippets
             />
             {this.getValidationMessage()}
