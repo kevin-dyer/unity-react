@@ -1,11 +1,20 @@
-.editor-container {
-  border: 1px solid #9299A4;
-  border-radius: 2px;
+.editor-wrapper {
+  --active-color: var(--primary-brand-color, var(--default-primary-brand-color));
+  --gutter-color: var(--primary-brand-color-light, var(--default-primary-brand-color-light));
+  --tm-fold-color: var(--primary-brand-color-dark, var(--default-primary-brand-color-dark));
+  --border-color: var(--dark-grey-text-color, var(--default-dark-grey-text-color));
+  --error-color: var(--danger-color, var(--default-danger-color));
+  --label-color: var(--medium-grey-text-color, var(--default-medium-grey-text-color));
   width: 100%;
+  height: 100%;
+  display: "flex";
+  flex-direction: "column";
   flex: 1;
 }
 
-.editor-wrapper {
+.editor-container {
+  border: 1px solid var(--border-color);
+  border-radius: 2px;
   width: 100%;
   height: 100%;
   display: flex;
@@ -17,27 +26,26 @@
   margin: 6px 0;
 }
 .code-editor-paragraph.label{
-  color: grey;
+  color: var(--label-color);
 }
 
 .code-editor-paragraph.invalid {
-  color: red;
+  color: var(--error-color);
   font-style: italic;
   text-align: right;
 }
 
 .ace_gutter-layer {
-  /* background-color: #B2E5F7; */  
-  background-color: #B2E5F7;
+  background-color: var(--gutter-color);
 }
 
 .ace_active-line {
-  background-color: #B2E5F7 !important;
+  background-color: var(--gutter-color) !important;
   opacity: 0.3;
 }
 
 .ace_gutter-active-line {
-  background-color: rgb(82, 199, 241) !important;
+  background-color: var(--active-color) !important;
 }
 
 .ace_line .ace_fold {
@@ -46,6 +54,8 @@
 .ace_line .ace_fold:hover {
   background-image: none;
 }
+
+/* Not entire sure what this covers? Could use a better name if so */
 .ace-tm .ace_fold {
-  background-color: #00AAE6;
+  background-color: var(--tm-fold-color);
 }
