@@ -10,43 +10,59 @@ import UnityPageHeader from './components/unity-page-header-react/UnityPageHeade
 const codeEditorStyle: CSSProperties = {
   height: "400px",
   width: "400px",
-  margin: "8px"
+  margin: "20px",
 }
 
-const App = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h2>Unity React Components</h2>
-      </header>
+class App extends React.Component {
+  state = {
+    value: '',
+    error: ''
+  }
 
-      <div>
-        <h3>UnityButton</h3>
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <h2>Unity React Components</h2>
+        </header>
 
         <div>
-          <UnityButton label="Unity" gradient={true}/>
+          <h3>UnityButton</h3>
+
+          <div>
+            <UnityButton label="Unity" gradient={true}/>
+          </div>
+        </div>
+
+        <div style={codeEditorStyle} >
+          <UnityCodeEditor
+            label="JSON editor"
+            mode="json"
+            onChange={(value: string, error: string) => {
+              console.log('value', value)
+              console.log('error', error)
+              this.setState({value, error})
+            }}
+            value={this.state.value}
+          />
+        </div>
+
+        <div>
+          <UnityTextInput label="Text Input"/>
+        </div>
+
+        <div>
+          <UnityPageHeader title="I'm a page header"/>
+        </div>
+
+        <div>
+          <h3>UnityTable</h3>
+
+          <UnityTable/>
         </div>
       </div>
-
-      <div style={codeEditorStyle}>
-        <UnityCodeEditor mode="json" label="JSON editor"/>
-      </div>
-
-      <div>
-        <UnityTextInput label="Text Input"/>
-      </div>
-
-      <div>
-        <UnityPageHeader title="I'm a page header"/>
-      </div>
-
-      <div>
-        <h3>UnityTable</h3>
-
-        <UnityTable/>
-      </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default App;
