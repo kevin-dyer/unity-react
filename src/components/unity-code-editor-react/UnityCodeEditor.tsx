@@ -20,9 +20,10 @@ import './UnityCodeEditor.css';
 export type EditorType = "json" | "javascript" | "python" | "sql" | "dockerfile" | "markdown" | "html";
 export interface CodeEditorProps {
   mode: EditorType,
-  label: string,
+  label?: string,
   onChange: Function,
-  value: string
+  value: string,
+  dirty?: boolean
 }
 export interface CodeEditorState {error: string}
 
@@ -64,20 +65,27 @@ class UnityCodeEditor extends React.Component<CodeEditorProps, CodeEditorState> 
   }
 
   render() {
+    const {
+      value,
+      mode,
+      label,
+      dirty
+    } = this.props
     return (
       <div className="editor-wrapper">
-        <p className="code-editor-paragraph label">{this.props.label}</p>
+        <p className="code-editor-paragraph label">{label}</p>
 
         <div className="editor-container">
-            <AceEditor
-              value={this.props.value}
-              style={{width: "100%", height: "100%"}}
-              mode={this.props.mode}
-              editorProps={{ $blockScrolling: true }}
-              onChange={this.handleChange}
-              enableSnippets
-            />
-            {this.getValidationMessage()}
+          {!!dirty && <div className="dirty-gutter"/>}
+          <AceEditor
+            value={value}
+            style={{width: "100%", height: "100%"}}
+            mode={mode}
+            editorProps={{ $blockScrolling: true }}
+            onChange={this.handleChange}
+            enableSnippets
+          />
+          {this.getValidationMessage()}
         </div>
       </div>
     );
