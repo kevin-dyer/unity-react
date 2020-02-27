@@ -10,7 +10,7 @@ import UnityPageHeader from './components/unity-page-header-react/UnityPageHeade
 const codeEditorStyle: CSSProperties = {
   height: "400px",
   width: "400px",
-  margin: "8px"
+  margin: "20px",
 }
 
 class App extends React.Component {
