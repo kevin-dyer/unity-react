@@ -8,8 +8,6 @@ import UnityPageHeader from './components/unity-page-header-react/UnityPageHeade
 
 
 const codeEditorStyle: CSSProperties = {
-  height: "400px",
-  width: "400px",
   margin: "20px",
 }
 
@@ -38,12 +36,15 @@ class App extends React.Component {
           <UnityCodeEditor
             label="JSON editor"
             mode="json"
-            onChange={(value: string, error: string) => {
+            onChange={(e: Event, value: string, error: string) => {
+              console.log(JSON.stringify(e))
               console.log('value', value)
               console.log('error', error)
               this.setState({value, error})
             }}
             value={this.state.value}
+            minLines={7}
+            maxLines={19}
           />
         </div>
 
