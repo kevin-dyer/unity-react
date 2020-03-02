@@ -23,7 +23,9 @@ export interface CodeEditorProps {
   label?: string,
   onChange: Function,
   value: string,
-  dirty?: boolean
+  dirty?: boolean,
+  minLines?: number,
+  maxLines?: number
 }
 export interface CodeEditorState {error: string}
 
@@ -34,12 +36,12 @@ class UnityCodeEditor extends React.Component<CodeEditorProps, CodeEditorState> 
   };
 
 
-  handleChange = (newValue: string) => {
+  handleChange = (newValue: string, e: Event) => {
     let error = ''
     if (this.props.mode === "json") {
       error = this.validateJson(newValue)
     }
-    this.props.onChange(newValue, error)
+    this.props.onChange(e, newValue, error)
   }
 
   validateJson(value: string) {
@@ -69,7 +71,9 @@ class UnityCodeEditor extends React.Component<CodeEditorProps, CodeEditorState> 
       value,
       mode,
       label,
-      dirty
+      dirty,
+      minLines=8,
+      maxLines=16
     } = this.props
     return (
       <div className="editor-wrapper">
@@ -84,6 +88,8 @@ class UnityCodeEditor extends React.Component<CodeEditorProps, CodeEditorState> 
             editorProps={{ $blockScrolling: true }}
             onChange={this.handleChange}
             enableSnippets
+            minLines={minLines}
+            maxLines={maxLines}
           />
           {this.getValidationMessage()}
         </div>
