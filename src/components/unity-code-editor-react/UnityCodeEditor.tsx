@@ -1,13 +1,6 @@
 import React from "react";
-import AceEditor from "react-ace";
-
-import "ace-builds/src-noconflict/mode-json";
-import "ace-builds/src-noconflict/mode-javascript";
-import "ace-builds/src-noconflict/mode-python";
-import "ace-builds/src-noconflict/mode-sql";
-import "ace-builds/src-noconflict/mode-dockerfile";
-import "ace-builds/src-noconflict/mode-markdown";
-import "ace-builds/src-noconflict/mode-html";
+import AceEditor from "react-ace-builds";
+import "react-ace-builds/webpack-resolver-min.js"
 
 import './UnityCodeEditor.css';
 
@@ -84,10 +77,10 @@ class UnityCodeEditor extends React.Component<CodeEditorProps, CodeEditorState> 
           <AceEditor
             value={value}
             style={{width: "100%", height: "100%"}}
+            theme={"textmate"}
             mode={mode}
             editorProps={{ $blockScrolling: true }}
             onChange={this.handleChange}
-            enableSnippets
             minLines={minLines}
             maxLines={maxLines}
           />
