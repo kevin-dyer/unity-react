@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@bit/smartworks.unity.unity-button": "0.0.19",
+    "@bit/smartworks.unity.unity-button": "^0.0.19",
     "@bit/smartworks.unity.unity-column-editor": "0.0.9",
     "@bit/smartworks.unity.unity-global-nav-base": "^0.1.1",
     "@bit/smartworks.unity.unity-global-nav-top-item": "^0.1.8",
