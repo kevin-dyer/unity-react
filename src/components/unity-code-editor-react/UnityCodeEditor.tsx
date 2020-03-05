@@ -9,6 +9,7 @@ import "ace-builds/src-noconflict/mode-sql";
 import "ace-builds/src-noconflict/mode-dockerfile";
 import "ace-builds/src-noconflict/mode-markdown";
 import "ace-builds/src-noconflict/mode-html";
+import "ace-builds/src-noconflict/theme-textmate";
 
 import './UnityCodeEditor.css';
 
