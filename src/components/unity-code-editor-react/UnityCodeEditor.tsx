@@ -2,7 +2,7 @@ import React from "react";
 import AceEditor from "react-ace";
 import "ace-builds/webpack-resolver.js"
 
-import "ace-builds/src-noconflict/mode-json";
+import "ace-builds/src-noconflict/mode-json5";
 import "ace-builds/src-noconflict/mode-javascript";
 import "ace-builds/src-noconflict/mode-python";
 import "ace-builds/src-noconflict/mode-sql";
@@ -19,7 +19,7 @@ import './UnityCodeEditor.css';
  * <CodeEditor mode="javascript" label="JSON editor"/>
  */
 
-export type EditorType = "json" | "javascript" | "python" | "sql" | "dockerfile" | "markdown" | "html";
+export type EditorType = "json" | "json5" | "javascript" | "python" | "sql" | "dockerfile" | "markdown" | "html";
 export interface CodeEditorProps {
   mode: EditorType,
   label?: string,
@@ -90,7 +90,7 @@ class UnityCodeEditor extends React.Component<CodeEditorProps, CodeEditorState> 
             value={value}
             style={{width: "100%", height: "100%"}}
             theme={"textmate"}
-            mode={mode}
+            mode={mode === 'json' ? 'json5' : mode}
             editorProps={{ $blockScrolling: true }}
             onChange={this.handleChange}
             minLines={minLines}
