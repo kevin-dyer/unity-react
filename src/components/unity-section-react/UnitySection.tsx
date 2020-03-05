@@ -1,13 +1,8 @@
 import React, { Component } from 'react'
 import '@bit/smartworks.unity.unity-section'
+import { sectionPropsType } from '@bit/smartworks.unity.unity-section'
 
-interface SectionProps {
-  bordered?: boolean,
-  nowrap?: boolean,
-  style?: object
-}
-
-export default class UnitySection extends Component<SectionProps> {
+export default class UnitySection extends Component<sectionPropsType> {
   render() {
     const {
       children,
@@ -25,10 +20,10 @@ export default class UnitySection extends Component<SectionProps> {
     if (!sectionProps.nowrap) delete sectionProps.nowrap
     if (!sectionProps.style) delete sectionProps.style
 
-    return <unity-section
+    return (<unity-section
       {...sectionProps}
     >
       {children}
-    </unity-section>
+    </unity-section>)
   }
 }
