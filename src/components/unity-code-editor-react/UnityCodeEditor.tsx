@@ -28,8 +28,11 @@ class UnityCodeEditor extends React.Component<CodeEditorProps, CodeEditorState> 
     error: ""
   };
 
+  componentDidMount = () => {
+    this.handleChange(this.props.value)
+  }
 
-  handleChange = (newValue: string, e: Event) => {
+  handleChange = (newValue: string, e?: Event) => {
     let error = ''
     if (this.props.mode === "json") {
       error = this.validateJson(newValue)
