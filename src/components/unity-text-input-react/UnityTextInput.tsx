@@ -24,7 +24,7 @@ export default class UnityTextInput extends Component<TextInputProps> {
     const {style, ...otherProps} = this.props
     const inputProps : TextInputProps= {}
     for(const prop of Object.keys(otherProps)) {
-      if(!!otherProps[prop]) inputProps[prop] = otherProps[prop]
+      if(otherProps[prop]) inputProps[prop] = otherProps[prop]
     }
 
     return <unity-text-input

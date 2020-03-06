@@ -10,7 +10,7 @@ export default class UnityButton extends Component<buttonPropsType> {
       onClick: !otherProps.disabled ? onClick : ()=>{}
     }
     for(const prop of Object.keys(otherProps)) {
-      if(!!otherProps[prop]) buttonProps[prop] = otherProps[prop]
+      if(otherProps[prop]) buttonProps[prop] = otherProps[prop]
     }
     return (
       <unity-button
