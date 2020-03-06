@@ -1,12 +1,12 @@
 declare namespace JSX {
   interface IntrinsicElements {
-    "unity-text-input": TextInputProps;
+    "unity-text-input": any;
   }
 }
 
 declare module '@bit/smartworks.unity.unity-text-input' {
   export interface TextInputProps {
-    [key: string],
+    [key: string]: any,
     value?: string,
     onChange?: Function,
     label?: string,

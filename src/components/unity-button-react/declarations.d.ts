@@ -1,12 +1,12 @@
 declare namespace JSX {
   interface IntrinsicElements {
-    "unity-button": buttonPropsType;
+    "unity-button": any;
   }
 }
 declare module '@bit/smartworks.unity.unity-button' {
   export type buttonType = 'gradient' | 'solid' | 'outlined'
   export interface buttonPropsType {
-    [key: string];
+    [key: string]: any;
     label?: string;
     leftIcon?: string;
     rightIcon?: string;
@@ -19,4 +19,3 @@ declare module '@bit/smartworks.unity.unity-button' {
     onClick?: Function;
   }
 }
-
