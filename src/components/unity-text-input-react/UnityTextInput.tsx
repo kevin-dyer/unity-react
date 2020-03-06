@@ -21,7 +21,11 @@ export default class UnityTextInput extends Component<TextInputProps> {
   }
 
   render() {
-    const {style, ...inputProps} = this.props
+    const {style, ...otherProps} = this.props
+    const inputProps : TextInputProps= {}
+    for(const prop of Object.keys(otherProps)) {
+      if(!!otherProps[prop]) inputProps[prop] = otherProps[prop]
+    }
 
     return <unity-text-input
       style={style}

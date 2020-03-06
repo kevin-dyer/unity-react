@@ -6,6 +6,7 @@ declare namespace JSX {
 
 declare module '@bit/smartworks.unity.unity-text-input' {
   export interface TextInputProps {
+    [key: string],
     value?: string,
     onChange?: Function,
     label?: string,
