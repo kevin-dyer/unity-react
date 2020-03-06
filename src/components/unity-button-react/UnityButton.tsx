@@ -7,8 +7,10 @@ export default class UnityButton extends Component<buttonPropsType> {
   render() {
     const {onClick, ...otherProps} = this.props
     const buttonProps : buttonPropsType = {
-      ...otherProps,
       onClick: !otherProps.disabled ? onClick : ()=>{}
+    }
+    for(const prop of Object.keys(otherProps)) {
+      if(!!otherProps[prop]) buttonProps[prop] = otherProps[prop]
     }
     return (
       <unity-button

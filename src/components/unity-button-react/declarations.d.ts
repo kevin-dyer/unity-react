@@ -6,6 +6,7 @@ declare namespace JSX {
 declare module '@bit/smartworks.unity.unity-button' {
   export type buttonType = 'gradient' | 'solid' | 'outlined'
   export interface buttonPropsType {
+    [key: string];
     label?: string;
     leftIcon?: string;
     rightIcon?: string;
