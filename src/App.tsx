@@ -28,7 +28,7 @@ class App extends React.Component {
           <h3>UnityButton</h3>
 
           <div>
-            <UnityButton label="Unity" gradient={true}/>
+            <UnityButton label="Unity" type="solid" onClick={() => console.log("click")}/>
           </div>
         </div>
 

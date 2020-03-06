@@ -1,29 +1,10 @@
-import React, { Component, CSSProperties } from 'react'
+import React, { Component } from 'react'
 import '@bit/smartworks.unity.unity-table'
-
-interface TableProps {
-  data?: Object[],
-  columns?: Object[],
-  childKeys?: string[],
-  keyExtractor?: Function,
-  onClickRow?: Function,
-  onSelectionChange?: Function,
-  onDisplayColumnsChange?: Function,
-  onColumnChange?: Function,
-  selectable?: boolean,
-  filter?: Object[],
-  emptyText?: string,
-  isLoading?: boolean,
-}
-
-interface TableStyles {
-  container: CSSProperties
-}
+import {TableProps, TableStyles} from '@bit/smartworks.unity.unity-table'
 
 export default class UnityTable extends Component<TableProps> {
 
   private tableRef = React.createRef<TableProps>()
-
 
   componentDidMount = () => {
     this.updateProperties()
@@ -33,7 +14,7 @@ export default class UnityTable extends Component<TableProps> {
     this.updateProperties(oldProps)
   }
 
-  updateProperties(oldProps={}) {
+  updateProperties(oldProps: TableProps = {}) {
     const {
       data,
       columns,
@@ -42,7 +23,9 @@ export default class UnityTable extends Component<TableProps> {
       onClickRow,
       onSelectionChange,
       onDisplayColumnsChange,
-      onColumnChange
+      onColumnChange,
+      onEndReached,
+      onHighlight
     } = this.props
     const {
       data: oldData,
@@ -52,11 +35,13 @@ export default class UnityTable extends Component<TableProps> {
       onClickRow: oldOnClickRow,
       onSelectionChange: oldOnSelectionChange,
       onDisplayColumnsChange: oldOnDisplayColumnsChange,
-      onColumnChange: oldOnColumnChange
+      onColumnChange: oldOnColumnChange,
+      onEndReached: oldOnEndReached,
+      onHighlight: oldOnHighlight
     } : TableProps = oldProps
 
     const unityTable = this.tableRef.current
-    if (unityTable) {
+    if(unityTable) {
       if (oldChildKeys !== childKeys) {
         unityTable.childKeys = childKeys
       }
@@ -70,7 +55,7 @@ export default class UnityTable extends Component<TableProps> {
         unityTable.keyExtractor = keyExtractor
       }
       if (oldOnClickRow !== onClickRow) {
-        unityTable.keyExtractor = keyExtractor
+        unityTable.onClickRow = onClickRow
       }
       if (oldOnSelectionChange !== onSelectionChange) {
         unityTable.onSelectionChange = onSelectionChange
@@ -81,6 +66,12 @@ export default class UnityTable extends Component<TableProps> {
       }
       if (oldOnColumnChange !== onColumnChange) {
         unityTable.onColumnChange = onColumnChange
+      }
+      if (oldOnEndReached !== onEndReached) {
+        unityTable.onEndReached = onEndReached
+      }
+      if (oldOnHighlight !== onHighlight) {
+        unityTable.onHighlight = onHighlight
       }
     }
   }
@@ -107,7 +98,6 @@ export default class UnityTable extends Component<TableProps> {
           selectable={selectable}
           filter={filter}
           emptyDisplay={emptyText}
-          // isLoading={isLoading}
           {...isLoadingProps}
         />
     </div>
