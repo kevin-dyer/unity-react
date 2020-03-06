@@ -1,6 +1,6 @@
 declare namespace JSX {
   interface IntrinsicElements {
-    "unity-section": sectionPropsType;
+    "unity-section": any;
   }
 }
 
