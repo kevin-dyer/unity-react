@@ -78,6 +78,28 @@
         "origin": "AUTHORED",
         "exported": true
     },
+    "smartworks.unity-react/unity-section-react@0.1.0": {
+        "files": [
+            {
+                "relativePath": "src/components/unity-section-react/UnitySection.tsx",
+                "test": false,
+                "name": "UnitySection.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-section-react/declarations.d.ts",
+                "test": false,
+                "name": "declarations.d.ts"
+            },
+            {
+                "relativePath": "src/components/unity-section-react/unity-section-react.md",
+                "test": false,
+                "name": "unity-section-react.md"
+            }
+        ],
+        "mainFile": "src/components/unity-section-react/UnitySection.tsx",
+        "origin": "AUTHORED",
+        "exported": true
+    },
     "smartworks.unity-react/unity-table-react@0.0.3": {
         "files": [
             {
