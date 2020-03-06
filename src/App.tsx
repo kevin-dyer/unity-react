@@ -46,6 +46,7 @@ class App extends React.Component {
               value={this.state.value}
               minLines={7}
               maxLines={19}
+              showError
             />
           </div>
         </UnitySection>
