@@ -1,6 +1,6 @@
 declare namespace JSX {
   interface IntrinsicElements {
-    "unity-table": TableProps;
+    "unity-table": any;
   }
 }
 
@@ -23,6 +23,6 @@ declare module '@bit/smartworks.unity.unity-table' {
     onHighlight?: Function
   }
   export interface TableStyles {
-    container: CSSProperties
+    container: React.CSSProperties
   }
 }
