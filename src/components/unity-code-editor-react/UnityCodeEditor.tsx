@@ -28,7 +28,7 @@ export interface CodeEditorProps {
   dirty?: boolean,
   minLines?: number,
   maxLines?: number,
-  errorText?: string,
+  error?: string,
   validation?: Function
 }
 export interface CodeEditorState {error: string}
@@ -57,7 +57,7 @@ class UnityCodeEditor extends React.Component<CodeEditorProps, CodeEditorState> 
   }
 
   getValidationMessage()  {
-    const { errorText='' } = this.props
+    const { error: errorText='' } = this.props
     const { error='' } = this.state
     if (this.state.error) {
       return (
