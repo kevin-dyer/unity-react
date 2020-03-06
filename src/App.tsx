@@ -37,8 +37,7 @@ class App extends React.Component {
             <UnityCodeEditor
               label="JSON editor"
               mode="json"
-              onChange={(e: Event, value: string, error: string) => {
-                console.log(JSON.stringify(e))
+              onChange={(value: string, error: string) => {
                 console.log('value', value)
                 console.log('error', error)
                 this.setState({value, error})
@@ -46,6 +45,14 @@ class App extends React.Component {
               value={this.state.value}
               minLines={7}
               maxLines={19}
+              validation={(val: string) => {
+                try {
+                  if (val) JSON.parse(val)
+                } catch (error) {
+                  return error.toString()
+                }
+                return ''
+              }}
               showError
             />
           </div>

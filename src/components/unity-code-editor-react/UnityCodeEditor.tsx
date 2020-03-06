@@ -22,14 +22,15 @@ import './UnityCodeEditor.css';
 export type EditorType = "json" | "json5" | "javascript" | "python" | "sql" | "dockerfile" | "markdown" | "html";
 export interface CodeEditorProps {
   mode: EditorType,
-  label?: string,
-  onChange: Function,
   value: string,
+  onChange: Function,
+  label?: string,
   dirty?: boolean,
   minLines?: number,
   maxLines?: number,
   showError?: boolean,
-  errorText?: string
+  errorText?: string,
+  validation?: Function
 }
 export interface CodeEditorState {error: string}
 
@@ -43,24 +44,17 @@ class UnityCodeEditor extends React.Component<CodeEditorProps, CodeEditorState> 
     this.handleChange(this.props.value)
   }
 
-  handleChange = (newValue: string, e?: Event) => {
+  handleChange = (newValue: string) => {
+    const {
+      validation,
+      onChange
+    } = this.props
     let error = ''
-    if (this.props.mode === "json") {
-      error = this.validateJson(newValue)
+    if (validation instanceof Function) {
+      error = validation(newValue)
     }
-    this.props.onChange(e, newValue, error)
-  }
-
-  validateJson(value: string) {
-    try {
-      if(value) {
-        JSON.parse(value);
-      }
-      this.setState({error: ""});
-    } catch (e) {
-      this.setState({error: e.toString()});
-      return e.toString()
-    }
+    this.setState({error})
+    onChange(newValue, error)
   }
 
   getValidationMessage()  {
