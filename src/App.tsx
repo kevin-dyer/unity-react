@@ -53,7 +53,6 @@ class App extends React.Component {
                 }
                 return ''
               }}
-              showError
             />
           </div>
         </UnitySection>
