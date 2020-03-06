@@ -28,7 +28,6 @@ export interface CodeEditorProps {
   dirty?: boolean,
   minLines?: number,
   maxLines?: number,
-  showError?: boolean,
   errorText?: string,
   validation?: Function
 }
@@ -76,8 +75,7 @@ class UnityCodeEditor extends React.Component<CodeEditorProps, CodeEditorState> 
       label,
       dirty,
       minLines=8,
-      maxLines=16,
-      showError
+      maxLines=16
     } = this.props
     return (
       <div className="editor-wrapper">
@@ -95,7 +93,7 @@ class UnityCodeEditor extends React.Component<CodeEditorProps, CodeEditorState> 
             minLines={minLines}
             maxLines={maxLines}
           />
-          {showError && this.getValidationMessage()}
+          {this.getValidationMessage()}
         </div>
       </div>
     );
