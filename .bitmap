@@ -24,7 +24,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-code-editor-react@0.0.4": {
+    "smartworks.unity-react/unity-code-editor-react@0.1.0": {
         "files": [
             {
                 "relativePath": "src/components/unity-code-editor-react/UnityCodeEditor.css",
@@ -35,6 +35,11 @@
                 "relativePath": "src/components/unity-code-editor-react/UnityCodeEditor.tsx",
                 "test": false,
                 "name": "UnityCodeEditor.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-code-editor-react/unity-code-editor-react.md",
+                "test": false,
+                "name": "unity-code-editor-react.md"
             }
         ],
         "mainFile": "src/components/unity-code-editor-react/UnityCodeEditor.tsx",
@@ -100,7 +105,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-table-react@0.0.3": {
+    "smartworks.unity-react/unity-table-react@0.0.4": {
         "files": [
             {
                 "relativePath": "src/components/unity-table-react/UnityTable.tsx",
