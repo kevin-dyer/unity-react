@@ -59,7 +59,7 @@ class UnityCodeEditor extends React.Component<CodeEditorProps, CodeEditorState> 
   getValidationMessage()  {
     const { error: errorText='' } = this.props
     const { error='' } = this.state
-    if (this.state.error) {
+    if (errorText || error) {
       return (
         <p className="code-editor-paragraph invalid">
           {errorText || error}
