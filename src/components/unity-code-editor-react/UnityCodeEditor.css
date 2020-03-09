@@ -1,7 +1,7 @@
 .editor-wrapper {
   --internal-active-color: var(--active-color, var(--primary-brand-color, var(--default-primary-brand-color)));
   --internal-gutter-color: var(--gutter-color, var(--primary-brand-color-light, var(--default-primary-brand-color-light)));
-  --internal-tm-fold-color: var(--tm-fold-color, var(--primary-brand-color-dark, var(--default-primary-brand-color-dark)));
+  --internal-fold-color: var(--fold-color, var(--primary-brand-color-dark, var(--default-primary-brand-color-dark)));
   --internal-border-color: var(--border-color, var(--dark-grey-text-color, var(--default-dark-grey-text-color)));
   --internal-validation-color: var(--validation-color, red);
   --internal-dirty-color: var(--dirty-color, var(--danger-color, var(--default-danger-color)));
@@ -71,5 +71,5 @@
 
 /* Not entire sure what this covers? Could use a better name if so */
 .ace-tm .ace_fold {
-  background-color: var(--internal-tm-fold-color);
+  background-color: var(--internal-fold-color);
 }
