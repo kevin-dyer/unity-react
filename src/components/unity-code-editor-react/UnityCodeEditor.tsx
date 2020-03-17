@@ -1,13 +1,15 @@
 import React from "react";
 import AceEditor from "react-ace";
+import "ace-builds/webpack-resolver.js"
 
-import "ace-builds/src-noconflict/mode-json";
+import "ace-builds/src-noconflict/mode-json5";
 import "ace-builds/src-noconflict/mode-javascript";
 import "ace-builds/src-noconflict/mode-python";
 import "ace-builds/src-noconflict/mode-sql";
 import "ace-builds/src-noconflict/mode-dockerfile";
 import "ace-builds/src-noconflict/mode-markdown";
 import "ace-builds/src-noconflict/mode-html";
+import "ace-builds/src-noconflict/theme-textmate";
 
 import './UnityCodeEditor.css';
 
@@ -17,15 +19,17 @@ import './UnityCodeEditor.css';
  * <CodeEditor mode="javascript" label="JSON editor"/>
  */
 
-export type EditorType = "json" | "javascript" | "python" | "sql" | "dockerfile" | "markdown" | "html";
+export type EditorType = "json" | "json5" | "javascript" | "python" | "sql" | "dockerfile" | "markdown" | "html";
 export interface CodeEditorProps {
   mode: EditorType,
-  label?: string,
-  onChange: Function,
   value: string,
+  onChange: Function,
+  label?: string,
   dirty?: boolean,
   minLines?: number,
-  maxLines?: number
+  maxLines?: number,
+  error?: string,
+  validation?: Function
 }
 export interface CodeEditorState {error: string}
 
@@ -35,32 +39,30 @@ class UnityCodeEditor extends React.Component<CodeEditorProps, CodeEditorState> 
     error: ""
   };
 
-
-  handleChange = (newValue: string, e: Event) => {
-    let error = ''
-    if (this.props.mode === "json") {
-      error = this.validateJson(newValue)
-    }
-    this.props.onChange(e, newValue, error)
+  componentDidMount = () => {
+    this.handleChange(this.props.value)
   }
 
-  validateJson(value: string) {
-    try {
-      if(value) {
-        JSON.parse(value);
-      }
-      this.setState({error: ""});
-    } catch (e) {
-      this.setState({error: e.toString()});
-      return e.toString()
+  handleChange = (newValue: string) => {
+    const {
+      validation,
+      onChange
+    } = this.props
+    let error = ''
+    if (validation instanceof Function) {
+      error = validation(newValue)
     }
+    this.setState({error})
+    onChange(newValue, error)
   }
 
   getValidationMessage()  {
-    if (this.state.error) {
+    const { error: errorText='' } = this.props
+    const { error='' } = this.state
+    if (errorText || error) {
       return (
         <p className="code-editor-paragraph invalid">
-          {this.state.error}
+          {errorText || error}
         </p>
       )
     }
@@ -84,10 +86,10 @@ class UnityCodeEditor extends React.Component<CodeEditorProps, CodeEditorState> 
           <AceEditor
             value={value}
             style={{width: "100%", height: "100%"}}
-            mode={mode}
+            theme={"textmate"}
+            mode={mode === 'json' ? 'json5' : mode}
             editorProps={{ $blockScrolling: true }}
             onChange={this.handleChange}
-            enableSnippets
             minLines={minLines}
             maxLines={maxLines}
           />

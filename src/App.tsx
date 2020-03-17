@@ -5,10 +5,12 @@ import UnityCodeEditor from './components/unity-code-editor-react/UnityCodeEdito
 import UnityTextInput from './components/unity-text-input-react/UnityTextInput'
 import UnityTable from './components/unity-table-react/UnityTable'
 import UnityPageHeader from './components/unity-page-header-react/UnityPageHeader'
+import UnitySection from './components/unity-section-react/UnitySection'
 
 
-const codeEditorStyle: CSSProperties = {
+const contentBox: CSSProperties = {
   margin: "20px",
+  width: '100%'
 }
 
 class App extends React.Component {
@@ -24,43 +26,62 @@ class App extends React.Component {
           <h2>Unity React Components</h2>
         </header>
 
-        <div>
-          <h3>UnityButton</h3>
-
-          <div>
-            <UnityButton label="Unity" type="solid" onClick={() => console.log("click")}/>
+        <UnitySection>
+          <div style={contentBox}>
+            <UnityPageHeader title="I'm a page header"/>
           </div>
-        </div>
+        </UnitySection>
 
-        <div style={codeEditorStyle} >
-          <UnityCodeEditor
-            label="JSON editor"
-            mode="json"
-            onChange={(e: Event, value: string, error: string) => {
-              console.log(JSON.stringify(e))
-              console.log('value', value)
-              console.log('error', error)
-              this.setState({value, error})
-            }}
-            value={this.state.value}
-            minLines={7}
-            maxLines={19}
-          />
-        </div>
+        <UnitySection>
+          <div style={contentBox}>
+            <UnityCodeEditor
+              label="JSON editor"
+              mode="json"
+              onChange={(value: string, error: string) => {
+                console.log('value', value)
+                console.log('error', error)
+                this.setState({value, error})
+              }}
+              value={this.state.value}
+              minLines={7}
+              maxLines={19}
+              validation={(val: string) => {
+                try {
+                  if (val) JSON.parse(val)
+                } catch (error) {
+                  return error.toString()
+                }
+                return ''
+              }}
+            />
+          </div>
+        </UnitySection>
 
-        <div>
-          <UnityTextInput label="Text Input"/>
-        </div>
+        <UnitySection>
+          <UnitySection>
+            <div style={contentBox}>
+              <UnityTextInput label="Text Input"/>
+            </div>
+          </UnitySection>
 
-        <div>
-          <UnityPageHeader title="I'm a page header"/>
-        </div>
+          <UnitySection>
+            <div style={contentBox}>
+              <h3>UnityButton</h3>
 
-        <div>
-          <h3>UnityTable</h3>
+              <div>
+                <UnityButton label="Unity" type="solid" onClick={() => console.log("click")}/>
+              </div>
+            </div>
+          </UnitySection>
+        </UnitySection>
 
-          <UnityTable/>
-        </div>
+        <UnitySection>
+          <div style={contentBox}>
+            <h3>UnityTable</h3>
+
+            <UnityTable/>
+          </div>
+        </UnitySection>
       </div>
     );
   }
