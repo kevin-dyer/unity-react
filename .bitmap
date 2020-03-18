@@ -83,7 +83,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-section-react@0.1.0": {
+    "smartworks.unity-react/unity-section-react@0.2.0": {
         "files": [
             {
                 "relativePath": "src/components/unity-section-react/UnitySection.tsx",

@@ -2,5 +2,8 @@
 
 ## Changelog:
 
+### v0.2.0
+- update to v0.2.0 of unity-section
+
 ### v0.1.0
 - add Section to the React Wrapped Unity Components
