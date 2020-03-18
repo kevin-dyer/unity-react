@@ -83,11 +83,14 @@ export default class UnityTable extends Component<TableProps> {
       emptyText,
       isLoading=false,
     } = this.props
-    let isLoadingProps = {}
+    let booleanProps : TableProps = {}
 
     //Not isLoading attribute must not be passed in if false
     if (isLoading) {
-      isLoadingProps = {isLoading}
+      booleanProps.isLoading = isLoading
+    }
+    if (selectable){
+      booleanProps.selectable = selectable
     }
 
     console.log("render data: ", this.props.data, ", columns: ", this.props.columns)
@@ -95,10 +98,9 @@ export default class UnityTable extends Component<TableProps> {
     return <div style={styles.container}>
         <unity-table
           ref={this.tableRef}
-          selectable={selectable}
           filter={filter}
           emptyDisplay={emptyText}
-          {...isLoadingProps}
+          {...booleanProps}
         />
     </div>
   }
