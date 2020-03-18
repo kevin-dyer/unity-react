@@ -128,7 +128,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-text-input-react@0.0.3": {
+    "smartworks.unity-react/unity-text-input-react@0.0.4": {
         "files": [
             {
                 "relativePath": "src/components/unity-text-input-react/UnityTextInput.tsx",
