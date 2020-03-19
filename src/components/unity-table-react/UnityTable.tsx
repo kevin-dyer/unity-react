@@ -1,35 +1,16 @@
-import React, { Component, CSSProperties } from 'react'
+import React, { Component } from 'react'
 import '@bit/smartworks.unity.unity-table'
+//See definitions in ./declarations.d.ts
+import {
+  TableProps,
+  TableStyles,
+  TableColumn
+} from '@bit/smartworks.unity.unity-table'
 
-interface TableProps {
-  data?: Object[],
-  columns?: IColumn[],
-  childKeys?: string[],
-  keyExtractor?: Function,
-  onClickRow?: Function,
-  onSelectionChange?: Function,
-  onDisplayColumnsChange?: Function,
-  onColumnChange?: Function,
-  selectable?: boolean,
-  filter?: Object[],
-  emptyText?: string,
-  isLoading?: boolean,
-  children?: Object[]
-}
-
-interface TableStyles {
-  container: CSSProperties
-}
-
-interface IColumn {
-  renderCustomContent?: Function,
-  key?: string
-}
 
 export default class UnityTable extends Component<TableProps> {
 
   private tableRef = React.createRef<TableProps>()
-
 
   componentDidMount = () => {
     this.updateProperties()
@@ -39,7 +20,7 @@ export default class UnityTable extends Component<TableProps> {
     this.updateProperties(oldProps)
   }
 
-  updateProperties(oldProps={}) {
+  updateProperties(oldProps: TableProps = {}) {
     const {
       data,
       columns,
@@ -48,7 +29,9 @@ export default class UnityTable extends Component<TableProps> {
       onClickRow,
       onSelectionChange,
       onDisplayColumnsChange,
-      onColumnChange
+      onColumnChange,
+      onEndReached,
+      onHighlight
     } = this.props
     const {
       data: oldData,
@@ -58,11 +41,13 @@ export default class UnityTable extends Component<TableProps> {
       onClickRow: oldOnClickRow,
       onSelectionChange: oldOnSelectionChange,
       onDisplayColumnsChange: oldOnDisplayColumnsChange,
-      onColumnChange: oldOnColumnChange
+      onColumnChange: oldOnColumnChange,
+      onEndReached: oldOnEndReached,
+      onHighlight: oldOnHighlight
     } : TableProps = oldProps
 
     const unityTable = this.tableRef.current
-    if (unityTable) {
+    if(unityTable) {
       if (oldChildKeys !== childKeys) {
         unityTable.childKeys = childKeys
       }
@@ -76,7 +61,7 @@ export default class UnityTable extends Component<TableProps> {
         unityTable.keyExtractor = keyExtractor
       }
       if (oldOnClickRow !== onClickRow) {
-        unityTable.keyExtractor = keyExtractor
+        unityTable.onClickRow = onClickRow
       }
       if (oldOnSelectionChange !== onSelectionChange) {
         unityTable.onSelectionChange = onSelectionChange
@@ -87,6 +72,12 @@ export default class UnityTable extends Component<TableProps> {
       }
       if (oldOnColumnChange !== onColumnChange) {
         unityTable.onColumnChange = onColumnChange
+      }
+      if (oldOnEndReached !== onEndReached) {
+        unityTable.onEndReached = onEndReached
+      }
+      if (oldOnHighlight !== onHighlight) {
+        unityTable.onHighlight = onHighlight
       }
     }
   }
@@ -132,7 +123,7 @@ export default class UnityTable extends Component<TableProps> {
     //Extract cell content and append to slots array
     nodes.forEach((node: any={}) => {
       colsWithContent.forEach((column={}) => {
-        const {key='', renderCustomContent=()=>{}}: IColumn = column
+        const {key='', renderCustomContent=()=>{}}: TableColumn = column
         const cellValue: string = node[key]
         const customContent: any = renderCustomContent(cellValue, node)
         const slotId: string = this._slotIdExtractor(node, column)
@@ -154,20 +145,22 @@ export default class UnityTable extends Component<TableProps> {
       isLoading=false,
       children
     } = this.props
-    let isLoadingProps = {}
+    let booleanProps : TableProps = {}
 
     //Not isLoading attribute must not be passed in if false
     if (isLoading) {
-      isLoadingProps = {isLoading}
+      booleanProps.isLoading = isLoading
+    }
+    if (selectable){
+      booleanProps.selectable = selectable
     }
 
     return <div style={styles.container}>
         <unity-table
           ref={this.tableRef}
-          selectable={selectable}
           filter={filter}
           emptyDisplay={emptyText}
-          {...isLoadingProps}
+          {...booleanProps}
         >
           {this.renderCustomContent()}
           {children}
