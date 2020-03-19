@@ -889,7 +889,14 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@bit/smartworks.unity.unity-button@^0.0.17":
+"@bit/smartworks.unity.table-cell-base@0.0.3":
+  version "0.0.3"
+  resolved "https://node.bit.dev/smartworks.unity.table-cell-base/-/smartworks.unity.table-cell-base-0.0.3.tgz#ba8e314333c0954efe3b677c0c9dc61acbd695fd"
+  integrity sha1-uo4xQzPAlU7+O2d8DJ3GGsvWlf0=
+  dependencies:
+    lit-element "^2.0.1"
+
+"@bit/smartworks.unity.unity-button@0.0.17":
   version "0.0.17"
   resolved "https://node.bit.dev/smartworks.unity.unity-button/-/smartworks.unity.unity-button-0.0.17.tgz#65d65ac3b5568a6b488af46ad02804421428bb7c"
   integrity sha1-ZdZaw7VWimtIivRq0CgEQhQou3w=
@@ -901,12 +908,187 @@
     "@polymer/paper-spinner" "^3.0.2"
     lit-element "^2.0.1"
 
+"@bit/smartworks.unity.unity-button@0.0.19", "@bit/smartworks.unity.unity-button@^0.0.19":
+  version "0.0.19"
+  resolved "https://node.bit.dev/smartworks.unity.unity-button/-/smartworks.unity.unity-button-0.0.19.tgz#de1ae30c97457465a7ecc81dfa8f473b1efc0704"
+  integrity sha1-3hrjDJdFdGWn7Mgd+o9HOx78BwQ=
+  dependencies:
+    "@bit/smartworks.unity.unity-default-theme-styles" "0.0.15"
+    "@bit/smartworks.unity.unity-typography" "0.0.2"
+    "@polymer/iron-icon" "^3.0.1"
+    "@polymer/iron-icons" "^3.0.1"
+    "@polymer/paper-button" "^3.0.1"
+    "@polymer/paper-spinner" "^3.0.2"
+    lit-element "^2.0.1"
+
+"@bit/smartworks.unity.unity-column-editor@^0.0.6":
+  version "0.0.6"
+  resolved "https://node.bit.dev/smartworks.unity.unity-column-editor/-/smartworks.unity.unity-column-editor-0.0.6.tgz#ce549db018264e0692060ae4626d2fa605a196da"
+  integrity sha1-zlSdsBgmTgaSBgrkYm0vpgWhlto=
+  dependencies:
+    "@bit/smartworks.unity.unity-button" "0.0.17"
+    "@bit/smartworks.unity.unity-default-theme-styles" "0.0.13"
+    "@bit/smartworks.unity.unity-modal" "0.1.2"
+    "@polymer/iron-icons" "^3.0.1"
+    "@polymer/paper-checkbox" "^3.1.0"
+    "@polymer/paper-icon-button" "^3.0.2"
+    lit-element "^2.0.1"
+    sortablejs "^1.10.2"
+
+"@bit/smartworks.unity.unity-default-theme-styles@0.0.12":
+  version "0.0.12"
+  resolved "https://node.bit.dev/smartworks.unity.unity-default-theme-styles/-/smartworks.unity.unity-default-theme-styles-0.0.12.tgz#1e63c5ca2442e5214a3aa776aa479898d9393e01"
+  integrity sha1-HmPFyiRC5SFKOqd2qkeYmNk5PgE=
+  dependencies:
+    lit-element "^2.0.1"
+
 "@bit/smartworks.unity.unity-default-theme-styles@0.0.13":
   version "0.0.13"
   resolved "https://node.bit.dev/smartworks.unity.unity-default-theme-styles/-/smartworks.unity.unity-default-theme-styles-0.0.13.tgz#3a8835aaf7b1ab6b79f6965f0a478b6c19aedcfd"
   integrity sha1-Oog1qvexq2t59pZfCkeLbBmu3P0=
   dependencies:
     lit-element "^2.0.1"
+
+"@bit/smartworks.unity.unity-default-theme-styles@0.0.15":
+  version "0.0.15"
+  resolved "https://node.bit.dev/smartworks.unity.unity-default-theme-styles/-/smartworks.unity.unity-default-theme-styles-0.0.15.tgz#9c7c35649d43a2b33db8ff14496ffbcc5847e13c"
+  integrity sha1-nHw1ZJ1DorM9uP8USW/7zFhH4Tw=
+  dependencies:
+    lit-element "^2.0.1"
+
+"@bit/smartworks.unity.unity-dropdown@0.1.10":
+  version "0.1.10"
+  resolved "https://node.bit.dev/smartworks.unity.unity-dropdown/-/smartworks.unity.unity-dropdown-0.1.10.tgz#367c42053ebc2dd426a6437ce7eb777ce551fe91"
+  integrity sha1-NnxCBT68LdQmpkN85+t3fOVR/pE=
+  dependencies:
+    "@bit/smartworks.unity.unity-button" "0.0.19"
+    "@bit/smartworks.unity.unity-default-theme-styles" "0.0.15"
+    "@bit/smartworks.unity.unity-icon-set" "0.1.1"
+    "@bit/smartworks.unity.unity-select-menu" "0.0.4"
+    "@bit/smartworks.unity.unity-text-input" "0.1.30"
+    "@polymer/iron-icon" "^3.0.1"
+    "@polymer/paper-checkbox" "^3.1.0"
+    "@polymer/paper-dialog" "^3.0.1"
+    lit-element "^2.0.1"
+
+"@bit/smartworks.unity.unity-global-nav-base@^0.1.0":
+  version "0.1.1"
+  resolved "https://node.bit.dev/smartworks.unity.unity-global-nav-base/-/smartworks.unity.unity-global-nav-base-0.1.1.tgz#e361e8c7baeb5a514f3e07975230ac359dd6c3f3"
+  integrity sha1-42Hox7rrWlFPPgeXUjCsNZ3Ww/M=
+  dependencies:
+    "@bit/smartworks.unity.unity-default-theme-styles" "0.0.15"
+    lit-element "^2.0.1"
+
+"@bit/smartworks.unity.unity-global-nav-inner-item@0.0.4":
+  version "0.0.4"
+  resolved "https://node.bit.dev/smartworks.unity.unity-global-nav-inner-item/-/smartworks.unity.unity-global-nav-inner-item-0.0.4.tgz#48ece94950eeda20f331b75dd0975f9fcf3bbb77"
+  integrity sha1-SOzpSVDu2iDzMbdd0Jdfn887u3c=
+  dependencies:
+    "@bit/smartworks.unity.unity-default-theme-styles" "0.0.15"
+    "@polymer/iron-icons" "^3.0.1"
+    lit-element "^2.0.1"
+
+"@bit/smartworks.unity.unity-global-nav-top-item@^0.1.6":
+  version "0.1.8"
+  resolved "https://node.bit.dev/smartworks.unity.unity-global-nav-top-item/-/smartworks.unity.unity-global-nav-top-item-0.1.8.tgz#c9c942469aa72a73c3fc24a77a228694d7fc76c7"
+  integrity sha1-yclCRpqnKnPD/CSneiKGlNf8dsc=
+  dependencies:
+    "@bit/smartworks.unity.unity-default-theme-styles" "0.0.15"
+    "@bit/smartworks.unity.unity-global-nav-inner-item" "0.0.4"
+    "@polymer/iron-icons" "^3.0.1"
+    lit-element "^2.0.1"
+
+"@bit/smartworks.unity.unity-icon-set@0.1.1":
+  version "0.1.1"
+  resolved "https://node.bit.dev/smartworks.unity.unity-icon-set/-/smartworks.unity.unity-icon-set-0.1.1.tgz#617883ee433bc87bc93eed3ab48e4ab351bc33a2"
+  integrity sha1-YXiD7kM7yHvJPu06tI5Ks1G8M6I=
+  dependencies:
+    "@polymer/iron-iconset-svg" "^3.0.1"
+    "@polymer/polymer" "^3.1.0"
+
+"@bit/smartworks.unity.unity-modal@0.1.2":
+  version "0.1.2"
+  resolved "https://node.bit.dev/smartworks.unity.unity-modal/-/smartworks.unity.unity-modal-0.1.2.tgz#fe396042a33d2956163a3ba99309443056b73b49"
+  integrity sha1-/jlgQqM9KVYWOjupkwlEMFa3O0k=
+  dependencies:
+    "@bit/smartworks.unity.unity-default-theme-styles" "0.0.13"
+    "@bit/smartworks.unity.unity-utils" "0.0.1"
+    "@polymer/paper-dialog" "^3.0.1"
+    "@polymer/paper-dialog-scrollable" "^3.0.1"
+    lit-element "^2.0.1"
+
+"@bit/smartworks.unity.unity-page-header@^0.0.20":
+  version "0.0.20"
+  resolved "https://node.bit.dev/smartworks.unity.unity-page-header/-/smartworks.unity.unity-page-header-0.0.20.tgz#5599c57459f9f9268e5a813c0be8212c60c8dc21"
+  integrity sha1-VZnFdFn5+SaOWoE8C+ghLGDI3CE=
+  dependencies:
+    "@bit/smartworks.unity.unity-default-theme-styles" "0.0.12"
+    "@polymer/iron-icons" "^3.0.1"
+    "@polymer/paper-icon-button" "^3.0.2"
+    "@polymer/paper-tabs" "^3.1.0"
+    lit-element "^2.0.1"
+
+"@bit/smartworks.unity.unity-select-menu@0.0.4":
+  version "0.0.4"
+  resolved "https://node.bit.dev/smartworks.unity.unity-select-menu/-/smartworks.unity.unity-select-menu-0.0.4.tgz#47b076522791ff17ea1e240f2ddce7fa01c812a8"
+  integrity sha1-R7B2UieR/xfqHiQPLdzn+gHIEqg=
+  dependencies:
+    "@bit/smartworks.unity.unity-default-theme-styles" "0.0.15"
+    lit-element "^2.0.1"
+
+"@bit/smartworks.unity.unity-table-cell@0.1.23":
+  version "0.1.23"
+  resolved "https://node.bit.dev/smartworks.unity.unity-table-cell/-/smartworks.unity.unity-table-cell-0.1.23.tgz#ade7c8a0d59bd62613ac7ae90ac3988977d9357e"
+  integrity sha1-refIoNWb1iYTrHrpCsOYiXfZNX4=
+  dependencies:
+    "@bit/smartworks.unity.table-cell-base" "0.0.3"
+    "@bit/smartworks.unity.unity-default-theme-styles" "0.0.15"
+    "@polymer/iron-icons" "^3.0.1"
+    "@polymer/paper-checkbox" "^3.1.0"
+    "@polymer/paper-icon-button" "^3.0.2"
+    lit-element "^2.0.1"
+
+"@bit/smartworks.unity.unity-table@^0.3.10":
+  version "0.3.10"
+  resolved "https://node.bit.dev/smartworks.unity.unity-table/-/smartworks.unity.unity-table-0.3.10.tgz#ade6c08af7cb0d891e2b9c4cf91828b3d9a50b78"
+  integrity sha1-rebAivfLDYkeK5xM+Rgos9mlC3g=
+  dependencies:
+    "@bit/smartworks.unity.table-cell-base" "0.0.3"
+    "@bit/smartworks.unity.unity-button" "0.0.19"
+    "@bit/smartworks.unity.unity-default-theme-styles" "0.0.15"
+    "@bit/smartworks.unity.unity-dropdown" "0.1.10"
+    "@bit/smartworks.unity.unity-table-cell" "0.1.23"
+    "@polymer/iron-icons" "^3.0.1"
+    "@polymer/iron-scroll-threshold" "^3.0.1"
+    "@polymer/paper-checkbox" "^3.1.0"
+    "@polymer/paper-icon-button" "^3.0.2"
+    "@polymer/paper-spinner" "^3.0.2"
+    lit-element "^2.0.1"
+
+"@bit/smartworks.unity.unity-text-input@0.1.30", "@bit/smartworks.unity.unity-text-input@^0.1.28":
+  version "0.1.30"
+  resolved "https://node.bit.dev/smartworks.unity.unity-text-input/-/smartworks.unity.unity-text-input-0.1.30.tgz#521532ba41af1fd2321d755cee0b911b08a8cdee"
+  integrity sha1-UhUyukGvH9IyHXVc7guRGwioze4=
+  dependencies:
+    "@bit/smartworks.unity.unity-default-theme-styles" "0.0.15"
+    "@bit/smartworks.unity.unity-icon-set" "0.1.1"
+    "@polymer/iron-autogrow-textarea" "^3.0.1"
+    "@polymer/iron-icon" "^3.0.1"
+    "@polymer/iron-input" "^3.0.1"
+    lit-element "^2.0.1"
+
+"@bit/smartworks.unity.unity-typography@0.0.2":
+  version "0.0.2"
+  resolved "https://node.bit.dev/smartworks.unity.unity-typography/-/smartworks.unity.unity-typography-0.0.2.tgz#973da90ddcefb4690a1c91447e915c63bf6dd200"
+  integrity sha1-lz2pDdzvtGkKHJFEfpFcY79t0gA=
+  dependencies:
+    "@bit/smartworks.unity.unity-default-theme-styles" "0.0.15"
+    lit-element "^2.0.1"
+
+"@bit/smartworks.unity.unity-utils@0.0.1":
+  version "0.0.1"
+  resolved "https://node.bit.dev/smartworks.unity.unity-utils/-/smartworks.unity.unity-utils-0.0.1.tgz#4d194467bde61253f3c47218fc75198f295a03b9"
+  integrity sha1-TRlEZ73mElPzxHIY/HUZjylaA7k=
 
 "@cnakazawa/watch@^1.0.3":
   version "1.0.3"
@@ -1124,11 +1306,28 @@
   resolved "https://registry.yarnpkg.com/@polymer/font-roboto/-/font-roboto-3.0.2.tgz#80cdaa7225db2359130dfb2c6d9a3be1820020c3"
   integrity sha512-tx5TauYSmzsIvmSqepUPDYbs4/Ejz2XbZ1IkD7JEGqkdNUJlh+9KU85G56Tfdk/xjEZ8zorFfN09OSwiMrIQWA==
 
+"@polymer/iron-a11y-announcer@^3.0.0-pre.26":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@polymer/iron-a11y-announcer/-/iron-a11y-announcer-3.0.2.tgz#730dd36ccb2e042ecd5160ba439c2bf2f8a97412"
+  integrity sha512-LqnMF39mXyxSSRbTHRzGbcJS8nU0NVTo2raBOgOlpxw5yfGJUVcwaTJ/qy5NtWCZLRfa4suycf0oAkuUjHTXHQ==
+  dependencies:
+    "@polymer/polymer" "^3.0.0"
+
 "@polymer/iron-a11y-keys-behavior@^3.0.0-pre.26":
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/@polymer/iron-a11y-keys-behavior/-/iron-a11y-keys-behavior-3.0.1.tgz#2868ea72912d2007ffab4734684a91f5aac49b84"
   integrity sha512-lnrjKq3ysbBPT/74l0Fj0U9H9C35Tpw2C/tpJ8a+5g8Y3YJs1WSZYnEl1yOkw6sEyaxOq/1DkzH0+60gGu5/PQ==
   dependencies:
+    "@polymer/polymer" "^3.0.0"
+
+"@polymer/iron-autogrow-textarea@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@polymer/iron-autogrow-textarea/-/iron-autogrow-textarea-3.0.1.tgz#0205d9c5ca16f3afd505f41e9037989707d59dce"
+  integrity sha512-FgSL7APrOSL9Vu812sBCFlQ17hvnJsBAV2C2e1UAiaHhB+dyfLq8gGdGUpqVWuGJ50q4Y/49QwCNnLf85AdVYA==
+  dependencies:
+    "@polymer/iron-behaviors" "^3.0.0-pre.26"
+    "@polymer/iron-flex-layout" "^3.0.0-pre.26"
+    "@polymer/iron-validatable-behavior" "^3.0.0-pre.26"
     "@polymer/polymer" "^3.0.0"
 
 "@polymer/iron-behaviors@^3.0.0-pre.26":
@@ -1146,6 +1345,13 @@
   dependencies:
     "@polymer/iron-form-element-behavior" "^3.0.0-pre.26"
     "@polymer/iron-validatable-behavior" "^3.0.0-pre.26"
+    "@polymer/polymer" "^3.0.0"
+
+"@polymer/iron-fit-behavior@^3.0.0-pre.26":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@polymer/iron-fit-behavior/-/iron-fit-behavior-3.0.2.tgz#2ec460d8a6b0151394b55631a72a68b92e14e2e0"
+  integrity sha512-JndryJYbBR3gSN5IlST4rCHsd01+OyvYpRO6z5Zd3C6u5V/m07TwAtcf3aXwZ8WBNt2eLG28OcvdSO7XR2v2pg==
+  dependencies:
     "@polymer/polymer" "^3.0.0"
 
 "@polymer/iron-flex-layout@^3.0.0-pre.26":
@@ -1180,12 +1386,31 @@
     "@polymer/iron-iconset-svg" "^3.0.0-pre.26"
     "@polymer/polymer" "^3.0.0"
 
-"@polymer/iron-iconset-svg@^3.0.0-pre.26":
+"@polymer/iron-iconset-svg@^3.0.0-pre.26", "@polymer/iron-iconset-svg@^3.0.1":
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/@polymer/iron-iconset-svg/-/iron-iconset-svg-3.0.1.tgz#568d6e7dbc120299dae63be3600aeba0d30ddbea"
   integrity sha512-XNwURbNHRw6u2fJe05O5fMYye6GSgDlDqCO+q6K1zAnKIrpgZwf2vTkBd5uCcZwsN0FyCB3mvNZx4jkh85dRDw==
   dependencies:
     "@polymer/iron-meta" "^3.0.0-pre.26"
+    "@polymer/polymer" "^3.0.0"
+
+"@polymer/iron-input@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@polymer/iron-input/-/iron-input-3.0.1.tgz#dc866a25107f9b38d9ca4512dd9a3e51b78b4915"
+  integrity sha512-WLx13kEcbH9GKbj9+pWR6pbJkA5kxn3796ynx6eQd2rueMyUfVTR3GzOvadBKsciUuIuzrxpBWZ2+3UcueVUQQ==
+  dependencies:
+    "@polymer/iron-a11y-announcer" "^3.0.0-pre.26"
+    "@polymer/iron-validatable-behavior" "^3.0.0-pre.26"
+    "@polymer/polymer" "^3.0.0"
+
+"@polymer/iron-menu-behavior@^3.0.0-pre.26":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@polymer/iron-menu-behavior/-/iron-menu-behavior-3.0.2.tgz#f8fa2d59af472a4cb4fb0359c704b808bc2c105d"
+  integrity sha512-8dpASkFNBIkxAJWsFLWIO1M7tKM0+wKs3PqdeF/dDdBciwoaaFgC2K1XCZFZnbe2t9/nJgemXxVugGZAWpYCGg==
+  dependencies:
+    "@polymer/iron-a11y-keys-behavior" "^3.0.0-pre.26"
+    "@polymer/iron-flex-layout" "^3.0.0-pre.26"
+    "@polymer/iron-selector" "^3.0.0-pre.26"
     "@polymer/polymer" "^3.0.0"
 
 "@polymer/iron-meta@^3.0.0-pre.26":
@@ -1195,12 +1420,60 @@
   dependencies:
     "@polymer/polymer" "^3.0.0"
 
+"@polymer/iron-overlay-behavior@^3.0.0-pre.27":
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/@polymer/iron-overlay-behavior/-/iron-overlay-behavior-3.0.3.tgz#29c198e19e05bb2bcf7d86d3c11848cb93301d00"
+  integrity sha512-Q/Fp0+uOQQ145ebZ7T8Cxl4m1tUKYjyymkjcL2rXUm+aDQGb1wA1M1LYxUF5YBqd+9lipE0PTIiYwA2ZL/sznA==
+  dependencies:
+    "@polymer/iron-a11y-keys-behavior" "^3.0.0-pre.26"
+    "@polymer/iron-fit-behavior" "^3.0.0-pre.26"
+    "@polymer/iron-resizable-behavior" "^3.0.0-pre.26"
+    "@polymer/polymer" "^3.0.0"
+
+"@polymer/iron-resizable-behavior@^3.0.0-pre.26":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@polymer/iron-resizable-behavior/-/iron-resizable-behavior-3.0.1.tgz#e284348ed7c1c7e263f7039297532fa954025ea2"
+  integrity sha512-FyHxRxFspVoRaeZSWpT3y0C9awomb4tXXolIJcZ7RvXhMP632V5lez+ch5G5SwK0LpnAPkg35eB0LPMFv+YMMQ==
+  dependencies:
+    "@polymer/polymer" "^3.0.0"
+
+"@polymer/iron-scroll-target-behavior@^3.0.0-pre.26":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@polymer/iron-scroll-target-behavior/-/iron-scroll-target-behavior-3.0.1.tgz#29fa644b320fb29ab6c68eb6d08a6520157764ac"
+  integrity sha512-xg1WanG25BIkQE8rhuReqY9zx1K5M7F+YAIYpswEp5eyDIaZ1Y3vUmVeQ3KG+hiSugzI1M752azXN7kvyhOBcQ==
+  dependencies:
+    "@polymer/polymer" "^3.0.0"
+
+"@polymer/iron-scroll-threshold@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@polymer/iron-scroll-threshold/-/iron-scroll-threshold-3.0.1.tgz#2f1b4fbc28f9550489e20e1fbed037ebee05a4e7"
+  integrity sha512-Zm06AP1CDfa19b5yTvLRjBfDA85zMh4XunL2/Fz5n2faZcP5zr5tIBtXsAqz4ug9I3Uau7rjzkyL7Cc0ni8sUA==
+  dependencies:
+    "@polymer/iron-scroll-target-behavior" "^3.0.0-pre.26"
+    "@polymer/polymer" "^3.0.0"
+
+"@polymer/iron-selector@^3.0.0-pre.26":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@polymer/iron-selector/-/iron-selector-3.0.1.tgz#e845bec58489c96b4e7609525532437869ad5a88"
+  integrity sha512-sBVk2uas6prW0glUe2xEJJYlvxmYzM40Au9OKbfDK2Qekou/fLKcBRyIYI39kuI8zWRaip8f3CI8qXcUHnKb1A==
+  dependencies:
+    "@polymer/polymer" "^3.0.0"
+
 "@polymer/iron-validatable-behavior@^3.0.0-pre.26":
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/@polymer/iron-validatable-behavior/-/iron-validatable-behavior-3.0.1.tgz#73538f005a07741c31b6fc1e981168c3d3e0d92b"
   integrity sha512-wwpYh6wOa4fNI+jH5EYKC7TVPYQ2OfgQqocWat7GsNWcsblKYhLYbwsvEY5nO0n2xKqNfZzDLrUom5INJN7msQ==
   dependencies:
     "@polymer/iron-meta" "^3.0.0-pre.26"
+    "@polymer/polymer" "^3.0.0"
+
+"@polymer/neon-animation@^3.0.0-pre.26":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@polymer/neon-animation/-/neon-animation-3.0.1.tgz#6658e4b524abc057477772a7473292493d366c24"
+  integrity sha512-cDDc0llpVCe0ATbDS3clDthI54Bc8YwZIeTGGmBJleKOvbRTUC5+ssJmRL+VwVh+VM5FlnQlx760ppftY3uprg==
+  dependencies:
+    "@polymer/iron-resizable-behavior" "^3.0.0-pre.26"
+    "@polymer/iron-selector" "^3.0.0-pre.26"
     "@polymer/polymer" "^3.0.0"
 
 "@polymer/paper-behaviors@^3.0.0-pre.27":
@@ -1219,6 +1492,57 @@
   integrity sha512-JRNBc+Oj9EWnmyLr7FcCr8T1KAnEHPh6mosln9BUdkM+qYaYsudSICh3cjTIbnj6AuF5OJidoLkM1dlyj0j6Zg==
   dependencies:
     "@polymer/iron-flex-layout" "^3.0.0-pre.26"
+    "@polymer/paper-behaviors" "^3.0.0-pre.27"
+    "@polymer/paper-styles" "^3.0.0-pre.26"
+    "@polymer/polymer" "^3.0.0"
+
+"@polymer/paper-checkbox@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@polymer/paper-checkbox/-/paper-checkbox-3.1.0.tgz#66b903ae5814db237d027deb4a3f3430f48d905b"
+  integrity sha512-kXm6yDG1tT8if0XuJ2cc9NF+g8Ev4wG+rnf0a+Sx+O7J6fn1jcnBlYn72FlrfjVjDQZDBFmT6nynhD5PvFw8iQ==
+  dependencies:
+    "@polymer/iron-a11y-keys-behavior" "^3.0.0-pre.26"
+    "@polymer/iron-checked-element-behavior" "^3.0.0-pre.26"
+    "@polymer/paper-behaviors" "^3.0.0-pre.27"
+    "@polymer/paper-ripple" "^3.0.0-pre.26"
+    "@polymer/paper-styles" "^3.0.0-pre.26"
+    "@polymer/polymer" "^3.0.0"
+
+"@polymer/paper-dialog-behavior@^3.0.0-pre.26":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@polymer/paper-dialog-behavior/-/paper-dialog-behavior-3.0.1.tgz#819b2fbb9444c1c318ddf55f02819bb29a85657b"
+  integrity sha512-wbI4kCK8le/9MHT+IXzvHjoatxf3kd3Yn0tgozAiAwfSZ7N4Ubpi5MHrK0m9S9PeIxKokAgBYdTUrezSE5378A==
+  dependencies:
+    "@polymer/iron-overlay-behavior" "^3.0.0-pre.27"
+    "@polymer/paper-styles" "^3.0.0-pre.26"
+    "@polymer/polymer" "^3.0.0"
+
+"@polymer/paper-dialog-scrollable@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@polymer/paper-dialog-scrollable/-/paper-dialog-scrollable-3.0.1.tgz#42fd30380320e6dd6d4d68b2ac4e45ee9e5e024f"
+  integrity sha512-1E8B9kNdL58jUrJ/BwqJeOoNVcxNrB559z//d1V0rVHWT5bWCCZegwS3G06iFK5MjxWFbIKzleVTLrT0opiZkA==
+  dependencies:
+    "@polymer/iron-flex-layout" "^3.0.0-pre.26"
+    "@polymer/paper-dialog-behavior" "^3.0.0-pre.26"
+    "@polymer/paper-styles" "^3.0.0-pre.26"
+    "@polymer/polymer" "^3.0.0"
+
+"@polymer/paper-dialog@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@polymer/paper-dialog/-/paper-dialog-3.0.1.tgz#728ebdbfc4d35ec1485e543434cef5dba476f15e"
+  integrity sha512-KvglYbEq7AWJvui2j6WKLnOvgVMeGjovAydGrPRj7kVzCiD49Eq/hpYFJTRV5iDcalWH+mORUpw+jrFnG9+Kgw==
+  dependencies:
+    "@polymer/iron-overlay-behavior" "^3.0.0-pre.27"
+    "@polymer/neon-animation" "^3.0.0-pre.26"
+    "@polymer/paper-dialog-behavior" "^3.0.0-pre.26"
+    "@polymer/polymer" "^3.0.0"
+
+"@polymer/paper-icon-button@^3.0.0-pre.26", "@polymer/paper-icon-button@^3.0.2":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@polymer/paper-icon-button/-/paper-icon-button-3.0.2.tgz#a1254faadc2c8dd135ce1ae33bcc161a94c31f65"
+  integrity sha512-kOdxQgnKL097bggFF6PWvsBYuWg+MCcoHoTHX6bh/MuZoWFZNjrFntFqwuB4oEbpjCpfm4moA33muPJFj7CihQ==
+  dependencies:
+    "@polymer/iron-icon" "^3.0.0-pre.26"
     "@polymer/paper-behaviors" "^3.0.0-pre.27"
     "@polymer/paper-styles" "^3.0.0-pre.26"
     "@polymer/polymer" "^3.0.0"
@@ -1248,7 +1572,23 @@
     "@polymer/iron-flex-layout" "^3.0.0-pre.26"
     "@polymer/polymer" "^3.0.0"
 
-"@polymer/polymer@^3.0.0":
+"@polymer/paper-tabs@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@polymer/paper-tabs/-/paper-tabs-3.1.0.tgz#a173839d20703fdd5fca97a9d878f7b0e6257150"
+  integrity sha512-t8G+3CiyI0R+wA077UNQXR/oG9GlsqRRO1KMsFHHjBSsYqWXghNsqxUG827wEj+PafI5u9tZ3vVt1S++Lg4B2g==
+  dependencies:
+    "@polymer/iron-behaviors" "^3.0.0-pre.26"
+    "@polymer/iron-flex-layout" "^3.0.0-pre.26"
+    "@polymer/iron-icon" "^3.0.0-pre.26"
+    "@polymer/iron-iconset-svg" "^3.0.0-pre.26"
+    "@polymer/iron-menu-behavior" "^3.0.0-pre.26"
+    "@polymer/iron-resizable-behavior" "^3.0.0-pre.26"
+    "@polymer/paper-behaviors" "^3.0.0-pre.27"
+    "@polymer/paper-icon-button" "^3.0.0-pre.26"
+    "@polymer/paper-styles" "^3.0.0-pre.26"
+    "@polymer/polymer" "^3.0.0"
+
+"@polymer/polymer@^3.0.0", "@polymer/polymer@^3.1.0":
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/@polymer/polymer/-/polymer-3.3.1.tgz#9ad48992d2a96775f80b0673f3a615d6df8a3dfc"
   integrity sha512-8KaB48tzyMjdsHdxo5KvCAaqmTe7rYDzQAoj/pyEfq9Fp4YfUaS+/xqwYj0GbiDAUNzwkmEQ7dw9cgnRNdKO8A==
@@ -1791,6 +2131,11 @@ accepts@~1.3.4, accepts@~1.3.5, accepts@~1.3.7:
   dependencies:
     mime-types "~2.1.24"
     negotiator "0.6.2"
+
+ace-builds@^1.4.6:
+  version "1.4.8"
+  resolved "https://registry.yarnpkg.com/ace-builds/-/ace-builds-1.4.8.tgz#d14be41d30294a2a12581f0bcfee4b696481ffdd"
+  integrity sha512-8ZVAxwyCGAxQX8mOp9imSXH0hoSPkGfy8igJy+WO/7axL30saRhKgg1XPACSmxxPA7nfHVwM+ShWXT+vKsNuFg==
 
 acorn-globals@^4.1.0, acorn-globals@^4.3.0:
   version "4.3.4"
@@ -3601,6 +3946,11 @@ detect-port-alt@1.1.6:
   dependencies:
     address "^1.0.1"
     debug "^2.6.0"
+
+diff-match-patch@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/diff-match-patch/-/diff-match-patch-1.0.4.tgz#6ac4b55237463761c4daf0dc603eb869124744b1"
+  integrity sha512-Uv3SW8bmH9nAtHKaKSanOQmj2DnlH65fUpcrMdfdaOxUG02QQ4YGZ8AE7kKOMisF7UqvOlGKVYWRvezdncW9lg==
 
 diff-sequences@^24.9.0:
   version "24.9.0"
@@ -6368,6 +6718,16 @@ lodash._reinterpolate@^3.0.0:
   resolved "https://registry.yarnpkg.com/lodash._reinterpolate/-/lodash._reinterpolate-3.0.0.tgz#0ccf2d89166af03b3663c796538b75ac6e114d9d"
   integrity sha1-DM8tiRZq8Ds2Y8eWU4t1rG4RTZ0=
 
+lodash.get@^4.4.2:
+  version "4.4.2"
+  resolved "https://registry.yarnpkg.com/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
+  integrity sha1-LRd/ZS+jHpObRDjVNBSZ36OCXpk=
+
+lodash.isequal@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/lodash.isequal/-/lodash.isequal-4.5.0.tgz#415c4478f2bcc30120c22ce10ed3226f7d3e18e0"
+  integrity sha1-QVxEePK8wwEgwizhDtMib30+GOA=
+
 lodash.memoize@^4.1.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/lodash.memoize/-/lodash.memoize-4.1.2.tgz#bcc6c49a42a2840ed997f323eada5ecd182e0bfe"
@@ -8400,6 +8760,17 @@ raw-body@2.4.0:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
+react-ace@^8.0.0:
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/react-ace/-/react-ace-8.1.0.tgz#6680accb7306a1850e6ef4370a00f0007eadc8b4"
+  integrity sha512-n3rm9gRNZjLGlXJQ587RASOQCPn6WlcV2gjRYwvG3gyVpBf4pY6lh/uI9tDkx2zYdEKJUfnGbTmzEGL5yyDWuw==
+  dependencies:
+    ace-builds "^1.4.6"
+    diff-match-patch "^1.0.4"
+    lodash.get "^4.4.2"
+    lodash.isequal "^4.5.0"
+    prop-types "^15.7.2"
+
 react-app-polyfill@^1.0.6:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/react-app-polyfill/-/react-app-polyfill-1.0.6.tgz#890f8d7f2842ce6073f030b117de9130a5f385f0"
@@ -9291,6 +9662,11 @@ sort-keys@^1.0.0:
   integrity sha1-RBttTTRnmPG05J6JIK37oOVD+a0=
   dependencies:
     is-plain-obj "^1.0.0"
+
+sortablejs@^1.10.2:
+  version "1.10.2"
+  resolved "https://registry.yarnpkg.com/sortablejs/-/sortablejs-1.10.2.tgz#6e40364d913f98b85a14f6678f92b5c1221f5290"
+  integrity sha512-YkPGufevysvfwn5rfdlGyrGjt7/CRHwvRPogD/lC+TnvcN29jDpCifKP+rBqf+LRldfXSTh+0CGLcSg0VIxq3A==
 
 source-list-map@^2.0.0:
   version "2.0.1"

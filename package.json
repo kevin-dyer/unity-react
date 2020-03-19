@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@bit/smartworks.unity.unity-button": "^0.0.17",
+    "@bit/smartworks.unity.unity-button": "^0.0.19",
     "@bit/smartworks.unity.unity-text-input": "^0.1.28",
-    "@bit/smartworks.unity.unity-table": "^0.2.0",
+    "@bit/smartworks.unity.unity-table": "^0.3.10",
     "@bit/smartworks.unity.unity-column-editor": "^0.0.6",
     "@bit/smartworks.unity.unity-global-nav-base": "^0.1.0",
     "@bit/smartworks.unity.unity-global-nav-top-item": "^0.1.6",

@@ -1,7 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import UnityButton from './components/UnityButton/UnityButton'
+import UnityTable from './components/UnityTable/UnityTable'
+
 
 const App = () => {
   return (
@@ -15,6 +16,21 @@ const App = () => {
 
         <div>
           <UnityButton label="Unity" gradient={true}/>
+        </div>
+
+        <div>
+          <UnityTable
+            data={[{name: 'first name', id: 0}]}
+            keyExtractor={(node: any, i: number) => node.id}
+            columns={[
+              {
+                key: 'name',
+                renderCustomContent: (cellValue: any, node: object) => {
+                  return <div>Hello {cellValue}!</div>
+                }
+              }
+            ]}
+          />
         </div>
       </div>
     </div>
