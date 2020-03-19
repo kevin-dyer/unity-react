@@ -83,7 +83,7 @@ export default class UnityTable extends Component<TableProps> {
   }
 
   _slotIdExtractor = (row: any, column: any) => {
-    const {keyExtractor=(node: any, index: number)=>{}} = this.props
+    const {keyExtractor=()=>{}} = this.props
     const rowId = keyExtractor(row)
 
     return `${rowId}-${column.key}`

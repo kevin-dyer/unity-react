@@ -81,13 +81,12 @@ class App extends React.Component {
 
             <UnityTable
               data={[{name: 'first name', id: 0}]}
-              keyExtractor={(node: any, i: number) => node.id}
+              keyExtractor={(node: any) => node.id}
               columns={[
                 {
                   key: 'name',
-                  renderCustomContent: (cellValue: any, node: object) => {
-                    return <div>Hello {cellValue}!</div>
-                  }
+                  renderCustomContent: (cellValue: any) =>
+                    <div>Hello {cellValue}!</div>
                 }
               ]}
             />

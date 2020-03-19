@@ -8,7 +8,7 @@ declare module '@bit/smartworks.unity.unity-table' {
   import CSSProperties from 'react'
   export interface TableProps {
     data?: Object[],
-    columns?: Object[],
+    columns?: TableColumn[],
     childKeys?: string[],
     keyExtractor?: Function,
     onClickRow?: Function,
