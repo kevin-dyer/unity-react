@@ -27,7 +27,9 @@ declare module '@bit/smartworks.unity.unity-table' {
     container: React.CSSProperties
   }
   export interface TableColumn {
-    renderCustomContent?: Function,
-    key?: string
+    key?: string,
+    label?: string,
+    formatLabel?: Function,
+    renderCustomContent?: Function
   }
 }
