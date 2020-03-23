@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v0.1.0
+- Update to WC component for validation and a few minor bugs. Marking as 0.1.0 to show its valid working state.
+
 ### v0.0.4 (03/18/2020)
 - Fixed empty string showing as "null" when specified through `value` property.
 

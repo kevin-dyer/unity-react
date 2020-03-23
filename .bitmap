@@ -105,7 +105,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-table-react@0.2.2": {
+    "smartworks.unity-react/unity-table-react@0.2.3": {
         "files": [
             {
                 "name": "UnityTable.tsx",
@@ -128,7 +128,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-text-input-react@0.0.4": {
+    "smartworks.unity-react/unity-text-input-react@0.1.0": {
         "files": [
             {
                 "relativePath": "src/components/unity-text-input-react/UnityTextInput.tsx",
