@@ -143,7 +143,9 @@ export default class UnityTable extends Component<TableProps> {
       filter='',
       emptyText,
       isLoading=false,
-      children
+      children,
+      highlightedRow='',
+      endReachedThreshold=200
     } = this.props
     let booleanProps : TableProps = {}
 
@@ -160,6 +162,8 @@ export default class UnityTable extends Component<TableProps> {
           ref={this.tableRef}
           filter={filter}
           emptyDisplay={emptyText}
+          highlightedRow={highlightedRow}
+          endReachedThreshold={endReachedThreshold}
           {...booleanProps}
         >
           {this.renderCustomContent()}
