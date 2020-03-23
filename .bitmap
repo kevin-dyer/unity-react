@@ -105,22 +105,22 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-table-react@0.0.6": {
+    "smartworks.unity-react/unity-table-react@0.2.2": {
         "files": [
             {
+                "name": "UnityTable.tsx",
                 "relativePath": "src/components/unity-table-react/UnityTable.tsx",
-                "test": false,
-                "name": "UnityTable.tsx"
+                "test": false
             },
             {
+                "name": "declarations.d.ts",
                 "relativePath": "src/components/unity-table-react/declarations.d.ts",
-                "test": false,
-                "name": "declarations.d.ts"
+                "test": false
             },
             {
+                "name": "unity-table-react.md",
                 "relativePath": "src/components/unity-table-react/unity-table-react.md",
-                "test": false,
-                "name": "unity-table-react.md"
+                "test": false
             }
         ],
         "mainFile": "src/components/unity-table-react/UnityTable.tsx",
