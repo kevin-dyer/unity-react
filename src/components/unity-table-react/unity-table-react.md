@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v0.2.3
+- update to dropdown dependency via text-input
+
 ### v0.2.2
 - Added highlightedRow and endReachedThreshold properties
 
