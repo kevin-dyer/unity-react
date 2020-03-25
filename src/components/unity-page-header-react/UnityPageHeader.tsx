@@ -19,11 +19,11 @@ export default class UnityPageHeader extends Component<pageHeaderProps> {
     this.updateProperties()
   }
 
-  componentDidUpdate(oldProps) {
+  componentDidUpdate(oldProps: pageHeaderProps) {
     this.updateProperties(oldProps)
   }
 
-  updateProperties(oldProps={}) {
+  updateProperties(oldProps: pageHeaderProps={}) {
     const {onTabSelect: oldTabSelect} = oldProps
     const {onTabSelect=()=>{}} = this.props
     const headerElement = this.headerRef.current
