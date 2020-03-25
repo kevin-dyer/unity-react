@@ -19,7 +19,7 @@ export default class UnityPageHeader extends Component<pageHeaderProps> {
     this.updateProperties()
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(oldProps) {
     this.updateProperties(oldProps)
   }
 
