@@ -16,10 +16,23 @@ export default class UnityPageHeader extends Component<pageHeaderProps> {
   private headerRef = React.createRef<pageHeaderProps>()
 
   componentDidMount() {
+    this.updateProperties()
+  }
+
+  componentDidUpdate() {
+    this.updateProperties(oldProps)
+  }
+
+  updateProperties(oldProps={}) {
+    const {onTabSelect: oldTabSelect} = oldProps
     const {onTabSelect=()=>{}} = this.props
     const headerElement = this.headerRef.current
 
-    if(headerElement) headerElement.onTabSelect = onTabSelect
+    if (!headerElement) return
+
+    if (onTabSelect !== oldTabSelect) {
+      headerElement.onTabSelect = onTabSelect
+    }
   }
 
   render() {
@@ -57,7 +70,7 @@ export default class UnityPageHeader extends Component<pageHeaderProps> {
 const style = {
   header: {
     position: 'relative',
-    zIndex: 1,
+    zIndex: 4,
     flex: 0
   }
 }
