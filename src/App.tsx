@@ -8,6 +8,14 @@ import UnityPageHeader from './components/unity-page-header-react/UnityPageHeade
 import UnitySection from './components/unity-section-react/UnitySection'
 import UnityGlobalNav from './components/unity-global-nav-react/UnityGlobalNav'
 
+
+const appStyle: CSSProperties = {
+  display: 'flex',
+  flexDirection: 'column',
+  height: '100vh',
+  width: '100%'
+}
+
 const contentBox: CSSProperties = {
   margin: "20px",
   width: '100%'
@@ -17,12 +25,15 @@ const wrapperStyle: CSSProperties = {
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'stretch',
-  position: 'relative'
+  position: 'relative',
+  flex: 1,
+  minHeight: 0
 }
 
 const mainStyle: CSSProperties = {
   flex: 1,
-  position: 'relative'
+  position: 'relative',
+  overflowY: 'auto'
 }
 
 interface NavItem {
@@ -137,7 +148,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App" style={appStyle}>
         <header className="App-header">
           <h2>Unity React Components</h2>
         </header>
