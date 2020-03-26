@@ -65,6 +65,24 @@
         "origin": "AUTHORED",
         "exported": true
     },
+    "smartworks.unity-react/unity-global-nav-react@0.1.0": {
+        "files": [
+            {
+                "relativePath": "src/components/unity-global-nav-react/UnityGlobalNav.tsx",
+                "test": false,
+                "name": "UnityGlobalNav.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-global-nav-react/declarations.d.ts",
+                "test": false,
+                "name": "declarations.d.ts"
+            }
+        ],
+        "mainFile": "src/components/unity-global-nav-react/UnityGlobalNav.tsx",
+        "trackDir": "src/components/unity-global-nav-react",
+        "origin": "AUTHORED",
+        "exported": true
+    },
     "smartworks.unity-react/unity-page-header-react@0.0.3": {
         "files": [
             {
