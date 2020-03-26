@@ -5,8 +5,7 @@
   "dependencies": {
     "@bit/smartworks.unity.unity-button": "^0.0.19",
     "@bit/smartworks.unity.unity-column-editor": "^0.0.9",
-    "@bit/smartworks.unity.unity-global-nav-base": "^0.1.1",
-    "@bit/smartworks.unity.unity-global-nav-top-item": "^0.1.8",
+    "@bit/smartworks.unity.unity-global-nav-base": "^0.2.1",
     "@bit/smartworks.unity.unity-page-header": "^0.0.22",
     "@bit/smartworks.unity.unity-section": "^0.2.0",
     "@bit/smartworks.unity.unity-table": "^0.3.19",
