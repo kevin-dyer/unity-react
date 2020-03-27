@@ -15,7 +15,7 @@ declare module '@bit/smartworks.unity.unity-dropdown' {
     boxType?: boxType,
     placeholder?: string,
     options?: Object[] | string,
-    selected?: string[],
+    selected?: string[] | string,
     disabled?: boolean,
     onMenuClick?: Function,
     selectIcon?: boolean,
