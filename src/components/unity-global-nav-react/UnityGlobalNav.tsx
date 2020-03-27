@@ -80,6 +80,6 @@ export default class UnityGlobalNav extends Component<NavProps> {
 
 const styles : NavStyles = {
   container: {
-
+    zIndex: 10
   }
 }
