@@ -7,6 +7,7 @@ import UnityTable from './components/unity-table-react/UnityTable'
 import UnityPageHeader from './components/unity-page-header-react/UnityPageHeader'
 import UnitySection from './components/unity-section-react/UnitySection'
 import UnityGlobalNav from './components/unity-global-nav-react/UnityGlobalNav'
+import UnityDropdown from './components/unity-dropdown-react/UnityDropdown'
 
 
 const appStyle: CSSProperties = {
@@ -139,6 +140,21 @@ const navItems : navConfig = {
     }
   ]
 }
+const dropdownOptions: Object[] = [
+  {
+    "label": "Option 1",
+    "id": "1"
+  },
+  {
+    "label": "Option 2",
+    "id": "2"
+  },
+  {
+    "label": "Option 3",
+    "id": "3",
+    // "disabled": true
+  }
+]
 
 class App extends React.Component {
   state = {
@@ -207,6 +223,15 @@ class App extends React.Component {
                   </div>
                 </div>
               </UnitySection>
+            </UnitySection>
+
+            <UnitySection>
+              <UnityDropdown
+                label={"This is a Dropdown"}
+                inputType={"single-select"}
+                onValueChange={(...args:any) => console.log('value changed, here are the args', args)}
+                options={dropdownOptions}
+              ></UnityDropdown>
             </UnitySection>
 
             <UnitySection>
