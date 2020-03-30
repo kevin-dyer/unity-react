@@ -1,17 +1,6 @@
-import React, { Component, CSSProperties } from 'react'
+import React, { Component } from 'react'
 import '@bit/smartworks.unity.unity-column-editor'
-
-interface ColumnEditorProps {
-  columns?: Object[],
-  selectedColumns?: Object[],
-  onUpdate?: Function,
-  buttonGradient?: boolean,
-  buttonOutlined?: boolean,
-}
-
-interface ColumnEditorStyles {
-  container: CSSProperties
-}
+import {ColumnEditorProps, ColumnEditorStyles} from '@bit/smartworks.unity.unity-column-editor'
 
 export default class UnityColumnEditor extends Component<ColumnEditorProps> {
 
@@ -55,22 +44,9 @@ export default class UnityColumnEditor extends Component<ColumnEditorProps> {
 
   render() {
     const {
-      buttonGradient,
-      buttonOutlined
+      buttonType
     } = this.props
-    let editorProps : ColumnEditorProps = {}
-
-    if (buttonGradient) {
-      editorProps.buttonGradient = buttonGradient
-    }
-
-    if (buttonOutlined) {
-      editorProps.buttonOutlined = buttonOutlined
-    }
-
-    if (!buttonGradient && !buttonOutlined) {
-      editorProps.buttonGradient = true
-    }
+    const editorProps : ColumnEditorProps = { buttonType }
 
     return <div style={styles.container}>
         <unity-column-editor
