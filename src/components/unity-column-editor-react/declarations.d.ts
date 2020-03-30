@@ -5,7 +5,6 @@ declare namespace JSX {
 }
 
 declare module '@bit/smartworks.unity.unity-column-editor' {
-  import CSSProperties from 'react'
   export interface ColumnEditorProps {
     columns?: Object[],
     selectedColumns?: Object[],
@@ -13,7 +12,7 @@ declare module '@bit/smartworks.unity.unity-column-editor' {
     buttonType?: string
   }
   export interface ColumnEditorStyles {
-    container: CSSProperties
+    container: React.CSSProperties
   }
 }
 
