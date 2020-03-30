@@ -47,7 +47,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-column-editor-react@0.0.2": {
+    "smartworks.unity-react/unity-column-editor-react@0.1.0": {
         "files": [
             {
                 "relativePath": "src/components/unity-column-editor-react/UnityColumnEditor.tsx",
@@ -58,6 +58,11 @@
                 "relativePath": "src/components/unity-column-editor-react/declarations.d.ts",
                 "test": false,
                 "name": "declarations.d.ts"
+            },
+            {
+                "relativePath": "src/components/unity-column-editor-react/unity-column-editor-react.md",
+                "test": false,
+                "name": "unity-column-editor-react.md"
             }
         ],
         "mainFile": "src/components/unity-column-editor-react/UnityColumnEditor.tsx",
