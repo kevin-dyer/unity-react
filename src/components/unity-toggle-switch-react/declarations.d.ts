@@ -5,7 +5,6 @@ declare namespace JSX {
 }
 
 declare module '@bit/smartworks.unity.unity-toggle-switch' {
-  import CSSProperties from 'react'
   export interface toggleSwitchType {
     value: boolean,
     label?: string,
