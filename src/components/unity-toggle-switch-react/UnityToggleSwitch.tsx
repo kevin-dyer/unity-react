@@ -14,9 +14,9 @@ export default class UnityToggleSwitch extends Component<toggleSwitchType> {
       ...otherProps
     }
     return (
-      <unity-dropdown
+      <unity-toggle-switch
         {...toggleSwitchProps}
-      ></unity-dropdown>
+      ></unity-toggle-switch>
     )
   }
 }
