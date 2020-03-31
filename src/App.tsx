@@ -8,6 +8,7 @@ import UnityPageHeader from './components/unity-page-header-react/UnityPageHeade
 import UnitySection from './components/unity-section-react/UnitySection'
 import UnityGlobalNav from './components/unity-global-nav-react/UnityGlobalNav'
 import UnityDropdown from './components/unity-dropdown-react/UnityDropdown'
+import UnityToggleSwitch from './components/unity-toggle-switch-react/UnityToggleSwitch'
 
 
 const appStyle: CSSProperties = {
@@ -232,6 +233,17 @@ class App extends React.Component {
                 onValueChange={(...args:any) => console.log('value changed, here are the args', args)}
                 options={dropdownOptions}
               ></UnityDropdown>
+            </UnitySection>
+
+            <UnitySection>
+              <UnityToggleSwitch
+                value={true}
+                label={"This is a Switch"}
+                onLabel={"Right"}
+                offLabel={"Left"}
+                remark={"Remarkable"}
+                onChange={(on : boolean) => console.log(`Switch is ${on ? 'on' : 'off'}`)}
+              />
             </UnitySection>
 
             <UnitySection>
