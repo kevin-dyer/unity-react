@@ -174,5 +174,28 @@
         "origin": "AUTHORED",
         "exported": true
     },
+    "smartworks.unity-react/unity-toggle-switch-react@0.1.0": {
+        "files": [
+            {
+                "relativePath": "src/components/unity-toggle-switch-react/UnityToggleSwitch.tsx",
+                "test": false,
+                "name": "UnityToggleSwitch.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-toggle-switch-react/declarations.d.ts",
+                "test": false,
+                "name": "declarations.d.ts"
+            },
+            {
+                "relativePath": "src/components/unity-toggle-switch-react/unity-toggle-switch-react.md",
+                "test": false,
+                "name": "unity-toggle-switch-react.md"
+            }
+        ],
+        "mainFile": "src/components/unity-toggle-switch-react/UnityToggleSwitch.tsx",
+        "trackDir": "src/components/unity-toggle-switch-react",
+        "origin": "AUTHORED",
+        "exported": true
+    },
     "version": "14.7.6"
 }
