@@ -160,7 +160,6 @@ export default class UnityTable extends Component<TableProps> {
     if (noTopBorder) {
       booleanProps.noTopBorder = noTopBorder
     }
-    console.log('noTopBorder', noTopBorder)
     return <div style={styles.container}>
         <unity-table
           ref={this.tableRef}

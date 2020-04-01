@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v0.3.1
+- remove leftover log
+
 ### v0.3.0
 - update to unity-table v0.4.2
 - add noTopBorder control

@@ -156,7 +156,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-table-react@0.3.0": {
+    "smartworks.unity-react/unity-table-react@0.3.1": {
         "files": [
             {
                 "name": "UnityTable.tsx",
