@@ -2,6 +2,10 @@
 
 ## Changelog:
 
+### v0.3.0
+- update to unity-table v0.4.2
+- add noTopBorder control
+
 ### v0.2.10
 - update to unity-table v0.3.23
 
