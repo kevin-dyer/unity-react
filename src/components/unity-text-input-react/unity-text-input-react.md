@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v0.1.2
+- Update to unity-text-input v0.1.32
+
 ### v0.1.0
 - Update to WC component for validation and a few minor bugs. Marking as 0.1.0 to show its valid working state.
 
