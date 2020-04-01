@@ -2,7 +2,7 @@
 
 ## Changelog:
 
-### v0.1.2
+### v0.1.3
 - updated to unity-column-editor 0.0.14
 
 ### v0.1.0

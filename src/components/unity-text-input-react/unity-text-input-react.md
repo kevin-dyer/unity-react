@@ -2,7 +2,7 @@
 
 ## Changelog:
 
-### v0.1.1
+### v0.1.2
 - Update to unity-text-input v0.1.32
 
 ### v0.1.0
