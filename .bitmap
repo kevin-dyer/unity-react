@@ -47,7 +47,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-column-editor-react@0.1.0": {
+    "smartworks.unity-react/unity-column-editor-react@0.1.1": {
         "files": [
             {
                 "relativePath": "src/components/unity-column-editor-react/UnityColumnEditor.tsx",
