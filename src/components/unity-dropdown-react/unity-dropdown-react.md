@@ -1,4 +1,4 @@
-# unity-button-react
+# unity-dropdown-react
 
 ## Changelog:
 
