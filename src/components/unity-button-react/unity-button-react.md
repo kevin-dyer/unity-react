@@ -3,7 +3,7 @@
 ## Changelog:
 
 ### v0.1.1
-- Update to unity-button version 0.1.0
+- Update to unity-button version 0.1.1
 
 ### v0.1.0
 - Updated types to include "type" prop

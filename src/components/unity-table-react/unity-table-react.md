@@ -3,7 +3,7 @@
 ## Changelog:
 
 ### v0.2.8
-- update to unity-table v0.3.21
+- update to unity-table v0.3.22
 
 ### v0.2.3
 - update to dropdown dependency via text-input

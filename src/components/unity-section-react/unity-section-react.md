@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v0.2.1
+- update to unity-section v0.2.1
+
 ### v0.2.0
 - update to v0.2.0 of unity-section
 
