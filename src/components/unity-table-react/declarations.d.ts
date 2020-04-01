@@ -23,7 +23,8 @@ declare module '@bit/smartworks.unity.unity-table' {
     onHighlight?: Function,
     children?: Object[],
     highlightedRow?: string,
-    endReachedThreshold?: number
+    endReachedThreshold?: number,
+    noTopBorder?: boolean
   }
   export interface TableStyles {
     container: React.CSSProperties

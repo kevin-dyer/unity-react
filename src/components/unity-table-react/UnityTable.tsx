@@ -145,7 +145,8 @@ export default class UnityTable extends Component<TableProps> {
       isLoading=false,
       children,
       highlightedRow='',
-      endReachedThreshold=200
+      endReachedThreshold=200,
+      noTopBorder
     } = this.props
     let booleanProps : TableProps = {}
 
@@ -153,10 +154,13 @@ export default class UnityTable extends Component<TableProps> {
     if (isLoading) {
       booleanProps.isLoading = isLoading
     }
-    if (selectable){
+    if (selectable) {
       booleanProps.selectable = selectable
     }
-
+    if (noTopBorder) {
+      booleanProps.noTopBorder = noTopBorder
+    }
+    console.log('noTopBorder', noTopBorder)
     return <div style={styles.container}>
         <unity-table
           ref={this.tableRef}
