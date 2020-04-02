@@ -1,14 +1,6 @@
 import React, { Component } from 'react'
 import '@bit/smartworks.unity.unity-page-header'
-
-interface pageHeaderProps {
-  title?: string,
-  tabs?: object,
-  selectedTab?: string,
-  leftContent?: string,
-  rightContent?: string,
-  onTabSelect?: Function
-}
+import { pageHeaderProps } from '@bit/smartworks.unity.unity-page-header'
 
 //React component to wrap unity-page-header web component
 export default class UnityPageHeader extends Component<pageHeaderProps> {
@@ -42,11 +34,12 @@ export default class UnityPageHeader extends Component<pageHeaderProps> {
       selectedTab,
       leftContent,
       rightContent,
+      style
     } = this.props
     const tabsStr = JSON.stringify(tabs)
 
     return <unity-page-header
-      style={style.header}
+      style={style}
       ref={this.headerRef}
       title={title}
       tabs={tabsStr}
@@ -64,13 +57,5 @@ export default class UnityPageHeader extends Component<pageHeaderProps> {
         </div>
       }
     </unity-page-header>
-  }
-}
-
-const style = {
-  header: {
-    position: 'relative',
-    zIndex: 4,
-    flex: 0
   }
 }
