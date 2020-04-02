@@ -32,12 +32,24 @@ export default class UnityToggleSwitch extends Component<toggleSwitchType> {
   render() {
     const {
       onChange,
+      value,
+      disabled,
       ...otherProps
     } = this.props
+
+    const toggleProps : toggleSwitchType = otherProps
+  
+    if(value) {
+      toggleProps.value = value
+    }
+    if (disabled) {
+      toggleProps.disabled = disabled
+    }
+
     return (
       <unity-toggle-switch
         ref={this.switchRef}
-        {...otherProps}
+        {...toggleProps}
       ></unity-toggle-switch>
     )
   }
