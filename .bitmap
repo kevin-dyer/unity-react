@@ -93,7 +93,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-global-nav-react@0.1.5": {
+    "smartworks.unity-react/unity-global-nav-react@0.1.6": {
         "files": [
             {
                 "name": "UnityGlobalNav.tsx",
