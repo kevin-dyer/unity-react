@@ -6,7 +6,7 @@
     "@bit/smartworks.unity.unity-button": "^0.1.2",
     "@bit/smartworks.unity.unity-column-editor": "0.0.15",
     "@bit/smartworks.unity.unity-dropdown": "^0.1.16",
-    "@bit/smartworks.unity.unity-global-nav-base": "^0.2.4",
+    "@bit/smartworks.unity.unity-global-nav-base": "^0.2.5",
     "@bit/smartworks.unity.unity-global-nav-top-item": "^0.2.2",
     "@bit/smartworks.unity.unity-page-header": "^0.1.1",
     "@bit/smartworks.unity.unity-section": "^0.2.1",
