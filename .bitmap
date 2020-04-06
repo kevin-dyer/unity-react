@@ -230,5 +230,27 @@
         "origin": "AUTHORED",
         "exported": true
     },
+    "smartworks.unity-react/unity-typography-react@0.1.0": {
+        "files": [
+            {
+                "relativePath": "src/components/unity-typography-react/UnityTypography.tsx",
+                "test": false,
+                "name": "UnityTypography.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-typography-react/declarations.d.ts",
+                "test": false,
+                "name": "declarations.d.ts"
+            },
+            {
+                "relativePath": "src/components/unity-typography-react/unity-typography-react.md",
+                "test": false,
+                "name": "unity-typography-react.md"
+            }
+        ],
+        "mainFile": "src/components/unity-typography-react/UnityTypography.tsx",
+        "origin": "AUTHORED",
+        "exported": true
+    },
     "version": "14.7.6"
 }
