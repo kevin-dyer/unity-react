@@ -73,9 +73,9 @@ export interface SplitPaneProps {
 }
 
 export type splitPaneStyleTypes = React.CSSProperties & { 
-  '--border-color': string
-  '--bar-border-color': string
-  '--background': string
-  '--bar-background': string
+  '--border-color'?: string
+  '--bar-border-color'?: string
+  '--background'?: string
+  '--bar-background'?: string
 }
 
