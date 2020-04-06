@@ -17,8 +17,8 @@ export default class UnitySplitPane extends Component<SplitPaneProps> {
     const { onClose, onResize } = this.props
     const unitySplitPane = this.splitPaneRef.current
     if (unitySplitPane) {
-      unitySplitPane.onClose = onClose
-      unitySplitPane.onResize = onResize
+      unitySplitPane.onClose = onClose || (() => {})
+      unitySplitPane.onResize = onResize || (() => {})
     }
   }
 
