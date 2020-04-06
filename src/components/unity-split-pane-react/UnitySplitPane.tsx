@@ -27,6 +27,7 @@ export default class UnitySplitPane extends Component<SplitPaneProps> {
       header,
       main,
       pane,
+      footer,
       show,
       closeButton,
       collapsed,
@@ -53,6 +54,9 @@ export default class UnitySplitPane extends Component<SplitPaneProps> {
         <div slot="pane" style={{height: '100%', display: 'flex', zIndex: 3}}>
           {pane}
         </div>
+        <div slot="footer">
+          {footer}
+        </div>
       </unity-split-pane>
     )
   }
@@ -63,6 +67,7 @@ export interface SplitPaneProps {
   header?: any
   main?: any
   pane?: any
+  footer?: any
   show?: boolean
   closeButton?: boolean
   onClose?: Function
