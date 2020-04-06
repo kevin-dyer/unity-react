@@ -218,7 +218,7 @@ class App extends React.Component {
                 style={{height: '400px', border: '1px solid grey'}}
                 closeButton
                 show
-                header="This is the header"
+                header={<p style={{paddingLeft: '24px'}}>This is the header</p>}
                 main="This is the main body"
                 footer="This is the footer"
                 pane="This is the pane"
