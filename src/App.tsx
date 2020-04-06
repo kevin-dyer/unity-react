@@ -4,18 +4,22 @@ import UnityButton from './components/unity-button-react/UnityButton'
 import UnityCodeEditor from './components/unity-code-editor-react/UnityCodeEditor'
 import UnityTextInput from './components/unity-text-input-react/UnityTextInput'
 import UnityTable from './components/unity-table-react/UnityTable'
+import UnityTypography, { headerStyleTypes } from './components/unity-typography-react/UnityTypography'
 import UnityPageHeader from './components/unity-page-header-react/UnityPageHeader'
 import UnitySection from './components/unity-section-react/UnitySection'
 import UnityGlobalNav from './components/unity-global-nav-react/UnityGlobalNav'
 import UnityDropdown from './components/unity-dropdown-react/UnityDropdown'
 import UnityToggleSwitch from './components/unity-toggle-switch-react/UnityToggleSwitch'
 
-
 const appStyle: CSSProperties = {
   display: 'flex',
   flexDirection: 'column',
   height: '100vh',
   width: '100%'
+}
+
+const headerStyle: headerStyleTypes  = {
+  '--header1-size': '25px'
 }
 
 const contentBox: CSSProperties = {
@@ -167,7 +171,7 @@ class App extends React.Component {
     return (
       <div className="App" style={appStyle}>
         <header className="App-header">
-          <h2>Unity React Components</h2>
+          <UnityTypography style={headerStyle} size='header1' color='light'>Unity React Components</UnityTypography>
         </header>
 
         <div className="wrapper" style={wrapperStyle}>
