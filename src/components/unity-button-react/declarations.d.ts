@@ -17,5 +17,6 @@ declare module '@bit/smartworks.unity.unity-button' {
     disabled?: boolean;
     small?: boolean;
     onClick?: Function;
+    styles?: object;
   }
 }

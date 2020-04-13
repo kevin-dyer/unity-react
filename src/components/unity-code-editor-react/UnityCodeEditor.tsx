@@ -10,6 +10,7 @@ import "ace-builds/src-noconflict/mode-dockerfile";
 import "ace-builds/src-noconflict/mode-markdown";
 import "ace-builds/src-noconflict/mode-html";
 import "ace-builds/src-noconflict/theme-textmate";
+import UnityTypography from "@bit/smartworks.unity-react.unity-typography-react";
 
 import './UnityCodeEditor.css';
 
@@ -56,16 +57,14 @@ class UnityCodeEditor extends React.Component<CodeEditorProps, CodeEditorState> 
     onChange(newValue, error)
   }
 
-  getValidationMessage()  {
-    const { error: errorText='' } = this.props
-    const { error='' } = this.state
-    if (errorText || error) {
-      return (
-        <p className="code-editor-paragraph invalid">
-          {errorText || error}
-        </p>
-      )
-    }
+  getValidationMessage(message: string)  {
+    return (
+      <div className="code-editor-paragraph invalid">
+        <UnityTypography color="medium" style={{"--font-color-medium": "var(--internal-validation-color)"}} size="paragraph">
+          {message}
+        </UnityTypography>
+      </div>
+    )
   }
 
   render() {
@@ -75,11 +74,18 @@ class UnityCodeEditor extends React.Component<CodeEditorProps, CodeEditorState> 
       label,
       dirty,
       minLines=8,
-      maxLines=16
+      maxLines=16,
+      error: errorText=''
     } = this.props
+    const { error='' } = this.state
+    const editorWrapperClass = (errorText || error)? "editor-wrapper invalid" : "editor-wrapper"
     return (
-      <div className="editor-wrapper">
-        <p className="code-editor-paragraph label">{label}</p>
+      <div className={editorWrapperClass}>
+        <div className="code-editor-paragraph label">
+          <UnityTypography color="medium" size="paragraph">
+            {label}
+          </UnityTypography>
+        </div>
 
         <div className="editor-container">
           {!!dirty && <div className="dirty-gutter"/>}
@@ -93,8 +99,10 @@ class UnityCodeEditor extends React.Component<CodeEditorProps, CodeEditorState> 
             minLines={minLines}
             maxLines={maxLines}
           />
-          {this.getValidationMessage()}
         </div>
+        {(errorText || error) &&
+          this.getValidationMessage(errorText || error)
+        }
       </div>
     );
   }

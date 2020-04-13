@@ -13,6 +13,10 @@
   flex: 1;
 }
 
+.editor-wrapper:not(.invalid) {
+  padding-bottom: 26px;
+}
+
 .editor-container {
   position: relative;
   border: 1px solid var(--internal-border-color);
@@ -33,7 +37,6 @@
 }
 
 .code-editor-paragraph {
-  font-size: 11px;
   margin: 6px 0;
 }
 .code-editor-paragraph.label{
@@ -41,12 +44,11 @@
 }
 
 .code-editor-paragraph.invalid {
-  position: absolute;
-  right: 4px;
-  bottom: -22px;
   color: var(--internal-validation-color);
   font-style: italic;
   text-align: right;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .ace_gutter-layer {
