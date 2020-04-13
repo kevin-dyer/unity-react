@@ -68,7 +68,8 @@ export default class UnitySplitPane extends Component<SplitPaneProps> {
 }
 
 
-export interface SplitPaneProps {
+export interface SplitPaneProps extends React.HTMLAttributes<HTMLElement>{
+  [key:string]: any,
   header?: any
   main?: any
   pane?: any
