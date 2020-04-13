@@ -6,19 +6,24 @@ export default class UnitySplitPane extends Component<SplitPaneProps> {
   private splitPaneRef = React.createRef<SplitPaneProps>()
 
   componentDidMount = () => {
-    this.setFunctionProps()
+    this.updateProperties()
   }
 
   componentDidUpdate = () => {
-    this.setFunctionProps()
+    this.updateProperties()
   }
 
-  setFunctionProps = () => {
-    const { onClose, onResize } = this.props
-    const unitySplitPane = this.splitPaneRef.current
+  updateProperties = () => {
+    const { props, splitPaneRef } = this
+    const unitySplitPane = splitPaneRef.current
+    const { header, main, pane, footer, onClose, onResize } = props
     if (unitySplitPane) {
       unitySplitPane.onClose = onClose || (() => {})
       unitySplitPane.onResize = onResize || (() => {})
+      unitySplitPane.header = header
+      unitySplitPane.main = main
+      unitySplitPane.pane = pane
+      unitySplitPane.footer = footer
     }
   }
 
