@@ -24,7 +24,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-code-editor-react@0.1.1": {
+    "smartworks.unity-react/unity-code-editor-react@0.1.2": {
         "files": [
             {
                 "relativePath": "src/components/unity-code-editor-react/UnityCodeEditor.css",

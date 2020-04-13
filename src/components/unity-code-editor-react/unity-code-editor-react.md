@@ -2,6 +2,10 @@
 
 ## Changelog:
 
+### v0.1.2
+- changed p elements (label and validation message) to unity-typography
+- moved validation message out of the editor container
+
 ### v0.1.1
 - alter getValidationMessage wrapper to render error if either props or state error is present
 
