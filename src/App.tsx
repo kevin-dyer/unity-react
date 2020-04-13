@@ -10,6 +10,7 @@ import UnitySection from './components/unity-section-react/UnitySection'
 import UnityGlobalNav from './components/unity-global-nav-react/UnityGlobalNav'
 import UnityDropdown from './components/unity-dropdown-react/UnityDropdown'
 import UnityToggleSwitch from './components/unity-toggle-switch-react/UnityToggleSwitch'
+import UnitySplitPane from './components/unity-split-pane-react/UnitySplitPane'
 
 const appStyle: CSSProperties = {
   display: 'flex',
@@ -164,7 +165,8 @@ const dropdownOptions: Object[] = [
 class App extends React.Component {
   state = {
     value: '',
-    error: ''
+    error: '',
+    showPane: true
   }
 
   render() {
@@ -210,6 +212,20 @@ class App extends React.Component {
                   }}
                 />
               </div>
+            </UnitySection>
+
+            <UnitySection>
+              <UnitySplitPane
+                onResize={()=>console.log("resize")}
+                style={{height: '400px', border: '1px solid grey'}}
+                onClose={()=> this.setState({showPane: false})}
+                closeButton
+                show={this.state.showPane}
+                header={<p style={{paddingLeft: '24px'}}>This is the header</p>}
+                main="This is the main body"
+                footer="This is the footer"
+                pane="This is the pane"
+              />
             </UnitySection>
 
             <UnitySection>
