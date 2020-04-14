@@ -16,10 +16,11 @@ export default class UnitySplitPane extends Component<SplitPaneProps> {
   updateProperties = () => {
     const { props, splitPaneRef } = this
     const unitySplitPane = splitPaneRef.current
-    const { header, main, pane, footer, onClose, onResize } = props
+    const { header, main, pane, footer, onClose, onResize, onCollapseChange } = props
     if (unitySplitPane) {
       unitySplitPane.onClose = onClose || (() => {})
       unitySplitPane.onResize = onResize || (() => {})
+      unitySplitPane.onCollaseChange = onCollapseChange || (() => {})
       unitySplitPane.header = header
       unitySplitPane.main = main
       unitySplitPane.pane = pane
@@ -36,12 +37,14 @@ export default class UnitySplitPane extends Component<SplitPaneProps> {
       show,
       closeButton,
       collapsed,
+      collapseButton,
       ...otherProps
     } = this.props
     let splitPaneArgs : SplitPaneProps = {...otherProps}
-    
+
     if (show) splitPaneArgs.show = show
     if (closeButton) splitPaneArgs.closeButton = closeButton
+    if (collapseButton) splitPaneArgs.collapseButton = collapseButton
     if (collapsed) splitPaneArgs.collapsed = collapsed
 
     return (
@@ -83,10 +86,9 @@ export interface SplitPaneProps extends React.HTMLAttributes<HTMLElement>{
   style?: splitPaneStyleTypes
 }
 
-export type splitPaneStyleTypes = React.CSSProperties & { 
+export type splitPaneStyleTypes = React.CSSProperties & {
   '--border-color'?: string
   '--bar-border-color'?: string
   '--background'?: string
   '--bar-background'?: string
 }
-
