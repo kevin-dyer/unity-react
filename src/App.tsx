@@ -169,6 +169,12 @@ class App extends React.Component {
     showPane: true
   }
 
+  makeCenterContent() {
+    return (<div>
+        I'm a page header
+      </div>)
+  }
+
   render() {
     return (
       <div className="App" style={appStyle}>
@@ -185,7 +191,8 @@ class App extends React.Component {
           <div className="main" style={mainStyle}>
             <UnitySection>
               <div style={contentBox}>
-                <UnityPageHeader title="I'm a page header"/>
+                <UnityPageHeader
+                centerContent={this.makeCenterContent()}/>
               </div>
             </UnitySection>
 
@@ -220,6 +227,7 @@ class App extends React.Component {
                 style={{height: '400px', border: '1px solid grey'}}
                 onClose={()=> this.setState({showPane: false})}
                 closeButton
+                collapseButton
                 show={this.state.showPane}
                 header={<p style={{paddingLeft: '24px'}}>This is the header</p>}
                 main="This is the main body"
