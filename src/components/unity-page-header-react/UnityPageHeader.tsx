@@ -33,6 +33,7 @@ export default class UnityPageHeader extends Component<pageHeaderProps> {
       tabs=[],
       selectedTab,
       leftContent,
+      centerContent,
       rightContent,
       style
     } = this.props
@@ -48,6 +49,12 @@ export default class UnityPageHeader extends Component<pageHeaderProps> {
       {!!leftContent &&
         <div slot="left-content">
           {leftContent}
+        </div>
+      }
+
+      {!!centerContent &&
+        <div slot="center-content">
+          {centerContent}
         </div>
       }
 
