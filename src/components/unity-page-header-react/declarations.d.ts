@@ -9,8 +9,9 @@ declare module '@bit/smartworks.unity.unity-page-header' {
     title?: string,
     tabs?: object,
     selectedTab?: string,
-    leftContent?: string,
-    rightContent?: string,
+    leftContent?: any,
+    centerContent?: any,
+    rightContent?: any,
     style?: React.CSSProperties,
     onTabSelect?: Function
   }
