@@ -2,5 +2,8 @@
 
 ## Changelog:
 
+### v0.2.0
+- add center-slot to allow for custom content
+
 ### v0.1.0
 - Enable styles to be passed as a prop.
