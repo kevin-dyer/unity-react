@@ -11,6 +11,7 @@ import UnityGlobalNav from './components/unity-global-nav-react/UnityGlobalNav'
 import UnityDropdown from './components/unity-dropdown-react/UnityDropdown'
 import UnityToggleSwitch from './components/unity-toggle-switch-react/UnityToggleSwitch'
 import UnitySplitPane from './components/unity-split-pane-react/UnitySplitPane'
+import UnityModal from './components/unity-modal-react/UnityModal'
 
 const appStyle: CSSProperties = {
   display: 'flex',
@@ -166,7 +167,8 @@ class App extends React.Component {
   state = {
     value: '',
     error: '',
-    showPane: true
+    showPane: true,
+    showModal: false
   }
 
   makeCenterContent() {
@@ -220,7 +222,15 @@ class App extends React.Component {
                 />
               </div>
             </UnitySection>
-
+            <UnitySection>
+              <UnityModal
+                top={<UnityButton centerIcon="unity:close" onClick={() => this.setState({showModal: false})}/>}
+                title="Modal title"
+                body={<UnityButton label="Unity" type="solid" onClick={() => console.log("click")}/>}
+                bottom='this is the bottom'
+                show={this.state.showModal}
+              />
+              </UnitySection>
             <UnitySection>
               <UnitySplitPane
                 onResize={()=>console.log("resize")}
@@ -245,10 +255,10 @@ class App extends React.Component {
 
               <UnitySection>
                 <div style={contentBox}>
-                  <h3>UnityButton</h3>
+                  <h3>UnityButton and modal</h3>
 
                   <div>
-                    <UnityButton label="Unity" type="solid" onClick={() => console.log("click")}/>
+                    <UnityButton label="Show modal" type="solid" onClick={() => this.setState({showModal: true})}/>
                   </div>
                 </div>
               </UnitySection>
