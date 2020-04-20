@@ -11,6 +11,7 @@
     "@bit/smartworks.unity.unity-global-nav-top-item": "^0.2.2",
     "@bit/smartworks.unity.unity-modal": "^0.1.7",
     "@bit/smartworks.unity.unity-page-header": "^0.2.0",
+    "@bit/smartworks.unity.unity-progress": "^0.1.0",
     "@bit/smartworks.unity.unity-section": "^0.2.2",
     "@bit/smartworks.unity.unity-split-pane": "^0.3.0",
     "@bit/smartworks.unity.unity-table": "^0.4.3",
