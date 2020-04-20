@@ -161,6 +161,28 @@
         "origin": "AUTHORED",
         "exported": true
     },
+    "smartworks.unity-react/unity-progress-react@0.1.0": {
+        "files": [
+            {
+                "relativePath": "src/components/unity-progress-react/UnityProgress.tsx",
+                "test": false,
+                "name": "UnityProgress.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-progress-react/declarations.d.ts",
+                "test": false,
+                "name": "declarations.d.ts"
+            },
+            {
+                "relativePath": "src/components/unity-progress-react/unity-progress-react.md",
+                "test": false,
+                "name": "unity-progress-react.md"
+            }
+        ],
+        "mainFile": "src/components/unity-progress-react/UnityProgress.tsx",
+        "origin": "AUTHORED",
+        "exported": true
+    },
     "smartworks.unity-react/unity-section-react@0.2.2": {
         "files": [
             {

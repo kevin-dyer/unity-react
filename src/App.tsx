@@ -12,6 +12,7 @@ import UnityDropdown from './components/unity-dropdown-react/UnityDropdown'
 import UnityToggleSwitch from './components/unity-toggle-switch-react/UnityToggleSwitch'
 import UnitySplitPane from './components/unity-split-pane-react/UnitySplitPane'
 import UnityModal from './components/unity-modal-react/UnityModal'
+import UnityProgress from './components/unity-progress-react/UnityProgress'
 
 const appStyle: CSSProperties = {
   display: 'flex',
@@ -197,7 +198,23 @@ class App extends React.Component {
                 centerContent={this.makeCenterContent()}/>
               </div>
             </UnitySection>
-
+          <UnitySection>
+            <UnityProgress
+              label="Unity Progress"
+              remark="Indeterminate"
+              style={{width:'400px', margin: "20px", "--progress-color": "var(--secondary-brand-color)", "--progress-indeterminate-cycle-duration": "4s"}}
+              indeterminate
+            />
+           <UnityProgress
+              label="Unity Progress"
+              remark="Controlled"
+              max={100}
+              value={30}
+              secondaryValue={80}
+              completionType="percentage"
+              style={{width:'400px', margin: "20px"}}
+            />
+          </UnitySection>
             <UnitySection>
               <div style={contentBox}>
                 <UnityCodeEditor
