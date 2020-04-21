@@ -13,6 +13,7 @@ import UnityToggleSwitch from './components/unity-toggle-switch-react/UnityToggl
 import UnitySplitPane from './components/unity-split-pane-react/UnitySplitPane'
 import UnityModal from './components/unity-modal-react/UnityModal'
 import UnityProgress from './components/unity-progress-react/UnityProgress'
+import UnityDropzone from './components/unity-dropzone-react/UnityDropzone'
 
 const appStyle: CSSProperties = {
   display: 'flex',
@@ -169,13 +170,33 @@ class App extends React.Component {
     value: '',
     error: '',
     showPane: true,
-    showModal: false
+    showModal: false,
+    fileName: '',
+    fileType: '',
+    fileContent: ''
   }
 
   makeCenterContent() {
     return (<div>
         I'm a page header
       </div>)
+  }
+
+  setFile = async (file:any) => {
+    console.log('setting file with', file)
+    this.setState({
+      fileName: file.name,
+      fileType: file.type,
+      fileContent: await file.text()
+    })
+  }
+
+  clearFile = () => {
+    this.setState({
+      fileName: '',
+      fileType: '',
+      fileContent: ''
+    })
   }
 
   render() {
@@ -215,39 +236,39 @@ class App extends React.Component {
               style={{width:'400px', margin: "20px"}}
             />
           </UnitySection>
-            <UnitySection>
-              <div style={contentBox}>
-                <UnityCodeEditor
-                  label="JSON editor"
-                  mode="json"
-                  onChange={(value: string, error: string) => {
-                    console.log('value', value)
-                    console.log('error', error)
-                    this.setState({value, error})
-                  }}
-                  value={this.state.value}
-                  minLines={7}
-                  maxLines={19}
-                  validation={(val: string) => {
-                    try {
-                      if (val) JSON.parse(val)
-                    } catch (error) {
-                      return error.toString()
-                    }
-                    return ''
-                  }}
-                />
-              </div>
-            </UnitySection>
-            <UnitySection>
-              <UnityModal
-                top={<UnityButton centerIcon="unity:close" onClick={() => this.setState({showModal: false})}/>}
-                title="Modal title"
-                body={<UnityButton label="Unity" type="solid" onClick={() => console.log("click")}/>}
-                bottom='this is the bottom'
-                show={this.state.showModal}
+          <UnitySection>
+            <div style={contentBox}>
+              <UnityCodeEditor
+                label="JSON editor"
+                mode="json"
+                onChange={(value: string, error: string) => {
+                  console.log('value', value)
+                  console.log('error', error)
+                  this.setState({value, error})
+                }}
+                value={this.state.value}
+                minLines={7}
+                maxLines={19}
+                validation={(val: string) => {
+                  try {
+                    if (val) JSON.parse(val)
+                  } catch (error) {
+                    return error.toString()
+                  }
+                  return ''
+                }}
               />
-              </UnitySection>
+            </div>
+          </UnitySection>
+          <UnitySection>
+            <UnityModal
+              top={<UnityButton centerIcon="unity:close" onClick={() => this.setState({showModal: false})}/>}
+              title="Modal title"
+              body={<UnityButton label="Unity" type="solid" onClick={() => console.log("click")}/>}
+              bottom='this is the bottom'
+              show={this.state.showModal}
+            />
+            </UnitySection>
             <UnitySection>
               <UnitySplitPane
                 onResize={()=>console.log("resize")}
@@ -299,6 +320,33 @@ class App extends React.Component {
                 remark={"Remarkable"}
                 onChange={(on : boolean) => console.log(`Switch is ${on ? 'on' : 'off'}`)}
               />
+            </UnitySection>
+
+            <UnitySection>
+              <UnitySection>
+                <UnityDropzone
+                  accept={"application/json"}
+                  onUpload={this.setFile}
+                ></UnityDropzone>
+                <UnityButton
+                  onClick={this.clearFile}
+                  label={"Clear File"}
+                  disabled={!this.state.fileContent}
+                ></UnityButton>
+              </UnitySection>
+              <UnitySection>
+                <div>
+                  <div>
+                    File Name: {this.state.fileName}
+                  </div>
+                  <div>
+                    File Type: {this.state.fileType}
+                  </div>
+                  <div>
+                    File Content: {this.state.fileContent}
+                  </div>
+                </div>
+              </UnitySection>
             </UnitySection>
 
             <UnitySection>
