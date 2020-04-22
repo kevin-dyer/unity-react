@@ -318,5 +318,27 @@
         "origin": "AUTHORED",
         "exported": true
     },
+    "unity-dropzone-react": {
+        "files": [
+            {
+                "relativePath": "src/components/unity-dropzone-react/UnityDropzone.tsx",
+                "test": false,
+                "name": "UnityDropzone.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-dropzone-react/declarations.d.ts",
+                "test": false,
+                "name": "declarations.d.ts"
+            },
+            {
+                "relativePath": "src/components/unity-dropzone-react/unity-dropzone-react.md",
+                "test": false,
+                "name": "unity-dropzone-react.md"
+            }
+        ],
+        "mainFile": "src/components/unity-dropzone-react/unity-dropzone-react.md",
+        "origin": "AUTHORED",
+        "exported": false
+    },
     "version": "14.7.6"
 }
