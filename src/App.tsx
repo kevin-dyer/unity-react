@@ -13,6 +13,7 @@ import UnityToggleSwitch from './components/unity-toggle-switch-react/UnityToggl
 import UnitySplitPane from './components/unity-split-pane-react/UnitySplitPane'
 import UnityModal from './components/unity-modal-react/UnityModal'
 import UnityProgress from './components/unity-progress-react/UnityProgress'
+import UnityNotification from './components/unity-notification-react/UnityNotification'
 
 const appStyle: CSSProperties = {
   display: 'flex',
@@ -215,39 +216,39 @@ class App extends React.Component {
               style={{width:'400px', margin: "20px"}}
             />
           </UnitySection>
-            <UnitySection>
-              <div style={contentBox}>
-                <UnityCodeEditor
-                  label="JSON editor"
-                  mode="json"
-                  onChange={(value: string, error: string) => {
-                    console.log('value', value)
-                    console.log('error', error)
-                    this.setState({value, error})
-                  }}
-                  value={this.state.value}
-                  minLines={7}
-                  maxLines={19}
-                  validation={(val: string) => {
-                    try {
-                      if (val) JSON.parse(val)
-                    } catch (error) {
-                      return error.toString()
-                    }
-                    return ''
-                  }}
-                />
-              </div>
-            </UnitySection>
-            <UnitySection>
-              <UnityModal
-                top={<UnityButton centerIcon="unity:close" onClick={() => this.setState({showModal: false})}/>}
-                title="Modal title"
-                body={<UnityButton label="Unity" type="solid" onClick={() => console.log("click")}/>}
-                bottom='this is the bottom'
-                show={this.state.showModal}
+          <UnitySection>
+            <div style={contentBox}>
+              <UnityCodeEditor
+                label="JSON editor"
+                mode="json"
+                onChange={(value: string, error: string) => {
+                  console.log('value', value)
+                  console.log('error', error)
+                  this.setState({value, error})
+                }}
+                value={this.state.value}
+                minLines={7}
+                maxLines={19}
+                validation={(val: string) => {
+                  try {
+                    if (val) JSON.parse(val)
+                  } catch (error) {
+                    return error.toString()
+                  }
+                  return ''
+                }}
               />
-              </UnitySection>
+            </div>
+          </UnitySection>
+          <UnitySection>
+            <UnityModal
+              top={<UnityButton centerIcon="unity:close" onClick={() => this.setState({showModal: false})}/>}
+              title="Modal title"
+              body={<UnityButton label="Unity" type="solid" onClick={() => console.log("click")}/>}
+              bottom='this is the bottom'
+              show={this.state.showModal}
+            />
+            </UnitySection>
             <UnitySection>
               <UnitySplitPane
                 onResize={()=>console.log("resize")}
@@ -282,23 +283,27 @@ class App extends React.Component {
             </UnitySection>
 
             <UnitySection>
-              <UnityDropdown
-                label={"This is a Dropdown"}
-                inputType={"single-select"}
-                onValueChange={(...args:any) => console.log('value changed, here are the args', args)}
-                options={dropdownOptions}
-              ></UnityDropdown>
-            </UnitySection>
-
-            <UnitySection>
-              <UnityToggleSwitch
-                value={true}
-                label={"This is a Switch"}
-                onLabel={"Right"}
-                offLabel={"Left"}
-                remark={"Remarkable"}
-                onChange={(on : boolean) => console.log(`Switch is ${on ? 'on' : 'off'}`)}
-              />
+              <UnitySection>
+                <UnityDropdown
+                  label={"This is a Dropdown"}
+                  inputType={"single-select"}
+                  onValueChange={(...args:any) => console.log('value changed, here are the args', args)}
+                  options={dropdownOptions}
+                />
+              </UnitySection>
+              <UnitySection>
+                <UnityToggleSwitch
+                  value={true}
+                  label={"This is a Switch"}
+                  onLabel={"Right"}
+                  offLabel={"Left"}
+                  remark={"Remarkable"}
+                  onChange={(on : boolean) => console.log(`Switch is ${on ? 'on' : 'off'}`)}
+                />
+              </UnitySection>
+              <UnitySection>
+                <UnityNotification style={{margin: '10px'}} text='Notification text' icon='unity:share' subtext='More text'/>
+              </UnitySection>
             </UnitySection>
 
             <UnitySection>
