@@ -24,14 +24,12 @@ export default class UnityDropzone extends Component<dropzonePropTypes> {
 
   render() {
     const {
-      accept,
-      dropzoneText,
-      invalidText,
       disabled,
-      hideIcon
+      hideIcon,
+      ...otherProps
     } : dropzonePropTypes = this.props
 
-    let dropzoneProps : dropzonePropTypes = { accept, dropzoneText, invalidText}
+    let dropzoneProps : dropzonePropTypes = { ...otherProps }
     if (!!disabled) dropzoneProps.disabled = disabled
     if (!!hideIcon) dropzoneProps.hideIcon = hideIcon
 
