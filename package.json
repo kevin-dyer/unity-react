@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@bit/smartworks.unity-react.unity-typography-react": "^0.1.1",
+    "@bit/smartworks.unity-react.unity-typography-react": "^0.1.2",
     "@bit/smartworks.unity.unity-button": "^0.1.4",
     "@bit/smartworks.unity.unity-column-editor": "0.0.17",
     "@bit/smartworks.unity.unity-dropdown": "^0.1.18",
