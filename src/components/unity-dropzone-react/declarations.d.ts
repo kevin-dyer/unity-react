@@ -4,7 +4,7 @@ declare namespace JSX {
   }
 }
 declare module '@bit/smartworks.unity.unity-dropzone' {
-  export interface dropzonePropTypes {
+  export interface dropzonePropTypes extends React.HTMLAttributes<HTMLElement> {
     [key: string]: any
     accept?: string
     disabled?: boolean
@@ -12,5 +12,6 @@ declare module '@bit/smartworks.unity.unity-dropzone' {
     dropzoneText?: string
     invalidText?: string
     onUpload?: Function
+    style?: customStyles
   }
 }
