@@ -167,7 +167,7 @@ const dropdownOptions: Object[] = [
 
 class App extends React.Component {
 
-  private tableRef: Object = React.createRef<UnityTable>()
+  private tableRef = React.createRef<UnityTable>()
 
   state = {
     value: '',
@@ -183,7 +183,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.tableRef)
     return (
       <div className="App" style={appStyle}>
         <header className="App-header">
@@ -226,8 +225,6 @@ class App extends React.Component {
                   label="JSON editor"
                   mode="json"
                   onChange={(value: string, error: string) => {
-                    console.log('value', value)
-                    console.log('error', error)
                     this.setState({value, error})
                   }}
                   value={this.state.value}
@@ -310,6 +307,7 @@ class App extends React.Component {
               <div style={contentBox}>
                 <h3>UnityTable</h3>
                 <UnityTable
+                  ref={this.tableRef}
                   data={[{name: 'first name', id: 0}]}
                   keyExtractor={(node: any) => node.id}
                   columns={[
@@ -320,9 +318,13 @@ class App extends React.Component {
                     }
                   ]}
                 />
-                <UnityExportButton
-                  tableRef={this.tableRef}
-                />
+                {!!this.tableRef.current && <UnityExportButton
+                  tableRef={this.tableRef.current.tableRef}
+                  type="solid"
+                  label="Export"
+                  rightIcon="unity:file_download"
+                  onExport={() => console.log(`Exported table data`)}
+                />}
               </div>
             </UnitySection>
           </div>
