@@ -325,7 +325,6 @@ class App extends React.Component {
             <UnitySection>
               <UnitySection>
                 <UnityDropzone
-                  style={{'--dropzone-color': 'red'}}
                   accept={"application/json"}
                   onUpload={this.setFile}
                 ></UnityDropzone>

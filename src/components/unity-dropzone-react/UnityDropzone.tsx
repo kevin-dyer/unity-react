@@ -53,8 +53,10 @@ export interface dropzonePropTypes extends React.HTMLAttributes<HTMLElement> {
 
 export type dropzoneStyleTypes = React.CSSProperties & {
   '--dropzone-color'?: string
+  '--success-color'?: string
+  '--danger-color'?: string
+  '--font-color'?: string
   '--dropzone-min-width'?: string | number
   '--dropzone-min-height'?: string | number
-  '--font-color'?: string
   '--icon-size'?: string | number
 }
