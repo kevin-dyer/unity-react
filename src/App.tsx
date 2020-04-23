@@ -4,6 +4,7 @@ import UnityButton from './components/unity-button-react/UnityButton'
 import UnityCodeEditor from './components/unity-code-editor-react/UnityCodeEditor'
 import UnityTextInput from './components/unity-text-input-react/UnityTextInput'
 import UnityTable from './components/unity-table-react/UnityTable'
+import UnityExportButton from './components/unity-export-button-react/UnityExportButton'
 import UnityTypography, { headerStyleTypes } from './components/unity-typography-react/UnityTypography'
 import UnityPageHeader from './components/unity-page-header-react/UnityPageHeader'
 import UnitySection from './components/unity-section-react/UnitySection'
@@ -165,6 +166,9 @@ const dropdownOptions: Object[] = [
 ]
 
 class App extends React.Component {
+
+  private tableRef: Object = React.createRef<UnityTable>()
+
   state = {
     value: '',
     error: '',
@@ -179,6 +183,7 @@ class App extends React.Component {
   }
 
   render() {
+    console.log(this.tableRef)
     return (
       <div className="App" style={appStyle}>
         <header className="App-header">
@@ -304,7 +309,6 @@ class App extends React.Component {
             <UnitySection>
               <div style={contentBox}>
                 <h3>UnityTable</h3>
-
                 <UnityTable
                   data={[{name: 'first name', id: 0}]}
                   keyExtractor={(node: any) => node.id}
@@ -315,6 +319,9 @@ class App extends React.Component {
                         <div>Hello {cellValue}!</div>
                     }
                   ]}
+                />
+                <UnityExportButton
+                  tableRef={this.tableRef}
                 />
               </div>
             </UnitySection>
