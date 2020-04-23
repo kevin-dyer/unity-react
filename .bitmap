@@ -24,7 +24,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-code-editor-react@0.1.9": {
+    "smartworks.unity-react/unity-code-editor-react@0.1.10": {
         "files": [
             {
                 "name": "UnityCodeEditor.css",
@@ -70,7 +70,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-dropdown-react@0.1.6": {
+    "smartworks.unity-react/unity-dropdown-react@0.1.7": {
         "files": [
             {
                 "name": "UnityDropdown.tsx",
@@ -227,7 +227,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-table-react@0.3.6": {
+    "smartworks.unity-react/unity-table-react@0.3.7": {
         "files": [
             {
                 "name": "UnityTable.tsx",
