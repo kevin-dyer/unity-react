@@ -4,47 +4,36 @@ import { ExportButtonProps, ExportButtonStyles } from '@bit/smartworks.unity.uni
 
 export default class UnityExportButton extends Component<ExportButtonProps> {
 
-  // componentDidMount = () => {
-  //   this.updateProperties()
-  // }
+  private exportButtonRef = React.createRef<ExportButtonProps>()
 
-  // componentDidUpdate(oldProps: ExportButtonProps) {
-  //   this.updateProperties(oldProps)
-  // }
+  componentDidMount = () => {
+    this.updateProperties()
+  }
 
-  // updateProperties(oldProps={}) {
-  //   const {
-  //     tableRef,
-  //     onExport
-  //   } : ExportButtonProps = this.props
-  //
-  //   const {
-  //     columns: oldColumns,
-  //     selectedColumns: oldSelectedColumns,
-  //     onUpdate: oldOnUpdate
-  //   } : ExportButtonProps = oldProps
-  //
-  //   const colEditor = this.colEditorRef.current
-  //   if (colEditor) {
-  //     if (oldColumns !== columns) {
-  //       colEditor.columns = columns
-  //     }
-  //     if (oldSelectedColumns !== selectedColumns) {
-  //       colEditor.selectedColumns = selectedColumns
-  //     }
-  //
-  //     if (oldOnUpdate !== onUpdate) {
-  //       colEditor.onUpdate = onUpdate
-  //     }
-  //   }
-  // }
+  componentDidUpdate(oldProps: ExportButtonProps) {
+    this.updateProperties(oldProps)
+  }
+
+  updateProperties(oldProps={}) {
+    const {
+      tableRef,
+      onExport,
+    } : ExportButtonProps = this.props
+
+    const {
+      tableRef: oldTableRef,
+      onExport: oldOnExport,
+    } : ExportButtonProps = oldProps
+
+    const exportButton = this.exportButtonRef.current
+    if (!!exportButton) {
+      if (oldTableRef !== tableRef) exportButton.tableRef = tableRef
+      if (oldOnExport !== onExport) exportButton.onExport = onExport
+    }
+  }
 
   render() {
     const {
-      // tableExportProps
-      tableRef,
-      onExport,
-      // button props
       label,
       leftIcon,
       rightIcon,
@@ -55,27 +44,21 @@ export default class UnityExportButton extends Component<ExportButtonProps> {
       small
     } = this.props
 
-    console.log('tableRef', tableRef)
-
-    const tableExportProps : ExportButtonProps = {}
-    if (!!tableRef) tableExportProps.tableRef = tableRef
-    if (!!onExport) tableExportProps.onExport = onExport
-
     const buttonProps : ExportButtonProps = {}
-    if (!!label) buttonProps.label = label
-    if (!!leftIcon) buttonProps.leftIcon = leftIcon
-    if (!!rightIcon) buttonProps.rightIcon = rightIcon
-    if (!!centerIcon) buttonProps.centerIcon = centerIcon
-    if (!!type) buttonProps.type = type
     if (!!danger) buttonProps.danger = danger
     if (!!loading) buttonProps.loading = loading
     if (!!small) buttonProps.small = small
 
     return <div style={styles.container}>
         <unity-table-export
-          {...tableExportProps}
+          ref={this.exportButtonRef}
         >
           <unity-button
+            label={label}
+            leftIcon={leftIcon}
+            rightIcon={rightIcon}
+            centerIcon={centerIcon}
+            type={type}
             {...buttonProps}
           ></unity-button>
         </unity-table-export>

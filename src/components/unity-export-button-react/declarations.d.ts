@@ -8,7 +8,7 @@ declare namespace JSX {
 declare module '@bit/smartworks.unity.unity-table-export' {
   export interface ExportButtonProps {
     // unity-table-export props
-    tableRef?: UnityTable,
+    tableRef?: RefObject,
     onExport?: Function,
     // unity-button props
     label?: String,
