@@ -7,7 +7,7 @@
     "@bit/smartworks.unity.unity-button": "^0.1.5",
     "@bit/smartworks.unity.unity-column-editor": "0.0.18",
     "@bit/smartworks.unity.unity-dropdown": "^0.1.19",
-    "@bit/smartworks.unity.unity-dropzone": "^0.1.1",
+    "@bit/smartworks.unity.unity-dropzone": "^0.1.4",
     "@bit/smartworks.unity.unity-global-nav-base": "^0.2.8",
     "@bit/smartworks.unity.unity-global-nav-top-item": "^0.2.5",
     "@bit/smartworks.unity.unity-modal": "^0.1.10",
