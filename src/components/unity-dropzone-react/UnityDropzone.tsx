@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-
 import '@bit/smartworks.unity.unity-dropzone'
-import { dropzonePropTypes } from '@bit/smartworks.unity.unity-dropzone'
 
 export default class UnityDropzone extends Component<dropzonePropTypes> {
   private dropzoneRef = React.createRef<dropzonePropTypes>()
@@ -40,4 +38,23 @@ export default class UnityDropzone extends Component<dropzonePropTypes> {
      ></unity-dropzone>
     )
   }
+}
+
+export interface dropzonePropTypes extends React.HTMLAttributes<HTMLElement> {
+  [key: string]: any
+  accept?: string
+  disabled?: boolean
+  hideIcon?: boolean
+  dropzoneText?: string
+  invalidText?: string
+  onUpload?: Function
+  style?: dropzoneStyleTypes
+}
+
+export type dropzoneStyleTypes = React.CSSProperties & {
+  '--dropzone-color'?: string
+  '--dropzone-min-width'?: string | number
+  '--dropzone-min-height'?: string | number
+  '--font-color'?: string
+  '--icon-size'?: string | number
 }
