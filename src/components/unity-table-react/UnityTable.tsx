@@ -10,7 +10,7 @@ import {
 
 export default class UnityTable extends Component<TableProps> {
 
-  private tableRef = React.createRef<TableProps>()
+  public tableRef = React.createRef<TableProps>()
 
   componentDidMount = () => {
     this.updateProperties()
