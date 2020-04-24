@@ -2,6 +2,18 @@
 
 ## Changelog:
 
+### v0.1.11
+- update to unity-typography-react v0.1.6
+
+### v0.1.7
+- update to new unity-typography-react v0.1.5
+
+### v0.1.6
+- update to new unity-typography-react v0.1.4
+
+### v0.1.5
+- update to new unity-typography-react v0.1.3
+
 ### v0.1.2
 - changed p elements (label and validation message) to unity-typography
 - moved validation message out of the editor container
