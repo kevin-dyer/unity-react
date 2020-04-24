@@ -93,7 +93,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-dropzone-react@0.1.1": {
+    "smartworks.unity-react/unity-dropzone-react@0.1.2": {
         "files": [
             {
                 "relativePath": "src/components/unity-dropzone-react/UnityDropzone.tsx",

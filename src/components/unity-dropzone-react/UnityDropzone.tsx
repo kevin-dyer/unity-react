@@ -56,7 +56,7 @@ export type dropzoneStyleTypes = React.CSSProperties & {
   '--success-color'?: string
   '--danger-color'?: string
   '--font-color'?: string
-  '--dropzone-min-width'?: string | number
-  '--dropzone-min-height'?: string | number
+  '--dropzone-width'?: string | number
+  '--dropzone-height'?: string | number
   '--icon-size'?: string | number
 }
