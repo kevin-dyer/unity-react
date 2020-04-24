@@ -6,7 +6,7 @@ declare namespace JSX {
 }
 
 declare module '@bit/smartworks.unity.unity-table-export' {
-  export interface ExportButtonProps {
+  export interface ExportButtonProps extends React.HTMLAttributes {
     // unity-table-export props
     tableRef?: RefObject,
     onExport?: Function,

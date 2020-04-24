@@ -318,7 +318,7 @@ class App extends React.Component {
                     }
                   ]}
                 />
-                {!!this.tableRef.current && <UnityExportButton
+                {!!this.tableRef && !!this.tableRef.current && <UnityExportButton
                   tableRef={this.tableRef.current.tableRef}
                   type="solid"
                   label="Export"
