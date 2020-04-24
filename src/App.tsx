@@ -14,6 +14,7 @@ import UnitySplitPane from './components/unity-split-pane-react/UnitySplitPane'
 import UnityModal from './components/unity-modal-react/UnityModal'
 import UnityProgress from './components/unity-progress-react/UnityProgress'
 import UnityDropzone from './components/unity-dropzone-react/UnityDropzone'
+import UnityNotification from './components/unity-notification-react/UnityNotification'
 
 const appStyle: CSSProperties = {
   display: 'flex',
@@ -303,12 +304,27 @@ class App extends React.Component {
             </UnitySection>
 
             <UnitySection>
-              <UnityDropdown
-                label={"This is a Dropdown"}
-                inputType={"single-select"}
-                onValueChange={(...args:any) => console.log('value changed, here are the args', args)}
-                options={dropdownOptions}
-              ></UnityDropdown>
+              <UnitySection>
+                <UnityDropdown
+                  label={"This is a Dropdown"}
+                  inputType={"single-select"}
+                  onValueChange={(...args:any) => console.log('value changed, here are the args', args)}
+                  options={dropdownOptions}
+                />
+              </UnitySection>
+              <UnitySection>
+                <UnityToggleSwitch
+                  value={true}
+                  label={"This is a Switch"}
+                  onLabel={"Right"}
+                  offLabel={"Left"}
+                  remark={"Remarkable"}
+                  onChange={(on : boolean) => console.log(`Switch is ${on ? 'on' : 'off'}`)}
+                />
+              </UnitySection>
+              <UnitySection>
+                <UnityNotification style={{margin: '10px'}} text='Notification text' icon='unity:share' subtext='More text'/>
+              </UnitySection>
             </UnitySection>
 
             <UnitySection>
