@@ -11,7 +11,7 @@
     "@bit/smartworks.unity.unity-global-nav-base": "^0.2.10",
     "@bit/smartworks.unity.unity-global-nav-top-item": "^0.2.7",
     "@bit/smartworks.unity.unity-modal": "^0.1.12",
-    "@bit/smartworks.unity.unity-notification": "^0.1.0",
+    "@bit/smartworks.unity.unity-notification": "^0.1.3",
     "@bit/smartworks.unity.unity-page-header": "^0.2.5",
     "@bit/smartworks.unity.unity-progress": "^0.1.5",
     "@bit/smartworks.unity.unity-section": "^0.2.7",
