@@ -24,7 +24,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-code-editor-react@0.1.11": {
+    "smartworks.unity-react/unity-code-editor-react@0.1.12": {
         "files": [
             {
                 "name": "UnityCodeEditor.css",
@@ -157,6 +157,28 @@
             }
         ],
         "mainFile": "src/components/unity-modal-react/UnityModal.tsx",
+        "origin": "AUTHORED",
+        "exported": true
+    },
+    "smartworks.unity-react/unity-notification-react@0.1.0": {
+        "files": [
+            {
+                "relativePath": "src/components/unity-notification-react/UnityNotification.tsx",
+                "test": false,
+                "name": "UnityNotification.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-notification-react/declarations.d.ts",
+                "test": false,
+                "name": "declarations.d.ts"
+            },
+            {
+                "relativePath": "src/components/unity-notification-react/unity-notification-react.md",
+                "test": false,
+                "name": "unity-notification-react.md"
+            }
+        ],
+        "mainFile": "src/components/unity-notification-react/UnityNotification.tsx",
         "origin": "AUTHORED",
         "exported": true
     },
