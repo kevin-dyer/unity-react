@@ -14,6 +14,8 @@ import UnityToggleSwitch from './components/unity-toggle-switch-react/UnityToggl
 import UnitySplitPane from './components/unity-split-pane-react/UnitySplitPane'
 import UnityModal from './components/unity-modal-react/UnityModal'
 import UnityProgress from './components/unity-progress-react/UnityProgress'
+import UnityDropzone from './components/unity-dropzone-react/UnityDropzone'
+import UnityNotification from './components/unity-notification-react/UnityNotification'
 
 const appStyle: CSSProperties = {
   display: 'flex',
@@ -173,13 +175,33 @@ class App extends React.Component {
     value: '',
     error: '',
     showPane: true,
-    showModal: false
+    showModal: false,
+    fileName: '',
+    fileType: '',
+    fileContent: ''
   }
 
   makeCenterContent() {
     return (<div>
         I'm a page header
       </div>)
+  }
+
+  setFile = async (file:any) => {
+    console.log('setting file with', file)
+    this.setState({
+      fileName: file.name,
+      fileType: file.type,
+      fileContent: await file.text()
+    })
+  }
+
+  clearFile = () => {
+    this.setState({
+      fileName: '',
+      fileType: '',
+      fileContent: ''
+    })
   }
 
   render() {
@@ -202,23 +224,23 @@ class App extends React.Component {
                 centerContent={this.makeCenterContent()}/>
               </div>
             </UnitySection>
-          <UnitySection>
+            <UnitySection>
+              <UnityProgress
+                label="Unity Progress"
+                remark="Indeterminate"
+                style={{width:'400px', margin: "20px", "--progress-color": "var(--secondary-brand-color)", "--progress-indeterminate-cycle-duration": "4s"}}
+                indeterminate
+              />
             <UnityProgress
-              label="Unity Progress"
-              remark="Indeterminate"
-              style={{width:'400px', margin: "20px", "--progress-color": "var(--secondary-brand-color)", "--progress-indeterminate-cycle-duration": "4s"}}
-              indeterminate
-            />
-           <UnityProgress
-              label="Unity Progress"
-              remark="Controlled"
-              max={100}
-              value={30}
-              secondaryValue={80}
-              completionType="percentage"
-              style={{width:'400px', margin: "20px"}}
-            />
-          </UnitySection>
+                label="Unity Progress"
+                remark="Controlled"
+                max={100}
+                value={30}
+                secondaryValue={80}
+                completionType="percentage"
+                style={{width:'400px', margin: "20px"}}
+              />
+            </UnitySection>
             <UnitySection>
               <div style={contentBox}>
                 <UnityCodeEditor
@@ -241,15 +263,16 @@ class App extends React.Component {
                 />
               </div>
             </UnitySection>
-            <UnitySection>
-              <UnityModal
-                top={<UnityButton centerIcon="unity:close" onClick={() => this.setState({showModal: false})}/>}
-                title="Modal title"
-                body={<UnityButton label="Unity" type="solid" onClick={() => console.log("click")}/>}
-                bottom='this is the bottom'
-                show={this.state.showModal}
-              />
-              </UnitySection>
+          </div>
+          <UnitySection>
+            <UnityModal
+              top={<UnityButton centerIcon="unity:close" onClick={() => this.setState({showModal: false})}/>}
+              title="Modal title"
+              body={<UnityButton label="Unity" type="solid" onClick={() => console.log("click")}/>}
+              bottom='this is the bottom'
+              show={this.state.showModal}
+            />
+            </UnitySection>
             <UnitySection>
               <UnitySplitPane
                 onResize={()=>console.log("resize")}
@@ -284,12 +307,27 @@ class App extends React.Component {
             </UnitySection>
 
             <UnitySection>
-              <UnityDropdown
-                label={"This is a Dropdown"}
-                inputType={"single-select"}
-                onValueChange={(...args:any) => console.log('value changed, here are the args', args)}
-                options={dropdownOptions}
-              ></UnityDropdown>
+              <UnitySection>
+                <UnityDropdown
+                  label={"This is a Dropdown"}
+                  inputType={"single-select"}
+                  onValueChange={(...args:any) => console.log('value changed, here are the args', args)}
+                  options={dropdownOptions}
+                />
+              </UnitySection>
+              <UnitySection>
+                <UnityToggleSwitch
+                  value={true}
+                  label={"This is a Switch"}
+                  onLabel={"Right"}
+                  offLabel={"Left"}
+                  remark={"Remarkable"}
+                  onChange={(on : boolean) => console.log(`Switch is ${on ? 'on' : 'off'}`)}
+                />
+              </UnitySection>
+              <UnitySection>
+                <UnityNotification style={{margin: '10px'}} text='Notification text' icon='unity:share' subtext='More text'/>
+              </UnitySection>
             </UnitySection>
 
             <UnitySection>
@@ -301,6 +339,33 @@ class App extends React.Component {
                 remark={"Remarkable"}
                 onChange={(on : boolean) => console.log(`Switch is ${on ? 'on' : 'off'}`)}
               />
+            </UnitySection>
+
+            <UnitySection>
+              <UnitySection>
+                <UnityDropzone
+                  accept={"application/json"}
+                  onUpload={this.setFile}
+                ></UnityDropzone>
+                <UnityButton
+                  onClick={this.clearFile}
+                  label={"Clear File"}
+                  disabled={!this.state.fileContent}
+                ></UnityButton>
+              </UnitySection>
+              <UnitySection>
+                <div>
+                  <div>
+                    File Name: {this.state.fileName}
+                  </div>
+                  <div>
+                    File Type: {this.state.fileType}
+                  </div>
+                  <div>
+                    File Content: {this.state.fileContent}
+                  </div>
+                </div>
+              </UnitySection>
             </UnitySection>
 
             <UnitySection>

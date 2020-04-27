@@ -2,6 +2,12 @@
 
 ## Changelog:
 
+### v0.1.12
+- update to ace-builds v1.4.11
+
+### v0.1.11
+- update to unity-typography-react v0.1.6
+
 ### v0.1.7
 - update to new unity-typography-react v0.1.5
 

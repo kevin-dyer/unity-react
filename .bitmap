@@ -24,7 +24,11 @@
         "origin": "AUTHORED",
         "exported": true
     },
+<<<<<<< HEAD
     "smartworks.unity-react/unity-code-editor-react@0.1.10": {
+=======
+    "smartworks.unity-react/unity-code-editor-react@0.1.12": {
+>>>>>>> master
         "files": [
             {
                 "name": "UnityCodeEditor.css",
@@ -93,6 +97,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
+<<<<<<< HEAD
     "smartworks.unity-react/unity-export-button-react@0.0.1": {
         "files": [
             {
@@ -102,10 +107,22 @@
             },
             {
                 "relativePath": "src/components/unity-export-button-react/declarations.d.ts",
+=======
+    "smartworks.unity-react/unity-dropzone-react@0.1.2": {
+        "files": [
+            {
+                "relativePath": "src/components/unity-dropzone-react/UnityDropzone.tsx",
+                "test": false,
+                "name": "UnityDropzone.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-dropzone-react/declarations.d.ts",
+>>>>>>> master
                 "test": false,
                 "name": "declarations.d.ts"
             },
             {
+<<<<<<< HEAD
                 "relativePath": "src/components/unity-export-button-react/unity-export-button.md",
                 "test": false,
                 "name": "unity-export-button.md"
@@ -113,6 +130,14 @@
         ],
         "mainFile": "src/components/unity-export-button-react/UnityExportButton.tsx",
         "trackDir": "src/components/unity-export-button-react",
+=======
+                "relativePath": "src/components/unity-dropzone-react/unity-dropzone-react.md",
+                "test": false,
+                "name": "unity-dropzone-react.md"
+            }
+        ],
+        "mainFile": "src/components/unity-dropzone-react/UnityDropzone.tsx",
+>>>>>>> master
         "origin": "AUTHORED",
         "exported": true
     },
@@ -161,6 +186,31 @@
         "origin": "AUTHORED",
         "exported": true
     },
+<<<<<<< HEAD
+=======
+    "smartworks.unity-react/unity-notification-react@0.1.1": {
+        "files": [
+            {
+                "relativePath": "src/components/unity-notification-react/UnityNotification.tsx",
+                "test": false,
+                "name": "UnityNotification.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-notification-react/declarations.d.ts",
+                "test": false,
+                "name": "declarations.d.ts"
+            },
+            {
+                "relativePath": "src/components/unity-notification-react/unity-notification-react.md",
+                "test": false,
+                "name": "unity-notification-react.md"
+            }
+        ],
+        "mainFile": "src/components/unity-notification-react/UnityNotification.tsx",
+        "origin": "AUTHORED",
+        "exported": true
+    },
+>>>>>>> master
     "smartworks.unity-react/unity-page-header-react@0.2.4": {
         "files": [
             {
@@ -250,7 +300,11 @@
         "origin": "AUTHORED",
         "exported": true
     },
+<<<<<<< HEAD
     "smartworks.unity-react/unity-table-react@0.3.8": {
+=======
+    "smartworks.unity-react/unity-table-react@0.3.7": {
+>>>>>>> master
         "files": [
             {
                 "name": "UnityTable.tsx",
