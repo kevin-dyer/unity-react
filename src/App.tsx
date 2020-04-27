@@ -4,6 +4,7 @@ import UnityButton from './components/unity-button-react/UnityButton'
 import UnityCodeEditor from './components/unity-code-editor-react/UnityCodeEditor'
 import UnityTextInput from './components/unity-text-input-react/UnityTextInput'
 import UnityTable from './components/unity-table-react/UnityTable'
+import UnityExportButton from './components/unity-export-button-react/UnityExportButton'
 import UnityTypography, { headerStyleTypes } from './components/unity-typography-react/UnityTypography'
 import UnityPageHeader from './components/unity-page-header-react/UnityPageHeader'
 import UnitySection from './components/unity-section-react/UnitySection'
@@ -167,6 +168,9 @@ const dropdownOptions: Object[] = [
 ]
 
 class App extends React.Component {
+
+  private tableRef = React.createRef<UnityTable>()
+
   state = {
     value: '',
     error: '',
@@ -212,7 +216,6 @@ class App extends React.Component {
             items={navItems}
             collapsible={true}
           />
-
           <div className="main" style={mainStyle}>
             <UnitySection>
               <div style={contentBox}>
@@ -220,55 +223,53 @@ class App extends React.Component {
                 centerContent={this.makeCenterContent()}/>
               </div>
             </UnitySection>
-          <UnitySection>
-            <UnityProgress
-              label="Unity Progress"
-              remark="Indeterminate"
-              style={{width:'400px', margin: "20px", "--progress-color": "var(--secondary-brand-color)", "--progress-indeterminate-cycle-duration": "4s"}}
-              indeterminate
-            />
-           <UnityProgress
-              label="Unity Progress"
-              remark="Controlled"
-              max={100}
-              value={30}
-              secondaryValue={80}
-              completionType="percentage"
-              style={{width:'400px', margin: "20px"}}
-            />
-          </UnitySection>
-          <UnitySection>
-            <div style={contentBox}>
-              <UnityCodeEditor
-                label="JSON editor"
-                mode="json"
-                onChange={(value: string, error: string) => {
-                  console.log('value', value)
-                  console.log('error', error)
-                  this.setState({value, error})
-                }}
-                value={this.state.value}
-                minLines={7}
-                maxLines={19}
-                validation={(val: string) => {
-                  try {
-                    if (val) JSON.parse(val)
-                  } catch (error) {
-                    return error.toString()
-                  }
-                  return ''
-                }}
+            <UnitySection>
+              <UnityProgress
+                label="Unity Progress"
+                remark="Indeterminate"
+                style={{width:'400px', margin: "20px", "--progress-color": "var(--secondary-brand-color)", "--progress-indeterminate-cycle-duration": "4s"}}
+                indeterminate
               />
-            </div>
-          </UnitySection>
-          <UnitySection>
-            <UnityModal
-              top={<UnityButton centerIcon="unity:close" onClick={() => this.setState({showModal: false})}/>}
-              title="Modal title"
-              body={<UnityButton label="Unity" type="solid" onClick={() => console.log("click")}/>}
-              bottom='this is the bottom'
-              show={this.state.showModal}
-            />
+              <UnityProgress
+                label="Unity Progress"
+                remark="Controlled"
+                max={100}
+                value={30}
+                secondaryValue={80}
+                completionType="percentage"
+                style={{width:'400px', margin: "20px"}}
+              />
+            </UnitySection>
+            <UnitySection>
+              <div style={contentBox}>
+                <UnityCodeEditor
+                  label="JSON editor"
+                  mode="json"
+                  onChange={(value: string, error: string) => {
+                    this.setState({value, error})
+                  }}
+                  value={this.state.value}
+                  minLines={7}
+                  maxLines={19}
+                  validation={(val: string) => {
+                    try {
+                      if (val) JSON.parse(val)
+                    } catch (error) {
+                      return error.toString()
+                    }
+                    return ''
+                  }}
+                />
+              </div>
+            </UnitySection>
+            <UnitySection>
+              <UnityModal
+                top={<UnityButton centerIcon="unity:close" onClick={() => this.setState({showModal: false})}/>}
+                title="Modal title"
+                body={<UnityButton label="Unity" type="solid" onClick={() => console.log("click")}/>}
+                bottom='this is the bottom'
+                show={this.state.showModal}
+              />
             </UnitySection>
             <UnitySection>
               <UnitySplitPane
@@ -284,25 +285,21 @@ class App extends React.Component {
                 pane="This is the pane"
               />
             </UnitySection>
-
             <UnitySection>
               <UnitySection>
                 <div style={contentBox}>
                   <UnityTextInput label="Text Input"/>
                 </div>
               </UnitySection>
-
               <UnitySection>
                 <div style={contentBox}>
                   <h3>UnityButton and modal</h3>
-
                   <div>
                     <UnityButton label="Show modal" type="solid" onClick={() => this.setState({showModal: true})}/>
                   </div>
                 </div>
               </UnitySection>
             </UnitySection>
-
             <UnitySection>
               <UnitySection>
                 <UnityDropdown
@@ -326,7 +323,6 @@ class App extends React.Component {
                 <UnityNotification style={{margin: '10px'}} text='Notification text' icon='unity:share' subtext='More text'/>
               </UnitySection>
             </UnitySection>
-
             <UnitySection>
               <UnityToggleSwitch
                 value={true}
@@ -337,18 +333,17 @@ class App extends React.Component {
                 onChange={(on : boolean) => console.log(`Switch is ${on ? 'on' : 'off'}`)}
               />
             </UnitySection>
-
             <UnitySection>
               <UnitySection>
                 <UnityDropzone
                   accept={"application/json"}
                   onUpload={this.setFile}
-                ></UnityDropzone>
+                />
                 <UnityButton
                   onClick={this.clearFile}
                   label={"Clear File"}
                   disabled={!this.state.fileContent}
-                ></UnityButton>
+                />
               </UnitySection>
               <UnitySection>
                 <div>
@@ -364,12 +359,11 @@ class App extends React.Component {
                 </div>
               </UnitySection>
             </UnitySection>
-
             <UnitySection>
               <div style={contentBox}>
                 <h3>UnityTable</h3>
-
                 <UnityTable
+                  ref={this.tableRef}
                   data={[{name: 'first name', id: 0}]}
                   keyExtractor={(node: any) => node.id}
                   columns={[
@@ -380,6 +374,13 @@ class App extends React.Component {
                     }
                   ]}
                 />
+                {!!this.tableRef && !!this.tableRef.current && <UnityExportButton
+                  tableRef={this.tableRef.current.tableRef}
+                  type="solid"
+                  label="Export"
+                  rightIcon="unity:file_download"
+                  onExport={() => console.log(`Exported table data`)}
+                />}
               </div>
             </UnitySection>
           </div>
