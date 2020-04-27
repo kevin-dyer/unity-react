@@ -216,7 +216,6 @@ class App extends React.Component {
             items={navItems}
             collapsible={true}
           />
-
           <div className="main" style={mainStyle}>
             <UnitySection>
               <div style={contentBox}>
@@ -231,7 +230,7 @@ class App extends React.Component {
                 style={{width:'400px', margin: "20px", "--progress-color": "var(--secondary-brand-color)", "--progress-indeterminate-cycle-duration": "4s"}}
                 indeterminate
               />
-            <UnityProgress
+              <UnityProgress
                 label="Unity Progress"
                 remark="Controlled"
                 max={100}
@@ -263,15 +262,14 @@ class App extends React.Component {
                 />
               </div>
             </UnitySection>
-          </div>
-          <UnitySection>
-            <UnityModal
-              top={<UnityButton centerIcon="unity:close" onClick={() => this.setState({showModal: false})}/>}
-              title="Modal title"
-              body={<UnityButton label="Unity" type="solid" onClick={() => console.log("click")}/>}
-              bottom='this is the bottom'
-              show={this.state.showModal}
-            />
+            <UnitySection>
+              <UnityModal
+                top={<UnityButton centerIcon="unity:close" onClick={() => this.setState({showModal: false})}/>}
+                title="Modal title"
+                body={<UnityButton label="Unity" type="solid" onClick={() => console.log("click")}/>}
+                bottom='this is the bottom'
+                show={this.state.showModal}
+              />
             </UnitySection>
             <UnitySection>
               <UnitySplitPane
@@ -287,25 +285,21 @@ class App extends React.Component {
                 pane="This is the pane"
               />
             </UnitySection>
-
             <UnitySection>
               <UnitySection>
                 <div style={contentBox}>
                   <UnityTextInput label="Text Input"/>
                 </div>
               </UnitySection>
-
               <UnitySection>
                 <div style={contentBox}>
                   <h3>UnityButton and modal</h3>
-
                   <div>
                     <UnityButton label="Show modal" type="solid" onClick={() => this.setState({showModal: true})}/>
                   </div>
                 </div>
               </UnitySection>
             </UnitySection>
-
             <UnitySection>
               <UnitySection>
                 <UnityDropdown
@@ -329,7 +323,6 @@ class App extends React.Component {
                 <UnityNotification style={{margin: '10px'}} text='Notification text' icon='unity:share' subtext='More text'/>
               </UnitySection>
             </UnitySection>
-
             <UnitySection>
               <UnityToggleSwitch
                 value={true}
@@ -340,18 +333,17 @@ class App extends React.Component {
                 onChange={(on : boolean) => console.log(`Switch is ${on ? 'on' : 'off'}`)}
               />
             </UnitySection>
-
             <UnitySection>
               <UnitySection>
                 <UnityDropzone
                   accept={"application/json"}
                   onUpload={this.setFile}
-                ></UnityDropzone>
+                />
                 <UnityButton
                   onClick={this.clearFile}
                   label={"Clear File"}
                   disabled={!this.state.fileContent}
-                ></UnityButton>
+                />
               </UnitySection>
               <UnitySection>
                 <div>
@@ -367,7 +359,6 @@ class App extends React.Component {
                 </div>
               </UnitySection>
             </UnitySection>
-
             <UnitySection>
               <div style={contentBox}>
                 <h3>UnityTable</h3>
