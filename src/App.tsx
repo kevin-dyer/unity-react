@@ -17,6 +17,8 @@ import UnityProgress from './components/unity-progress-react/UnityProgress'
 import UnityDropzone from './components/unity-dropzone-react/UnityDropzone'
 import UnityNotification from './components/unity-notification-react/UnityNotification'
 
+import { devices } from './fakeData'
+
 const appStyle: CSSProperties = {
   display: 'flex',
   flexDirection: 'column',
@@ -178,7 +180,8 @@ class App extends React.Component {
     showModal: false,
     fileName: '',
     fileType: '',
-    fileContent: ''
+    fileContent: '',
+    selection: []
   }
 
   makeCenterContent() {
@@ -205,6 +208,8 @@ class App extends React.Component {
   }
 
   render() {
+    const { selection } = this.state
+    const { data, columns, childKeys } = devices
     return (
       <div className="App" style={appStyle}>
         <header className="App-header">
@@ -364,15 +369,13 @@ class App extends React.Component {
                 <h3>UnityTable</h3>
                 <UnityTable
                   ref={this.tableRef}
-                  data={[{name: 'first name', id: 0}]}
+                  data={data}
+                  columns={columns}
+                  childKeys={childKeys}
+                  selected={selection}
                   keyExtractor={(node: any) => node.id}
-                  columns={[
-                    {
-                      key: 'name',
-                      renderCustomContent: (cellValue: any) =>
-                        <div>Hello {cellValue}!</div>
-                    }
-                  ]}
+                  selectable
+                  onSelectionChange={(selection: []) => console.log(`new selection:`, selection)}
                 />
                 {!!this.tableRef && !!this.tableRef.current && <UnityExportButton
                   tableRef={this.tableRef.current.tableRef}
@@ -380,7 +383,44 @@ class App extends React.Component {
                   label="Export"
                   rightIcon="unity:file_download"
                   onExport={() => console.log(`Exported table data`)}
-                />}
+                  />}
+                <UnityDropdown
+                  label='Change Selection'
+                  inputType='multi-select'
+                  placeholder='Pick some'
+                  options={[
+                    {
+                      label: 'Africa',
+                      id: 'africa'
+                    },
+                    {
+                      label: 'Asia',
+                      id: 'asia'
+                    },
+                    {
+                      label: 'Australia',
+                      id: 'australia'
+                    },
+                    {
+                      label: 'Europe',
+                      id: 'europe'
+                    },
+                  ]}
+                  onValueChange={(selectedElements: string[], selected: boolean) => {
+                    const newSelection: string[] = [...this.state.selection]
+                    selectedElements.forEach((element: string) => {
+                      if (selected) {
+                        newSelection.push(element)
+                        return
+                      }
+                      if (newSelection.includes(element)) {
+                        newSelection.splice(newSelection.indexOf(element), 1)
+                      }
+                    })
+                    this.setState({ selection: newSelection })
+                  }}
+                  showTags
+                />
               </div>
             </UnitySection>
           </div>
