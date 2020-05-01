@@ -18,17 +18,20 @@ export default class UnityExportButton extends Component<ExportButtonProps> {
     const {
       tableRef,
       onExport,
+      style
     } : ExportButtonProps = this.props
 
     const {
       tableRef: oldTableRef,
       onExport: oldOnExport,
+      style: oldStyle,
     } : ExportButtonProps = oldProps
 
     const exportButton = this.exportButtonRef.current
     if (!!exportButton) {
       if (oldTableRef !== tableRef) exportButton.tableRef = tableRef
       if (oldOnExport !== onExport) exportButton.onExport = onExport
+      if (oldStyle !== style) exportButton.style = style
     }
   }
 
@@ -72,3 +75,4 @@ const styles : ExportButtonStyles = {
     position: 'relative'
   }
 }
+

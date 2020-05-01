@@ -24,8 +24,20 @@ declare module '@bit/smartworks.unity.unity-table-export' {
     loading?: Boolean,
     small?: Boolean,
     // click?: Function,
+    style?: unityExportButtonStyles
   }
+
   export interface ExportButtonStyles {
     container: React.CSSProperties
   }
+}
+
+export type unityExportButtonStyles = React.CSSProperties & {
+  '--button-color'?: string,
+  '--gradient-background'?: string,
+  '--font-color'?: string,
+  '--font-size'?: string,
+  '--font-weight'?: string,
+  '--iron-icon-width'?: string,
+  '--iron-icon-height'?: string,
 }
