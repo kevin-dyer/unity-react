@@ -377,50 +377,56 @@ class App extends React.Component {
                   selectable
                   onSelectionChange={(selection: []) => console.log(`new selection:`, selection)}
                 />
-                {!!this.tableRef && !!this.tableRef.current && <UnityExportButton
-                  tableRef={this.tableRef.current.tableRef}
-                  type="solid"
-                  label="Export"
-                  rightIcon="unity:file_download"
-                  onExport={() => console.log(`Exported table data`)}
-                  />}
-                <UnityDropdown
-                  label='Change Selection'
-                  inputType='multi-select'
-                  placeholder='Pick some'
-                  options={[
-                    {
-                      label: 'Africa',
-                      id: 'africa'
-                    },
-                    {
-                      label: 'Asia',
-                      id: 'asia'
-                    },
-                    {
-                      label: 'Australia',
-                      id: 'australia'
-                    },
-                    {
-                      label: 'Europe',
-                      id: 'europe'
-                    },
-                  ]}
-                  onValueChange={(selectedElements: string[], selected: boolean) => {
-                    const newSelection: string[] = [...this.state.selection]
-                    selectedElements.forEach((element: string) => {
-                      if (selected) {
-                        newSelection.push(element)
-                        return
-                      }
-                      if (newSelection.includes(element)) {
-                        newSelection.splice(newSelection.indexOf(element), 1)
-                      }
-                    })
-                    this.setState({ selection: newSelection })
+                <UnitySection
+                  style={{
+                    marginTop: 20
                   }}
-                  showTags
-                />
+                >
+                  <UnityDropdown
+                    label='Change Selection'
+                    inputType='multi-select'
+                    placeholder='Pick some'
+                    options={[
+                      {
+                        label: 'Africa',
+                        id: 'africa'
+                      },
+                      {
+                        label: 'Asia',
+                        id: 'asia'
+                      },
+                      {
+                        label: 'Australia',
+                        id: 'australia'
+                      },
+                      {
+                        label: 'Europe',
+                        id: 'europe'
+                      },
+                    ]}
+                    onValueChange={(selectedElements: string[], selected: boolean) => {
+                      const newSelection: string[] = [...this.state.selection]
+                      selectedElements.forEach((element: string) => {
+                        if (selected) {
+                          newSelection.push(element)
+                          return
+                        }
+                        if (newSelection.includes(element)) {
+                          newSelection.splice(newSelection.indexOf(element), 1)
+                        }
+                      })
+                      this.setState({ selection: newSelection })
+                    }}
+                    showTags
+                  />
+                  {!!this.tableRef && !!this.tableRef.current && <UnityExportButton
+                    tableRef={this.tableRef.current.tableRef}
+                    type="solid"
+                    label="Export"
+                    rightIcon="unity:file_download"
+                    onExport={() => console.log(`Exported table data`)}
+                  />}
+                </UnitySection>
               </div>
             </UnitySection>
           </div>
