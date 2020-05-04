@@ -249,7 +249,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-split-pane-react@0.2.6": {
+    "smartworks.unity-react/unity-split-pane-react@0.2.8": {
         "files": [
             {
                 "name": "UnitySplitPane.tsx",

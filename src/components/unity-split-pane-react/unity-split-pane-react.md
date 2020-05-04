@@ -2,6 +2,12 @@
 
 ## Changelog:
 
+### v0.2.8
+- added onCollapsedChange to props interface and fixed typo in reference
+
+### v0.2.7
+- added functions to ref to fix show / hide behavior (broken in 0.2.6)
+
 ### v0.2.6
 - updated ref to add support for Edge
 
