@@ -425,6 +425,7 @@ class App extends React.Component {
                     label="Export"
                     rightIcon="unity:file_download"
                     onExport={() => console.log(`Exported table data`)}
+                    style={{'border': '2px solid black'}}
                   />}
                 </UnitySection>
               </div>

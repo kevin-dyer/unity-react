@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import '@bit/smartworks.unity.unity-table-export'
-import { ExportButtonProps, ExportButtonStyles } from '@bit/smartworks.unity.unity-table-export'
+import { ExportButtonProps } from '@bit/smartworks.unity.unity-table-export'
 
 export default class UnityExportButton extends Component<ExportButtonProps> {
 
@@ -17,21 +17,18 @@ export default class UnityExportButton extends Component<ExportButtonProps> {
   updateProperties(oldProps={}) {
     const {
       tableRef,
-      onExport,
-      style
+      onExport
     } : ExportButtonProps = this.props
 
     const {
       tableRef: oldTableRef,
       onExport: oldOnExport,
-      style: oldStyle,
     } : ExportButtonProps = oldProps
 
     const exportButton = this.exportButtonRef.current
     if (!!exportButton) {
       if (oldTableRef !== tableRef) exportButton.tableRef = tableRef
       if (oldOnExport !== onExport) exportButton.onExport = onExport
-      if (oldStyle !== style) exportButton.style = style
     }
   }
 
@@ -52,27 +49,20 @@ export default class UnityExportButton extends Component<ExportButtonProps> {
     if (!!loading) buttonProps.loading = loading
     if (!!small) buttonProps.small = small
 
-    return <div style={styles.container}>
-        <unity-table-export
-          ref={this.exportButtonRef}
-        >
-          <unity-button
-            label={label}
-            leftIcon={leftIcon}
-            rightIcon={rightIcon}
-            centerIcon={centerIcon}
-            type={type}
-            {...buttonProps}
-          ></unity-button>
-        </unity-table-export>
-    </div>
-  }
-}
-
-const styles : ExportButtonStyles = {
-  container: {
-    flex: 1,
-    position: 'relative'
+    return (
+      <unity-table-export
+        ref={this.exportButtonRef}
+      >
+        <unity-button
+          label={label}
+          leftIcon={leftIcon}
+          rightIcon={rightIcon}
+          centerIcon={centerIcon}
+          type={type}
+          {...buttonProps}
+        ></unity-button>
+      </unity-table-export>
+    )
   }
 }
 
