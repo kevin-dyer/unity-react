@@ -4,6 +4,28 @@ import '@bit/smartworks.unity.unity-button'
 import {buttonPropsType} from '@bit/smartworks.unity.unity-button'
 
 export default class UnityButton extends Component<buttonPropsType> {
+
+  private buttonRef = React.createRef<buttonPropsType>()
+
+  componentDidMount = () => {
+    this.updateProperties()
+  }
+
+  componentDidUpdate = () => {
+    this.updateProperties()
+  }
+
+  updateProperties = () => {
+    const { buttonRef, props } = this
+    const unityButton = buttonRef.current
+    const { style, ...other} = props
+    if (unityButton) {
+      for (let key of Object.keys(other)) {
+        if (key) unityButton[key] = other[key]
+      }
+    }
+  }
+
   render() {
     const {onClick, styles, ...otherProps} = this.props
     const buttonProps : buttonPropsType = {
@@ -15,6 +37,7 @@ export default class UnityButton extends Component<buttonPropsType> {
     }
     return (
       <unity-button
+        ref={this.buttonRef}
         {...buttonProps}
       ></unity-button>
     )
