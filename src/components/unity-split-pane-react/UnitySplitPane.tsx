@@ -16,15 +16,19 @@ export default class UnitySplitPane extends Component<SplitPaneProps> {
   updateProperties = () => {
     const { props, splitPaneRef } = this
     const unitySplitPane = splitPaneRef.current
-    const { header, main, pane, footer, onClose, onResize, onCollapseChange } = props
+    const { header, main, pane, footer, onClose, onResize, onCollapseChange, show, closeButton, collapseButton, collapsed } = props
     if (unitySplitPane) {
       unitySplitPane.onClose = onClose || (() => {})
       unitySplitPane.onResize = onResize || (() => {})
-      unitySplitPane.onCollaseChange = onCollapseChange || (() => {})
+      unitySplitPane.onCollapseChange = onCollapseChange || (() => {})
       unitySplitPane.header = header
       unitySplitPane.main = main
       unitySplitPane.pane = pane
       unitySplitPane.footer = footer
+      if (show) unitySplitPane.show = show
+      if (closeButton) unitySplitPane.closeButton = closeButton
+      if (collapseButton) unitySplitPane.collapseButton = collapseButton
+      if (collapsed) unitySplitPane.collapsed = collapsed
     }
   }
 
@@ -83,6 +87,7 @@ export interface SplitPaneProps extends React.HTMLAttributes<HTMLElement>{
   collapsed?: boolean
   paneWidth?: number
   onResize?: Function
+  onCollapseChange?: Function
   style?: splitPaneStyleTypes
 }
 
