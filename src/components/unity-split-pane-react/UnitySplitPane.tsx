@@ -16,15 +16,11 @@ export default class UnitySplitPane extends Component<SplitPaneProps> {
   updateProperties = () => {
     const { props, splitPaneRef } = this
     const unitySplitPane = splitPaneRef.current
-    const { header, main, pane, footer, onClose, onResize, onCollapseChange } = props
+    const { style, ...other} = props
     if (unitySplitPane) {
-      unitySplitPane.onClose = onClose || (() => {})
-      unitySplitPane.onResize = onResize || (() => {})
-      unitySplitPane.onCollaseChange = onCollapseChange || (() => {})
-      unitySplitPane.header = header
-      unitySplitPane.main = main
-      unitySplitPane.pane = pane
-      unitySplitPane.footer = footer
+      for (let key of Object.keys(other)) {
+        if (other[key]) unitySplitPane[key] = other[key]
+      }
     }
   }
 
