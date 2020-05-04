@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v0.1.10
+- Added ref for support for Edge
+
 ### v0.1.4
 - Add styles prop to pass styles down to unity-button
 
