@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v0.1.11
+- Do not pass children to ref (bug from v0.1.10)
+
 ### v0.1.10
 - Added ref for support for Edge
 

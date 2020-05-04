@@ -18,7 +18,7 @@ export default class UnityButton extends Component<buttonPropsType> {
   updateProperties = () => {
     const { buttonRef, props } = this
     const unityButton = buttonRef.current
-    const { style, ...other} = props
+    const { style, children, ...other} = props
     if (unityButton) {
       for (let key of Object.keys(other)) {
         if (key) unityButton[key] = other[key]
