@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v0.3.10
+- added selected attribute
+
 ### v0.3.1
 - remove leftover log
 
