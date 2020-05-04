@@ -294,7 +294,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-table-react@0.3.9": {
+    "smartworks.unity-react/unity-table-react@0.3.10": {
         "files": [
             {
                 "name": "UnityTable.tsx",
