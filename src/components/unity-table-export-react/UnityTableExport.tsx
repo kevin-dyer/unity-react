@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import '@bit/smartworks.unity.unity-table-export'
 import { ExportProps } from '@bit/smartworks.unity.unity-table-export'
 
-export default class UnityExport extends Component<ExportProps> {
+export default class UnityTableExport extends Component<ExportProps> {
 
   private exportRef = React.createRef<ExportProps>()
 
