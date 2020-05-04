@@ -421,11 +421,19 @@ class App extends React.Component {
                   />
                   {!!this.tableRef && !!this.tableRef.current && <UnityExport
                     tableRef={this.tableRef.current.tableRef}
-                    type="solid"
-                    label="Export"
-                    rightIcon="unity:file_download"
+                    beforeExport={(data: object) => {
+                      console.log(`processing data: `, data);
+                      return data
+                    }}
                     onExport={() => console.log(`Exported table data`)}
-                  />}
+                  >
+                    <UnityButton
+                      type="solid"
+                      label="Export"
+                      rightIcon="unity:file_download"  
+                      onClick={() => console.log(`UnityButton child on UnityExport received click event`)}
+                    />
+                  </UnityExport>}
                 </UnitySection>
               </div>
             </UnitySection>

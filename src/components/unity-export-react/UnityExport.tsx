@@ -17,50 +17,34 @@ export default class UnityExport extends Component<ExportProps> {
   updateProperties(oldProps={}) {
     const {
       tableRef,
+      beforeExport,
       onExport
     } : ExportProps = this.props
 
     const {
       tableRef: oldTableRef,
+      beforeExport: oldBeforeExport,
       onExport: oldOnExport,
     } : ExportProps = oldProps
 
     const ref = this.exportRef.current
     if (!!ref) {
       if (oldTableRef !== tableRef) ref.tableRef = tableRef
+      if (oldBeforeExport !== beforeExport) ref.beforeExport = beforeExport
       if (oldOnExport !== onExport) ref.onExport = onExport
     }
   }
 
   render() {
     const {
-      label,
-      leftIcon,
-      rightIcon,
-      centerIcon,
-      type,
-      danger,
-      loading,
-      small
+      children
     } = this.props
-
-    const buttonProps : ExportProps = {}
-    if (!!danger) buttonProps.danger = danger
-    if (!!loading) buttonProps.loading = loading
-    if (!!small) buttonProps.small = small
 
     return (
       <unity-table-export
         ref={this.exportRef}
       >
-        <unity-button
-          label={label}
-          leftIcon={leftIcon}
-          rightIcon={rightIcon}
-          centerIcon={centerIcon}
-          type={type}
-          {...buttonProps}
-        ></unity-button>
+        {children}
       </unity-table-export>
     )
   }
