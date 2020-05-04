@@ -10,7 +10,7 @@ interface RefObject {
 }
 
 declare module '@bit/smartworks.unity.unity-table-export' {
-  export interface ExportButtonProps extends React.HTMLAttributes<HTMLElement> {
+  export interface ExportProps extends React.HTMLAttributes<HTMLElement> {
     // unity-table-export props
     tableRef?: RefObject,
     onExport?: Function,
@@ -24,10 +24,10 @@ declare module '@bit/smartworks.unity.unity-table-export' {
     loading?: Boolean,
     small?: Boolean,
     // click?: Function,
-    style?: ExportButtonStyles
+    style?: ExportStyles
   }
 
-  export interface ExportButtonStyles extends React.CSSProperties {
+  export interface ExportStyles extends React.CSSProperties {
     '--button-color'?: string | number,
     '--gradient-background'?: string | number,
     '--font-color'?: string | number,

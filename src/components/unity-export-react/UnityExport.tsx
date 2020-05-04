@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
 import '@bit/smartworks.unity.unity-table-export'
-import { ExportButtonProps } from '@bit/smartworks.unity.unity-table-export'
+import { ExportProps } from '@bit/smartworks.unity.unity-table-export'
 
-export default class UnityExportButton extends Component<ExportButtonProps> {
+export default class UnityExport extends Component<ExportProps> {
 
-  private exportButtonRef = React.createRef<ExportButtonProps>()
+  private exportRef = React.createRef<ExportProps>()
 
   componentDidMount = () => {
     this.updateProperties()
   }
 
-  componentDidUpdate(oldProps: ExportButtonProps) {
+  componentDidUpdate(oldProps: ExportProps) {
     this.updateProperties(oldProps)
   }
 
@@ -18,17 +18,17 @@ export default class UnityExportButton extends Component<ExportButtonProps> {
     const {
       tableRef,
       onExport
-    } : ExportButtonProps = this.props
+    } : ExportProps = this.props
 
     const {
       tableRef: oldTableRef,
       onExport: oldOnExport,
-    } : ExportButtonProps = oldProps
+    } : ExportProps = oldProps
 
-    const exportButton = this.exportButtonRef.current
-    if (!!exportButton) {
-      if (oldTableRef !== tableRef) exportButton.tableRef = tableRef
-      if (oldOnExport !== onExport) exportButton.onExport = onExport
+    const ref = this.exportRef.current
+    if (!!ref) {
+      if (oldTableRef !== tableRef) ref.tableRef = tableRef
+      if (oldOnExport !== onExport) ref.onExport = onExport
     }
   }
 
@@ -44,14 +44,14 @@ export default class UnityExportButton extends Component<ExportButtonProps> {
       small
     } = this.props
 
-    const buttonProps : ExportButtonProps = {}
+    const buttonProps : ExportProps = {}
     if (!!danger) buttonProps.danger = danger
     if (!!loading) buttonProps.loading = loading
     if (!!small) buttonProps.small = small
 
     return (
       <unity-table-export
-        ref={this.exportButtonRef}
+        ref={this.exportRef}
       >
         <unity-button
           label={label}

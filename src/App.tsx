@@ -4,7 +4,7 @@ import UnityButton from './components/unity-button-react/UnityButton'
 import UnityCodeEditor from './components/unity-code-editor-react/UnityCodeEditor'
 import UnityTextInput from './components/unity-text-input-react/UnityTextInput'
 import UnityTable from './components/unity-table-react/UnityTable'
-import UnityExportButton from './components/unity-export-button-react/UnityExportButton'
+import UnityExport from './components/unity-export-react/UnityExport'
 import UnityTypography, { headerStyleTypes } from './components/unity-typography-react/UnityTypography'
 import UnityPageHeader from './components/unity-page-header-react/UnityPageHeader'
 import UnitySection from './components/unity-section-react/UnitySection'
@@ -419,13 +419,12 @@ class App extends React.Component {
                     }}
                     showTags
                   />
-                  {!!this.tableRef && !!this.tableRef.current && <UnityExportButton
+                  {!!this.tableRef && !!this.tableRef.current && <UnityExport
                     tableRef={this.tableRef.current.tableRef}
                     type="solid"
                     label="Export"
                     rightIcon="unity:file_download"
                     onExport={() => console.log(`Exported table data`)}
-                    style={{'border': '2px solid black'}}
                   />}
                 </UnitySection>
               </div>
