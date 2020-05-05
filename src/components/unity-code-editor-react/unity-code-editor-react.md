@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v0.1.14
+- add handler to control updates to avoid code unfolding as user types
+
 ### v0.1.12
 - update to ace-builds v1.4.11
 
