@@ -67,6 +67,32 @@ class UnityCodeEditor extends React.Component<CodeEditorProps, CodeEditorState> 
     )
   }
 
+  // When the user changes a value in the code editor, it fires two updates:
+  // the first is the state.error change
+  // the second has props change
+  // For whatever reason, the first update causes all folded code to unfold.
+  // This stops that first update from going through. However, this also stops
+  // any updates where the state.error changes and value doesn't. If we this
+  // becomes a problem, we can revisit.
+  shouldComponentUpdate(nextProps: CodeEditorProps, nextState: CodeEditorState) {
+    const {
+      value: nextValue
+    } = nextProps
+    const {
+      error: nextError
+    } = nextState
+    const {
+      value
+    } = this.props
+    const {
+      error: error
+    } = this.state
+
+    if (nextError !== error && nextValue === value) return false
+
+    return true
+  }
+
   render() {
     const {
       value,
