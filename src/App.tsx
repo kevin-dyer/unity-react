@@ -4,7 +4,7 @@ import UnityButton from './components/unity-button-react/UnityButton'
 import UnityCodeEditor from './components/unity-code-editor-react/UnityCodeEditor'
 import UnityTextInput from './components/unity-text-input-react/UnityTextInput'
 import UnityTable from './components/unity-table-react/UnityTable'
-import UnityExportButton from './components/unity-export-button-react/UnityExportButton'
+import UnityTableExport from './components/unity-table-export-react/UnityTableExport'
 import UnityTypography, { headerStyleTypes } from './components/unity-typography-react/UnityTypography'
 import UnityPageHeader from './components/unity-page-header-react/UnityPageHeader'
 import UnitySection from './components/unity-section-react/UnitySection'
@@ -16,6 +16,8 @@ import UnityModal from './components/unity-modal-react/UnityModal'
 import UnityProgress from './components/unity-progress-react/UnityProgress'
 import UnityDropzone from './components/unity-dropzone-react/UnityDropzone'
 import UnityNotification from './components/unity-notification-react/UnityNotification'
+
+import { devices } from './fakeData'
 
 const appStyle: CSSProperties = {
   display: 'flex',
@@ -178,7 +180,8 @@ class App extends React.Component {
     showModal: false,
     fileName: '',
     fileType: '',
-    fileContent: ''
+    fileContent: '',
+    selection: []
   }
 
   makeCenterContent() {
@@ -205,6 +208,8 @@ class App extends React.Component {
   }
 
   render() {
+    const { selection } = this.state
+    const { data, columns, childKeys } = devices
     return (
       <div className="App" style={appStyle}>
         <header className="App-header">
@@ -364,23 +369,72 @@ class App extends React.Component {
                 <h3>UnityTable</h3>
                 <UnityTable
                   ref={this.tableRef}
-                  data={[{name: 'first name', id: 0}]}
+                  data={data}
+                  columns={columns}
+                  childKeys={childKeys}
+                  selected={selection}
                   keyExtractor={(node: any) => node.id}
-                  columns={[
-                    {
-                      key: 'name',
-                      renderCustomContent: (cellValue: any) =>
-                        <div>Hello {cellValue}!</div>
-                    }
-                  ]}
+                  selectable
+                  onSelectionChange={(selection: []) => console.log(`new selection:`, selection)}
                 />
-                {!!this.tableRef && !!this.tableRef.current && <UnityExportButton
-                  tableRef={this.tableRef.current.tableRef}
-                  type="solid"
-                  label="Export"
-                  rightIcon="unity:file_download"
-                  onExport={() => console.log(`Exported table data`)}
-                />}
+                <UnitySection
+                  style={{
+                    marginTop: 20
+                  }}
+                >
+                  <UnityDropdown
+                    label='Change Selection'
+                    inputType='multi-select'
+                    placeholder='Pick some'
+                    options={[
+                      {
+                        label: 'Africa',
+                        id: 'africa'
+                      },
+                      {
+                        label: 'Asia',
+                        id: 'asia'
+                      },
+                      {
+                        label: 'Australia',
+                        id: 'australia'
+                      },
+                      {
+                        label: 'Europe',
+                        id: 'europe'
+                      },
+                    ]}
+                    onValueChange={(selectedElements: string[], selected: boolean) => {
+                      const newSelection: string[] = [...this.state.selection]
+                      selectedElements.forEach((element: string) => {
+                        if (selected) {
+                          newSelection.push(element)
+                          return
+                        }
+                        if (newSelection.includes(element)) {
+                          newSelection.splice(newSelection.indexOf(element), 1)
+                        }
+                      })
+                      this.setState({ selection: newSelection })
+                    }}
+                    showTags
+                  />
+                  {!!this.tableRef && !!this.tableRef.current && <UnityTableExport
+                    tableRef={this.tableRef.current.tableRef}
+                    beforeExport={(data: object) => {
+                      console.log(`processing data: `, data);
+                      return data
+                    }}
+                    onExport={() => console.log(`Exported table data`)}
+                  >
+                    <UnityButton
+                      type="solid"
+                      label="Export"
+                      rightIcon="unity:file_download"  
+                      onClick={() => console.log(`UnityButton child on UnityTableExport received click event`)}
+                    />
+                  </UnityTableExport>}
+                </UnitySection>
               </div>
             </UnitySection>
           </div>

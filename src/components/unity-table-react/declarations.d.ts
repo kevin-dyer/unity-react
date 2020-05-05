@@ -9,6 +9,7 @@ declare module '@bit/smartworks.unity.unity-table' {
   export interface TableProps {
     data?: Object[],
     columns?: TableColumn[],
+    selected?: string[];
     childKeys?: string[],
     keyExtractor?: Function,
     onClickRow?: Function,

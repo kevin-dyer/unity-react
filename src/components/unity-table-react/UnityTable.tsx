@@ -24,6 +24,7 @@ export default class UnityTable extends Component<TableProps> {
     const {
       data,
       columns,
+      selected,
       childKeys,
       keyExtractor,
       onClickRow,
@@ -36,6 +37,7 @@ export default class UnityTable extends Component<TableProps> {
     const {
       data: oldData,
       columns: oldColumns,
+      selected: oldSelected,
       childKeys: oldChildKeys,
       keyExtractor: oldKeyExtractor,
       onClickRow: oldOnClickRow,
@@ -53,6 +55,9 @@ export default class UnityTable extends Component<TableProps> {
       }
       if (oldColumns !== columns) {
         unityTable.columns = columns
+      }
+      if (oldSelected !== selected) {
+        unityTable.selected = selected
       }
       if (oldData !== data) {
         unityTable.data = data
