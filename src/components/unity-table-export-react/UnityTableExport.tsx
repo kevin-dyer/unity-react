@@ -37,12 +37,14 @@ export default class UnityTableExport extends Component<ExportProps> {
 
   render() {
     const {
-      children
+      children,
+      ...otherProps
     } = this.props
 
     return (
       <unity-table-export
         ref={this.exportRef}
+        {...otherProps}
       >
         {children}
       </unity-table-export>
