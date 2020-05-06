@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v0.3.11
+- updated to unity-table 0.4.20 (fixes column filter issues on Edge)
+
 ### v0.3.10
 - added selected attribute
 
