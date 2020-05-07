@@ -426,6 +426,11 @@ class App extends React.Component {
                       return data
                     }}
                     onExport={() => console.log(`Exported table data`)}
+                    style={{
+                      position: 'relative',
+                      top: 12,
+                      marginLeft: 40
+                    }}
                   >
                     <UnityButton
                       type="solid"
