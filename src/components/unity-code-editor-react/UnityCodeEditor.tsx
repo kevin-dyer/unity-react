@@ -85,7 +85,7 @@ class UnityCodeEditor extends React.Component<CodeEditorProps, CodeEditorState> 
       value
     } = this.props
     const {
-      error: error
+      error
     } = this.state
 
     if (nextError !== error && nextValue === value) return false
