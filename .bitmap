@@ -70,102 +70,102 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-core-react@0.1.0": {
+    "smartworks.unity-react/unity-core-react@0.1.1": {
         "files": [
+            {
+                "relativePath": "src/components/unity-core-react/UnityButton.tsx",
+                "test": false,
+                "name": "UnityButton.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-core-react/UnityCodeEditor.tsx",
+                "test": false,
+                "name": "UnityCodeEditor.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-core-react/UnityColumnEditor.tsx",
+                "test": false,
+                "name": "UnityColumnEditor.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-core-react/UnityDropdown.tsx",
+                "test": false,
+                "name": "UnityDropdown.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-core-react/UnityDropzone.tsx",
+                "test": false,
+                "name": "UnityDropzone.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-core-react/UnityGlobalNav.tsx",
+                "test": false,
+                "name": "UnityGlobalNav.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-core-react/UnityModal.tsx",
+                "test": false,
+                "name": "UnityModal.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-core-react/UnityNotification.tsx",
+                "test": false,
+                "name": "UnityNotification.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-core-react/UnityPageHeader.tsx",
+                "test": false,
+                "name": "UnityPageHeader.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-core-react/UnityProgress.tsx",
+                "test": false,
+                "name": "UnityProgress.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-core-react/UnitySection.tsx",
+                "test": false,
+                "name": "UnitySection.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-core-react/UnitySplitPane.tsx",
+                "test": false,
+                "name": "UnitySplitPane.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-core-react/UnityTable.tsx",
+                "test": false,
+                "name": "UnityTable.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-core-react/UnityTableExport.tsx",
+                "test": false,
+                "name": "UnityTableExport.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-core-react/UnityTextInput.tsx",
+                "test": false,
+                "name": "UnityTextInput.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-core-react/UnityToggleSwitch.tsx",
+                "test": false,
+                "name": "UnityToggleSwitch.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-core-react/UnityTypography.tsx",
+                "test": false,
+                "name": "UnityTypography.tsx"
+            },
             {
                 "relativePath": "src/components/unity-core-react/index.tsx",
                 "test": false,
                 "name": "index.tsx"
             },
             {
-                "relativePath": "src/components/unity-core-react/unity-button-react.tsx",
-                "test": false,
-                "name": "unity-button-react.tsx"
-            },
-            {
-                "relativePath": "src/components/unity-core-react/unity-code-editor-react.tsx",
-                "test": false,
-                "name": "unity-code-editor-react.tsx"
-            },
-            {
-                "relativePath": "src/components/unity-core-react/unity-column-editor-react.tsx",
-                "test": false,
-                "name": "unity-column-editor-react.tsx"
-            },
-            {
                 "relativePath": "src/components/unity-core-react/unity-core-react.md",
                 "test": false,
                 "name": "unity-core-react.md"
-            },
-            {
-                "relativePath": "src/components/unity-core-react/unity-dropdown.react.tsx",
-                "test": false,
-                "name": "unity-dropdown.react.tsx"
-            },
-            {
-                "relativePath": "src/components/unity-core-react/unity-dropzone-react.tsx",
-                "test": false,
-                "name": "unity-dropzone-react.tsx"
-            },
-            {
-                "relativePath": "src/components/unity-core-react/unity-global-nav-react.tsx",
-                "test": false,
-                "name": "unity-global-nav-react.tsx"
-            },
-            {
-                "relativePath": "src/components/unity-core-react/unity-modal-react.tsx",
-                "test": false,
-                "name": "unity-modal-react.tsx"
-            },
-            {
-                "relativePath": "src/components/unity-core-react/unity-notification-react.tsx",
-                "test": false,
-                "name": "unity-notification-react.tsx"
-            },
-            {
-                "relativePath": "src/components/unity-core-react/unity-page-header-react.tsx",
-                "test": false,
-                "name": "unity-page-header-react.tsx"
-            },
-            {
-                "relativePath": "src/components/unity-core-react/unity-progress-react.tsx",
-                "test": false,
-                "name": "unity-progress-react.tsx"
-            },
-            {
-                "relativePath": "src/components/unity-core-react/unity-section-react.tsx",
-                "test": false,
-                "name": "unity-section-react.tsx"
-            },
-            {
-                "relativePath": "src/components/unity-core-react/unity-split-pane-react.tsx",
-                "test": false,
-                "name": "unity-split-pane-react.tsx"
-            },
-            {
-                "relativePath": "src/components/unity-core-react/unity-table-export-react.tsx",
-                "test": false,
-                "name": "unity-table-export-react.tsx"
-            },
-            {
-                "relativePath": "src/components/unity-core-react/unity-table-react.tsx",
-                "test": false,
-                "name": "unity-table-react.tsx"
-            },
-            {
-                "relativePath": "src/components/unity-core-react/unity-text-input-react.tsx",
-                "test": false,
-                "name": "unity-text-input-react.tsx"
-            },
-            {
-                "relativePath": "src/components/unity-core-react/unity-toggle-switch-react.tsx",
-                "test": false,
-                "name": "unity-toggle-switch-react.tsx"
-            },
-            {
-                "relativePath": "src/components/unity-core-react/unity-typography-react.tsx",
-                "test": false,
-                "name": "unity-typography-react.tsx"
             }
         ],
         "mainFile": "src/components/unity-core-react/index.tsx",
