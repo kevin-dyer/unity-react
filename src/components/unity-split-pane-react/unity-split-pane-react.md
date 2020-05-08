@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v0.3.0
+- Moved all @bit depedencies to peerDependencies
+
 ### v0.2.8
 - added onCollapsedChange to props interface and fixed typo in reference
 

@@ -11,6 +11,9 @@ import {UnityTypography, colorTypes, sizeTypes, headerStyleTypes} from '@bit/sma
 
 ## Changelog:
 
+### v0.2.0
+- updated @bit dependencies
+
 ### v0.1.2
 - expose all components and their declarations at the top level.
 Ex. Import component and its types:

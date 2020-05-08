@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v0.2.0
+- Moved all @bit depedencies to peerDependencies
+
 ### v0.1.9
 - Updated unity-dropdown to v0.1.27 (fixes some Edge issues)
 
