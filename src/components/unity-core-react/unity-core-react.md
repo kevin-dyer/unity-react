@@ -5,11 +5,8 @@
 
 ## Changelog:
 
-### v1.0.1
-- Fixed wrong version of peerDependencies in unity-global-nav-base and unity-table
-
-### v1.0.0
-- Started using updated components with peer dependencies
+### v0.1.1
+- Renamed files
 
 ### v0.1.0
 - Mark as first release
