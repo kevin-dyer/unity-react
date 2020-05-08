@@ -70,6 +70,109 @@
         "origin": "AUTHORED",
         "exported": true
     },
+    "smartworks.unity-react/unity-core-react@0.1.0": {
+        "files": [
+            {
+                "relativePath": "src/components/unity-core-react/index.tsx",
+                "test": false,
+                "name": "index.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-core-react/unity-button-react.tsx",
+                "test": false,
+                "name": "unity-button-react.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-core-react/unity-code-editor-react.tsx",
+                "test": false,
+                "name": "unity-code-editor-react.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-core-react/unity-column-editor-react.tsx",
+                "test": false,
+                "name": "unity-column-editor-react.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-core-react/unity-core-react.md",
+                "test": false,
+                "name": "unity-core-react.md"
+            },
+            {
+                "relativePath": "src/components/unity-core-react/unity-dropdown.react.tsx",
+                "test": false,
+                "name": "unity-dropdown.react.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-core-react/unity-dropzone-react.tsx",
+                "test": false,
+                "name": "unity-dropzone-react.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-core-react/unity-global-nav-react.tsx",
+                "test": false,
+                "name": "unity-global-nav-react.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-core-react/unity-modal-react.tsx",
+                "test": false,
+                "name": "unity-modal-react.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-core-react/unity-notification-react.tsx",
+                "test": false,
+                "name": "unity-notification-react.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-core-react/unity-page-header-react.tsx",
+                "test": false,
+                "name": "unity-page-header-react.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-core-react/unity-progress-react.tsx",
+                "test": false,
+                "name": "unity-progress-react.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-core-react/unity-section-react.tsx",
+                "test": false,
+                "name": "unity-section-react.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-core-react/unity-split-pane-react.tsx",
+                "test": false,
+                "name": "unity-split-pane-react.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-core-react/unity-table-export-react.tsx",
+                "test": false,
+                "name": "unity-table-export-react.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-core-react/unity-table-react.tsx",
+                "test": false,
+                "name": "unity-table-react.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-core-react/unity-text-input-react.tsx",
+                "test": false,
+                "name": "unity-text-input-react.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-core-react/unity-toggle-switch-react.tsx",
+                "test": false,
+                "name": "unity-toggle-switch-react.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-core-react/unity-typography-react.tsx",
+                "test": false,
+                "name": "unity-typography-react.tsx"
+            }
+        ],
+        "mainFile": "src/components/unity-core-react/index.tsx",
+        "trackDir": "src/components/unity-core-react",
+        "origin": "AUTHORED",
+        "exported": true
+    },
     "smartworks.unity-react/unity-dropdown-react@0.1.10": {
         "files": [
             {
