@@ -1,23 +1,77 @@
 import React, { CSSProperties } from 'react';
 import './App.css';
-import { UnityButton } from '@bit/smartworks.unity-react.unity-core-react/UnityButton'
-import { UnityCodeEditor } from '@bit/smartworks.unity-react.unity-core-react/UnityCodeEditor'
-import { UnityTextInput } from '@bit/smartworks.unity-react.unity-core-react/UnityTextInput'
-import { UnityTable } from '@bit/smartworks.unity-react.unity-core-react/UnityTable'
-import { UnityTableExport } from '@bit/smartworks.unity-react.unity-core-react/UnityTableExport'
-import { UnityTypography, headerStyleTypes } from '@bit/smartworks.unity-react.unity-core-react/UnityTypography'
-import { UnityPageHeader } from '@bit/smartworks.unity-react.unity-core-react/UnityPageHeader'
-import { UnitySection } from '@bit/smartworks.unity-react.unity-core-react/UnitySection'
-import { UnityGlobalNav } from '@bit/smartworks.unity-react.unity-core-react/UnityGlobalNav'
-import { UnityDropdown } from '@bit/smartworks.unity-react.unity-core-react/UnityDropdown'
-import { UnityToggleSwitch } from '@bit/smartworks.unity-react.unity-core-react/UnityToggleSwitch'
-import { UnitySplitPane } from '@bit/smartworks.unity-react.unity-core-react/UnitySplitPane'
-import { UnityModal } from '@bit/smartworks.unity-react.unity-core-react/UnityModal'
-import { UnityProgress } from '@bit/smartworks.unity-react.unity-core-react/UnityProgress'
-import { UnityDropzone } from '@bit/smartworks.unity-react.unity-core-react/UnityDropzone'
-import { UnityNotification } from '@bit/smartworks.unity-react.unity-core-react/UnityNotification'
+// import {
+//   UnityButton,
+//   UnityCodeEditor,
+//   UnityTextInput,
+//   UnityTable,
+//   UnityTableExport,
+//   UnityTypography,
+//   headerStyleTypes, //TODO: Make sure this is defined
+//   UnityPageHeader,
+//   UnitySection,
+//   UnityGlobalNav,
+//   UnityDropdown,
+//   UnityToggleSwitch,
+//   UnitySplitPane,
+//   UnityModal,
+//   UnityProgress,
+//   UnityDropzone,
+//   UnityNotification
+// } from '@bit/smartworks.unity-react.unity-core-react'
+
+import {
+  UnityButton,
+  UnityCodeEditor,
+  UnityTextInput,
+  UnityTable,
+  UnityTableExport,
+  // UnityTypography,
+  // headerStyleTypes, //TODO: Make sure this is defined
+  UnityPageHeader,
+  UnitySection,
+  UnityGlobalNav,
+  UnityDropdown,
+  UnityToggleSwitch,
+  UnitySplitPane,
+  // SplitPaneProps,
+  UnityModal,
+  UnityProgress,
+  UnityDropzone,
+  UnityNotification
+} from './components/unity-core-react'
+
+// import type {headerStyleTypes} from './components/unity-typography-react/UnityTypography'
+
+// import {headerStyleTypes} from './components/unity-typography-react/UnityTypography'
+
+// import { UnityCodeEditor } from '@bit/smartworks.unity-react.unity-core-react/UnityCodeEditor'
+// import { UnityTextInput } from '@bit/smartworks.unity-react.unity-core-react/UnityTextInput'
+// import { UnityTable } from '@bit/smartworks.unity-react.unity-core-react/UnityTable'
+// import { UnityTableExport } from '@bit/smartworks.unity-react.unity-core-react/UnityTableExport'
+// import { UnityTypography, headerStyleTypes } from '@bit/smartworks.unity-react.unity-core-react/UnityTypography'
+// import { UnityPageHeader } from '@bit/smartworks.unity-react.unity-core-react/UnityPageHeader'
+// import { UnitySection } from '@bit/smartworks.unity-react.unity-core-react/UnitySection'
+// import { UnityGlobalNav } from '@bit/smartworks.unity-react.unity-core-react/UnityGlobalNav'
+// import { UnityDropdown } from '@bit/smartworks.unity-react.unity-core-react/UnityDropdown'
+// import { UnityToggleSwitch } from '@bit/smartworks.unity-react.unity-core-react/UnityToggleSwitch'
+// import { UnitySplitPane } from '@bit/smartworks.unity-react.unity-core-react/UnitySplitPane'
+// import { UnityModal } from '@bit/smartworks.unity-react.unity-core-react/UnityModal'
+// import { UnityProgress } from '@bit/smartworks.unity-react.unity-core-react/UnityProgress'
+// import { UnityDropzone } from '@bit/smartworks.unity-react.unity-core-react/UnityDropzone'
+// import { UnityNotification } from '@bit/smartworks.unity-react.unity-core-react/UnityNotification'
 
 import { devices } from './fakeData'
+
+import {UnityTypography, headerStyleTypes } from './components/unity-typography-react/UnityTypography'
+
+
+
+
+
+// ??QUTESTION THIS ISSUE   COULD BE B/C COMPONENT IS DEFAULT EXPORT - TRY MAKING NAMED
+console.log("headerStyleTypes: ", headerStyleTypes)
+
 
 const appStyle: CSSProperties = {
   display: 'flex',
