@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import '@bit/smartworks.unity.unity-text-input'
-import { TextInputProps } from '@bit/smartworks.unity.unity-text-input'
+import '@bit/smartworks.unity.unity-core/unity-text-input'
+import { TextInputProps } from '@bit/smartworks.unity.unity-core/unity-text-input'
 
 export default class UnityTextInput extends Component<TextInputProps> {
 

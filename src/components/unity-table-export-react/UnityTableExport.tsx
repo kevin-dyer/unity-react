@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import '@bit/smartworks.unity.unity-table-export'
-import { ExportProps } from '@bit/smartworks.unity.unity-table-export'
+import '@bit/smartworks.unity.unity-core/unity-table-export'
+import { ExportProps } from '@bit/smartworks.unity.unity-core/unity-table-export'
 
 export default class UnityTableExport extends Component<ExportProps> {
 

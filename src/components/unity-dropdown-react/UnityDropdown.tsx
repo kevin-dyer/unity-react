@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
-import '@bit/smartworks.unity.unity-dropdown'
-import { dropdownPropsType } from '@bit/smartworks.unity.unity-dropdown'
+import '@bit/smartworks.unity.unity-core/unity-dropdown'
+import { dropdownPropsType } from '@bit/smartworks.unity.unity-core/unity-dropdown'
 
 export default class UnityDropdown extends Component<dropdownPropsType> {
   private dropdownRef = React.createRef<dropdownPropsType>()

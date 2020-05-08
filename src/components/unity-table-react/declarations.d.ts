@@ -4,7 +4,7 @@ declare namespace JSX {
   }
 }
 
-declare module '@bit/smartworks.unity.unity-table' {
+declare module '@bit/smartworks.unity.unity-core/unity-table' {
   import CSSProperties from 'react'
   export interface TableProps {
     data?: Object[],

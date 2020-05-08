@@ -3,7 +3,7 @@ declare namespace JSX {
     "unity-button": any;
   }
 }
-declare module '@bit/smartworks.unity.unity-button' {
+declare module '@bit/smartworks.unity.unity-core/unity-button' {
   export type buttonType = 'gradient' | 'solid' | 'outlined'
   export interface buttonPropsType {
     [key: string]: any;

@@ -3,4 +3,4 @@ declare namespace JSX {
     "unity-dropzone": any
   }
 }
-declare module '@bit/smartworks.unity.unity-dropzone'
+declare module '@bit/smartworks.unity.unity-core/unity-dropzone'

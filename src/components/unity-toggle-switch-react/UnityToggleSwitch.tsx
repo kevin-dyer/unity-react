@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
-import '@bit/smartworks.unity.unity-toggle-switch'
-import { toggleSwitchType } from '@bit/smartworks.unity.unity-toggle-switch'
+import '@bit/smartworks.unity.unity-core/unity-toggle-switch'
+import { toggleSwitchType } from '@bit/smartworks.unity.unity-core/unity-toggle-switch'
 
 export default class UnityToggleSwitch extends Component<toggleSwitchType> {
   private switchRef = React.createRef<toggleSwitchType>()

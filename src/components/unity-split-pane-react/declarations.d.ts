@@ -3,4 +3,4 @@ declare namespace JSX {
     "unity-split-pane": any;
   }
 }
-declare module '@bit/smartworks.unity.unity-split-pane'
+declare module '@bit/smartworks.unity.unity-core/unity-split-pane'
