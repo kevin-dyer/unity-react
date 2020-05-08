@@ -1,8 +1,13 @@
 # unity-core
 
-## usage Example
+## Usage Example
 `//import unity-typography react component and it's declarations
 import {UnityTypography, colorTypes, sizeTypes, headerStyleTypes} from '@bit/smartworks.unity.unity-core-react'`
+
+## Adding a component
+- add these two lines to unity-core-react/index.tsx:
+`export {default as <Component>} from "@bit/smartworks.unity-react.<component-path>" //Export Component definition`
+`export * from "@bit/smartworks.unity-react.<component-path>" //Export named exports such as typescript declarations`
 
 ## Changelog:
 
