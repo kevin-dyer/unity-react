@@ -65,6 +65,27 @@
       "compiler": "bit.envs/compilers/react-typescript@3.1.51"
     },
     "componentsDefaultDirectory": "src/components/{name}",
-    "packageManager": "npm"
+    "packageManager": "npm",
+    "overrides": {
+      "*": {
+        "exclude": [
+          "unity-code-editor-react"
+        ],
+        "dependencies": {
+          "@bit/smartworks.unity.unity-core": "-"
+        },
+        "peerDependencies": {
+          "@bit/smartworks.unity.unity-core": "^1.0.0"
+        }
+      },
+      "unity-code-editor-react": {
+        "dependencies": {
+          "@bit/smartworks.unity-react.unity-typography-react": "-"
+        },
+        "peerDependencies": {
+          "@bit/smartworks.unity-react.unity-typography-react": "^0.1.8"
+        }
+      }
+    }
   }
 }
