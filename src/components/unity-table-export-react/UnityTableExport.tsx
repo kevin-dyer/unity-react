@@ -38,6 +38,7 @@ export default class UnityTableExport extends Component<ExportProps> {
   render() {
     const {
       children,
+      tableRef,
       ...otherProps
     } = this.props
 
