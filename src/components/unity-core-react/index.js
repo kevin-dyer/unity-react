@@ -1,7 +1,7 @@
 /**
- * @name unity-core-react 
+ * @name unity-core-react
  *
- * @description 
+ * @description
  * Unity Core React Library
  * All unity react components are included in this library
  *
