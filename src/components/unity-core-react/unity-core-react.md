@@ -1,21 +1,38 @@
 # unity-core
 
 ## Usage Example
-`//import unity-typography react component and it's declarations
-import {UnityTypography, colorTypes, sizeTypes, headerStyleTypes} from '@bit/smartworks.unity.unity-core-react'`
+- Using top level import:
+```javascript
+//import unity-typography react component and its declarations
+import {UnityTypography, colorTypes, sizeTypes, headerStyleTypes} from '@bit/smartworks.unity.unity-core-react'
+```
+- Using path import to avoid loading unused modules
+```javascript
+import UnityTypography, {colorTypes, sizeTypes, headerStyleTypes} from '@bit/smartworks.unity.unity-core-react/UnityTypography'
+```
 
 ## Adding a component
-- add these two lines to unity-core-react/index.tsx:
-`export {default as <Component>} from "@bit/smartworks.unity-react.<component-path>" //Export Component definition`
-`export * from "@bit/smartworks.unity-react.<component-path>" //Export named exports such as typescript declarations`
+1) Add these two lines to `unity-core-react/index.js`:
+```javascript
+export {default as <Component>} from "@bit/smartworks.unity-react.<component-path>" //Export Component definition
+export * from "@bit/smartworks.unity-react.<component-path>" //Export named exports such as typescript declarations
+```
+2) Add a folder with the component name to `unity-core-react`, and put an `index.js` file there with these lines:
+```javascript
+export {default} from "@bit/smartworks.unity-react.<component-path>" //Export Component definition
+export * from "@bit/smartworks.unity-react.<component-path>" //Export named exports such as typescript declarations
+```
 
 ## Changelog:
 
+### v0.3.0
+- Added path imports
+
 ### v0.2.0
-- updated @bit dependencies
+- Updated @bit dependencies
 
 ### v0.1.2
-- expose all components and their declarations at the top level.
+- Expose all components and their declarations at the top level.
 Ex. Import component and its types:
 `import {<Component>, <Type1>, <Type2>, <PropsInterface>} from '@bit/smartworks.unity.unity-core-react'`
 

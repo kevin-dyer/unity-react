@@ -1,9 +1,13 @@
 /**
+ * @name unity-core-react 
+ *
+ * @description 
  * Unity Core React Library
  * All unity react components are included in this library
  *
- * Usage Example:
- * import {UnityButton} '@bit/smartworks.unity.unity-core-react' // imports UnityButton react component
+ * @example
+ * import {UnityButton} from '@bit/smartworks.unity.unity-core-react' // top level import
+ * import UnityButton from '@bit/smartworks.unity.unity-core-react/UnityButton' // path import
 */
 
 export {default as UnityButton} from "@bit/smartworks.unity-react.unity-button-react"
