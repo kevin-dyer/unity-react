@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v0.3.0
+- Moved all @bit depedencies to peerDependencies
+
 ### v0.2.2
 - update to unity-section v0.2.2
 

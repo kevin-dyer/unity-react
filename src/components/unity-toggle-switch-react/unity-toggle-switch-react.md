@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v0.2.0
+- Moved all @bit depedencies to peerDependencies
+
 ### v0.1.4
 - Fix boolean props to be passed only if true
 
