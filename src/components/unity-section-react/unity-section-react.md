@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v0.3.1
+- Updated @types dependency
+
 ### v0.3.0
 - Moved all @bit depedencies to peerDependencies
 
