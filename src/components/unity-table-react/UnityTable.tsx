@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import '@bit/smartworks.unity.unity-table'
+import '@bit/smartworks.unity.unity-core/unity-table'
 //See definitions in ./declarations.d.ts
 import {
   TableProps,
   TableStyles,
   TableColumn
-} from '@bit/smartworks.unity.unity-table'
+} from '@bit/smartworks.unity.unity-core/unity-table'
 
 
 export default class UnityTable extends Component<TableProps> {

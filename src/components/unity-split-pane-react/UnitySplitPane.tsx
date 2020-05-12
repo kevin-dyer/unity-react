@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import '@bit/smartworks.unity.unity-split-pane'
+import '@bit/smartworks.unity.unity-core/unity-split-pane'
 
 export default class UnitySplitPane extends Component<SplitPaneProps> {
 

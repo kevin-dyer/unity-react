@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import '@bit/smartworks.unity.unity-button'
-import {buttonPropsType} from '@bit/smartworks.unity.unity-button'
+import '@bit/smartworks.unity.unity-core/unity-button'
+import {buttonPropsType} from '@bit/smartworks.unity.unity-core/unity-button'
 
 export default class UnityButton extends Component<buttonPropsType> {
 

@@ -4,7 +4,7 @@ declare namespace JSX {
   }
 }
 
-declare module '@bit/smartworks.unity.unity-column-editor' {
+declare module '@bit/smartworks.unity.unity-core/unity-column-editor' {
   export interface ColumnEditorProps {
     columns?: Object[],
     selectedColumns?: Object[],

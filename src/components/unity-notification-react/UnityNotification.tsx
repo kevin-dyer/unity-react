@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import '@bit/smartworks.unity.unity-notification'
+import '@bit/smartworks.unity.unity-core/unity-notification'
 
 export default class UnityNotification extends Component<notificationPropsType> {
 

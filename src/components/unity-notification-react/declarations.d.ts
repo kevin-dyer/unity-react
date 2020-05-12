@@ -4,4 +4,4 @@ declare namespace JSX {
   }
 }
 
-declare module '@bit/smartworks.unity.unity-notification'
+declare module '@bit/smartworks.unity.unity-core/unity-notification'

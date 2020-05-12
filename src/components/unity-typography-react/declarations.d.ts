@@ -3,4 +3,4 @@ declare namespace JSX {
     "unity-typography": any;
   }
 }
-declare module '@bit/smartworks.unity.unity-typography'
+declare module '@bit/smartworks.unity.unity-core/unity-typography'

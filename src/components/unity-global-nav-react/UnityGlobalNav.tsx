@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import '@bit/smartworks.unity.unity-global-nav-base'
+import '@bit/smartworks.unity.unity-core/unity-global-nav-base'
 import {
   NavProps,
   NavStyles
-} from '@bit/smartworks.unity.unity-global-nav-base'
+} from '@bit/smartworks.unity.unity-core/unity-global-nav-base'
 
 /*
     Takes property.oject `items`
