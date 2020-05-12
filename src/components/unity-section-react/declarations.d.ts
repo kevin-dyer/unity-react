@@ -4,7 +4,7 @@ declare namespace JSX {
   }
 }
 
-declare module '@bit/smartworks.unity.unity-section' {
+declare module '@bit/smartworks.unity.unity-core/unity-section' {
   export interface sectionPropsType {
     bordered?: boolean,
     nowrap?: boolean,

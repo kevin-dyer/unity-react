@@ -1,23 +1,26 @@
 import React, { CSSProperties } from 'react';
 import './App.css';
-import UnityButton from './components/unity-button-react/UnityButton'
-import UnityCodeEditor from './components/unity-code-editor-react/UnityCodeEditor'
-import UnityTextInput from './components/unity-text-input-react/UnityTextInput'
-import UnityTable from './components/unity-table-react/UnityTable'
-import UnityTableExport from './components/unity-table-export-react/UnityTableExport'
-import UnityTypography, { headerStyleTypes } from './components/unity-typography-react/UnityTypography'
-import UnityPageHeader from './components/unity-page-header-react/UnityPageHeader'
-import UnitySection from './components/unity-section-react/UnitySection'
-import UnityGlobalNav from './components/unity-global-nav-react/UnityGlobalNav'
-import UnityDropdown from './components/unity-dropdown-react/UnityDropdown'
-import UnityToggleSwitch from './components/unity-toggle-switch-react/UnityToggleSwitch'
-import UnitySplitPane from './components/unity-split-pane-react/UnitySplitPane'
-import UnityModal from './components/unity-modal-react/UnityModal'
-import UnityProgress from './components/unity-progress-react/UnityProgress'
-import UnityDropzone from './components/unity-dropzone-react/UnityDropzone'
-import UnityNotification from './components/unity-notification-react/UnityNotification'
-
+import {
+  UnityButton,
+  UnityCodeEditor,
+  UnityTextInput,
+  UnityTable,
+  UnityTableExport,
+  UnityTypography,
+  headerStyleTypes,
+  UnityPageHeader,
+  UnitySection,
+  UnityGlobalNav,
+  UnityDropdown,
+  UnityToggleSwitch,
+  UnitySplitPane,
+  UnityModal,
+  UnityProgress,
+  UnityDropzone,
+  UnityNotification
+} from './components/unity-core-react'
 import { devices } from './fakeData'
+
 
 const appStyle: CSSProperties = {
   display: 'flex',

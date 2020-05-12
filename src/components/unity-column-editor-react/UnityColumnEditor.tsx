@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import '@bit/smartworks.unity.unity-column-editor'
-import {ColumnEditorProps, ColumnEditorStyles} from '@bit/smartworks.unity.unity-column-editor'
+import '@bit/smartworks.unity.unity-core/unity-column-editor'
+import {ColumnEditorProps, ColumnEditorStyles} from '@bit/smartworks.unity.unity-core/unity-column-editor'
 
 export default class UnityColumnEditor extends Component<ColumnEditorProps> {
 

@@ -4,7 +4,7 @@ declare namespace JSX {
   }
 }
 
-declare module '@bit/smartworks.unity.unity-toggle-switch' {
+declare module '@bit/smartworks.unity.unity-core/unity-toggle-switch' {
   export interface toggleSwitchType {
     value?: boolean,
     label?: string,

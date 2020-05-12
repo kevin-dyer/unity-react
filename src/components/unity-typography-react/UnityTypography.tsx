@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import '@bit/smartworks.unity.unity-typography'
+import '@bit/smartworks.unity.unity-core/unity-typography'
 
 export default class UnityTypography extends Component<typographyProps> {
   render() {

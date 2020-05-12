@@ -4,4 +4,4 @@ declare namespace JSX {
   }
 }
 
-declare module '@bit/smartworks.unity.unity-modal'
+declare module '@bit/smartworks.unity.unity-core/unity-modal'

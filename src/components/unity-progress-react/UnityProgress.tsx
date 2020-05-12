@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import '@bit/smartworks.unity.unity-progress'
+import '@bit/smartworks.unity.unity-core/unity-progress'
 
 export default class UnityProgress extends Component<progressPropsType> {
 

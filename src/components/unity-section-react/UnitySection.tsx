@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import '@bit/smartworks.unity.unity-section'
-import { sectionPropsType } from '@bit/smartworks.unity.unity-section'
+import '@bit/smartworks.unity.unity-core/unity-section'
+import { sectionPropsType } from '@bit/smartworks.unity.unity-core/unity-section'
 
 export default class UnitySection extends Component<sectionPropsType> {
   render() {

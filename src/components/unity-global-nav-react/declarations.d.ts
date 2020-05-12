@@ -4,7 +4,7 @@ declare namespace JSX {
   }
 }
 
-declare module '@bit/smartworks.unity.unity-global-nav-base' {
+declare module '@bit/smartworks.unity.unity-core/unity-global-nav-base' {
   import CSSProperties from 'react'
 
   export interface NavItem {
