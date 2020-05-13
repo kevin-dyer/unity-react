@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import '@bit/smartworks.unity.unity-page-header'
-import { pageHeaderProps } from '@bit/smartworks.unity.unity-page-header'
+import '@bit/smartworks.unity.unity-core/unity-page-header'
+import { pageHeaderProps } from '@bit/smartworks.unity.unity-core/unity-page-header'
 
 //React component to wrap unity-page-header web component
 export default class UnityPageHeader extends Component<pageHeaderProps> {

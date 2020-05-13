@@ -2,6 +2,12 @@
 
 ## Changelog:
 
+### v0.2.1
+- Updated @types dependency
+
+### v0.2.0
+- Moved all @bit depedencies to peerDependencies
+
 ### v0.1.14
 - add handler to control updates to avoid code unfolding as user types
 

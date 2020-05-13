@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import '@bit/smartworks.unity.unity-dropzone'
+import '@bit/smartworks.unity.unity-core/unity-dropzone'
 
 export default class UnityDropzone extends Component<dropzonePropTypes> {
   private dropzoneRef = React.createRef<dropzonePropTypes>()

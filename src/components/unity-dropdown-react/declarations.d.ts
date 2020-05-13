@@ -4,7 +4,7 @@ declare namespace JSX {
   }
 }
 
-declare module '@bit/smartworks.unity.unity-dropdown' {
+declare module '@bit/smartworks.unity.unity-core/unity-dropdown' {
   export type inputType = "menu" | "single-select" | "multi-select"
   export type boxType = "label" | "search" | "button-gradient" | "button-outlined" | "inline"
   import CSSProperties from 'react'

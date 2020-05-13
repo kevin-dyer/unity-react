@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import '@bit/smartworks.unity.unity-modal'
+import '@bit/smartworks.unity.unity-core/unity-modal'
 
 export default class UnityModal extends Component<modalPropsType> {
 
