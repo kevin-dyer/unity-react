@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v0.2.2
+- Fixed eslint error
+
 ### v0.2.1
 - Updated @types dependency
 
