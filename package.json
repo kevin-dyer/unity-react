@@ -21,7 +21,7 @@
     "@bit/smartworks.unity-react.unity-text-input-react": "^0.2.1",
     "@bit/smartworks.unity-react.unity-toggle-switch-react": "^0.2.1",
     "@bit/smartworks.unity-react.unity-typography-react": "^0.2.1",
-    "@bit/smartworks.unity.unity-core": "^1.0.1",
+    "@bit/smartworks.unity.unity-core": "^1.1.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -85,7 +85,13 @@
         "peerDependencies": {
           "@bit/smartworks.unity-react.unity-typography-react": "^0.1.8"
         }
-      }
+      },
+      "unity-dropdown-react": {
+        "peerDependencies": {
+          "@bit/smartworks.unity.unity-core": "^1.1.0"
+        },
+        "propagate": true
     }
   }
+}
 }

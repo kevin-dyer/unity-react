@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
 import '@bit/smartworks.unity.unity-core/unity-dropdown'
-import { dropdownPropsType } from '@bit/smartworks.unity.unity-core/unity-dropdown'
 
 export default class UnityDropdown extends Component<dropdownPropsType> {
   private dropdownRef = React.createRef<dropdownPropsType>()
@@ -50,4 +49,43 @@ export default class UnityDropdown extends Component<dropdownPropsType> {
       ></unity-dropdown>
     )
   }
+}
+
+
+export type inputType = "menu" | "single-select" | "multi-select"
+export type boxType = "label" | "search" | "button-gradient" | "button-outlined" | "inline"
+export interface dropdownPropsType extends React.HTMLAttributes<HTMLElement> {
+  [key: string]: any
+  label?: string
+  inputType?: inputType
+  boxType?: boxType
+  placeholder?: string
+  options?: Object[] | string
+  selected?: string[] | string
+  disabled?: boolean
+  onMenuClick?: Function
+  selectIcon?: boolean
+  helperText?: string
+  searchBox?: boolean
+  showTags?: boolean
+  onValueChange?: Function
+  rightAlign?: boolean
+  style?: dropdownStyleTypes
+}
+export type dropdownStyleTypes = React.CSSProperties & {
+  '--dropdown-background-color'?: string
+  '--dropdown-background-color-disabled'?: string
+  '--dropdown-border-color'?: string
+  '--dropdown-border-color-disabled'?: string
+  '--dropdown-checkbox-unchecked-color'?:string
+  '--dropdown-color'?: string
+  '--dropdown-color-dark'?: string
+  '--dropdown-input-font'?: string
+  '--dropdown-color-light'?: string
+  '--dropdown-label-color'?: string
+  '--dropdown-line-height'?: string | number
+  '--dropdown-options-box-width'?: string | number
+  '--dropdown-text-color'?: string
+  '--dropdown-text-size'?: string | number
+
 }
