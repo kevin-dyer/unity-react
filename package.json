@@ -7,7 +7,7 @@
     "@bit/smartworks.unity-react.unity-code-editor-react": "^0.2.2",
     "@bit/smartworks.unity-react.unity-column-editor-react": "^0.2.1",
     "@bit/smartworks.unity-react.unity-core-react": "^0.3.1",
-    "@bit/smartworks.unity-react.unity-dropdown-react": "^0.2.1",
+    "@bit/smartworks.unity-react.unity-dropdown-react": "^0.3.0",
     "@bit/smartworks.unity-react.unity-dropzone-react": "^0.2.1",
     "@bit/smartworks.unity-react.unity-global-nav-react": "^0.2.1",
     "@bit/smartworks.unity-react.unity-modal-react": "^0.2.1",
@@ -86,12 +86,18 @@
           "@bit/smartworks.unity-react.unity-typography-react": "^0.1.8"
         }
       },
+      "unity-core-react": {
+        "peerDependencies": {
+          "@bit/smartworks.unity.unity-core": "^1.1.0"
+        },
+        "propagate": true
+      },
       "unity-dropdown-react": {
         "peerDependencies": {
           "@bit/smartworks.unity.unity-core": "^1.1.0"
         },
         "propagate": true
+      }
     }
   }
-}
 }
