@@ -2,6 +2,10 @@
 
 ## Changelog:
 
+### v0.3.0
+- Added rightAlign to prop types
+- Added css types
+
 ### v0.2.1
 - Updated @types dependency
 
