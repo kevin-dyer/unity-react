@@ -1,6 +1,7 @@
 declare namespace JSX {
   interface IntrinsicElements {
     "unity-notification": any;
+    "unity-notifications-handler": any;
   }
 }
 
