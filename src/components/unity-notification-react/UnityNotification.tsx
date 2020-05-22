@@ -3,9 +3,7 @@ import React, { Component } from 'react'
 import { v4 as uuid } from 'uuid'
 
 import '@bit/smartworks.unity.unity-core/unity-notification'
-import '@bit/smartworks.unity.unity-core/unity-notifications-handler'
 import { addNotification, closeNotification, clearNotifications } from '@bit/smartworks.unity.unity-core/unity-notifications-handler'
-import { render } from '@testing-library/react'
 
 export default class UnityNotification extends Component<NotificationPropsI> {
 
@@ -86,8 +84,8 @@ interface NotificationTypesAssingerI {
   help?: string,
 }
 
-export function withNotifications<T>(handlerProps: NotificationsHandlerPropsI) {
-  return (WrappedComponent: React.ComponentType<T extends NotificationWrappedComponentPropsI>): React.ReactNode => {
+export function withNotifications(handlerProps: NotificationsHandlerPropsI) {
+  return function wrapComponent<T>(WrappedComponent: React.ComponentType<T extends NotificationWrappedComponentPropsI>): React.ReactNode {
     return class ComponentWithNotifications extends Component { 
       private _uniqueName: string
       private _notificationsHandlerRef: React.Ref<NotificationsHandlerPropsI>
