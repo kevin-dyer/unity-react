@@ -5,6 +5,7 @@ import { v4 as uuid } from 'uuid'
 import '@bit/smartworks.unity.unity-core/unity-notification'
 import '@bit/smartworks.unity.unity-core/unity-notifications-handler'
 import { addNotification, closeNotification, clearNotifications } from '@bit/smartworks.unity.unity-core/unity-notifications-handler'
+import { render } from '@testing-library/react'
 
 export default class UnityNotification extends Component<NotificationPropsI> {
 
@@ -22,8 +23,8 @@ export default class UnityNotification extends Component<NotificationPropsI> {
     const { props, notificationRef } = this
     const unityNotification = notificationRef.current
     const { onClose } = props
-    if (unityNotification) {
-      if (onClose) unityNotification.onClose = onClose
+    if (!!unityNotification) {
+      if (!!onClose) unityNotification.onClose = onClose
     }
   }
 
@@ -78,30 +79,61 @@ interface NotificationTypesAssingerI {
 
 export function withNotifications<T>(handlerProps: NotificationsHandlerPropsI) {
   return (WrappedComponent: React.ComponentType<T>): React.ReactNode => {
-    return (props: T) => {  
-      const { name, ...restOfHandlerProps } = handlerProps
-      const uniqueName = name || uuid()
+    return class ComponentWithNotifications extends Component { 
+      private _uniqueName: string
+      private _notificationsHandlerRef: React.Ref<NotificationsHandlerPropsI>
+
+      constructor(props: T) {
+        super(props)
+
+        const { name } = handlerProps
+        this._uniqueName = name || uuid() 
+        this._notificationsHandlerRef = React.createRef()
+      }    
+      
+      render() {
+        const { props, _uniqueName, _notificationsHandlerRef } = this
+
+        const {
+          icons,
+          colors,
+          customTypes,
+          allowDuplicates,
+          noAnimation,
+          onClose
+        } = handlerProps
+        
+        const notificationsHandler = _notificationsHandlerRef.current
+        if (!!notificationsHandler) {
+          if (!!icons) notificationsHandler.icons = icons
+          if (!!colors) notificationsHandler.colors = colors
+          if (!!customTypes) notificationsHandler.customTypes = customTypes
+          if (!!allowDuplicates) notificationsHandler.allowDuplicates = allowDuplicates
+          if (!!noAnimation) notificationsHandler.noAnimation = noAnimation
+          if (!!onClose) notificationsHandler.onClose = onClose
+        }
 
         return (
           <div style={{ position: 'relative', overflow: 'hidden' }}>
             <WrappedComponent
               addNotification={({
-                name: target=uniqueName,
+                name: target=_uniqueName,
                 notification
               }: {
                 name?: string,
                 notification: NotificationPropsWithTypeI
               }) => addNotification(target, notification)}
-              closeNotiification={(target=uniqueName) => closeNotification(target)}
-              clearNotification={(target=uniqueName) => clearNotifications(target)}
+              closeNotiification={(target=_uniqueName) => closeNotification(target)}
+              clearNotification={(target=_uniqueName) => clearNotifications(target)}
               { ...props }
             />
             <unity-notifications-handler
-              name={uniqueName}
-              { ...restOfHandlerProps }
+              name={_uniqueName}
+              ref={_notificationsHandlerRef}
             ></unity-notifications-handler>/
           </div>
         )
+      }
     }
   }
 }
