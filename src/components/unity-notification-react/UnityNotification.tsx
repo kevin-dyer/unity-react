@@ -88,7 +88,7 @@ export function withNotifications(handlerProps: NotificationsHandlerPropsI) {
   return function wrapComponent<T>(WrappedComponent: React.ComponentType<NotificationWrappedComponentPropsI>): React.ReactNode {
     return class ComponentWithNotifications extends Component { 
       private _uniqueName: string
-      private _notificationsHandlerRef: React.Ref<NotificationsHandlerPropsI>
+      private _notificationsHandlerRef: React.RefObject<NotificationsHandlerPropsI>
 
       constructor(props: T) {
         super(props)
@@ -110,7 +110,9 @@ export function withNotifications(handlerProps: NotificationsHandlerPropsI) {
           onClose
         } = handlerProps
         
-        const notificationsHandler = _notificationsHandlerRef.current
+        const {
+          current: notificationsHandler=null
+        } = _notificationsHandlerRef || {}
         if (!!notificationsHandler) {
           if (!!icons) notificationsHandler.icons = icons
           if (!!colors) notificationsHandler.colors = colors
