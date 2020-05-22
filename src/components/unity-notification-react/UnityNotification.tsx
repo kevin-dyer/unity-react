@@ -58,7 +58,16 @@ export interface NotificationStylesI extends React.CSSProperties {
   '--notification-width'?: string
 }
 
-interface NotificationsHandlerPropsI {
+interface NotificationWrappedComponentPropsI {
+  addNotification: (params: {
+    name?: string,
+    notification: NotificationPropsWithTypeI
+  }) => void,
+  closeNotification: (target: string) => void,
+  clearNotifications: (target: string) => void,
+}
+
+interface NotificationsHandlerPropsI extends React.HTMLAttributes<HTMLElement> {
   name?: string,
   position?: string,
   icons?: NotificationTypesAssingerI,
@@ -78,7 +87,7 @@ interface NotificationTypesAssingerI {
 }
 
 export function withNotifications<T>(handlerProps: NotificationsHandlerPropsI) {
-  return (WrappedComponent: React.ComponentType<T>): React.ReactNode => {
+  return (WrappedComponent: React.ComponentType<T extends NotificationWrappedComponentPropsI>): React.ReactNode => {
     return class ComponentWithNotifications extends Component { 
       private _uniqueName: string
       private _notificationsHandlerRef: React.Ref<NotificationsHandlerPropsI>
@@ -119,9 +128,6 @@ export function withNotifications<T>(handlerProps: NotificationsHandlerPropsI) {
               addNotification={({
                 name: target=_uniqueName,
                 notification
-              }: {
-                name?: string,
-                notification: NotificationPropsWithTypeI
               }) => addNotification(target, notification)}
               closeNotiification={(target=_uniqueName) => closeNotification(target)}
               clearNotification={(target=_uniqueName) => clearNotifications(target)}
