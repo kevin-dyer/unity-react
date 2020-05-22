@@ -85,7 +85,7 @@ interface NotificationTypesAssingerI {
 }
 
 export function withNotifications(handlerProps: NotificationsHandlerPropsI) {
-  return function wrapComponent<T>(WrappedComponent: React.ComponentType<T extends NotificationWrappedComponentPropsI>): React.ReactNode {
+  return function wrapComponent<T>(WrappedComponent: React.ComponentType<NotificationWrappedComponentPropsI>): React.ReactNode {
     return class ComponentWithNotifications extends Component { 
       private _uniqueName: string
       private _notificationsHandlerRef: React.Ref<NotificationsHandlerPropsI>
@@ -127,8 +127,8 @@ export function withNotifications(handlerProps: NotificationsHandlerPropsI) {
                 name: target=_uniqueName,
                 notification
               }) => addNotification(target, notification)}
-              closeNotiification={(target=_uniqueName) => closeNotification(target)}
-              clearNotification={(target=_uniqueName) => clearNotifications(target)}
+              closeNotification={(target=_uniqueName) => closeNotification(target)}
+              clearNotifications={(target=_uniqueName) => clearNotifications(target)}
               { ...props }
             />
             <unity-notifications-handler
