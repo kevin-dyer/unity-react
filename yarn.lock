@@ -1211,13 +1211,32 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-notification-react@0.2.2", "@bit/smartworks.unity-react.unity-notification-react@^0.2.2":
+"@bit/smartworks.unity-react.unity-notification-react@0.2.2":
   version "0.2.2"
   resolved "https://node.bit.dev/smartworks.unity-react.unity-notification-react/-/smartworks.unity-react.unity-notification-react-0.2.2.tgz#12430edc08e63e61938df8a442619dee6026dc84"
   integrity sha1-EkMO3AjmPmGTjfikQmGd7mAm3IQ=
   dependencies:
     "@types/react" "16.9.11"
     react "^16.12.0"
+
+"@bit/smartworks.unity-react.unity-notification-react@^1.0.0":
+  version "1.0.0"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-notification-react/-/smartworks.unity-react.unity-notification-react-1.0.0.tgz#2f603baef4cfe8520c54750b06c19a2f5a95b50a"
+  integrity sha1-L2A7rvTP6FIMVHULBsGaL1qVtQo=
+  dependencies:
+    "@types/react" "16.9.11"
+    react "^16.12.0"
+
+"@bit/smartworks.unity-react.unity-notifications-handler-react@^0.1.0":
+  version "0.1.0"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-notifications-handler-react/-/smartworks.unity-react.unity-notifications-handler-react-0.1.0.tgz#d4951a4250dc8719f2de10dc37d653259103872c"
+  integrity sha1-1JUaQlDchxny3hDcN9ZTJZEDhyw=
+  dependencies:
+    "@bit/smartworks.unity.unity-core" "1.2.1"
+    "@types/react" "16.9.11"
+    "@types/uuid" "^8.0.0"
+    react "^16.12.0"
+    uuid "3.4.0"
 
 "@bit/smartworks.unity-react.unity-page-header-react@0.3.1", "@bit/smartworks.unity-react.unity-page-header-react@^0.3.1":
   version "0.3.1"
@@ -1320,7 +1339,7 @@
     lit-element "^2.0.1"
     sortablejs "^1.10.2"
 
-"@bit/smartworks.unity.unity-core@^1.2.1":
+"@bit/smartworks.unity.unity-core@1.2.1", "@bit/smartworks.unity.unity-core@^1.2.1":
   version "1.2.1"
   resolved "https://node.bit.dev/smartworks.unity.unity-core/-/smartworks.unity.unity-core-1.2.1.tgz#619c933e371ea6b4d22610ad176f0652370ef7df"
   integrity sha1-YZyTPjceprTSJhCtF28GUjcO998=
@@ -11205,7 +11224,7 @@ utils-merge@1.0.1:
   resolved "https://registry.yarnpkg.com/utils-merge/-/utils-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
   integrity sha1-n5VxD1CiZ5R7LMwSR0HBAoQn5xM=
 
-uuid@^3.0.1, uuid@^3.3.2:
+uuid@3.4.0, uuid@^3.0.1, uuid@^3.3.2:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
   integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
