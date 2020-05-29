@@ -234,8 +234,7 @@ const SectionForNotifications = (props?: any) => {
 }
 
 const WithNotificationsWrappedSection = withNotifications({
-  name: NOTIFICATION_REF
-  position: userSpecifiedNotificationPosition,
+  position: 'top-left',
   allowDuplicates: true,
   style: notificationSectionStyle
 })(SectionForNotifications)
@@ -514,7 +513,7 @@ class App extends React.Component {
               style={notificationSectionContainerStyle}
             >
               <WithNotificationsWrappedSection
-                text={'This text is being passed to the wrapped component as a prop.'}
+                text={'This texts is being passed to the wrapped component as a prop.'}
               />
               <UnityNotificationsHandler
                 name='notifications-via-component'
