@@ -1,7 +1,7 @@
 import React, { Component, CSSProperties } from 'react'
 import { v4 as uuid } from 'uuid'
 
-import { NotificationPropsI, NotificationStylesI } from './UnityNotification'
+import { NotificationPropsI, NotificationStylesI } from '@bit/smartworks.unity-react.unity-notification-react'
 import { addNotification, closeNotification, clearNotifications } from '@bit/smartworks.unity.unity-core/unity-notifications-handler'
 
 

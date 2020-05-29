@@ -17,12 +17,14 @@ import {
   UnityModal,
   UnityProgress,
   UnityDropzone,
-  UnityNotification
+  UnityNotification,
+  NotificationStylesI,
+  UnityNotificationsHandler,
+  withNotifications,
+  addNotification
 } from './components/unity-core-react'
 
-import UnityNotificationsHandler, { withNotifications, addNotification } from '../src/components/unity-notification-react/UnityNotificationsHandler'
 import { devices } from './fakeData'
-import { NotificationStylesI } from './components/unity-notification-react/UnityNotification';
 
 const appStyle: CSSProperties = {
   display: 'flex',
@@ -232,8 +234,8 @@ const SectionForNotifications = (props?: any) => {
 }
 
 const WithNotificationsWrappedSection = withNotifications({
-  name: 'notifications-via-wrapper',
-  position: 'top-left',
+  name: NOTIFICATION_REF
+  position: userSpecifiedNotificationPosition,
   allowDuplicates: true,
   style: notificationSectionStyle
 })(SectionForNotifications)
@@ -512,7 +514,7 @@ class App extends React.Component {
               style={notificationSectionContainerStyle}
             >
               <WithNotificationsWrappedSection
-                text={'This texts is being passed to the wrapped component as a prop.'}
+                text={'This text is being passed to the wrapped component as a prop.'}
               />
               <UnityNotificationsHandler
                 name='notifications-via-component'
@@ -534,7 +536,7 @@ class App extends React.Component {
                     })}
                   />
                 </div>
-              </UnityNotificationsHandler>
+              </UnityNotificationsHandler> 
             </div>
           </div>
         </div>
