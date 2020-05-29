@@ -57,15 +57,18 @@ const mainStyle: CSSProperties = {
 
 const notificationSectionContainerStyle: CSSProperties = {
   display: 'flex',
-  flexDirection: 'row'
+  flexDirection: 'row',
+  height: 500
 }
-console.log(notificationSectionContainerStyle)
 
 const notificationSectionStyle: NotificationStylesI = {
-  border: '1px solid black',
-  margin: 20,
-  padding: 100,
-  boxShadow: '0 0 5px 1px rgba(0,0,0,0.1)'
+  display: 'flex',
+  flex: 1,
+  flexDirection: 'column',
+  justifyContent: 'center',
+  margin: 10,
+  boxShadow: '0 0 5px 1px rgba(0,0,0,0.1)',
+  height: '100%'
 }
 
 interface NavItem {
@@ -489,9 +492,11 @@ class App extends React.Component {
                 />
               </div>
             </UnitySection>
-            <UnitySection>
+            <div
+              style={notificationSectionContainerStyle}
+            >
               <WithNotificationsWrappedSection
-                text={'this is my text'}
+                text={'This texts is being passed to the wrapped element as a prop.'}
               />
               <UnityNotificationsHandler
                 name='notifications-via-component'
@@ -512,7 +517,7 @@ class App extends React.Component {
                   })}
                 />
               </UnityNotificationsHandler>
-            </UnitySection>
+            </div>
           </div>
         </div>
       </div>
