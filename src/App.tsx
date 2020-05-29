@@ -22,6 +22,7 @@ import {
 
 import UnityNotificationsHandler, { withNotifications, addNotification } from '../src/components/unity-notification-react/UnityNotificationsHandler'
 import { devices } from './fakeData'
+import { NotificationStylesI } from './components/unity-notification-react/UnityNotification';
 
 const appStyle: CSSProperties = {
   display: 'flex',
@@ -54,7 +55,13 @@ const mainStyle: CSSProperties = {
   overflowY: 'auto'
 }
 
-const notificationSectionStyle: CSSProperties = {
+const notificationSectionContainerStyle: CSSProperties = {
+  display: 'flex',
+  flexDirection: 'row'
+}
+console.log(notificationSectionContainerStyle)
+
+const notificationSectionStyle: NotificationStylesI = {
   border: '1px solid black',
   margin: 20,
   padding: 100,
@@ -182,11 +189,13 @@ const dropdownOptions: Object[] = [
 
 const SectionForNotifications = (props?: any) => {
   const {
-    addNotification=()=>console.log(`no add notification function!`)
+    addNotification=()=>console.log(`no add notification function!`),
+    text
   } = props
 
   return (
     <div>
+      {!!text && <UnityTypography>{text}</UnityTypography>}
       <UnityButton
         type='solid'
         label='Add notification'
@@ -194,7 +203,7 @@ const SectionForNotifications = (props?: any) => {
           notification: {
             type: 'tip',
             text: 'Check out this cool Notification!',
-            timeout: 3000
+            timeout: 0
           }
         })
         }
@@ -207,6 +216,7 @@ const WithNotificationsWrappedSection = withNotifications({
   name: 'notifications-via-wrapper',
   position: 'top-left',
   allowDuplicates: true,
+  style: notificationSectionStyle
 })(SectionForNotifications)
 
 
@@ -481,11 +491,12 @@ class App extends React.Component {
             </UnitySection>
             <UnitySection>
               <WithNotificationsWrappedSection
-                style={notificationSectionStyle}
+                text={'this is my text'}
               />
               <UnityNotificationsHandler
                 name='notifications-via-component'
                 allowDuplicates={true}
+                position={'top-left'}
                 style={notificationSectionStyle}
               >
                 <UnityButton
@@ -496,7 +507,8 @@ class App extends React.Component {
                     notification: {
                       type: 'help',
                       text: 'What a helpful notification'
-                    }
+                    },
+                    timeout: 0
                   })}
                 />
               </UnityNotificationsHandler>
@@ -507,5 +519,6 @@ class App extends React.Component {
     );
   }
 }
+console.log(notificationSectionStyle)
 
 export default App;
