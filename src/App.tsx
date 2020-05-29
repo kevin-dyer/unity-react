@@ -513,7 +513,7 @@ class App extends React.Component {
               style={notificationSectionContainerStyle}
             >
               <WithNotificationsWrappedSection
-                text={'This texts is being passed to the wrapped component as a prop.'}
+                text={'This text is being passed to the wrapped component as a prop.'}
               />
               <UnityNotificationsHandler
                 name='notifications-via-component'
@@ -543,6 +543,5 @@ class App extends React.Component {
     );
   }
 }
-console.log(notificationSectionStyle)
 
 export default App;
