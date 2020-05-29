@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import '@bit/smartworks.unity.unity-core/unity-section'
-import { sectionPropsType } from '@bit/smartworks.unity.unity-core/unity-section'
+import { SectionPropsI } from '@bit/smartworks.unity.unity-core/unity-section'
 
-export default class UnitySection extends Component<sectionPropsType> {
+export default class UnitySection extends Component<SectionPropsI> {
   render() {
     const {
       children,
@@ -10,6 +10,7 @@ export default class UnitySection extends Component<sectionPropsType> {
       nowrap,
       style
     } = this.props
+    
     let sectionProps = {
       bordered,
       nowrap,
