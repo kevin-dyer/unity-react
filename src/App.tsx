@@ -19,8 +19,9 @@ import {
   UnityDropzone,
   UnityNotification
 } from './components/unity-core-react'
-import { devices } from './fakeData'
 
+import UnityNotificationsHandler, { withNotifications, addNotification } from '../src/components/unity-notification-react/UnityNotificationsHandler'
+import { devices } from './fakeData'
 
 const appStyle: CSSProperties = {
   display: 'flex',
@@ -51,6 +52,13 @@ const mainStyle: CSSProperties = {
   flex: 1,
   position: 'relative',
   overflowY: 'auto'
+}
+
+const notificationSectionStyle: CSSProperties = {
+  border: '1px solid black',
+  margin: 20,
+  padding: 100,
+  boxShadow: '0 0 5px 1px rgba(0,0,0,0.1)'
 }
 
 interface NavItem {
@@ -171,6 +179,36 @@ const dropdownOptions: Object[] = [
     // "disabled": true
   }
 ]
+
+const SectionForNotifications = (props?: any) => {
+  const {
+    addNotification=()=>console.log(`no add notification function!`)
+  } = props
+
+  return (
+    <div>
+      <UnityButton
+        type='solid'
+        label='Add notification'
+        onClick={() => addNotification({
+          notification: {
+            type: 'tip',
+            text: 'Check out this cool Notification!',
+            timeout: 3000
+          }
+        })
+        }
+      />
+    </div>
+  )
+}
+
+const WithNotificationsWrappedSection = withNotifications({
+  name: 'notifications-via-wrapper',
+  position: 'top-left',
+  allowDuplicates: true,
+})(SectionForNotifications)
+
 
 class App extends React.Component {
 
@@ -440,6 +478,28 @@ class App extends React.Component {
                   onSelectionChange={(selection: []) => console.log(`new selection:`, selection)}
                 />
               </div>
+            </UnitySection>
+            <UnitySection>
+              <WithNotificationsWrappedSection
+                style={notificationSectionStyle}
+              />
+              <UnityNotificationsHandler
+                name='notifications-via-component'
+                allowDuplicates={true}
+                style={notificationSectionStyle}
+              >
+                <UnityButton
+                  type='solid'
+                  label='Add Help Notification'
+                  onClick={() => addNotification({
+                    name: 'notifications-via-component',
+                    notification: {
+                      type: 'help',
+                      text: 'What a helpful notification'
+                    }
+                  })}
+                />
+              </UnityNotificationsHandler>
             </UnitySection>
           </div>
         </div>
