@@ -2,6 +2,12 @@
 
 ## Changelog:
 
+### v0.3.3
+- fixed styles interface bug
+
+### v0.3.2
+- Updated to accept custom styles
+
 ### v0.3.1
 - Updated @types dependency
 

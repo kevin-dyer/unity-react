@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v0.2.2
+- Minor types and interface changes; module export for unity-notifications-handler-react
+
 ### v0.2.1
 - Updated @types dependency
 
