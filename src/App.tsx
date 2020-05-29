@@ -68,7 +68,14 @@ const notificationSectionStyle: NotificationStylesI = {
   justifyContent: 'center',
   margin: 10,
   boxShadow: '0 0 5px 1px rgba(0,0,0,0.1)',
-  height: '100%'
+  height: '100%',
+  alignItems: 'center'
+}
+
+const buttonContainerStyle: CSSProperties = {
+  width: '32%',
+  margin: '180px auto',
+  padding: 20,
 }
 
 interface NavItem {
@@ -198,19 +205,28 @@ const SectionForNotifications = (props?: any) => {
 
   return (
     <div>
-      {!!text && <UnityTypography>{text}</UnityTypography>}
-      <UnityButton
-        type='solid'
-        label='Add notification'
-        onClick={() => addNotification({
-          notification: {
-            type: 'tip',
-            text: 'Check out this cool Notification!',
-            timeout: 0
+      <div style={buttonContainerStyle}>
+        <UnityButton
+          type='solid'
+          label='Add Notification'
+          onClick={() => addNotification({
+            notification: {
+              type: 'tip',
+              text: 'Check out this cool Notification',
+              timeout: 0
+            }
+          })
           }
-        })
-        }
-      />
+        />
+      </div>
+      {!!text &&
+      <div style={{
+        display: 'flex',
+        justifyContent: 'center'
+      }}>
+        <UnityTypography>{text}</UnityTypography>
+      </div>
+      }
     </div>
   )
 }
@@ -496,7 +512,7 @@ class App extends React.Component {
               style={notificationSectionContainerStyle}
             >
               <WithNotificationsWrappedSection
-                text={'This texts is being passed to the wrapped element as a prop.'}
+                text={'This texts is being passed to the wrapped component as a prop.'}
               />
               <UnityNotificationsHandler
                 name='notifications-via-component'
@@ -504,18 +520,20 @@ class App extends React.Component {
                 position={'top-left'}
                 style={notificationSectionStyle}
               >
-                <UnityButton
-                  type='solid'
-                  label='Add Help Notification'
-                  onClick={() => addNotification({
-                    name: 'notifications-via-component',
-                    notification: {
-                      type: 'help',
-                      text: 'What a helpful notification'
-                    },
-                    timeout: 0
-                  })}
-                />
+                <div style={buttonContainerStyle}>
+                  <UnityButton
+                    type='solid'
+                    label='Add Notification'
+                    onClick={() => addNotification({
+                      name: 'notifications-via-component',
+                      notification: {
+                        type: 'help',
+                        text: 'What a helpful Notification'
+                      },
+                      timeout: 0
+                    })}
+                  />
+                </div>
               </UnityNotificationsHandler>
             </div>
           </div>
