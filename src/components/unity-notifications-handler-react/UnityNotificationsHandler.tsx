@@ -76,15 +76,15 @@ export default class UnityNotificationsHandler extends Component<NotificationsHa
   render() {
     const {
       _notificationsHandlerRef,
-      props,
       props: {
-        children
+        children,
+        ...restOfProps
       }
   } = this
     return (
       <unity-notifications-handler
         ref={_notificationsHandlerRef}
-        {...props}
+        {...restOfProps}
       >
         {children}
       </unity-notifications-handler>
@@ -129,7 +129,7 @@ export function withNotifications(handlerProps: NotificationsHandlerPropsI) {
             addNotification={({
               name: target=_uniqueName,
               notification
-            }) => addNotification({name: target, notification})}
+            }) => addNotification({ name: target, notification })}
             closeNotification={(target=_uniqueName) => closeNotification(target)}
             clearNotifications={(target=_uniqueName) => clearNotifications(target)}
             { ...props }

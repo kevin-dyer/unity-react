@@ -1220,10 +1220,21 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-notifications-handler-react@0.1.0", "@bit/smartworks.unity-react.unity-notifications-handler-react@^0.1.0":
+"@bit/smartworks.unity-react.unity-notifications-handler-react@0.1.0":
   version "0.1.0"
   resolved "https://node.bit.dev/smartworks.unity-react.unity-notifications-handler-react/-/smartworks.unity-react.unity-notifications-handler-react-0.1.0.tgz#d4951a4250dc8719f2de10dc37d653259103872c"
   integrity sha1-1JUaQlDchxny3hDcN9ZTJZEDhyw=
+  dependencies:
+    "@bit/smartworks.unity.unity-core" "1.2.1"
+    "@types/react" "16.9.11"
+    "@types/uuid" "^8.0.0"
+    react "^16.12.0"
+    uuid "3.4.0"
+
+"@bit/smartworks.unity-react.unity-notifications-handler-react@^0.1.1":
+  version "0.1.1"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-notifications-handler-react/-/smartworks.unity-react.unity-notifications-handler-react-0.1.1.tgz#adfbdefc16fafe648e0e6a98310e7e088e11a784"
+  integrity sha1-rfve/Bb6/mSODmqYMQ5+CI4Rp4Q=
   dependencies:
     "@bit/smartworks.unity.unity-core" "1.2.1"
     "@types/react" "16.9.11"
