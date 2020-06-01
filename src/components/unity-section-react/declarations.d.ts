@@ -5,9 +5,14 @@ declare namespace JSX {
 }
 
 declare module '@bit/smartworks.unity.unity-core/unity-section' {
-  export interface sectionPropsType {
+  export interface SectionPropsI {
     bordered?: boolean,
     nowrap?: boolean,
-    style?: object
+    style?: React.CSSProperties & {
+      '--section-color'?: string,
+      '--border-color'?: string,
+      '--horz-pos'?: string,
+      '--vert-pos'?: string,
+    }
   }
 }

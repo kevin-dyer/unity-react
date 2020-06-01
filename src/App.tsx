@@ -17,10 +17,14 @@ import {
   UnityModal,
   UnityProgress,
   UnityDropzone,
-  UnityNotification
+  UnityNotification,
+  NotificationStylesI,
+  UnityNotificationsHandler,
+  withNotifications,
+  addNotification
 } from './components/unity-core-react'
-import { devices } from './fakeData'
 
+import { devices } from './fakeData'
 
 const appStyle: CSSProperties = {
   display: 'flex',
@@ -51,6 +55,29 @@ const mainStyle: CSSProperties = {
   flex: 1,
   position: 'relative',
   overflowY: 'auto'
+}
+
+const notificationSectionContainerStyle: CSSProperties = {
+  display: 'flex',
+  flexDirection: 'row',
+  height: 500
+}
+
+const notificationSectionStyle: NotificationStylesI = {
+  display: 'flex',
+  flex: 1,
+  flexDirection: 'column',
+  justifyContent: 'center',
+  margin: 10,
+  boxShadow: '0 0 5px 1px rgba(0,0,0,0.1)',
+  height: '100%',
+  alignItems: 'center'
+}
+
+const buttonContainerStyle: CSSProperties = {
+  width: '32%',
+  margin: '180px auto',
+  padding: 20,
 }
 
 interface NavItem {
@@ -171,6 +198,47 @@ const dropdownOptions: Object[] = [
     // "disabled": true
   }
 ]
+
+const SectionForNotifications = (props?: any) => {
+  const {
+    addNotification=()=>console.log(`no add notification function!`),
+    text
+  } = props
+
+  return (
+    <div>
+      <div style={buttonContainerStyle}>
+        <UnityButton
+          type='solid'
+          label='Add Notification'
+          onClick={() => addNotification({
+            notification: {
+              type: 'tip',
+              text: 'Check out this cool Notification',
+              timeout: 0
+            }
+          })
+          }
+        />
+      </div>
+      {!!text &&
+      <div style={{
+        display: 'flex',
+        justifyContent: 'center'
+      }}>
+        <UnityTypography>{text}</UnityTypography>
+      </div>
+      }
+    </div>
+  )
+}
+
+const WithNotificationsWrappedSection = withNotifications({
+  position: 'top-left',
+  allowDuplicates: true,
+  style: notificationSectionStyle
+})(SectionForNotifications)
+
 
 class App extends React.Component {
 
@@ -441,6 +509,34 @@ class App extends React.Component {
                 />
               </div>
             </UnitySection>
+            <div
+              style={notificationSectionContainerStyle}
+            >
+              <WithNotificationsWrappedSection
+                text={'This text is being passed to the wrapped component as a prop.'}
+              />
+              <UnityNotificationsHandler
+                name='notifications-via-component'
+                allowDuplicates={true}
+                position={'top-left'}
+                style={notificationSectionStyle}
+              >
+                <div style={buttonContainerStyle}>
+                  <UnityButton
+                    type='solid'
+                    label='Add Notification'
+                    onClick={() => addNotification({
+                      name: 'notifications-via-component',
+                      notification: {
+                        type: 'help',
+                        text: 'What a helpful Notification'
+                      },
+                      timeout: 0
+                    })}
+                  />
+                </div>
+              </UnityNotificationsHandler> 
+            </div>
           </div>
         </div>
       </div>

@@ -61,3 +61,6 @@ export * from "@bit/smartworks.unity-react.unity-toggle-switch-react"
 export {default as UnityTypography} from "@bit/smartworks.unity-react.unity-typography-react"
 export * from "@bit/smartworks.unity-react.unity-typography-react"
 
+export {default as UnityNotificationsHandler} from "@bit/smartworks.unity-react.unity-notifications-handler-react"
+export * from "@bit/smartworks.unity-react.unity-notifications-handler-react"
+

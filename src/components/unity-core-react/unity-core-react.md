@@ -25,6 +25,23 @@ export * from "@bit/smartworks.unity-react.<component-path>" //Export named expo
 
 ## Changelog:
 
+## v0.4.5
+- unity-notifications-handler 0.1.1
+
+## v0.4.4
+- export bug fix for unity-notifications-handler
+
+## v0.4.3
+- unity-notifications-handler-react 0.1.0
+- unity-notification-react 1.0.0
+
+### v0.4.2
+- unity-section-react 0.3.3
+
+### v0.4.1
+- unity-section-react 0.3.2
+- unity-notification-react 0.2.2
+
 ### v0.4.0
 - unity-dropdown-react 0.3.0 (depends on unity-core 1.1.0)
 

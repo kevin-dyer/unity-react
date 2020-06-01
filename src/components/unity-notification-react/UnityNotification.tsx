@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
+
 import '@bit/smartworks.unity.unity-core/unity-notification'
 
-export default class UnityNotification extends Component<notificationPropsType> {
+export default class UnityNotification extends Component<NotificationPropsI> {
 
-  private notificationRef = React.createRef<notificationPropsType>()
+  private notificationRef = React.createRef<NotificationPropsI>()
 
   componentDidMount = () => {
     this.updateProperties()
@@ -17,8 +18,8 @@ export default class UnityNotification extends Component<notificationPropsType> 
     const { props, notificationRef } = this
     const unityNotification = notificationRef.current
     const { onClose } = props
-    if (unityNotification) {
-      if (onClose) unityNotification.onClose = onClose
+    if (!!unityNotification) {
+      if (!!onClose) unityNotification.onClose = onClose
     }
   }
 
@@ -34,15 +35,16 @@ export default class UnityNotification extends Component<notificationPropsType> 
   }
 }
 
-export interface notificationPropsType extends React.HTMLAttributes<HTMLElement> {
+export interface NotificationPropsI extends React.HTMLAttributes<HTMLElement> {
   text?: string 
   subtext?: string
   icon?: string
   onClose?: Function
-  style?: notificationStyleTypes
+  style?: NotificationStylesI
 }
 
-export type notificationStyleTypes = React.CSSProperties & {
+
+export interface NotificationStylesI extends React.CSSProperties {
   '--notification-color'?: string
   '--notification-height'?: string
   '--notification-width'?: string
