@@ -5,6 +5,9 @@
 
 ## Changelog:
 
+### v0.1.2
+- Bug fixes; graceful failure when no "name" passed
+
 ### v0.1.1
 - Prevented passing children as props to unity-notifications-handler
 

@@ -79,8 +79,13 @@ export default class UnityNotificationsHandler extends Component<NotificationsHa
       props: {
         children,
         ...restOfProps
-      }
-  } = this
+      }={}
+    } = this
+    
+    if (!this.props.name) {
+      console.warn(`UnityNotificationsHandler was not passed a "name" property.`)
+      return (<>{children}</>)
+    }
     return (
       <unity-notifications-handler
         ref={_notificationsHandlerRef}
@@ -97,6 +102,7 @@ export function withNotifications(handlerProps: NotificationsHandlerPropsI) {
     return (props: NotificationWrappedComponentPropsI) => {
       const {
         name,
+        position,
         icons,
         colors,
         customTypes,
@@ -104,7 +110,7 @@ export function withNotifications(handlerProps: NotificationsHandlerPropsI) {
         noAnimation,
         onClose,
         style
-      } = handlerProps
+      } = handlerProps || {}
       const _uniqueName: string = name || uuid()
       const _notificationsHandlerRef: React.RefObject<NotificationsHandlerPropsI> = React.createRef()
       const {
@@ -122,6 +128,7 @@ export function withNotifications(handlerProps: NotificationsHandlerPropsI) {
       return (
         <unity-notifications-handler
           name={_uniqueName}
+          position={position}
           ref={_notificationsHandlerRef}
           style={style}
         >
