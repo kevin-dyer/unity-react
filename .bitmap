@@ -70,107 +70,107 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-core-react@0.4.6": {
+    "smartworks.unity-react/unity-core-react@0.4.8": {
         "files": [
             {
+                "name": "index.js",
                 "relativePath": "src/components/unity-core-react/UnityButton/index.js",
-                "test": false,
-                "name": "index.js"
+                "test": false
             },
             {
+                "name": "index.js",
                 "relativePath": "src/components/unity-core-react/UnityCodeEditor/index.js",
-                "test": false,
-                "name": "index.js"
+                "test": false
             },
             {
+                "name": "index.js",
                 "relativePath": "src/components/unity-core-react/UnityColumnEditor/index.js",
-                "test": false,
-                "name": "index.js"
+                "test": false
             },
             {
+                "name": "index.js",
                 "relativePath": "src/components/unity-core-react/UnityDropdown/index.js",
-                "test": false,
-                "name": "index.js"
+                "test": false
             },
             {
+                "name": "index.js",
                 "relativePath": "src/components/unity-core-react/UnityDropzone/index.js",
-                "test": false,
-                "name": "index.js"
+                "test": false
             },
             {
+                "name": "index.js",
                 "relativePath": "src/components/unity-core-react/UnityGlobalNav/index.js",
-                "test": false,
-                "name": "index.js"
+                "test": false
             },
             {
+                "name": "index.js",
                 "relativePath": "src/components/unity-core-react/UnityModal/index.js",
-                "test": false,
-                "name": "index.js"
+                "test": false
             },
             {
+                "name": "index.js",
                 "relativePath": "src/components/unity-core-react/UnityNotification/index.js",
-                "test": false,
-                "name": "index.js"
+                "test": false
             },
             {
+                "name": "index.js",
                 "relativePath": "src/components/unity-core-react/UnityNotificationsHandler/index.js",
-                "test": false,
-                "name": "index.js"
+                "test": false
             },
             {
+                "name": "index.js",
                 "relativePath": "src/components/unity-core-react/UnityPageHeader/index.js",
-                "test": false,
-                "name": "index.js"
+                "test": false
             },
             {
+                "name": "index.js",
                 "relativePath": "src/components/unity-core-react/UnityProgress/index.js",
-                "test": false,
-                "name": "index.js"
+                "test": false
             },
             {
+                "name": "index.js",
                 "relativePath": "src/components/unity-core-react/UnitySection/index.js",
-                "test": false,
-                "name": "index.js"
+                "test": false
             },
             {
+                "name": "index.js",
                 "relativePath": "src/components/unity-core-react/UnitySplitPane/index.js",
-                "test": false,
-                "name": "index.js"
+                "test": false
             },
             {
+                "name": "index.js",
                 "relativePath": "src/components/unity-core-react/UnityTable/index.js",
-                "test": false,
-                "name": "index.js"
+                "test": false
             },
             {
+                "name": "index.js",
                 "relativePath": "src/components/unity-core-react/UnityTableExport/index.js",
-                "test": false,
-                "name": "index.js"
+                "test": false
             },
             {
+                "name": "index.js",
                 "relativePath": "src/components/unity-core-react/UnityTextInput/index.js",
-                "test": false,
-                "name": "index.js"
+                "test": false
             },
             {
+                "name": "index.js",
                 "relativePath": "src/components/unity-core-react/UnityToggleSwitch/index.js",
-                "test": false,
-                "name": "index.js"
+                "test": false
             },
             {
+                "name": "index.js",
                 "relativePath": "src/components/unity-core-react/UnityTypography/index.js",
-                "test": false,
-                "name": "index.js"
+                "test": false
             },
             {
+                "name": "index.js",
                 "relativePath": "src/components/unity-core-react/index.js",
-                "test": false,
-                "name": "index.js"
+                "test": false
             },
             {
+                "name": "unity-core-react.md",
                 "relativePath": "src/components/unity-core-react/unity-core-react.md",
-                "test": false,
-                "name": "unity-core-react.md"
+                "test": false
             }
         ],
         "mainFile": "src/components/unity-core-react/index.js",
@@ -290,7 +290,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-notifications-handler-react@0.1.2": {
+    "smartworks.unity-react/unity-notifications-handler-react@0.1.3": {
         "files": [
             {
                 "relativePath": "src/components/unity-notifications-handler-react/UnityNotificationsHandler.tsx",
