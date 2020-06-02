@@ -5,6 +5,9 @@
 
 ## Changelog:
 
+### v0.1.3
+- Bug fix for when no children are passed
+
 ### v0.1.2
 - Bug fixes; graceful failure when no "name" passed
 

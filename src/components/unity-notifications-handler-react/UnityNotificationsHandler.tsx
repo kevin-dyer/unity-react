@@ -77,7 +77,7 @@ export default class UnityNotificationsHandler extends Component<NotificationsHa
     const {
       _notificationsHandlerRef,
       props: {
-        children,
+        children=[],
         ...restOfProps
       }={}
     } = this
