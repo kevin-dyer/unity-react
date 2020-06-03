@@ -516,7 +516,7 @@ class App extends React.Component {
                 text={'This text is being passed to the wrapped component as a prop.'}
               />
               <UnityNotificationsHandler
-                name='notifications-via-component'
+                target='notifications-via-component'
                 allowDuplicates={true}
                 position={'top-left'}
                 style={notificationSectionStyle}
