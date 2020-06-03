@@ -1,7 +1,7 @@
 import React from "react";
 import AceEditor from "react-ace";
-import "ace-builds/webpack-resolver.js"
-
+//NOTE: webpack-resolver prevents this component from being used in apps without webpack
+// import "ace-builds/webpack-resolver.js"
 import "ace-builds/src-noconflict/mode-json5";
 import "ace-builds/src-noconflict/mode-javascript";
 import "ace-builds/src-noconflict/mode-python";
