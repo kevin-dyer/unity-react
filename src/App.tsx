@@ -435,7 +435,7 @@ class App extends React.Component {
                 </div>
               </UnitySection>
             </UnitySection>
-            <UnitySection style={{height: "500px", "--vert-pos": "top"}}>
+            <UnitySection style={{height: "1000px", overflow: 'scroll', "--vert-pos": "top"}}>
               <div style={{...contentBox, display: "flex", flexDirection: "column"}}>
                   <UnitySection style={{flex: 0}}>
                     <h3>UnityTable</h3>
