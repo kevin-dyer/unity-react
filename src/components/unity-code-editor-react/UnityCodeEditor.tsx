@@ -128,7 +128,7 @@ class UnityCodeEditor extends React.Component<CodeEditorProps, CodeEditorState> 
           {!!dirty && <div className="dirty-gutter"/>}
           <AceEditor
             value={value}
-            style={width: "100%", height: "100%"}
+            style={{width: "100%", height: "100%"}}
             theme={"textmate"}
             mode={mode === 'json' ? 'json5' : mode}
             editorProps={{ $blockScrolling: true }}
