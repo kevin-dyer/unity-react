@@ -2,6 +2,7 @@ import React from "react";
 import AceEditor from "react-ace";
 //NOTE: webpack-resolver prevents this component from being used in apps without webpack
 // import "ace-builds/webpack-resolver.js"
+
 import "ace-builds/src-noconflict/mode-json5";
 import "ace-builds/src-noconflict/mode-javascript";
 import "ace-builds/src-noconflict/mode-python";
@@ -10,6 +11,7 @@ import "ace-builds/src-noconflict/mode-dockerfile";
 import "ace-builds/src-noconflict/mode-markdown";
 import "ace-builds/src-noconflict/mode-html";
 import "ace-builds/src-noconflict/theme-textmate";
+
 import UnityTypography from "@bit/smartworks.unity-react.unity-typography-react";
 
 import './UnityCodeEditor.css';
@@ -30,8 +32,13 @@ export interface CodeEditorProps {
   minLines?: number,
   maxLines?: number,
   error?: string,
-  validation?: Function
+  validation?: Function,
+  readOnly?: boolean,
+  highlightActiveLine?: boolean,
+  showLineNumbers?: boolean,
+  tabSize?: number
 }
+
 export interface CodeEditorState {error: string}
 
 class UnityCodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
@@ -101,7 +108,11 @@ class UnityCodeEditor extends React.Component<CodeEditorProps, CodeEditorState> 
       dirty,
       minLines=8,
       maxLines=16,
-      error: errorText=''
+      error: errorText='',
+      readOnly=false,
+      highlightActiveLine=true,
+      showLineNumbers=true,
+      tabSize=2
     } = this.props
     const { error='' } = this.state
     const editorWrapperClass = (errorText || error)? "editor-wrapper invalid" : "editor-wrapper"
@@ -117,13 +128,19 @@ class UnityCodeEditor extends React.Component<CodeEditorProps, CodeEditorState> 
           {!!dirty && <div className="dirty-gutter"/>}
           <AceEditor
             value={value}
-            style={{width: "100%", height: "100%"}}
+            style={width: "100%", height: "100%"}
             theme={"textmate"}
             mode={mode === 'json' ? 'json5' : mode}
             editorProps={{ $blockScrolling: true }}
             onChange={this.handleChange}
             minLines={minLines}
             maxLines={maxLines}
+            readOnly={readOnly}
+            highlightActiveLine={highlightActiveLine}
+            setOptions={{
+              showLineNumbers
+            }}
+            tabSize={tabSize}
           />
         </div>
         {(errorText || error) &&
