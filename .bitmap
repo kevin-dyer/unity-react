@@ -70,7 +70,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-core-react@0.4.10": {
+    "smartworks.unity-react/unity-core-react@0.4.11": {
         "files": [
             {
                 "name": "index.js",
@@ -425,7 +425,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-table-react@0.4.1": {
+    "smartworks.unity-react/unity-table-react@0.4.2": {
         "files": [
             {
                 "name": "UnityTable.tsx",
