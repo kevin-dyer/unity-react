@@ -1,21 +1,25 @@
-import UnityModal from '@bit/smartworks.unity-react.unity-modal-react'
-import UnityNotificationsHandler from '@bit/smartworks.unity-react.unity-notifications-handler-react'
+import React, { Component } from 'react'
 
-import { NotificationsHandlerPropsI } from '@bit/smartworks.unity-react.unity-notifications-handler-react'
+import UnityModal, { ModalPropsI } from '@bit/smartworks.unity-react.unity-modal-react'
+import UnityNotificationsHandler, { NotificationsHandlerPropsI } from '@bit/smartworks.unity-react.unity-notifications-handler-react'
 
+export interface NotificationModalPropsI extends ModalPropsI {
+  notificationHandler: NotificationsHandlerPropsI
+}
 
-export default class UnityNotificationModal {
+export default class UnityNotificationModal extends Component<NotificationModalPropsI>{
 
   render() {
     const {
-      target
-    }
+      notificationHandler: notificationHandlerProps={},
+      ...modalProps
+    } = this.props
     return (
       <UnityNotificationsHandler
-        target={target}
+        {...notificationHandlerProps}
       >
         <UnityModal
-
+          {...modalProps}
         />
       </UnityNotificationsHandler>
     )

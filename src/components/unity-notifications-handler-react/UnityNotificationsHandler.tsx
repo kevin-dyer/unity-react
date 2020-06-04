@@ -148,3 +148,9 @@ export function withNotifications(handlerProps: NotificationsHandlerPropsI) {
 }
 
 export { addNotification, closeNotification, clearNotifications }
+
+export { default } from './UnityNotificationModal'
+export * from './UnityNotificationModal'
+
+export { default } from './UnityNotificationSplitPane'
+export * from './UnityNotificationSplitPane'
