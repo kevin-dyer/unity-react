@@ -30,8 +30,13 @@ export interface CodeEditorProps {
   minLines?: number,
   maxLines?: number,
   error?: string,
-  validation?: Function
+  validation?: Function,
+  readOnly?: boolean,
+  highlightActiveLine?: boolean,
+  showLineNumbers?: boolean,
+  tabSize?: number
 }
+
 export interface CodeEditorState {error: string}
 
 class UnityCodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
@@ -101,7 +106,11 @@ class UnityCodeEditor extends React.Component<CodeEditorProps, CodeEditorState> 
       dirty,
       minLines=8,
       maxLines=16,
-      error: errorText=''
+      error: errorText='',
+      readOnly=false,
+      highlightActiveLine=true,
+      showLineNumbers=true,
+      tabSize=2
     } = this.props
     const { error='' } = this.state
     const editorWrapperClass = (errorText || error)? "editor-wrapper invalid" : "editor-wrapper"
@@ -124,6 +133,12 @@ class UnityCodeEditor extends React.Component<CodeEditorProps, CodeEditorState> 
             onChange={this.handleChange}
             minLines={minLines}
             maxLines={maxLines}
+            readOnly={readOnly}
+            highlightActiveLine={highlightActiveLine}
+            setOptions={{
+              showLineNumbers
+            }}
+            tabSize={tabSize}
           />
         </div>
         {(errorText || error) &&
