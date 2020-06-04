@@ -2,7 +2,6 @@ import React from "react";
 import AceEditor from "react-ace";
 //NOTE: webpack-resolver prevents this component from being used in apps without webpack
 // import "ace-builds/webpack-resolver.js"
-
 import "ace-builds/src-noconflict/mode-json5";
 import "ace-builds/src-noconflict/mode-javascript";
 import "ace-builds/src-noconflict/mode-python";
@@ -11,7 +10,6 @@ import "ace-builds/src-noconflict/mode-dockerfile";
 import "ace-builds/src-noconflict/mode-markdown";
 import "ace-builds/src-noconflict/mode-html";
 import "ace-builds/src-noconflict/theme-textmate";
-
 import UnityTypography from "@bit/smartworks.unity-react.unity-typography-react";
 
 import './UnityCodeEditor.css';
