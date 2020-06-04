@@ -134,7 +134,7 @@ export default class UnityTable extends Component<TableProps> {
         const slotId: string = this._slotIdExtractor(node, column)
 
         if (!!customContent) {
-          slots.push(<div slot={slotId} key={slotId}>{customContent}</div>)
+          slots.push(<div slot={slotId} key={slotId} style={styles.slot}>{customContent}</div>)
         }
       })
     })
@@ -186,5 +186,8 @@ const styles : TableStyles = {
     flex: 1,
     position: 'relative',
     overflowY: 'auto'
+  },
+  slot: {
+    flex: 1
   }
 }
