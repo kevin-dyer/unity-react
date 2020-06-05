@@ -86,6 +86,7 @@ export default class UnityNotificationsHandler extends Component<NotificationsHa
       console.warn(`UnityNotificationsHandler was not passed a "target" property.`)
       return (<>{children}</>)
     }
+
     return (
       <unity-notifications-handler
         ref={_notificationsHandlerRef}
@@ -149,8 +150,8 @@ export function withNotifications(handlerProps: NotificationsHandlerPropsI) {
 
 export { addNotification, closeNotification, clearNotifications }
 
-export { default } from './UnityNotificationModal'
+export { default as UnityNotificationModal } from './UnityNotificationModal'
 export * from './UnityNotificationModal'
 
-export { default } from './UnityNotificationSplitPane'
+export { default as UnityNotificationSplitPane } from './UnityNotificationSplitPane'
 export * from './UnityNotificationSplitPane'
