@@ -1204,10 +1204,18 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-modal-react@0.2.1", "@bit/smartworks.unity-react.unity-modal-react@^0.2.1":
+"@bit/smartworks.unity-react.unity-modal-react@0.2.1":
   version "0.2.1"
   resolved "https://node.bit.dev/smartworks.unity-react.unity-modal-react/-/smartworks.unity-react.unity-modal-react-0.2.1.tgz#fa506683487532aa9a27cc52e4f3db26130fa6d1"
   integrity sha1-+lBmg0h1MqqaJ8xS5PPbJhMPptE=
+  dependencies:
+    "@types/react" "16.9.11"
+    react "^16.12.0"
+
+"@bit/smartworks.unity-react.unity-modal-react@^0.2.2":
+  version "0.2.2"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-modal-react/-/smartworks.unity-react.unity-modal-react-0.2.2.tgz#10b4da04d6b695f92dab66bb0817410159dd6cad"
+  integrity sha1-ELTaBNa2lfktq2a7CBdBAVndbK0=
   dependencies:
     "@types/react" "16.9.11"
     react "^16.12.0"

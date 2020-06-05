@@ -246,7 +246,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-modal-react@0.2.1": {
+    "smartworks.unity-react/unity-modal-react@0.2.2": {
         "files": [
             {
                 "name": "UnityModal.tsx",

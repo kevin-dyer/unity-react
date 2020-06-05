@@ -5,6 +5,9 @@
 
 ## Changelog:
 
+### v0.2.1
+- Added UnityNotificationSplitPane and UnityNotificationModal
+
 ### v0.2.0
 - Naming convention changes
 
