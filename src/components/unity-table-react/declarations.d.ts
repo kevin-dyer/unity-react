@@ -28,7 +28,8 @@ declare module '@bit/smartworks.unity.unity-core/unity-table' {
     noTopBorder?: boolean
   }
   export interface TableStyles {
-    container: React.CSSProperties
+    container: React.CSSProperties,
+    slot: React.CSSProperties
   }
   export interface TableColumn {
     key?: string,
