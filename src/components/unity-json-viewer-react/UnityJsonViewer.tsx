@@ -1,6 +1,6 @@
 import React from "react";
 import UnityCodeEditor from '@bit/smartworks.unity-react.unity-code-editor-react'
-import 'UnityJsonViewer.css'
+import './UnityJsonViewer.css'
 /**
  * A readOnly collapsible json tree viewer based on UnityCodeEditor
  * @example
