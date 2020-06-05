@@ -2,7 +2,7 @@ import React from "react";
 import UnityCodeEditor from '@bit/smartworks.unity-react.unity-code-editor-react'
 
 /**
- * A collapsible json tree viewer based on UnityCodeEditor
+ * A readOnly collapsible json tree viewer based on UnityCodeEditor
  * @example
  * <UnityJsonViewer src={json_string_or_object}/>
  */

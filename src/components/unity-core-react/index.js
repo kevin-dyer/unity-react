@@ -28,6 +28,9 @@ export * from "@bit/smartworks.unity-react.unity-dropzone-react"
 export {default as UnityGlobalNav} from "@bit/smartworks.unity-react.unity-global-nav-react"
 export * from "@bit/smartworks.unity-react.unity-global-nav-react"
 
+export {default as UnityJsonViewer} from "@bit/smartworks.unity-react.unity-json-viewer-react"
+export * from "@bit/smartworks.unity-react.unity-json-viewer-react"
+
 export {default as UnityModal} from "@bit/smartworks.unity-react.unity-modal-react"
 export * from "@bit/smartworks.unity-react.unity-modal-react"
 
