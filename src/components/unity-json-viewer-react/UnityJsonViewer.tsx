@@ -8,7 +8,7 @@ import UnityCodeEditor from '@bit/smartworks.unity-react.unity-code-editor-react
  */
 
 export interface JsonViewerProps {
-  src: string
+  src?: string
 }
 
 export default class UnityJsonViewer extends React.Component<JsonViewerProps> {
