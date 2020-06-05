@@ -86,14 +86,16 @@ const modalStyle: CSSProperties = {
 const splitPaneHeaderStyle: CSSProperties = {
   paddingLeft: 24,
   width: '100%',
-  borderBottom: '1px solid black'
+  border: '1px solid black'
 }
 
 const splitPaneContainerStyle: CSSProperties = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  flex: 1
+  height: '100%',
+  width: '100%',
+  padding: 40
 }
 
 const buttonContainerStyle: CSSProperties = {
@@ -329,29 +331,33 @@ class App extends React.Component {
           <UnityModal
             top={<UnityButton centerIcon="unity:close" onClick={() => this.setState({ showModal: false })}/>}
             title="Modal title"
-            body={<UnityButton
-              label="Unity"
-              type="solid"
-              onClick={() => console.log("click")}
-            />}
+            body={<div style={{ padding: '100px 300px' }}>
+              <UnityButton
+                label="Unity"
+                type="solid"
+                onClick={() => console.log("click")}
+              />
+           </div> }
             bottom='this is the bottom'
             show={this.state.showModal}
             style={modalStyle}
           />
           <UnityNotificationModal
             top={<UnityButton centerIcon="unity:close" onClick={() => this.setState({ showNotificationModal: false })}/>}
-            title="Modal title"
-            body={<UnityButton
-              label="Show a Notification"
-              type="solid"
-              onClick={() => addNotification({
-                target: 'notifications-in-modal',
-                notification: {
-                  text: 'This notification is scoped to the modal',
-                  type: 'tip'
-                }
-              })}/>}
-            bottom='this is the bottom'
+            title="A Notification-Enabled Modal"
+            body={<div style={{ padding: '100px 300px' }}>
+              <UnityButton
+                label="Show a Notification"
+                type="solid"
+                onClick={() => addNotification({
+                  target: 'notifications-in-modal',
+                  notification: {
+                    text: 'Check it out',
+                    subtext: 'This notification is scoped to the modal',
+                    type: 'tip'
+                  }
+                })}/>
+            </div>}
             show={this.state.showNotificationModal}
             notifications={{
               target: 'notifications-in-modal'
@@ -427,8 +433,8 @@ class App extends React.Component {
               <UnitySection>
                 <UnitySplitPane
                   onResize={(params: any)=>console.log("resize params: ", params)}
-                  style={{height: '400px', border: '1px solid grey'}}
-                  onClose={()=> this.setState({showPane: false})}
+                  style={{ height: 400, border: '1px solid grey', margin: 20 }}
+                  onClose={()=> this.setState({ showPane: false })}
                   closeButton
                   collapseButton
                   show={this.state.showPane}
@@ -444,13 +450,13 @@ class App extends React.Component {
                     />
                   </div>
                   }
-                  footer="This is the footer"
-                  pane="This is the pane"
+                  footer={<div style={splitPaneHeaderStyle}>This is the footer</div>}
+                  pane={<div style={splitPaneContainerStyle}>This is the pane content</div>}
                 />
                 <UnityNotificationSplitPane
                   mainNotifications={{ target: 'split-pane-main-notification'}}
                   paneNotifications={{ target: 'split-pane-pane-notification'}}
-                  style={{height: '400px', border: '1px solid grey'}}
+                  style={{height: 400, border: '1px solid grey', margin: 20}}
                   onClose={()=> this.setState({ showNotificationSplitPane: false })}
                   closeButton
                   collapseButton
@@ -471,11 +477,13 @@ class App extends React.Component {
                             type: 'success'
                           }
                         })}
+                        style={{ margin: 20 }}
                       />
                       <UnityButton
                         label="Toggle Split Pane"
                         type="solid"
                         onClick={() => this.setState({ showNotificationSplitPane: !this.state.showNotificationSplitPane})}
+                        style={{ margin: 20 }}
                       />
                     </div>
                   )}
@@ -487,7 +495,7 @@ class App extends React.Component {
                         label="show warning notification"
                         type="solid"
                         onClick={() => addNotification({
-                          target: 'split-pane-main-notification',
+                          target: 'split-pane-pane-notification',
                           notification: {
                             text: 'Look  out',
                             subtext: 'this is a warning notification',
@@ -497,7 +505,6 @@ class App extends React.Component {
                       />
                     </div>
                   )}
-                  footer="This is the footer"
                 />
               </UnitySection>
               <UnitySection>
@@ -510,8 +517,18 @@ class App extends React.Component {
                   <div style={contentBox}>
                     <h3>UnityButton and modal</h3>
                     <div>
-                      <UnityButton label="Show Standard Modal" type="solid" onClick={() => this.setState({showModal: true})}/>
-                      <UnityButton label="Show Notifications-Enabled Modal" type="solid" onClick={() => this.setState({showNotificationModal: true})}/>
+                      <UnityButton
+                        label="Show Standard Modal"
+                        type="solid"
+                        onClick={() => this.setState({showModal: true})}
+                        style={{ margin: 20 }}
+                      />
+                      <UnityButton
+                        label="Show Notifications-Enabled Modal"
+                        type="solid"
+                        onClick={() => this.setState({showNotificationModal: true})}
+                        style={{ margin: 20 }}
+                      />
                     </div>
                   </div>
                 </UnitySection>
