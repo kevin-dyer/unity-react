@@ -4,24 +4,39 @@ import UnitySplitPane, { SplitPaneProps } from '@bit/smartworks.unity-react.unit
 import UnityNotificationsHandler, { NotificationsHandlerPropsI } from '@bit/smartworks.unity-react.unity-notifications-handler-react'
 
 export interface NotificationSplitPanePropsI extends SplitPaneProps {
-  notificationHandler: NotificationsHandlerPropsI
+  mainNotifications?: NotificationsHandlerPropsI,
+  paneNotifications?: NotificationsHandlerPropsI,
 }
 
 export default class UnityNotificationSplitPane extends Component<NotificationSplitPanePropsI>{
 
   render() {
     const {
-      notificationHandler: notificationHandlerProps={},
+      mainNotifications={},
+      paneNotifications={},
+      main,
+      pane,
       ...splitPaneProps
     } = this.props
+
     return (
-      <UnityNotificationsHandler
-        {...notificationHandlerProps}
-      >
-        <UnitySplitPane
-          {...splitPaneProps}
-        />
-      </UnityNotificationsHandler>
+      <UnitySplitPane
+        main={!!mainNotifications.target ?  (
+          <UnityNotificationsHandler
+            {...mainNotifications}
+          >
+            {main}
+          </UnityNotificationsHandler>
+        ) : main}
+        pane={!!paneNotifications.target ?  (
+          <UnityNotificationsHandler
+            {...paneNotifications}
+          >
+            {pane}
+          </UnityNotificationsHandler>
+        ) : pane}
+        {...splitPaneProps}
+      />
     )
   }
 }

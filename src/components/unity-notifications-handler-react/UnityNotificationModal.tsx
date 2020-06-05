@@ -4,18 +4,27 @@ import UnityModal, { ModalPropsI } from '@bit/smartworks.unity-react.unity-modal
 import UnityNotificationsHandler, { NotificationsHandlerPropsI } from '@bit/smartworks.unity-react.unity-notifications-handler-react'
 
 export interface NotificationModalPropsI extends ModalPropsI {
-  notificationHandler: NotificationsHandlerPropsI
+  notifications?: NotificationsHandlerPropsI
 }
 
 export default class UnityNotificationModal extends Component<NotificationModalPropsI>{
 
   render() {
     const {
-      notificationHandler: notificationHandlerProps={},
+      notifications={},
       ...modalProps
     } = this.props
+
+    const {
+      target,
+      ...notificationHandlerProps
+    } = notifications
+
+    if (!target) return (<UnityModal {...modalProps} />)
+
     return (
       <UnityNotificationsHandler
+        target={target || 'no-target-specified'}
         {...notificationHandlerProps}
       >
         <UnityModal
