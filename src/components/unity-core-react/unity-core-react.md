@@ -25,7 +25,7 @@ export * from "@bit/smartworks.unity-react.<component-path>" //Export named expo
 
 ## Changelog:
 
-## v0.4.15
+## v0.4.16
 - unity-notifications-handler-react 0.2.1
 
 ## v0.4.8
