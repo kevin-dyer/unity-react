@@ -70,7 +70,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-core-react@0.4.10": {
+    "smartworks.unity-react/unity-core-react@0.4.14": {
         "files": [
             {
                 "name": "index.js",
@@ -100,6 +100,11 @@
             {
                 "name": "index.js",
                 "relativePath": "src/components/unity-core-react/UnityGlobalNav/index.js",
+                "test": false
+            },
+            {
+                "name": "index.js",
+                "relativePath": "src/components/unity-core-react/UnityJsonViewer/index.js",
                 "test": false
             },
             {
@@ -290,7 +295,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-notifications-handler-react@0.2.0": {
+    "smartworks.unity-react/unity-notifications-handler-react@0.2.1": {
         "files": [
             {
                 "relativePath": "src/components/unity-notifications-handler-react/UnityNotificationModal.tsx",

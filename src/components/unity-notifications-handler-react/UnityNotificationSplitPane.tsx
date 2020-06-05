@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import UnitySplitPane, { SplitPaneProps } from '@bit/smartworks.unity-react.unity-split-pane-react'
-import UnityNotificationsHandler, { NotificationsHandlerPropsI } from '@bit/smartworks.unity-react.unity-notifications-handler-react'
+import UnityNotificationsHandler, { NotificationsHandlerPropsI } from './UnityNotificationsHandler'
 
 export interface NotificationSplitPanePropsI extends SplitPaneProps {
   mainNotifications?: NotificationsHandlerPropsI,

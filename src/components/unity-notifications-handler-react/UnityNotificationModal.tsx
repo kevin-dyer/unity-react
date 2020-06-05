@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import UnityModal, { ModalPropsI } from '@bit/smartworks.unity-react.unity-modal-react'
-import UnityNotificationsHandler, { NotificationsHandlerPropsI } from '@bit/smartworks.unity-react.unity-notifications-handler-react'
+import UnityNotificationsHandler, { NotificationsHandlerPropsI } from './UnityNotificationsHandler'
 
 export interface NotificationModalPropsI extends ModalPropsI {
   notifications?: NotificationsHandlerPropsI
