@@ -3,6 +3,7 @@ import './App.css';
 import {
   UnityButton,
   UnityCodeEditor,
+  UnityJsonViewer,
   UnityTextInput,
   UnityTable,
   UnityTableExport,
@@ -414,6 +415,12 @@ class App extends React.Component {
                       }
                       return ''
                     }}
+                  />
+                </div>
+                <div style={contentBox}>
+                  <UnityTypography>JSON Viewer</UnityTypography>
+                  <UnityJsonViewer
+                    src={JSON.stringify(navItems)}
                   />
                 </div>
               </UnitySection>

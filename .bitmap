@@ -70,7 +70,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-core-react@0.4.14": {
+    "smartworks.unity-react/unity-core-react@0.4.15": {
         "files": [
             {
                 "name": "index.js",
@@ -248,6 +248,19 @@
         ],
         "mainFile": "src/components/unity-global-nav-react/UnityGlobalNav.tsx",
         "trackDir": "src/components/unity-global-nav-react",
+        "origin": "AUTHORED",
+        "exported": true
+    },
+    "smartworks.unity-react/unity-json-viewer-react@0.0.2": {
+        "files": [
+            {
+                "relativePath": "src/components/unity-json-viewer-react/UnityJsonViewer.tsx",
+                "test": false,
+                "name": "UnityJsonViewer.tsx"
+            }
+        ],
+        "mainFile": "src/components/unity-json-viewer-react/UnityJsonViewer.tsx",
+        "trackDir": "src/components/unity-json-viewer-react",
         "origin": "AUTHORED",
         "exported": true
     },
