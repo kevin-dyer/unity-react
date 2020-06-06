@@ -70,7 +70,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-core-react@0.4.17": {
+    "smartworks.unity-react/unity-core-react@0.4.18": {
         "files": [
             {
                 "name": "index.js",
@@ -183,7 +183,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-dropdown-react@0.3.0": {
+    "smartworks.unity-react/unity-dropdown-react@0.3.1": {
         "files": [
             {
                 "name": "UnityDropdown.tsx",
@@ -269,7 +269,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-modal-react@0.2.1": {
+    "smartworks.unity-react/unity-modal-react@0.2.2": {
         "files": [
             {
                 "name": "UnityModal.tsx",
@@ -313,22 +313,22 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-notifications-handler-react@0.1.3": {
+    "smartworks.unity-react/unity-notifications-handler-react@0.2.1": {
         "files": [
             {
+                "name": "UnityNotificationsHandler.tsx",
                 "relativePath": "src/components/unity-notifications-handler-react/UnityNotificationsHandler.tsx",
-                "test": false,
-                "name": "UnityNotificationsHandler.tsx"
+                "test": false
             },
             {
+                "name": "declarations.d.ts",
                 "relativePath": "src/components/unity-notifications-handler-react/declarations.d.ts",
-                "test": false,
-                "name": "declarations.d.ts"
+                "test": false
             },
             {
+                "name": "unity-notifications-handler-react.md",
                 "relativePath": "src/components/unity-notifications-handler-react/unity-notifications-handler-react.md",
-                "test": false,
-                "name": "unity-notifications-handler-react.md"
+                "test": false
             }
         ],
         "mainFile": "src/components/unity-notifications-handler-react/UnityNotificationsHandler.tsx",

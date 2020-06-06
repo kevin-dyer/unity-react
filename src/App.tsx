@@ -253,7 +253,9 @@ class App extends React.Component {
     fileName: '',
     fileType: '',
     fileContent: '',
-    selection: []
+    selection: [],
+    dropdownOptions,
+    dropdownDisabled: false
   }
 
   makeCenterContent() {
@@ -280,7 +282,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { selection } = this.state
+    const { selection, dropdownOptions, dropdownDisabled } = this.state
     const { data, columns, childKeys } = devices
     return (
       <div className="App" style={appStyle}>
@@ -391,6 +393,28 @@ class App extends React.Component {
                   inputType={"single-select"}
                   onValueChange={(...args:any) => console.log('value changed, here are the args', args)}
                   options={dropdownOptions}
+                  disabled={dropdownDisabled}
+                />
+                <UnityToggleSwitch
+                  value={!dropdownDisabled}
+                  label={"Disabled"}
+                  onChange={(on : boolean) => this.setState({ dropdownDisabled: !on })}
+                />
+                <UnityButton
+                  onClick={() => {
+                    const willAdd = (Math.random() > .5) || dropdownOptions.length === 0
+                    let newDropdownOptions = [...dropdownOptions]
+                    if (willAdd) {
+                      newDropdownOptions.push({
+                        id: dropdownOptions.length + 1,
+                        label: `New Option ${dropdownOptions.length + 1}`
+                      })
+                    } else {
+                      newDropdownOptions.pop()
+                    }
+                    this.setState({ dropdownOptions: newDropdownOptions })
+                  }}
+                  label={"Add/Remove Item"}
                 />
               </UnitySection>
               <UnitySection>
@@ -485,7 +509,7 @@ class App extends React.Component {
                         }}
                         showTags
                       />
-                      {!!this.tableRef && !!this.tableRef.current && 
+                      {!!this.tableRef && !!this.tableRef.current &&
                         <UnityTableExport
                           style={{margin: "4px", alignSelf: "flex-end", marginLeft: 40}}
                           tableRef={this.tableRef.current.tableRef}
@@ -498,13 +522,14 @@ class App extends React.Component {
                           <UnityButton
                             type="solid"
                             label="Export"
-                            rightIcon="unity:file_download"  
+                            rightIcon="unity:file_download"
                             onClick={() => console.log(`UnityButton child on UnityTableExport received click event`)}
                           />
                         </UnityTableExport>
                       }
                     </UnitySection>
                   </UnitySection>
+                {console.log('columns', columns)}
                 <UnityTable
                   ref={this.tableRef}
                   data={data}
@@ -543,7 +568,7 @@ class App extends React.Component {
                     })}
                   />
                 </div>
-              </UnityNotificationsHandler> 
+              </UnityNotificationsHandler>
             </div>
           </div>
         </div>

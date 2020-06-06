@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v0.3.1
+- fix disabled to function as intended
+
 ### v0.3.0
 - Added rightAlign to prop types
 - Added css types
