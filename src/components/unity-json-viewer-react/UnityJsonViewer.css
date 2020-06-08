@@ -1,0 +1,8 @@
+.read-only-json .editor-wrapper {
+  padding: 0;
+  margin: 0;
+}
+
+.read-only-json .code-editor-paragraph {
+  margin: 0;
+}

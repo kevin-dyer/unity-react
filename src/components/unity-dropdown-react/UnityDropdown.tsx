@@ -16,7 +16,7 @@ export default class UnityDropdown extends Component<dropdownPropsType> {
   updateProperties(oldProps: dropdownPropsType={}) {
     const {
       onMenuClick,
-      onValueChange
+      onValueChange,
     } = this.props
 
     const {
@@ -35,6 +35,7 @@ export default class UnityDropdown extends Component<dropdownPropsType> {
     const {
       options=[],
       selected=[],
+      disabled,
       ...otherProps
     } = this.props
     const dropdownProps : dropdownPropsType = {
@@ -42,6 +43,7 @@ export default class UnityDropdown extends Component<dropdownPropsType> {
       selected: JSON.stringify(selected),
       ...otherProps
     }
+    if (disabled) dropdownProps.disabled = true
     return (
       <unity-dropdown
         ref={this.dropdownRef}

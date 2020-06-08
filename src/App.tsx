@@ -279,7 +279,9 @@ class App extends React.Component {
     fileName: '',
     fileType: '',
     fileContent: '',
-    selection: []
+    selection: [],
+    dropdownOptions,
+    dropdownDisabled: false
   }
 
   makeCenterContent() {
@@ -309,7 +311,9 @@ class App extends React.Component {
     const {
       selection,
       showModal,
-      showNotificationModal
+      showNotificationModal,
+      dropdownOptions,
+      dropdownDisabled
     } = this.state
     const { data, columns, childKeys } = devices
 
@@ -541,6 +545,27 @@ class App extends React.Component {
                     onValueChange={(...args:any) => console.log('value changed, here are the args', args)}
                     options={dropdownOptions}
                   />
+                  <UnityToggleSwitch
+                    value={!dropdownDisabled}
+                    label={"Disabled"}
+                    onChange={(on : boolean) => this.setState({ dropdownDisabled: !on })}
+                  />
+                  <UnityButton
+                    onClick={() => {
+                      const willAdd = (Math.random() > .5) || dropdownOptions.length === 0
+                      let newDropdownOptions = [...dropdownOptions]
+                      if (willAdd) {
+                        newDropdownOptions.push({
+                          id: dropdownOptions.length + 1,
+                          label: `New Option ${dropdownOptions.length + 1}`
+                        })
+                      } else {
+                        newDropdownOptions.pop()
+                      }
+                      this.setState({ dropdownOptions: newDropdownOptions })
+                    }}
+                    label={"Add/Remove Item"}
+                  />
                 </UnitySection>
                 <UnitySection>
                   <UnityToggleSwitch
@@ -592,6 +617,7 @@ class App extends React.Component {
                   </div>
                 </UnitySection>
               </UnitySection>
+<<<<<<< HEAD
               <UnitySection style={{height: "1000px", overflow: 'scroll', "--vert-pos": "top"}}>
                 <div style={{...contentBox, display: "flex", flexDirection: "column"}}>
                     <UnitySection style={{flex: 0}}>
@@ -694,6 +720,111 @@ class App extends React.Component {
                   </div>
                 </UnityNotificationsHandler> 
               </div>
+=======
+            </UnitySection>
+            <UnitySection style={{height: "500px", "--vert-pos": "top"}}>
+              <div style={{...contentBox, display: "flex", flexDirection: "column"}}>
+                  <UnitySection style={{flex: 0}}>
+                    <h3>UnityTable</h3>
+                    <UnitySection style={{"--horz-pos": "right"}}>
+                      <UnityDropdown
+                        label='Change Selection'
+                        inputType='multi-select'
+                        placeholder='Pick some'
+                        options={[
+                          {
+                            label: 'Africa',
+                            id: 'africa'
+                          },
+                          {
+                            label: 'Asia',
+                            id: 'asia'
+                          },
+                          {
+                            label: 'Australia',
+                            id: 'australia'
+                          },
+                          {
+                            label: 'Europe',
+                            id: 'europe'
+                          },
+                        ]}
+                        onValueChange={(selectedElements: string[], selected: boolean) => {
+                          const newSelection: string[] = [...this.state.selection]
+                          selectedElements.forEach((element: string) => {
+                            if (selected) {
+                              newSelection.push(element)
+                              return
+                            }
+                            if (newSelection.includes(element)) {
+                              newSelection.splice(newSelection.indexOf(element), 1)
+                            }
+                          })
+                          this.setState({ selection: newSelection })
+                        }}
+                        showTags
+                      />
+                      {!!this.tableRef && !!this.tableRef.current &&
+                        <UnityTableExport
+                          style={{margin: "4px", alignSelf: "flex-end", marginLeft: 40}}
+                          tableRef={this.tableRef.current.tableRef}
+                          beforeExport={(data: object) => {
+                            console.log(`processing data: `, data);
+                            return data
+                          }}
+                          onExport={() => console.log(`Exported table data`)}
+                        >
+                          <UnityButton
+                            type="solid"
+                            label="Export"
+                            rightIcon="unity:file_download"
+                            onClick={() => console.log(`UnityButton child on UnityTableExport received click event`)}
+                          />
+                        </UnityTableExport>
+                      }
+                    </UnitySection>
+                  </UnitySection>
+                {console.log('columns', columns)}
+                <UnityTable
+                  ref={this.tableRef}
+                  data={data}
+                  columns={columns}
+                  childKeys={childKeys}
+                  selected={selection}
+                  keyExtractor={(node: any) => node.id}
+                  selectable
+                  onSelectionChange={(selection: []) => console.log(`new selection:`, selection)}
+                />
+              </div>
+            </UnitySection>
+            <div
+              style={notificationSectionContainerStyle}
+            >
+              <WithNotificationsWrappedSection
+                text={'This text is being passed to the wrapped component as a prop.'}
+              />
+              <UnityNotificationsHandler
+                name='notifications-via-component'
+                allowDuplicates={true}
+                position={'top-left'}
+                style={notificationSectionStyle}
+              >
+                <div style={buttonContainerStyle}>
+                  <UnityButton
+                    type='solid'
+                    label='Add Notification'
+                    onClick={() => addNotification({
+                      name: 'notifications-via-component',
+                      notification: {
+                        type: 'help',
+                        text: 'What a helpful Notification'
+                      },
+                      timeout: 0
+                    })}
+                  />
+                </div>
+              </UnityNotificationsHandler>
+>>>>>>> master
             </div>
           </div>
         </div>
