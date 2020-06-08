@@ -5,8 +5,8 @@ import { NotificationPropsI, NotificationStylesI } from '@bit/smartworks.unity-r
 import { addNotification, closeNotification, clearNotifications } from '@bit/smartworks.unity.unity-core/unity-notifications-handler'
 
 
-interface NotificationsHandlerPropsI extends React.HTMLAttributes<HTMLElement> {
-  name?: string,
+export interface NotificationsHandlerPropsI extends React.HTMLAttributes<HTMLElement> {
+  target?: string,
   position?: string,
   icons?: NotificationTypesAssingerI,
   colors?: NotificationTypesAssingerI,
@@ -18,9 +18,9 @@ interface NotificationsHandlerPropsI extends React.HTMLAttributes<HTMLElement> {
   style?: CSSProperties & NotificationStylesI,
 }
 
-interface NotificationWrappedComponentPropsI extends NotificationsHandlerPropsI {
+export interface NotificationWrappedComponentPropsI extends NotificationsHandlerPropsI {
   addNotification?: (params: {
-    name?: string,
+    target?: string,
     notification: NotificationPropsWithTypeI
   }) => void,
   closeNotification?: (target: string) => void,
@@ -29,7 +29,7 @@ interface NotificationWrappedComponentPropsI extends NotificationsHandlerPropsI 
   text?: string
 }
 
-interface NotificationPropsWithTypeI extends NotificationPropsI {
+export interface NotificationPropsWithTypeI extends NotificationPropsI {
   type?: string
 }
 
@@ -82,10 +82,11 @@ export default class UnityNotificationsHandler extends Component<NotificationsHa
       }={}
     } = this
     
-    if (!this.props.name) {
-      console.warn(`UnityNotificationsHandler was not passed a "name" property.`)
+    if (!this.props.target) {
+      console.warn(`UnityNotificationsHandler was not passed a "target" property.`)
       return (<>{children}</>)
     }
+
     return (
       <unity-notifications-handler
         ref={_notificationsHandlerRef}
@@ -101,7 +102,7 @@ export function withNotifications(handlerProps: NotificationsHandlerPropsI) {
   return function wrapComponent(WrappedComponent: React.FunctionComponent<NotificationWrappedComponentPropsI>) {
     return (props: NotificationWrappedComponentPropsI) => {
       const {
-        name,
+        target,
         position,
         icons,
         colors,
@@ -111,7 +112,7 @@ export function withNotifications(handlerProps: NotificationsHandlerPropsI) {
         onClose,
         style
       } = handlerProps || {}
-      const _uniqueName: string = name || uuid()
+      const _uniqueName: string = target || uuid()
       const _notificationsHandlerRef: React.RefObject<NotificationsHandlerPropsI> = React.createRef()
       const {
         current: notificationsHandler=null
@@ -127,16 +128,16 @@ export function withNotifications(handlerProps: NotificationsHandlerPropsI) {
 
       return (
         <unity-notifications-handler
-          name={_uniqueName}
+          target={_uniqueName}
           position={position}
           ref={_notificationsHandlerRef}
           style={style}
         >
           <WrappedComponent
             addNotification={({
-              name: target=_uniqueName,
+              target=_uniqueName,
               notification
-            }) => addNotification({ name: target, notification })}
+            }) => addNotification({ target, notification })}
             closeNotification={(target=_uniqueName) => closeNotification(target)}
             clearNotifications={(target=_uniqueName) => clearNotifications(target)}
             { ...props }
@@ -148,3 +149,9 @@ export function withNotifications(handlerProps: NotificationsHandlerPropsI) {
 }
 
 export { addNotification, closeNotification, clearNotifications }
+
+export { default as UnityNotificationModal } from './UnityNotificationModal'
+export * from './UnityNotificationModal'
+
+export { default as UnityNotificationSplitPane } from './UnityNotificationSplitPane'
+export * from './UnityNotificationSplitPane'

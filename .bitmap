@@ -316,7 +316,16 @@
     "smartworks.unity-react/unity-notifications-handler-react@0.2.1": {
         "files": [
             {
-                "name": "UnityNotificationsHandler.tsx",
+                "relativePath": "src/components/unity-notifications-handler-react/UnityNotificationModal.tsx",
+                "test": false,
+                "name": "UnityNotificationModal.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-notifications-handler-react/UnityNotificationSplitPane.tsx",
+                "test": false,
+                "name": "UnityNotificationSplitPane.tsx"
+            },
+            {
                 "relativePath": "src/components/unity-notifications-handler-react/UnityNotificationsHandler.tsx",
                 "test": false
             },

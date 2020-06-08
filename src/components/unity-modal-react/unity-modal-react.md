@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v0.2.2
+- Typescript internal interface naming convention changes
+
 ### v0.2.1
 - Updated @types dependency
 

@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import '@bit/smartworks.unity.unity-core/unity-modal'
 
-export default class UnityModal extends Component<modalPropsType> {
+export default class UnityModal extends Component<ModalPropsI> {
 
-  private modalRef = React.createRef<modalPropsType>()
+  private modalRef = React.createRef<ModalPropsI>()
 
   componentDidMount = () => {
     this.updateProperties()
@@ -32,7 +32,7 @@ export default class UnityModal extends Component<modalPropsType> {
       ...otherProps
     } = this.props
 
-    const modalProps : modalPropsType = {...otherProps}
+    const modalProps : ModalPropsI = {...otherProps}
     if (show) modalProps.show = show
     if (cancelOnOutsideClick) modalProps.cancelOnOutsideClick = cancelOnOutsideClick
 
@@ -54,7 +54,7 @@ export default class UnityModal extends Component<modalPropsType> {
   }
 }
 
-export interface modalPropsType extends React.HTMLAttributes<HTMLElement> {
+export interface ModalPropsI extends React.HTMLAttributes<HTMLElement> {
   title?: string 
   show?: boolean
   toggle?: Function

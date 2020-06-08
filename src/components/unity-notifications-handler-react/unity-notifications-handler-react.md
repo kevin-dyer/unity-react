@@ -5,6 +5,12 @@
 
 ## Changelog:
 
+### v0.2.1
+- Added UnityNotificationSplitPane and UnityNotificationModal
+
+### v0.2.0
+- Naming convention changes
+
 ### v0.1.3
 - Bug fix for when no children are passed
 

@@ -22,10 +22,13 @@ import {
   NotificationStylesI,
   UnityNotificationsHandler,
   withNotifications,
-  addNotification
+  addNotification,
+    UnityNotificationModal,
+    UnityNotificationSplitPane
 } from './components/unity-core-react'
 
 import { devices } from './fakeData'
+
 
 const appStyle: CSSProperties = {
   display: 'flex',
@@ -72,7 +75,27 @@ const notificationSectionStyle: NotificationStylesI = {
   margin: 10,
   boxShadow: '0 0 5px 1px rgba(0,0,0,0.1)',
   height: '100%',
-  alignItems: 'center'
+  alignItems: 'center',
+  '--notification-width': '350px'
+}
+
+const modalStyle: CSSProperties = {
+
+}
+
+const splitPaneHeaderStyle: CSSProperties = {
+  paddingLeft: 24,
+  width: '100%',
+  border: '1px solid black'
+}
+
+const splitPaneContainerStyle: CSSProperties = {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  height: '100%',
+  width: '100%',
+  padding: 40
 }
 
 const buttonContainerStyle: CSSProperties = {
@@ -184,6 +207,7 @@ const navItems : navConfig = {
     }
   ]
 }
+
 const dropdownOptions: Object[] = [
   {
     "label": "Option 1",
@@ -249,7 +273,9 @@ class App extends React.Component {
     value: '',
     error: '',
     showPane: true,
+    showNotificationSplitPane: true,
     showModal: false,
+    showNotificationModal: false,
     fileName: '',
     fileType: '',
     fileContent: '',
@@ -282,140 +308,278 @@ class App extends React.Component {
   }
 
   render() {
-    const { selection, dropdownOptions, dropdownDisabled } = this.state
+    const {
+      selection,
+      showModal,
+      showNotificationModal,
+      dropdownOptions,
+      dropdownDisabled
+    } = this.state
     const { data, columns, childKeys } = devices
+
     return (
       <div className="App" style={appStyle}>
-        <header className="App-header">
-          <UnityTypography style={headerStyle} size='header1' color='light'>Unity React Components</UnityTypography>
-        </header>
-
-        <div className="wrapper" style={wrapperStyle}>
-          <UnityGlobalNav
-            items={navItems}
-            collapsible={true}
+        <div
+          className="modal-container"
+          style={{
+            backgroundColor: 'rgba(105, 105, 105, 0.4)',
+            zIndex: 5,
+            position: 'fixed',
+            top: 0,
+            bottom: 0,
+            left: 0,
+            right: 0,
+            display: (showModal || showNotificationModal) ? 'block' : 'none'
+          }}
+        >
+          <UnityModal
+            top={<UnityButton centerIcon="unity:close" onClick={() => this.setState({ showModal: false })}/>}
+            title="Modal title"
+            body={<div style={{ padding: '100px 300px' }}>
+              <UnityButton
+                label="Unity"
+                type="solid"
+                onClick={() => console.log("click")}
+              />
+           </div> }
+            bottom='this is the bottom'
+            show={this.state.showModal}
+            style={modalStyle}
           />
-          <div className="main" style={mainStyle}>
-            <UnitySection>
-              <div style={contentBox}>
-                <UnityPageHeader
-                centerContent={this.makeCenterContent()}/>
-              </div>
-            </UnitySection>
-            <UnitySection>
-              <UnityProgress
-                label="Unity Progress"
-                remark="Indeterminate"
-                style={{width:'400px', margin: "20px", "--progress-color": "var(--secondary-brand-color)", "--progress-indeterminate-cycle-duration": "4s"}}
-                indeterminate
-              />
-              <UnityProgress
-                label="Unity Progress"
-                remark="Controlled"
-                max={100}
-                value={30}
-                secondaryValue={80}
-                completionType="percentage"
-                style={{width:'400px', margin: "20px"}}
-              />
-            </UnitySection>
-            <UnitySection>
-              <div style={contentBox}>
-                <UnityCodeEditor
-                  label="JSON editor"
-                  mode="json"
-                  onChange={(value: string, error: string) => {
-                    this.setState({value, error})
-                  }}
-                  value={this.state.value}
-                  minLines={7}
-                  maxLines={19}
-                  validation={(val: string) => {
-                    try {
-                      if (val) JSON.parse(val)
-                    } catch (error) {
-                      return error.toString()
-                    }
-                    return ''
-                  }}
-                />
-              </div>
+          <UnityNotificationModal
+            top={<UnityButton centerIcon="unity:close" onClick={() => this.setState({ showNotificationModal: false })}/>}
+            title="A Notification-Enabled Modal"
+            body={<div style={{ padding: '100px 300px' }}>
+              <UnityButton
+                label="Show a Notification"
+                type="solid"
+                onClick={() => addNotification({
+                  target: 'notifications-in-modal',
+                  notification: {
+                    text: 'Check it out',
+                    subtext: 'This notification is scoped to the modal',
+                    type: 'tip'
+                  }
+                })}/>
+            </div>}
+            show={this.state.showNotificationModal}
+            notifications={{
+              target: 'notifications-in-modal'
+            }}
+            style={modalStyle}
+          />
+        </div>
+        <div
+          className="content-container"
+          style={(showModal || showNotificationModal) ? { pointerEvents:  'none' } : {}}
+        >
+          <header className="App-header">
+            <UnityTypography style={headerStyle} size='header1' color='light'>Unity React Components</UnityTypography>
+          </header>
 
-              <div style={contentBox}>
-                <UnityTypography>JSON Viewer</UnityTypography>
-                <UnityJsonViewer
-                  src={JSON.stringify(navItems)}
-                />
-              </div>
-            </UnitySection>
-            <UnitySection>
-              <UnityModal
-                top={<UnityButton centerIcon="unity:close" onClick={() => this.setState({showModal: false})}/>}
-                title="Modal title"
-                body={<UnityButton label="Unity" type="solid" onClick={() => console.log("click")}/>}
-                bottom='this is the bottom'
-                show={this.state.showModal}
-              />
-            </UnitySection>
-            <UnitySection>
-              <UnitySplitPane
-                onResize={()=>console.log("resize")}
-                style={{height: '400px', border: '1px solid grey'}}
-                onClose={()=> this.setState({showPane: false})}
-                closeButton
-                collapseButton
-                show={this.state.showPane}
-                header={<p style={{paddingLeft: '24px'}}>This is the header</p>}
-                main="This is the main body"
-                footer="This is the footer"
-                pane="This is the pane"
-              />
-            </UnitySection>
-            <UnitySection>
+          <div className="wrapper" style={wrapperStyle}>
+            <UnityGlobalNav
+              items={navItems}
+              collapsible={true}
+            />
+            <div className="main" style={mainStyle}>
               <UnitySection>
                 <div style={contentBox}>
-                  <UnityTextInput label="Text Input"/>
+                  <UnityPageHeader
+                  centerContent={this.makeCenterContent()}/>
                 </div>
               </UnitySection>
               <UnitySection>
+                <UnityProgress
+                  label="Unity Progress"
+                  remark="Indeterminate"
+                  style={{width:'400px', margin: "20px", "--progress-color": "var(--secondary-brand-color)", "--progress-indeterminate-cycle-duration": "4s"}}
+                  indeterminate
+                />
+                <UnityProgress
+                  label="Unity Progress"
+                  remark="Controlled"
+                  max={100}
+                  value={30}
+                  secondaryValue={80}
+                  completionType="percentage"
+                  style={{width:'400px', margin: "20px"}}
+                />
+              </UnitySection>
+              <UnitySection>
                 <div style={contentBox}>
-                  <h3>UnityButton and modal</h3>
-                  <div>
-                    <UnityButton label="Show modal" type="solid" onClick={() => this.setState({showModal: true})}/>
+                  <UnityCodeEditor
+                    label="JSON editor"
+                    mode="json"
+                    onChange={(value: string, error: string) => {
+                      this.setState({value, error})
+                    }}
+                    value={this.state.value}
+                    minLines={7}
+                    maxLines={19}
+                    validation={(val: string) => {
+                      try {
+                        if (val) JSON.parse(val)
+                      } catch (error) {
+                        return error.toString()
+                      }
+                      return ''
+                    }}
+                  />
+                </div>
+                <div style={contentBox}>
+                  <UnityTypography>JSON Viewer</UnityTypography>
+                  <UnityJsonViewer
+                    src={JSON.stringify(navItems)}
+                  />
+                </div>
+              </UnitySection>
+              <UnitySection>
+                <UnitySplitPane
+                  onResize={(params: any)=>console.log("resize params: ", params)}
+                  style={{ height: 400, border: '1px solid grey', margin: 20 }}
+                  onClose={()=> this.setState({ showPane: false })}
+                  closeButton
+                  collapseButton
+                  show={this.state.showPane}
+                  header={<div style={splitPaneHeaderStyle}>This is the header</div>}
+                  main={
+                  <div
+                    style={splitPaneContainerStyle}
+                  >
+                    <UnityButton
+                      label="Toggle Split Pane"
+                      type="solid"
+                      onClick={() => this.setState({ showPane: !this.state.showPane})}
+                    />
                   </div>
-                </div>
+                  }
+                  footer={<div style={splitPaneHeaderStyle}>This is the footer</div>}
+                  pane={<div style={splitPaneContainerStyle}>This is the pane content</div>}
+                />
+                <UnityNotificationSplitPane
+                  mainNotifications={{ target: 'split-pane-main-notification'}}
+                  paneNotifications={{ target: 'split-pane-pane-notification'}}
+                  style={{height: 400, border: '1px solid grey', margin: 20}}
+                  onClose={()=> this.setState({ showNotificationSplitPane: false })}
+                  closeButton
+                  collapseButton
+                  show={this.state.showNotificationSplitPane}
+                  header={<div style={splitPaneHeaderStyle}>This is a Notification-Enabled Split Pane</div>}
+                  main={(
+                    <div
+                      style={splitPaneContainerStyle}
+                    >
+                      <UnityButton
+                        label="show success notification"
+                        type="solid"
+                        onClick={() => addNotification({
+                          target: 'split-pane-main-notification',
+                          notification: {
+                            text: 'Hooray',
+                            subtext: 'this is a success notification',
+                            type: 'success'
+                          }
+                        })}
+                        style={{ margin: 20 }}
+                      />
+                      <UnityButton
+                        label="Toggle Split Pane"
+                        type="solid"
+                        onClick={() => this.setState({ showNotificationSplitPane: !this.state.showNotificationSplitPane})}
+                        style={{ margin: 20 }}
+                      />
+                    </div>
+                  )}
+                  pane={(
+                    <div
+                      style={splitPaneContainerStyle}
+                    >
+                      <UnityButton
+                        label="show warning notification"
+                        type="solid"
+                        onClick={() => addNotification({
+                          target: 'split-pane-pane-notification',
+                          notification: {
+                            text: 'Look  out',
+                            subtext: 'this is a warning notification',
+                            type: 'warning'
+                          }
+                        })}
+                      />
+                    </div>
+                  )}
+                />
               </UnitySection>
-            </UnitySection>
-            <UnitySection>
               <UnitySection>
-                <UnityDropdown
-                  label={"This is a Dropdown"}
-                  inputType={"single-select"}
-                  onValueChange={(...args:any) => console.log('value changed, here are the args', args)}
-                  options={dropdownOptions}
-                  disabled={dropdownDisabled}
-                />
-                <UnityToggleSwitch
-                  value={!dropdownDisabled}
-                  label={"Disabled"}
-                  onChange={(on : boolean) => this.setState({ dropdownDisabled: !on })}
-                />
-                <UnityButton
-                  onClick={() => {
-                    const willAdd = (Math.random() > .5) || dropdownOptions.length === 0
-                    let newDropdownOptions = [...dropdownOptions]
-                    if (willAdd) {
-                      newDropdownOptions.push({
-                        id: dropdownOptions.length + 1,
-                        label: `New Option ${dropdownOptions.length + 1}`
-                      })
-                    } else {
-                      newDropdownOptions.pop()
-                    }
-                    this.setState({ dropdownOptions: newDropdownOptions })
-                  }}
-                  label={"Add/Remove Item"}
-                />
+                <UnitySection>
+                  <div style={contentBox}>
+                    <UnityTextInput label="Text Input"/>
+                  </div>
+                </UnitySection>
+                <UnitySection>
+                  <div style={contentBox}>
+                    <h3>UnityButton and modal</h3>
+                    <div>
+                      <UnityButton
+                        label="Show Standard Modal"
+                        type="solid"
+                        onClick={() => this.setState({showModal: true})}
+                        style={{ margin: 20 }}
+                      />
+                      <UnityButton
+                        label="Show Notifications-Enabled Modal"
+                        type="solid"
+                        onClick={() => this.setState({showNotificationModal: true})}
+                        style={{ margin: 20 }}
+                      />
+                    </div>
+                  </div>
+                </UnitySection>
+              </UnitySection>
+              <UnitySection>
+                <UnitySection>
+                  <UnityDropdown
+                    label={"This is a Dropdown"}
+                    inputType={"single-select"}
+                    onValueChange={(...args:any) => console.log('value changed, here are the args', args)}
+                    options={dropdownOptions}
+                  />
+                  <UnityToggleSwitch
+                    value={!dropdownDisabled}
+                    label={"Disabled"}
+                    onChange={(on : boolean) => this.setState({ dropdownDisabled: !on })}
+                  />
+                  <UnityButton
+                    onClick={() => {
+                      const willAdd = (Math.random() > .5) || dropdownOptions.length === 0
+                      let newDropdownOptions = [...dropdownOptions]
+                      if (willAdd) {
+                        newDropdownOptions.push({
+                          id: dropdownOptions.length + 1,
+                          label: `New Option ${dropdownOptions.length + 1}`
+                        })
+                      } else {
+                        newDropdownOptions.pop()
+                      }
+                      this.setState({ dropdownOptions: newDropdownOptions })
+                    }}
+                    label={"Add/Remove Item"}
+                  />
+                </UnitySection>
+                <UnitySection>
+                  <UnityToggleSwitch
+                    value={true}
+                    label={"This is a Switch"}
+                    onLabel={"Right"}
+                    offLabel={"Left"}
+                    remark={"Remarkable"}
+                    onChange={(on : boolean) => console.log(`Switch is ${on ? 'on' : 'off'}`)}
+                  />
+                </UnitySection>
+                <UnitySection>
+                  <UnityNotification style={{margin: '10px'}} text='Notification text' icon='unity:share' subtext='More text'/>
+                </UnitySection>
               </UnitySection>
               <UnitySection>
                 <UnityToggleSwitch
@@ -428,44 +592,135 @@ class App extends React.Component {
                 />
               </UnitySection>
               <UnitySection>
-                <UnityNotification style={{margin: '10px'}} text='Notification text' icon='unity:share' subtext='More text'/>
+                <UnitySection>
+                  <UnityDropzone
+                    accept={"application/json"}
+                    onUpload={this.setFile}
+                  />
+                  <UnityButton
+                    onClick={this.clearFile}
+                    label={"Clear File"}
+                    disabled={!this.state.fileContent}
+                  />
+                </UnitySection>
+                <UnitySection>
+                  <div>
+                    <div>
+                      File Name: {this.state.fileName}
+                    </div>
+                    <div>
+                      File Type: {this.state.fileType}
+                    </div>
+                    <div>
+                      File Content: {this.state.fileContent}
+                    </div>
+                  </div>
+                </UnitySection>
               </UnitySection>
-            </UnitySection>
-            <UnitySection>
-              <UnityToggleSwitch
-                value={true}
-                label={"This is a Switch"}
-                onLabel={"Right"}
-                offLabel={"Left"}
-                remark={"Remarkable"}
-                onChange={(on : boolean) => console.log(`Switch is ${on ? 'on' : 'off'}`)}
-              />
-            </UnitySection>
-            <UnitySection>
-              <UnitySection>
-                <UnityDropzone
-                  accept={"application/json"}
-                  onUpload={this.setFile}
-                />
-                <UnityButton
-                  onClick={this.clearFile}
-                  label={"Clear File"}
-                  disabled={!this.state.fileContent}
-                />
-              </UnitySection>
-              <UnitySection>
-                <div>
-                  <div>
-                    File Name: {this.state.fileName}
-                  </div>
-                  <div>
-                    File Type: {this.state.fileType}
-                  </div>
-                  <div>
-                    File Content: {this.state.fileContent}
-                  </div>
+<<<<<<< HEAD
+              <UnitySection style={{height: "1000px", overflow: 'scroll', "--vert-pos": "top"}}>
+                <div style={{...contentBox, display: "flex", flexDirection: "column"}}>
+                    <UnitySection style={{flex: 0}}>
+                      <h3>UnityTable</h3>
+                      <UnitySection style={{"--horz-pos": "right"}}>
+                        <UnityDropdown
+                          label='Change Selection'
+                          inputType='multi-select'
+                          placeholder='Pick some'
+                          options={[
+                            {
+                              label: 'Africa',
+                              id: 'africa'
+                            },
+                            {
+                              label: 'Asia',
+                              id: 'asia'
+                            },
+                            {
+                              label: 'Australia',
+                              id: 'australia'
+                            },
+                            {
+                              label: 'Europe',
+                              id: 'europe'
+                            },
+                          ]}
+                          onValueChange={(selectedElements: string[], selected: boolean) => {
+                            const newSelection: string[] = [...this.state.selection]
+                            selectedElements.forEach((element: string) => {
+                              if (selected) {
+                                newSelection.push(element)
+                                return
+                              }
+                              if (newSelection.includes(element)) {
+                                newSelection.splice(newSelection.indexOf(element), 1)
+                              }
+                            })
+                            this.setState({ selection: newSelection })
+                          }}
+                          showTags
+                        />
+                        {!!this.tableRef && !!this.tableRef.current && 
+                          <UnityTableExport
+                            style={{margin: "4px", alignSelf: "flex-end", marginLeft: 40}}
+                            tableRef={this.tableRef.current.tableRef}
+                            beforeExport={(data: object) => {
+                              console.log(`processing data: `, data);
+                              return data
+                            }}
+                            onExport={() => console.log(`Exported table data`)}
+                          >
+                            <UnityButton
+                              type="solid"
+                              label="Export"
+                              rightIcon="unity:file_download"  
+                              onClick={() => console.log(`UnityButton child on UnityTableExport received click event`)}
+                            />
+                          </UnityTableExport>
+                        }
+                      </UnitySection>
+                    </UnitySection>
+                  <UnityTable
+                    ref={this.tableRef}
+                    data={data}
+                    columns={columns}
+                    childKeys={childKeys}
+                    selected={selection}
+                    keyExtractor={(node: any) => node.id}
+                    selectable
+                    onSelectionChange={(selection: []) => console.log(`new selection:`, selection)}
+                  />
                 </div>
               </UnitySection>
+              <div
+                style={notificationSectionContainerStyle}
+              >
+                <WithNotificationsWrappedSection
+                  text={'This text is being passed to the wrapped component as a prop.'}
+                />
+                <UnityNotificationsHandler
+                  target='notifications-via-component'
+                  allowDuplicates={true}
+                  position={'top-right'}
+                  style={notificationSectionStyle}
+                >
+                  <div style={buttonContainerStyle}>
+                    <UnityButton
+                      type='solid'
+                      label='Add Notification'
+                      onClick={() => addNotification({
+                        target: 'notifications-via-component',
+                        notification: {
+                          type: 'help',
+                          text: 'What a helpful Notification'
+                        },
+                        timeout: 0
+                      })}
+                    />
+                  </div>
+                </UnityNotificationsHandler> 
+              </div>
+=======
             </UnitySection>
             <UnitySection style={{height: "500px", "--vert-pos": "top"}}>
               <div style={{...contentBox, display: "flex", flexDirection: "column"}}>
@@ -569,6 +824,7 @@ class App extends React.Component {
                   />
                 </div>
               </UnityNotificationsHandler>
+>>>>>>> master
             </div>
           </div>
         </div>
