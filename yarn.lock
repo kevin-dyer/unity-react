@@ -1148,22 +1148,22 @@
     react "^16.12.0"
     react-ace "^8.0.0"
 
-"@bit/smartworks.unity-react.unity-column-editor-react@0.2.1", "@bit/smartworks.unity-react.unity-column-editor-react@^0.2.1":
-  version "0.2.1"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-column-editor-react/-/smartworks.unity-react.unity-column-editor-react-0.2.1.tgz#6d961f60c2c4ed183a8ef73dfdced4324045d7b4"
-  integrity sha1-bZYfYMLE7Rg6jvc9/c7UMkBF17Q=
+"@bit/smartworks.unity-react.unity-column-editor-react@0.2.2", "@bit/smartworks.unity-react.unity-column-editor-react@^0.2.2":
+  version "0.2.2"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-column-editor-react/-/smartworks.unity-react.unity-column-editor-react-0.2.2.tgz#d1331aff302c7a237da9629d1c116ae393b2e1c7"
+  integrity sha1-0TMa/zAseiN9qWKdHBFq45Oy4cc=
   dependencies:
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-core-react@^0.4.17":
-  version "0.4.18"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-core-react/-/smartworks.unity-react.unity-core-react-0.4.18.tgz#eb4691c5cc65b67e2df2d4020d53d1d58fa27df7"
-  integrity sha1-60aRxcxltn4t8tQCDVPR1Y+iffc=
+"@bit/smartworks.unity-react.unity-core-react@^0.4.19":
+  version "0.4.19"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-core-react/-/smartworks.unity-react.unity-core-react-0.4.19.tgz#aee46f2e293d10ce85c20c10016a64fa7de9835b"
+  integrity sha1-ruRvLik9EM6FwgwQAWpk+n3pg1s=
   dependencies:
     "@bit/smartworks.unity-react.unity-button-react" "0.2.1"
     "@bit/smartworks.unity-react.unity-code-editor-react" "0.2.4"
-    "@bit/smartworks.unity-react.unity-column-editor-react" "0.2.1"
+    "@bit/smartworks.unity-react.unity-column-editor-react" "0.2.2"
     "@bit/smartworks.unity-react.unity-dropdown-react" "0.3.1"
     "@bit/smartworks.unity-react.unity-dropzone-react" "0.2.1"
     "@bit/smartworks.unity-react.unity-global-nav-react" "0.2.1"
