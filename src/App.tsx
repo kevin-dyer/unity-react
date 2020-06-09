@@ -23,8 +23,9 @@ import {
   UnityNotificationsHandler,
   withNotifications,
   addNotification,
-    UnityNotificationModal,
-    UnityNotificationSplitPane
+  UnityNotificationModal,
+  UnityNotificationSplitPane,
+  UnityColumnEditor
 } from './components/unity-core-react'
 
 import { devices } from './fakeData'
@@ -677,6 +678,9 @@ class App extends React.Component {
                             />
                           </UnityTableExport>
                         }
+                        <UnityColumnEditor
+                          columns={columns}
+                        />
                       </UnitySection>
                     </UnitySection>
                   <UnityTable

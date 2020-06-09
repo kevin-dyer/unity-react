@@ -59,7 +59,6 @@ export default class UnityColumnEditor extends Component<ColumnEditorProps> {
 
 const styles : ColumnEditorStyles = {
   container: {
-    flex: 1,
-    position: 'relative'
+    flex: 1
   }
 }
