@@ -242,3 +242,147 @@ export const devices = {
   //filters: [{column: "status", values: ["Active"], include: true} ],
   childKeys: ['groups', 'devices']
 }
+
+
+const BIT_TOKEN = 'my-fake-bit-token'
+
+export const fakeYaml = `stages:
+  - setup
+  - test
+  - cq
+  - version
+  - build
+  - package
+  - deploy
+  - int
+
+setup:
+  stage: setup
+  image:
+    name: atlassianlabs/docker-node-jdk-chrome-firefox
+  script:
+  - echo "Set upp"
+  - echo "**************"
+  - echo ""
+  - echo "***************************** installing deps for the project and building the app"
+  - rm -rf node_modules && rm package-lock.json
+  - echo -e "@bit:registry=https://node.bit.dev\n//node.bit.dev/:_authToken=${BIT_TOKEN}\nalways-auth=true" > .npmrc
+  - npm install
+  rules:
+  - if: '$CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "master"'
+  cache:
+    key: node_modules
+    paths:
+      - node_modules/
+    policy: push
+  tags:
+  - docker
+
+test:
+  stage: test
+  image:
+    name: atlassianlabs/docker-node-jdk-chrome-firefox
+  script:
+  - echo "Running tests"
+  - npm test
+  artifacts:
+    paths:
+      - junit/report.xml
+      - coverage
+    reports:
+      junit: junit/report.xml
+  coverage: /Statements.*?(\d+(?:\.\d+)?)%/
+  rules:
+  - if: '$CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "master"'
+  cache:
+    key: node_modules
+    paths:
+      - node_modules/
+    policy: pull
+  tags:
+  - docker
+
+code-quality:
+  stage: cq
+  script:
+    - echo "Launching code quality tests"
+  rules:
+    - if: '$CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "master"'
+  tags:
+#CHANGE TO DOCKER WHEN WE HAVE INTEGRATION TEST
+    - shell
+
+version:
+  stage: version
+  image: iotaltairacr.azurecr.io/dev/iot/common/docker/gitlab-semver:v1.0.0
+  script:
+  - python3 /version-update/version-update.py
+  rules:
+    - if: '$CI_COMMIT_REF_NAME == "master"'
+  tags:
+    - docker
+
+build:
+  stage: build
+  image:
+    name: node:erbium
+  script:
+  - echo "A WIP pipeline"
+  - echo "**************"
+  - echo ""
+  - echo "***************************** installing deps for the project and building the app"
+  - echo -e "@bit:registry=https://node.bit.dev\n//node.bit.dev/:_authToken=${BIT_TOKEN}\nalways-auth=true" > .npmrc
+  - rm -rf node_modules && rm package-lock.json
+  - npm install
+  - npm run build-storybook
+  artifacts:
+    paths:
+    - ./storybook-static
+  rules:
+  - if: '$CI_COMMIT_REF_NAME == "master"'
+  tags:
+  - docker
+
+package:
+  stage: package
+  script:
+  - echo "***************************** moving static content to be serverd by Nginx"
+  - TAG=$(git describe --tags --abbrev=0)
+  - rm -rf /tmp/storybook-static
+  - mv ./storybook-static /tmp
+  - echo "***************************** pulling changes from the Packer repo"
+  - git -C /home/gitlab-runner/packer pull https://$DEPLOYERU:$DEPLOYERP@carritosdev.carriots.com/devops/kubernetes-and-containers/packer.git
+  - cd /home/gitlab-runner/packer && git fetch --all && git reset --hard origin/master
+  - echo "***************************** creating Docker image"
+  - sed -i "s/__CI_COMMIT_SHORT_SHA__/$TAG/g" /home/gitlab-runner/packer/2020-smartworks-webcomponents.json
+  - docker login -u $REGROU -p $REGROP $REGSRV
+  - cd /home/gitlab-runner/packer && packer build 2020-smartworks-webcomponents.json
+  - echo ""
+  rules:
+  - if: '$CI_COMMIT_REF_NAME == "master"'
+  tags:
+  - shell
+
+deploy:
+  stage: deploy
+  script:
+  - echo "***************************** deploying to K8s"
+  - TAG=$(git describe --tags --abbrev=0)
+  - docker login -u $REGROU -p $REGROP $REGSRV
+  - echo "Going to deploy smartworks-webcomponents:$TAG"
+  - kubectl -n dev-iot set image deployment/webcomponents webcomponents=iotaltairacr.azurecr.io/dev/iot/common/packer/smartworks-webcomponents:$TAG --record
+  rules:
+  - if: '$CI_COMMIT_REF_NAME == "master"'
+  tags:
+  - shell
+
+integration-test:
+  stage: int
+  script:
+    - echo "Launching integration tests"
+  rules:
+    - if: '$CI_COMMIT_REF_NAME == "master"'
+#CHANGE TO DOCKER WHEN WE HAVE INTEGRATION TEST
+  tags:
+    - shell
+`;

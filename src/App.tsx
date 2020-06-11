@@ -28,7 +28,7 @@ import {
   UnityColumnEditor
 } from './components/unity-core-react'
 
-import { devices } from './fakeData'
+import { devices, fakeYaml } from './fakeData'
 
 
 const appStyle: CSSProperties = {
@@ -282,7 +282,9 @@ class App extends React.Component {
     fileContent: '',
     selection: [],
     dropdownOptions,
-    dropdownDisabled: false
+    dropdownDisabled: false,
+    yamlValue: fakeYaml,
+    yamlError: ''
   }
 
   makeCenterContent() {
@@ -426,6 +428,19 @@ class App extends React.Component {
                       }
                       return ''
                     }}
+                  />
+                </div>
+
+                <div style={contentBox}>
+                  <UnityCodeEditor
+                    label="YAML editor"
+                    mode="yaml"
+                    onChange={(value: string, error: string) => {
+                      this.setState({yamlValue: value, yamlError: error})
+                    }}
+                    value={this.state.yamlValue}
+                    minLines={7}
+                    maxLines={19}
                   />
                 </div>
                 <div style={contentBox}>
