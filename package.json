@@ -3,22 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@bit/smartworks.unity-react.unity-button-react": "^0.2.1",
+    "@bit/smartworks.unity-react.unity-button-react": "^0.2.2",
     "@bit/smartworks.unity-react.unity-code-editor-react": "^0.2.5",
     "@bit/smartworks.unity-react.unity-column-editor-react": "^0.2.2",
-    "@bit/smartworks.unity-react.unity-core-react": "^0.4.24",
+    "@bit/smartworks.unity-react.unity-core-react": "^0.4.29",
     "@bit/smartworks.unity-react.unity-dropdown-react": "^0.3.1",
     "@bit/smartworks.unity-react.unity-dropzone-react": "^0.2.1",
     "@bit/smartworks.unity-react.unity-global-nav-react": "^0.2.1",
     "@bit/smartworks.unity-react.unity-modal-react": "^0.2.2",
     "@bit/smartworks.unity-react.unity-notification-react": "^1.0.0",
-    "@bit/smartworks.unity-react.unity-notifications-handler-react": "^0.2.1",
+    "@bit/smartworks.unity-react.unity-notifications-handler-react": "^0.2.4",
     "@bit/smartworks.unity-react.unity-page-header-react": "^0.3.1",
     "@bit/smartworks.unity-react.unity-progress-react": "^0.2.1",
     "@bit/smartworks.unity-react.unity-section-react": "^0.3.3",
     "@bit/smartworks.unity-react.unity-split-pane-react": "^0.3.1",
     "@bit/smartworks.unity-react.unity-table-export-react": "^0.2.1",
-    "@bit/smartworks.unity-react.unity-table-react": "^0.4.2",
+    "@bit/smartworks.unity-react.unity-table-react": "^0.4.3",
     "@bit/smartworks.unity-react.unity-text-input-react": "^0.2.1",
     "@bit/smartworks.unity-react.unity-toggle-switch-react": "^0.2.1",
     "@bit/smartworks.unity-react.unity-typography-react": "^0.2.1",
@@ -78,7 +78,7 @@
           "@bit/smartworks.unity.unity-core": "-"
         },
         "peerDependencies": {
-          "@bit/smartworks.unity.unity-core": "^1.0.0"
+          "@bit/smartworks.unity.unity-core": "^1.1.0"
         }
       },
       "unity-code-editor-react": {
@@ -109,8 +109,8 @@
         },
         "peerDependencies": {
           "@bit/smartworks.unity-react.unity-notification-react": "^1.0.0",
-          "@bit/smartworks.unity-react.unity-modal-react": "0.2.2",
-          "@bit/smartworks.unity-react.unity-split-pane-react": "0.3.1"
+          "@bit/smartworks.unity-react.unity-modal-react": "^0.2.2",
+          "@bit/smartworks.unity-react.unity-split-pane-react": "^0.3.1"
         },
         "propagate": true
       },
@@ -119,7 +119,7 @@
           "@bit/smartworks.unity-react.unity-code-editor-react": "-"
         },
         "peerDependencies": {
-          "@bit/smartworks.unity-react.unity-code-editor-react": "0.2.5"
+          "@bit/smartworks.unity-react.unity-code-editor-react": "^0.2.5"
         }
       }
     }
