@@ -21,7 +21,7 @@ import './UnityCodeEditor.css';
  * <CodeEditor mode="javascript" label="JSON editor"/>
  */
 
-export type EditorType = "json" | "json5" | "javascript" | "python" | "sql" | "dockerfile" | "markdown" | "html";
+export type EditorType = "json" | "json5" | "javascript" | "python" | "sql" | "dockerfile" | "markdown" | "html" | "yaml";
 export interface CodeEditorProps {
   mode: EditorType,
   value: string,
