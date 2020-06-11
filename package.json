@@ -108,8 +108,8 @@
         },
         "peerDependencies": {
           "@bit/smartworks.unity-react.unity-notification-react": "^1.0.0",
-          "@bit/smartworks.unity-react.unity-modal-react": "0.2.0",
-          "@bit/smartworks.unity-react.unity-split-pane-react": "0.3.0"
+          "@bit/smartworks.unity-react.unity-modal-react": "0.2.2",
+          "@bit/smartworks.unity-react.unity-split-pane-react": "0.3.1"
         },
         "propagate": true
       }
