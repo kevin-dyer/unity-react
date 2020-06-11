@@ -70,7 +70,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-core-react@0.4.24": {
+    "smartworks.unity-react/unity-core-react@0.4.26": {
         "files": [
             {
                 "name": "index.js",
@@ -251,7 +251,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-json-viewer-react@0.1.3": {
+    "smartworks.unity-react/unity-json-viewer-react@0.1.4": {
         "files": [
             {
                 "relativePath": "src/components/unity-json-viewer-react/UnityJsonViewer.css",

@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@bit/smartworks.unity-react.unity-button-react": "^0.2.1",
-    "@bit/smartworks.unity-react.unity-code-editor-react": "^0.2.4",
+    "@bit/smartworks.unity-react.unity-code-editor-react": "^0.2.5",
     "@bit/smartworks.unity-react.unity-column-editor-react": "^0.2.2",
     "@bit/smartworks.unity-react.unity-core-react": "^0.4.24",
     "@bit/smartworks.unity-react.unity-dropdown-react": "^0.3.1",
@@ -71,7 +71,8 @@
     "overrides": {
       "*": {
         "exclude": [
-          "unity-code-editor-react"
+          "unity-code-editor-react",
+          "unity-json-viewer-react"
         ],
         "dependencies": {
           "@bit/smartworks.unity.unity-core": "-"
@@ -112,6 +113,14 @@
           "@bit/smartworks.unity-react.unity-split-pane-react": "0.3.1"
         },
         "propagate": true
+      },
+      "unity-json-viewer-react": {
+        "dependencies": {
+          "@bit/smartworks.unity-react.unity-code-editor-react": "-"
+        },
+        "peerDependencies": {
+          "@bit/smartworks.unity-react.unity-code-editor-react": "0.2.5"
+        }
       }
     }
   }
