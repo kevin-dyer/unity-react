@@ -291,7 +291,7 @@ test:
       - coverage
     reports:
       junit: junit/report.xml
-  coverage: /Statements.*?(\d+(?:\.\d+)?)%/
+  coverage: /Statements.*?(\\d+(?:\\.\\d+)?)%/
   rules:
   - if: '$CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "master"'
   cache:
