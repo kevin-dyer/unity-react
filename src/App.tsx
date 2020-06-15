@@ -3,6 +3,7 @@ import './App.css';
 import {
   UnityButton,
   UnityCodeEditor,
+  CodeEditorStylesI,
   UnityJsonViewer,
   UnityTextInput,
   UnityTable,
@@ -27,7 +28,6 @@ import {
   UnityNotificationSplitPane,
   UnityColumnEditor
 } from './components/unity-core-react'
-
 import { devices, fakeYaml } from './fakeData'
 
 
@@ -103,6 +103,11 @@ const buttonContainerStyle: CSSProperties = {
   width: '32%',
   margin: '180px auto',
   padding: 20,
+}
+
+const jsonViewerStyle: CodeEditorStylesI = {
+  '--gutter-color': '#FFF',
+  '--fold-color': '#FFF'
 }
 
 interface NavItem {
@@ -447,6 +452,7 @@ class App extends React.Component {
                   <UnityTypography>JSON Viewer</UnityTypography>
                   <UnityJsonViewer
                     src={JSON.stringify(navItems)}
+                    style={jsonViewerStyle}
                   />
                 </div>
               </UnitySection>
