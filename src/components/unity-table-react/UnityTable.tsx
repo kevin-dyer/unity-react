@@ -188,6 +188,9 @@ const styles : TableStyles = {
     overflowY: 'auto'
   },
   slot: {
-    flex: 1
+    flex: 1,
+    minHeight: 'var(--trow-height)',
+    display: 'flex',
+    alignItems: 'center'
   }
 }
