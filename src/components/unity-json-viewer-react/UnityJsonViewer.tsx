@@ -1,6 +1,7 @@
 import React from "react";
-import UnityCodeEditor from '@bit/smartworks.unity-react.unity-code-editor-react'
+import UnityCodeEditor, {CodeEditorStylesI} from '@bit/smartworks.unity-react.unity-code-editor-react'
 import './UnityJsonViewer.css'
+
 /**
  * A readOnly collapsible json tree viewer based on UnityCodeEditor
  * @example
@@ -8,12 +9,13 @@ import './UnityJsonViewer.css'
  */
 
 export interface JsonViewerProps {
-  src?: string
+  src?: string,
+  style?: CodeEditorStylesI
 }
 
 export default class UnityJsonViewer extends React.Component<JsonViewerProps> {
   render() {
-    const {src=''} = this.props
+    const {src='', style={}} = this.props
     let formattedStr
     try {
       formattedStr = JSON.stringify(JSON.parse(src), null, 2)
@@ -26,7 +28,7 @@ export default class UnityJsonViewer extends React.Component<JsonViewerProps> {
         e.preventDefault();
         e.stopPropagation()
       }}
-      style={styles.readOnlyJSON}
+      style={{...styles.readOnlyJSON, ...style}}
       className="read-only-json"
     >
       <div style={styles.editorWrapper}>
@@ -51,8 +53,9 @@ export default class UnityJsonViewer extends React.Component<JsonViewerProps> {
 const styles = {
   readOnlyJSON: {
     "--active-color": "rgba(0,0,0,0)",
-    "--gutter-color": "rgba(0,0,0,0.05)",
+    "--gutter-color": "#FFF",
     "--border-color": "rgba(0,0,0,0)",
+    "--fold-color": "#FFF",
     display: "relative",
     overflow: "hidden"
   },
