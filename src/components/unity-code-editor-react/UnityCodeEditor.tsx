@@ -22,6 +22,13 @@ import './UnityCodeEditor.css';
  */
 
 export type EditorType = "json" | "json5" | "javascript" | "python" | "sql" | "dockerfile" | "markdown" | "html" | "yaml";
+
+export interface CodeEditorStylesI extends React.CSSProperties {
+  '--gutter-color'?: string,
+  '--fold-color'?: string,
+  '--active-color'?: string
+}
+
 export interface CodeEditorProps {
   mode: EditorType,
   value: string,
@@ -35,7 +42,8 @@ export interface CodeEditorProps {
   readOnly?: boolean,
   highlightActiveLine?: boolean,
   showLineNumbers?: boolean,
-  tabSize?: number
+  tabSize?: number,
+  style?: CodeEditorStylesI
 }
 
 export interface CodeEditorState {error: string}

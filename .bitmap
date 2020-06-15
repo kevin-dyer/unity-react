@@ -24,7 +24,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-code-editor-react@0.2.6": {
+    "smartworks.unity-react/unity-code-editor-react@0.2.7": {
         "files": [
             {
                 "name": "UnityCodeEditor.css",
@@ -70,7 +70,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-core-react@0.4.30": {
+    "smartworks.unity-react/unity-core-react@0.4.32": {
         "files": [
             {
                 "name": "index.js",
@@ -251,7 +251,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-json-viewer-react@0.1.4": {
+    "smartworks.unity-react/unity-json-viewer-react@0.1.5": {
         "files": [
             {
                 "relativePath": "src/components/unity-json-viewer-react/UnityJsonViewer.css",
