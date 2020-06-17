@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v0.4.5
+- Update unity-core v1.2.10
+
 ### v0.4.1
 - Updated @types dependency
 

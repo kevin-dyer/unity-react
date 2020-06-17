@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v0.3.4
+- Update unity-core v1.2.10
+
 ### v0.3.3
 - fixed styles interface bug
 

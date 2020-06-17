@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v0.3.2
+- Update unity-core v1.2.10
+
 ### v0.3.1
 - fix disabled to function as intended
 
