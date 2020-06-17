@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v0.2.3
+- Update unity-core v1.2.10
+
 ### v0.2.2
 - Typescript internal interface naming convention changes
 

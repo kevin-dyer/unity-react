@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v1.0.1
+- Update unity-core v1.2.10
+
 ### v1.0.0
 - Removed conflations for unity-notifications-handler; bumping major version
 

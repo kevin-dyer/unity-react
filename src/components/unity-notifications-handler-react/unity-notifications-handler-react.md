@@ -5,6 +5,9 @@
 
 ## Changelog:
 
+### v0.2.5
+- Update unity-core v1.2.10
+
 ### v0.2.1
 - Added UnityNotificationSplitPane and UnityNotificationModal
 
