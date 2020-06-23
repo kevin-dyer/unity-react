@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v0.5.0
+- Update to unity-core v1.2.15, add compact option, remove header border option
+
 ### v0.4.5
 - Update unity-core v1.2.10
 

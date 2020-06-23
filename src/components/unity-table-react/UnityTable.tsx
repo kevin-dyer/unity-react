@@ -151,7 +151,7 @@ export default class UnityTable extends Component<TableProps> {
       children,
       highlightedRow='',
       endReachedThreshold=200,
-      noTopBorder
+      compact
     } = this.props
     let booleanProps : TableProps = {}
 
@@ -162,8 +162,8 @@ export default class UnityTable extends Component<TableProps> {
     if (selectable) {
       booleanProps.selectable = selectable
     }
-    if (noTopBorder) {
-      booleanProps.noTopBorder = noTopBorder
+    if (compact) {
+      booleanProps.compact = compact
     }
     return <div style={styles.container}>
         <unity-table
