@@ -12,7 +12,6 @@ import {
   headerStyleTypes,
   UnityPageHeader,
   UnitySection,
-  UnityGlobalNav,
   UnityDropdown,
   UnityToggleSwitch,
   UnitySplitPane,
@@ -28,6 +27,8 @@ import {
   UnityNotificationSplitPane,
   UnityColumnEditor
 } from './components/unity-core-react'
+
+import UnityGlobalNav, { NavItemsConfigI } from './components/unity-global-nav-react/UnityGlobalNav'
 import { devices, fakeYaml } from './fakeData'
 
 
@@ -110,20 +111,8 @@ const jsonViewerStyle: CodeEditorStylesI = {
   '--fold-color': '#FFF'
 }
 
-interface NavItem {
-  key: string,
-  label: string,
-  short?: boolean,
-  icon?: string,
-  children?: NavItem[]
-}
 
-interface navConfig {
-  top?: NavItem[],
-  bottom?: NavItem[]
-}
-
-const navItems : navConfig = {
+const navItems : NavItemsConfigI = {
   top: [
     {
       key: 'item-0',
@@ -388,7 +377,9 @@ class App extends React.Component {
           <div className="wrapper" style={wrapperStyle}>
             <UnityGlobalNav
               items={navItems}
-              collapsible={true}
+              collapsible
+              grid
+              header='ProductName'              
             />
             <div className="main" style={mainStyle}>
               <UnitySection>

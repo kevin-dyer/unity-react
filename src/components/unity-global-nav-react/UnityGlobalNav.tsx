@@ -1,10 +1,56 @@
-import React, { Component } from 'react'
+import React, { CSSProperties, Component } from 'react'
 import '@bit/smartworks.unity.unity-core/unity-global-nav-base'
-import {
-  NavProps,
-  NavStyles
-} from '@bit/smartworks.unity.unity-core/unity-global-nav-base'
 
+export interface NavItemI {
+  key: string
+  label: string
+  short?: boolean
+  icon?: string
+  children?: NavItemI[]
+  disabled?: boolean
+}
+export interface NavItemsConfigI {
+  top?: NavItemI[]
+  bottom?: NavItemI[]
+}
+export interface NavPropsI {
+  gutter?: boolean
+  logo?: string
+  selected?: string
+  collapsible?: boolean
+  collapsed?: boolean
+  items?: NavItemsConfigI
+  onSelect?: Function
+  header?: string
+  headerImg?: string
+  grid?: boolean
+  children?: any
+  style?: NavStyles
+}
+
+export type NavStyles = CSSProperties & {
+  '--primary-menu-color'?: string
+  '--gutter-color'?: string
+  '--logo-height'?: string
+  '--global-nav-background-color'?: string
+  '--global-nav-border-color'?: string
+  '--global-nav-margin-size'?: string
+  '--global-nav-padding-size'?: string
+  '--global-nav-padding-size-sm'?: string
+  '--global-nav-highlight-color'?: string
+  '--global-nav-hover-color'?: string
+  '--global-nav-text-color'?: string
+  '--global-nav-light-text-color'?: string
+  '--global-nav-gutter-color'?: string
+  '--global-nav-header-font-size'?: string
+  '--global-nav-font-size'?: string
+  '--global-nav-short-row'?: string
+  '--global-nav-large-row'?: string
+  '--global-nav-expanded-width'?: string
+  '--global-nav-collapsed-width'?: string
+  '--global-nav-logo-size'?: string
+  '--global-nav-menu-shadow'?: string
+}
 /*
     Takes property.oject `items`
     This is an object with a top and bottom object attributes.
@@ -22,13 +68,13 @@ import {
     If an item.object has a `children` array of non-Zero size, onSelect is ignored
 */
 
-export default class UnityGlobalNav extends Component<NavProps> {
-  private navRef = React.createRef<NavProps>()
+export default class UnityGlobalNav extends Component<NavPropsI> {
+  private navRef = React.createRef<NavPropsI>()
   componentDidMount = () => {
     this.updateProps({})
   }
 
-  componentDidUpdate = (oldProps : NavProps) => {
+  componentDidUpdate = (oldProps : NavPropsI) => {
     this.updateProps(oldProps)
   }
 
@@ -36,11 +82,11 @@ export default class UnityGlobalNav extends Component<NavProps> {
     const {
       items={},
       onSelect
-    } : NavProps = this.props
+    } : NavPropsI = this.props
     const {
       items: oldItems,
       onSelect: oldOnSelect
-    } : NavProps = oldProps
+    } : NavPropsI = oldProps
     const nav = this.navRef.current
 
     if (!!nav) {
@@ -56,30 +102,31 @@ export default class UnityGlobalNav extends Component<NavProps> {
 
   render() {
     const {
-      logo='',
-      selected='',
       gutter,
       collapsible,
       collapsed,
-      styles: stylesProp
-    } : NavProps = this.props
-    let sideNavProps : NavProps = { logo, selected }
+      grid,
+      style: stylesProp,
+      items,
+      onSelect,
+      ...otherProps
+    } : NavPropsI = this.props
+    let sideNavProps : NavPropsI = otherProps 
     if (!!gutter) sideNavProps.gutter = gutter
     if (!!collapsible) sideNavProps.collapsible = collapsible
     if (!!collapsed) sideNavProps.collapsed = collapsed
+    if (!!grid) sideNavProps.grid = grid
 
-    return <div style={{...styles.container, ...stylesProp}}>
+
+    return (
       <unity-global-nav-base
         ref={this.navRef}
+        style={stylesProp}
         {...sideNavProps}
       >
       </unity-global-nav-base>
-    </div>
+    )
   }
 }
 
-const styles : NavStyles = {
-  container: {
-    zIndex: 10
-  }
-}
+// const styles : NavStylesI = { zIndex: 10 }
