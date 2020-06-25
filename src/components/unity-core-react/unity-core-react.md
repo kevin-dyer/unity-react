@@ -4,11 +4,11 @@
 - Using top level import:
 ```javascript
 //import unity-typography react component and its declarations
-import {UnityTypography, colorTypes, sizeTypes, headerStyleTypes} from '@bit/smartworks.unity.unity-core-react'
+import {UnityTypography, colorTypes, sizeTypes, headerStyleTypes} from '@bit/smartworks.unity-react.unity-core-react'
 ```
 - Using path import to avoid loading unused modules
 ```javascript
-import UnityTypography, {colorTypes, sizeTypes, headerStyleTypes} from '@bit/smartworks.unity.unity-core-react/UnityTypography'
+import UnityTypography, {colorTypes, sizeTypes, headerStyleTypes} from '@bit/smartworks.unity-react.unity-core-react/UnityTypography'
 ```
 
 ## Adding a component
