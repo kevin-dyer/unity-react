@@ -2,8 +2,12 @@
 
 ## Changelog:
 
+### v0.3.0
+- Updated unity-core v1.3.1
+- Added new props and updated types
+
 ### v0.2.2
-- Update unity-core v1.2.10
+- Updated unity-core v1.2.10
 
 ### v0.2.1
 - Updated @types dependency
