@@ -25,6 +25,9 @@ export * from "@bit/smartworks.unity-react.<component-path>" //Export named expo
 
 ## Changelog:
 
+### v0.5.2
+- Fix uncaught unity-global-nav-react downgrade
+
 ### v0.5.1
 - Update unity-core v1.3.2
 
