@@ -70,7 +70,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-core-react@0.4.37": {
+    "smartworks.unity-react/unity-core-react@0.5.1": {
         "files": [
             {
                 "name": "index.js",
