@@ -36,6 +36,7 @@ export default class UnityDropdown extends Component<dropdownPropsType> {
       options=[],
       selected=[],
       disabled,
+      important,
       ...otherProps
     } = this.props
     const dropdownProps : dropdownPropsType = {
@@ -44,6 +45,7 @@ export default class UnityDropdown extends Component<dropdownPropsType> {
       ...otherProps
     }
     if (disabled) dropdownProps.disabled = true
+    if (important) dropdownProps.important = true
     return (
       <unity-dropdown
         ref={this.dropdownRef}
@@ -55,12 +57,13 @@ export default class UnityDropdown extends Component<dropdownPropsType> {
 
 
 export type inputType = "menu" | "single-select" | "multi-select"
-export type boxType = "label" | "search" | "button-gradient" | "button-outlined" | "inline"
+export type boxType = "label" | "search" | "button-primary" | "button-secondary" | "button-borderless" | "inline"
 export interface dropdownPropsType extends React.HTMLAttributes<HTMLElement> {
   [key: string]: any
   label?: string
   inputType?: inputType
   boxType?: boxType
+  important?: boolean
   placeholder?: string
   options?: Object[] | string
   selected?: string[] | string
