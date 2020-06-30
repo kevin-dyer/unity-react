@@ -2,6 +2,11 @@
 
 ## Changelog:
 
+### v1.0.0
+- Added types for monospace property
+- Update unity-core v1.4.0
+- Update to v1 to enable proper semantic versioning
+
 ### v0.2.2
 - Update unity-core v1.2.10
 
