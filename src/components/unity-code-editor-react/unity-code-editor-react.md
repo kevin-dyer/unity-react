@@ -2,6 +2,10 @@
 
 ## Changelog:
 
+### v1.0.0
+- Updated unity-typography-react v1.0.0
+- Updated to v1 to enable proper semantic versioning
+
 ### v0.2.2
 - Fixed eslint error
 

@@ -24,7 +24,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-code-editor-react@0.2.7": {
+    "smartworks.unity-react/unity-code-editor-react@1.0.0": {
         "files": [
             {
                 "name": "UnityCodeEditor.css",
@@ -70,7 +70,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-core-react@0.5.3": {
+    "smartworks.unity-react/unity-core-react@1.0.1": {
         "files": [
             {
                 "name": "index.js",
@@ -251,7 +251,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-json-viewer-react@0.1.5": {
+    "smartworks.unity-react/unity-json-viewer-react@1.0.0": {
         "files": [
             {
                 "relativePath": "src/components/unity-json-viewer-react/UnityJsonViewer.css",
@@ -262,6 +262,11 @@
                 "relativePath": "src/components/unity-json-viewer-react/UnityJsonViewer.tsx",
                 "test": false,
                 "name": "UnityJsonViewer.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-json-viewer-react/unity-json-viewer-react.md",
+                "test": false,
+                "name": "unity-json-viewer-react.md"
             }
         ],
         "mainFile": "src/components/unity-json-viewer-react/UnityJsonViewer.tsx",
@@ -526,7 +531,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-typography-react@0.2.2": {
+    "smartworks.unity-react/unity-typography-react@1.0.1": {
         "files": [
             {
                 "name": "UnityTypography.tsx",

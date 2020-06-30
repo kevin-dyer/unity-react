@@ -5,12 +5,16 @@ export default class UnityTypography extends Component<typographyProps> {
   render() {
     const {
       children,
+      monospace,
       ...otherProps
     } = this.props
+    
+    const typographyProps : typographyProps = {...otherProps}
+    if (monospace) typographyProps.monospace = monospace
 
     return (
       <unity-typography
-        {...otherProps}
+        {...typographyProps}
       >
         {children}
       </unity-typography>
@@ -23,6 +27,7 @@ export type sizeTypes = 'header1' | 'header2' | 'paragraph' | 'medium' | 'small'
 
 export type headerStyleTypes = React.CSSProperties & { 
 '--font-face'?: string,
+'--monospace-font-face'?: string,
 '--font-color-light'?: string,
 '--font-color-medium'?: string,
 '--font-color-dark'?: string,
@@ -44,5 +49,6 @@ export interface typographyProps {
   color?: colorTypes,
   size?: sizeTypes,
   weight?: sizeTypes,
-  style?: headerStyleTypes
+  style?: headerStyleTypes,
+  monospace?: boolean
 }
