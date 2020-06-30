@@ -14,7 +14,7 @@ export default class UnityTypography extends Component<typographyProps> {
 
     return (
       <unity-typography
-        {...otherProps}
+        {...typographyProps}
       >
         {children}
       </unity-typography>
