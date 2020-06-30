@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v1.0.1
+- Fix monospace prop not being passed into the component
+
 ### v1.0.0
 - Added types for monospace property
 - Update unity-core v1.4.0

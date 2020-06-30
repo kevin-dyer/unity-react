@@ -25,6 +25,9 @@ export * from "@bit/smartworks.unity-react.<component-path>" //Export named expo
 
 ## Changelog:
 
+### v1.0.1
+- unity-typography-react v1.0.1
+
 ### v1.0.0
 - Update unity-typography-react v1.0.0, unity-code-editor-react v1.0.0, unity-json-viewer-react v1.0.0
 - Update to v1 to enable proper semantic versioning
