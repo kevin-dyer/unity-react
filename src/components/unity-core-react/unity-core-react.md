@@ -25,6 +25,9 @@ export * from "@bit/smartworks.unity-react.<component-path>" //Export named expo
 
 ## Changelog:
 
+### v0.5.3
+- Update unity-core v1.3.6, unity-button-react v1.0.0, unity-dropdown-react v1.0.0
+
 ### v0.5.2
 - Fix uncaught unity-global-nav-react downgrade
 
