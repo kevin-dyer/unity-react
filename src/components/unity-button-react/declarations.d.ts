@@ -4,7 +4,7 @@ declare namespace JSX {
   }
 }
 declare module '@bit/smartworks.unity.unity-core/unity-button' {
-  export type buttonType = 'gradient' | 'solid' | 'outlined'
+  export type buttonType = 'primary' | 'ssecondary' | 'borderless'
   export interface buttonPropsType {
     [key: string]: any;
     label?: string;
@@ -12,10 +12,9 @@ declare module '@bit/smartworks.unity.unity-core/unity-button' {
     rightIcon?: string;
     centerIcon?: string;
     type?: buttonType;
-    danger?: boolean;
+    important?: boolean;
     loading?: boolean;
     disabled?: boolean;
-    small?: boolean;
     onClick?: Function;
     styles?: object;
   }

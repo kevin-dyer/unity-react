@@ -229,7 +229,7 @@ const SectionForNotifications = (props?: any) => {
     <div>
       <div style={buttonContainerStyle}>
         <UnityButton
-          type='solid'
+          type='primary'
           label='Add Notification'
           onClick={() => addNotification({
             notification: {
@@ -335,7 +335,7 @@ class App extends React.Component {
             body={<div style={{ padding: '100px 300px' }}>
               <UnityButton
                 label="Unity"
-                type="solid"
+                type="primary"
                 onClick={() => console.log("click")}
               />
            </div> }
@@ -349,7 +349,7 @@ class App extends React.Component {
             body={<div style={{ padding: '100px 300px' }}>
               <UnityButton
                 label="Show a Notification"
-                type="solid"
+                type="primary"
                 onClick={() => addNotification({
                   target: 'notifications-in-modal',
                   notification: {
@@ -379,7 +379,7 @@ class App extends React.Component {
               items={navItems}
               collapsible
               grid
-              header='ProductName'              
+              header='ProductName'
             />
             <div className="main" style={mainStyle}>
               <UnitySection>
@@ -462,7 +462,7 @@ class App extends React.Component {
                   >
                     <UnityButton
                       label="Toggle Split Pane"
-                      type="solid"
+                      type="primary"
                       onClick={() => this.setState({ showPane: !this.state.showPane})}
                     />
                   </div>
@@ -485,7 +485,7 @@ class App extends React.Component {
                     >
                       <UnityButton
                         label="show success notification"
-                        type="solid"
+                        type="primary"
                         onClick={() => addNotification({
                           target: 'split-pane-main-notification',
                           notification: {
@@ -498,7 +498,7 @@ class App extends React.Component {
                       />
                       <UnityButton
                         label="Toggle Split Pane"
-                        type="solid"
+                        type="primary"
                         onClick={() => this.setState({ showNotificationSplitPane: !this.state.showNotificationSplitPane})}
                         style={{ margin: 20 }}
                       />
@@ -510,7 +510,7 @@ class App extends React.Component {
                     >
                       <UnityButton
                         label="show warning notification"
-                        type="solid"
+                        type="primary"
                         onClick={() => addNotification({
                           target: 'split-pane-pane-notification',
                           notification: {
@@ -536,13 +536,13 @@ class App extends React.Component {
                     <div>
                       <UnityButton
                         label="Show Standard Modal"
-                        type="solid"
+                        type="primary"
                         onClick={() => this.setState({showModal: true})}
                         style={{ margin: 20 }}
                       />
                       <UnityButton
                         label="Show Notifications-Enabled Modal"
-                        type="solid"
+                        type="primary"
                         onClick={() => this.setState({showNotificationModal: true})}
                         style={{ margin: 20 }}
                       />
@@ -683,7 +683,7 @@ class App extends React.Component {
                             onExport={() => console.log(`Exported table data`)}
                           >
                             <UnityButton
-                              type="solid"
+                              type="primary"
                               label="Export"
                               rightIcon="unity:file_download"
                               onClick={() => console.log(`UnityButton child on UnityTableExport received click event`)}
@@ -721,7 +721,7 @@ class App extends React.Component {
                 >
                   <div style={buttonContainerStyle}>
                     <UnityButton
-                      type='solid'
+                      type='primary'
                       label='Add Notification'
                       onClick={() => addNotification({
                         target: 'notifications-via-component',

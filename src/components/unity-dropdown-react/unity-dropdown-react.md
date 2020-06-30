@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v1.0.0
+- Updatee unity-core v1.3.6
+
 ### v0.3.2
 - Update unity-core v1.2.10
 
