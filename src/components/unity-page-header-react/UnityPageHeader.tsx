@@ -29,7 +29,7 @@ export default class UnityPageHeader extends Component<pageHeaderProps> {
 
   render() {
     const {
-      title='',
+      header='',
       tabs=[],
       selectedTab,
       leftContent,
@@ -43,7 +43,7 @@ export default class UnityPageHeader extends Component<pageHeaderProps> {
     return <unity-page-header
       style={style}
       ref={this.headerRef}
-      title={title}
+      header={header}
       tabs={tabsStr}
       selectedTab={selectedTab}
     >

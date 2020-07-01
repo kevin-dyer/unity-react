@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v1.0.1
+- properly handle header arg change
+
 ### v1.0.0
 - update unity-core v1.4.3
 

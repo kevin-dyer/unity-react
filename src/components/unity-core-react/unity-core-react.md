@@ -25,6 +25,9 @@ export * from "@bit/smartworks.unity-react.<component-path>" //Export named expo
 
 ## Changelog:
 
+### v1.0.5
+- unity-page-header-react v1.0.1
+
 ### v1.0.2
 - unity-page-header-react v1.0.0
 
