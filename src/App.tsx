@@ -692,6 +692,11 @@ class App extends React.Component {
                         }
                         <UnityColumnEditor
                           columns={columns}
+                          buttonProps={{
+                            label: 'Adjust Columns',
+                            leftIcon: 'icons:view-column',
+                            type: 'borderless'
+                          }}
                         />
                       </UnitySection>
                     </UnitySection>
