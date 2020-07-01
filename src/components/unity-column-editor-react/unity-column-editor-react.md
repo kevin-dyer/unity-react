@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v0.3.0
+- Replace buttonType prop with buttonProps
+
 ### v0.2.3
 - Update unity-core v1.2.10
 
