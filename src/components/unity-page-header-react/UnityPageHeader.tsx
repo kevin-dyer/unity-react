@@ -34,7 +34,8 @@ export default class UnityPageHeader extends Component<pageHeaderProps> {
       selectedTab,
       leftContent,
       centerContent,
-      rightContent,
+      leftAction,
+      rightAction,
       style
     } = this.props
     const tabsStr = JSON.stringify(tabs)
@@ -58,9 +59,15 @@ export default class UnityPageHeader extends Component<pageHeaderProps> {
         </div>
       }
 
-      {!!rightContent &&
-        <div slot="right-content">
-          {rightContent}
+      {!!leftAction &&
+        <div slot="left-action">
+          {leftAction}
+        </div>
+      }
+
+      {!!rightAction &&
+        <div slot="right-action">
+          {rightAction}
         </div>
       }
     </unity-page-header>

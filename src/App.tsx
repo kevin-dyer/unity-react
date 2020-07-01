@@ -385,7 +385,10 @@ class App extends React.Component {
               <UnitySection>
                 <div style={contentBox}>
                   <UnityPageHeader
-                  centerContent={this.makeCenterContent()}/>
+                    centerContent={this.makeCenterContent()}
+                    leftAction={<UnityButton centerIcon="unity:db_candi" type="borderless"/>}
+                    rightAction={<UnityButton label="Header Button"/>}
+                  />
                 </div>
               </UnitySection>
               <UnitySection>

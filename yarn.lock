@@ -1156,10 +1156,10 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-core-react@^1.0.1":
-  version "1.0.1"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-core-react/-/smartworks.unity-react.unity-core-react-1.0.1.tgz#54c39eea2f218db67939aa574be36b4b50baa30f"
-  integrity sha1-VMOe6i8hjbZ5OapXS+NrS1C6ow8=
+"@bit/smartworks.unity-react.unity-core-react@^1.0.2":
+  version "1.0.2"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-core-react/-/smartworks.unity-react.unity-core-react-1.0.2.tgz#e1fa0c72ea1510e9f29f57a097b573b9c89c82d9"
+  integrity sha1-4foMcuoVEOnyn1egl7Vzucicgtk=
   dependencies:
     "@bit/smartworks.unity-react.unity-button-react" "1.0.0"
     "@bit/smartworks.unity-react.unity-code-editor-react" "1.0.0"
@@ -1171,7 +1171,7 @@
     "@bit/smartworks.unity-react.unity-modal-react" "0.2.3"
     "@bit/smartworks.unity-react.unity-notification-react" "1.0.1"
     "@bit/smartworks.unity-react.unity-notifications-handler-react" "0.2.5"
-    "@bit/smartworks.unity-react.unity-page-header-react" "0.3.2"
+    "@bit/smartworks.unity-react.unity-page-header-react" "1.0.0"
     "@bit/smartworks.unity-react.unity-progress-react" "0.2.2"
     "@bit/smartworks.unity-react.unity-section-react" "0.3.4"
     "@bit/smartworks.unity-react.unity-split-pane-react" "0.3.2"
@@ -1239,10 +1239,10 @@
     react "^16.12.0"
     uuid "3.4.0"
 
-"@bit/smartworks.unity-react.unity-page-header-react@0.3.2", "@bit/smartworks.unity-react.unity-page-header-react@^0.3.2":
-  version "0.3.2"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-page-header-react/-/smartworks.unity-react.unity-page-header-react-0.3.2.tgz#a525dde47680c4b16dcff19031ecfb15c163937f"
-  integrity sha1-pSXd5HaAxLFtz/GQMez7FcFjk38=
+"@bit/smartworks.unity-react.unity-page-header-react@1.0.0", "@bit/smartworks.unity-react.unity-page-header-react@^1.0.0":
+  version "1.0.0"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-page-header-react/-/smartworks.unity-react.unity-page-header-react-1.0.0.tgz#0f8acb8c2acaadd402b874457ddb16d3dde6b334"
+  integrity sha1-D4rLjCrKrdQCuHRFfdsW093mszQ=
   dependencies:
     "@types/react" "16.9.11"
     react "^16.12.0"

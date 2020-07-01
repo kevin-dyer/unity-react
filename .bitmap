@@ -70,7 +70,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-core-react@1.0.1": {
+    "smartworks.unity-react/unity-core-react@1.0.2": {
         "files": [
             {
                 "name": "index.js",
@@ -350,7 +350,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-page-header-react@0.3.2": {
+    "smartworks.unity-react/unity-page-header-react@1.0.0": {
         "files": [
             {
                 "name": "UnityPageHeader.tsx",
