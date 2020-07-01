@@ -6,7 +6,7 @@ declare namespace JSX {
 
 declare module '@bit/smartworks.unity.unity-core/unity-page-header' {
   export interface pageHeaderProps {
-    title?: string,
+    header?: string,
     tabs?: object,
     selectedTab?: string,
     leftContent?: any,
