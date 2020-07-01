@@ -4,7 +4,7 @@ declare namespace JSX {
   }
 }
 declare module '@bit/smartworks.unity.unity-core/unity-button' {
-  export type buttonType = 'primary' | 'ssecondary' | 'borderless'
+  export type buttonType = 'primary' | 'secondary' | 'borderless'
   export interface buttonPropsType {
     [key: string]: any;
     label?: string;

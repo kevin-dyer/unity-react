@@ -18,13 +18,15 @@ export default class UnityColumnEditor extends Component<ColumnEditorProps> {
     const {
       columns,
       selectedColumns,
-      onUpdate
+      onUpdate,
+      buttonProps
     } : ColumnEditorProps = this.props
 
     const {
       columns: oldColumns,
       selectedColumns: oldSelectedColumns,
-      onUpdate: oldOnUpdate
+      onUpdate: oldOnUpdate,
+      buttonProps: oldButtonProps
     } : ColumnEditorProps = oldProps
 
     const colEditor = this.colEditorRef.current
@@ -39,19 +41,17 @@ export default class UnityColumnEditor extends Component<ColumnEditorProps> {
       if (oldOnUpdate !== onUpdate) {
         colEditor.onUpdate = onUpdate
       }
+
+      if (oldButtonProps !== buttonProps) {
+        colEditor.buttonProps = buttonProps
+      }
     }
   }
 
   render() {
-    const {
-      buttonType
-    } = this.props
-    const editorProps : ColumnEditorProps = { buttonType }
-
     return <div style={styles.container}>
         <unity-column-editor
           ref={this.colEditorRef}
-          {...editorProps}
         ></unity-column-editor>
     </div>
   }
