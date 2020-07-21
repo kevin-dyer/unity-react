@@ -82,6 +82,7 @@ export interface SplitPaneProps extends React.HTMLAttributes<HTMLElement>{
   pane?: any
   footer?: any
   show?: boolean
+  label?: string
   closeButton?: boolean
   onClose?: Function
   collapsed?: boolean
@@ -96,4 +97,9 @@ export type splitPaneStyleTypes = React.CSSProperties & {
   '--bar-border-color'?: string
   '--background'?: string
   '--bar-background'?: string
+  '--pane-border-width'?: string
+  '--pane-border-color'?: string
+  '--bar-width'?: string
+  '--header-border'?: string
+  '--collapse-button-padding'?: string
 }
