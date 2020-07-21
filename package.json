@@ -90,6 +90,14 @@
           "@bit/smartworks.unity-react.unity-typography-react": "^1.0.0"
         }
       },
+      "unity-column-editor-react": {
+        "dependencies": {
+          "@bit/smartworks.unity-react.unity-button-react": "-"
+        },
+        "peerDependencies": {
+          "@bit/smartworks.unity-react.unity-button-react": "^1.1.0"
+        }
+      },
       "unity-notifications-handler-react": {
         "dependencies": {
           "@bit/smartworks.unity-react.unity-notification-react": "-",
