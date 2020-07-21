@@ -2,6 +2,10 @@
 
 ## Changelog:
 
+### v1.1.0
+- Added generic HTML attributes
+- Added exports for ts definitions
+
 ### v1.0.0
 - Update unity-core v1.3.6
 
