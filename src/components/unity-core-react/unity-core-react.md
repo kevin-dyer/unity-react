@@ -47,6 +47,9 @@ export * from "@bit/smartworks.unity-react.<component-path>" //Export named expo
 ### v0.5.1
 - Update unity-core v1.3.2
 
+### v0.5.0
+- Update unity-global-nav-react v0.3.0
+
 ### v0.4.35
 - Update unity-core v1.2.15, update UnityTable to handle new props
 
