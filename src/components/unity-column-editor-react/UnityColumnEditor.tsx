@@ -49,16 +49,10 @@ export default class UnityColumnEditor extends Component<ColumnEditorProps> {
   }
 
   render() {
-    return <div style={styles.container}>
-        <unity-column-editor
-          ref={this.colEditorRef}
-        ></unity-column-editor>
-    </div>
-  }
-}
-
-const styles : ColumnEditorStyles = {
-  container: {
-    flex: 1
+    return (
+      <unity-column-editor
+        ref={this.colEditorRef}
+      ></unity-column-editor>
+    )
   }
 }
