@@ -26,6 +26,7 @@ export interface TablePropsI extends HTMLAttributes<HTMLElement> {
   headless?: boolean
   startExpanded?: boolean
   columnFilter?: Object[]
+  style?: TableStyles
 }
 
 export type TableStyles = CSSProperties & {

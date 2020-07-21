@@ -16,6 +16,7 @@ export interface buttonPropsType extends HTMLAttributes<HTMLElement>{
   loading?: boolean
   disabled?: boolean
   onClick?: (event: ReactMouseEvent<HTMLElement, MouseEvent>) => void
+  style?: buttonStyles
 }
 
 export type buttonStyles = CSSProperties & {
