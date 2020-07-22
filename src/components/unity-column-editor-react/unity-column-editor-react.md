@@ -2,6 +2,11 @@
 
 ## Changelog:
 
+### v1.0.0
+- Added generic HTML attributes
+- Added unity-button-react dependency to import types
+- Updated to v1 to enable proper semantic versioning
+
 ### v0.3.0
 - Replace buttonType prop with buttonProps
 

@@ -1,38 +1,104 @@
-import React, { Component } from 'react'
+import React, { Component, CSSProperties, HTMLAttributes } from 'react'
 import '@bit/smartworks.unity.unity-core/unity-table'
-//See definitions in ./declarations.d.ts
-import {
-  TableProps,
-  TableStyles,
-  TableColumn
-} from '@bit/smartworks.unity.unity-core/unity-table'
 
+export interface TablePropsI extends HTMLAttributes<HTMLElement> {
+  data?: Object[]
+  columns?: TableColumnI[]
+  selected?: string[]
+  childKeys?: string[]
+  keyExtractor?: Function
+  slotIdExtractor?: Function
+  onClickRow?: Function
+  onSelectionChange?: Function
+  onDisplayColumnsChange?: Function
+  onColumnChange?: Function
+  onExpandedChange?: Function
+  selectable?: boolean
+  filter?: Object[]
+  emptyText?: string
+  isLoading?: boolean
+  onEndReached?: Function
+  onHighlight?: Function
+  children?: Object[]
+  highlightedRow?: string
+  endReachedThreshold?: number
+  compact?: boolean
+  headless?: boolean
+  startExpanded?: boolean
+  columnFilter?: Object[]
+  style?: TableStyles
+}
 
-export default class UnityTable extends Component<TableProps> {
+export type TableStyles = CSSProperties & {
+  '--paper-checkbox-size'?: string 
+  '--paper-checkbox-unchecked-background-color'?: string 
+  '--paper-checkbox-unchecked-color'?: string 
+  '--paper-checkbox-checked-color'?: string 
+  '--paper-checkbox-unchecked-ink-color'?: string 
+  '--paper-checkbox-checked-ink-color'?: string 
+  '--paper-spinner-color'?: string 
+  '--thead-height'?: string 
+  '--thead-compact-height'?: string 
+  '--trow-height'?: string 
+  '--trow-compact-height'?: string 
+  '--default-hover-color'?: string 
+  '--default-highlight-color'?: string 
+  '--default-hover-highlight-color'?: string 
+  '--paper-checkbox-ink-size'?: string 
+  '--paper-icon-button-ink-color'?: string 
+  '--padding-small'?: string 
+  '--padding-medium'?: string 
+  '--padding-large'?: string 
+  '--padding-extra-large'?: string 
+  '--margin-medium'?: string 
+  '--header-text-color'?: string 
+  '--separator-color'?: string 
+  '--filter-button-color'?: string 
+  '--sort-button-color'?: string 
+}
 
-  public tableRef = React.createRef<TableProps>()
+export interface TableColumnI {
+  key?: string,
+  label?: string,
+  formatLabel?: Function,
+  renderCustomContent?: Function
+}
+
+const slotStyles : CSSProperties = {
+  flex: 1,
+  minHeight: 'var(--trow-height)',
+  display: 'flex',
+  alignItems: 'center'
+}
+
+export default class UnityTable extends Component<TablePropsI> {
+
+  public tableRef = React.createRef<TablePropsI>()
 
   componentDidMount = () => {
     this.updateProperties()
   }
 
-  componentDidUpdate(oldProps: TableProps) {
+  componentDidUpdate(oldProps: TablePropsI) {
     this.updateProperties(oldProps)
   }
 
-  updateProperties(oldProps: TableProps = {}) {
+  updateProperties(oldProps: TablePropsI = {}) {
     const {
       data,
       columns,
       selected,
       childKeys,
       keyExtractor,
+      slotIdExtractor,
       onClickRow,
       onSelectionChange,
       onDisplayColumnsChange,
       onColumnChange,
       onEndReached,
-      onHighlight
+      onHighlight,
+      onExpandedChange,
+      columnFilter
     } = this.props
     const {
       data: oldData,
@@ -40,13 +106,16 @@ export default class UnityTable extends Component<TableProps> {
       selected: oldSelected,
       childKeys: oldChildKeys,
       keyExtractor: oldKeyExtractor,
+      slotIdExtractor: oldSlotIdExtractor,
       onClickRow: oldOnClickRow,
       onSelectionChange: oldOnSelectionChange,
       onDisplayColumnsChange: oldOnDisplayColumnsChange,
       onColumnChange: oldOnColumnChange,
       onEndReached: oldOnEndReached,
-      onHighlight: oldOnHighlight
-    } : TableProps = oldProps
+      onHighlight: oldOnHighlight,
+      onExpandedChange: oldOnExpandedChange,
+      columnFilter: oldColumnFilter
+    } : TablePropsI = oldProps
 
     const unityTable = this.tableRef.current
     if(unityTable) {
@@ -64,6 +133,9 @@ export default class UnityTable extends Component<TableProps> {
       }
       if (oldKeyExtractor !== keyExtractor) {
         unityTable.keyExtractor = keyExtractor
+      }
+      if (oldSlotIdExtractor !== slotIdExtractor) {
+        unityTable.slotIdExtractor = slotIdExtractor
       }
       if (oldOnClickRow !== onClickRow) {
         unityTable.onClickRow = onClickRow
@@ -84,6 +156,15 @@ export default class UnityTable extends Component<TableProps> {
       if (oldOnHighlight !== onHighlight) {
         unityTable.onHighlight = onHighlight
       }
+      if (oldSlotIdExtractor !== slotIdExtractor) {
+        unityTable.slotIdExtractor = slotIdExtractor
+      }
+      if (oldOnExpandedChange !== onExpandedChange) {
+        unityTable.onExpandedChange = onExpandedChange
+      }
+      if (oldColumnFilter !== columnFilter) {
+        unityTable.columnFilter = columnFilter
+      }
     }
   }
 
@@ -99,7 +180,7 @@ export default class UnityTable extends Component<TableProps> {
       data=[],
       columns=[],
       childKeys=[],
-    }: TableProps = this.props
+    }: TablePropsI = this.props
 
     let slots: any[] = []
     let nodes: object[] = [...data]
@@ -128,13 +209,13 @@ export default class UnityTable extends Component<TableProps> {
     //Extract cell content and append to slots array
     nodes.forEach((node: any={}) => {
       colsWithContent.forEach((column={}) => {
-        const {key='', renderCustomContent=()=>{}}: TableColumn = column
+        const {key='', renderCustomContent=()=>{}}: TableColumnI = column
         const cellValue: string = node[key]
         const customContent: any = renderCustomContent(cellValue, node)
         const slotId: string = this._slotIdExtractor(node, column)
 
         if (!!customContent) {
-          slots.push(<div slot={slotId} key={slotId} style={styles.slot}>{customContent}</div>)
+          slots.push(<div slot={slotId} key={slotId} style={slotStyles}>{customContent}</div>)
         }
       })
     })
@@ -142,6 +223,9 @@ export default class UnityTable extends Component<TableProps> {
     return slots
   }
 
+
+headless?: boolean
+startExpanded?: boolean 
   render() {
     const {
       selectable=false,
@@ -151,9 +235,11 @@ export default class UnityTable extends Component<TableProps> {
       children,
       highlightedRow='',
       endReachedThreshold=200,
-      compact
+      compact,
+      headless,
+      startExpanded
     } = this.props
-    let booleanProps : TableProps = {}
+    let booleanProps : TablePropsI = {}
 
     //Not isLoading attribute must not be passed in if false
     if (isLoading) {
@@ -165,32 +251,24 @@ export default class UnityTable extends Component<TableProps> {
     if (compact) {
       booleanProps.compact = compact
     }
-    return <div style={styles.container}>
-        <unity-table
-          ref={this.tableRef}
-          filter={filter}
-          emptyDisplay={emptyText}
-          highlightedRow={highlightedRow}
-          endReachedThreshold={endReachedThreshold}
-          {...booleanProps}
-        >
-          {this.renderCustomContent()}
-          {children}
-        </unity-table>
-    </div>
-  }
-}
-
-const styles : TableStyles = {
-  container: {
-    flex: 1,
-    position: 'relative',
-    overflowY: 'auto'
-  },
-  slot: {
-    flex: 1,
-    minHeight: 'var(--trow-height)',
-    display: 'flex',
-    alignItems: 'center'
+    if (headless) {
+      booleanProps.headless = headless
+    }
+    if (startExpanded) {
+      booleanProps.startExpanded = startExpanded
+    }
+    return ( 
+      <unity-table
+        ref={this.tableRef}
+        filter={filter}
+        emptyDisplay={emptyText}
+        highlightedRow={highlightedRow}
+        endReachedThreshold={endReachedThreshold}
+        {...booleanProps}
+      >
+        {this.renderCustomContent()}
+        {children}
+      </unity-table>
+    )
   }
 }

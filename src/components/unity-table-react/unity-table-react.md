@@ -2,6 +2,13 @@
 
 ## Changelog:
 
+### v1.0.0
+- Added generic HTML attributes
+- Added `slotIdExtractor`, `onExpandedChange`, `headless`, `startExpanded` and `columnFilter` props
+- Updated prop and CSS types
+- Removed wrapper div
+- Updated to v1 to enable proper semantic versioning
+
 ### v0.5.0
 - Update to unity-core v1.2.15, add compact option, remove header border option
 

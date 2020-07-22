@@ -1,6 +1,22 @@
-import React, { Component } from 'react'
+import React, { Component, CSSProperties } from 'react'
 import '@bit/smartworks.unity.unity-core/unity-column-editor'
-import {ColumnEditorProps, ColumnEditorStyles} from '@bit/smartworks.unity.unity-core/unity-column-editor'
+import { buttonPropsType } from "@bit/smartworks.unity-react.unity-button-react";
+
+  export interface ColumnEditorProps {
+    columns?: Object[],
+    selectedColumns?: Object[],
+    onUpdate?: Function,
+    buttonProps?: buttonPropsType
+    style?: ColumnEditorStyles
+  }
+
+  export type ColumnEditorStyles =  CSSProperties & {
+    '--paper-checkbox-size'?: string
+    '--paper-checkbox-unchecked-color'?: string
+    '--paper-checkbox-checked-color'?: string
+    '--paper-checkbox-unchecked-ink-color'?: string
+    '--paper-checkbox-checked-ink-color'?: string
+  }
 
 export default class UnityColumnEditor extends Component<ColumnEditorProps> {
 
@@ -49,16 +65,12 @@ export default class UnityColumnEditor extends Component<ColumnEditorProps> {
   }
 
   render() {
-    return <div style={styles.container}>
-        <unity-column-editor
-          ref={this.colEditorRef}
-        ></unity-column-editor>
-    </div>
-  }
-}
-
-const styles : ColumnEditorStyles = {
-  container: {
-    flex: 1
+    const { columns, selectedColumns, onUpdate, buttonProps, ...otherProps } = this.props
+    return (
+      <unity-column-editor
+        ref={this.colEditorRef}
+        {...otherProps}
+      ></unity-column-editor>
+    )
   }
 }

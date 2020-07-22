@@ -2,6 +2,11 @@
 
 ## Changelog:
 
+### v1.0.0
+- Fix header slot div not filling the whole width
+- Updated types and CSS vars
+- Updated to v1 to enable proper semantic versioning
+
 ### v0.3.2
 - Update unity-core v1.2.10
 

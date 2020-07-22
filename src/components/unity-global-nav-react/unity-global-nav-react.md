@@ -2,6 +2,10 @@
 
 ## Changelog:
 
+### v1.0.0
+- Added generic HTML attributes
+- Updated to v1 to enable proper semantic versioning
+
 ### v0.3.0
 - Updated unity-core v1.3.1
 - Added new props and updated types

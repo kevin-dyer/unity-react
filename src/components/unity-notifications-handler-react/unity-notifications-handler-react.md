@@ -5,6 +5,10 @@
 
 ## Changelog:
 
+### v1.0.0
+- Updated to v1 to enable proper semantic versioning
+- Updated split pane peer dependency
+
 ### v0.2.5
 - Update unity-core v1.2.10
 

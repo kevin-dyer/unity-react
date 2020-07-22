@@ -380,6 +380,7 @@ class App extends React.Component {
               collapsible
               grid
               header='ProductName'
+              onSelect={(e) => console.log(`Menu item ${e} clicked`)}
             />
             <div className="main" style={mainStyle}>
               <UnitySection>

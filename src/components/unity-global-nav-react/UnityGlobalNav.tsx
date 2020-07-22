@@ -1,4 +1,4 @@
-import React, { CSSProperties, Component } from 'react'
+import React, { CSSProperties, Component, HTMLAttributes, SyntheticEvent } from 'react'
 import '@bit/smartworks.unity.unity-core/unity-global-nav-base'
 
 export interface NavItemI {
@@ -13,14 +13,14 @@ export interface NavItemsConfigI {
   top?: NavItemI[]
   bottom?: NavItemI[]
 }
-export interface NavPropsI {
+export interface NavPropsI extends HTMLAttributes<HTMLElement> {
   gutter?: boolean
   logo?: string
   selected?: string
   collapsible?: boolean
   collapsed?: boolean
   items?: NavItemsConfigI
-  onSelect?: Function
+  onSelect?: ((event: SyntheticEvent<HTMLElement, Event>) => void) // this seems to be the correct type for extending HTMLAttributes 
   header?: string
   headerImg?: string
   grid?: boolean
