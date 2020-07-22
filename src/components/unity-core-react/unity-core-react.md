@@ -25,6 +25,15 @@ export * from "@bit/smartworks.unity-react.<component-path>" //Export named expo
 
 ## Changelog:
 
+### v1.1.0
+- Updated props, types, and added generic HTML attributes multiple components:
+  - unity-button-react v1.1.0
+  - unity-column-editor-react v1.0.0
+  - unity-global-nav-react v1.0.0
+  - unity-notifications-handler-react v1.0.0
+  - unity-split-pane-react v1.0.0
+  - unity-table-react v1.0.0
+
 ### v1.0.5
 - unity-page-header-react v1.0.1
 
