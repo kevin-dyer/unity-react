@@ -5,8 +5,8 @@
   "dependencies": {
     "@bit/smartworks.unity-react.unity-button-react": "^1.1.0",
     "@bit/smartworks.unity-react.unity-code-editor-react": "^1.0.0",
-    "@bit/smartworks.unity-react.unity-column-editor-react": "^1.0.0",
-    "@bit/smartworks.unity-react.unity-core-react": "^1.1.0",
+    "@bit/smartworks.unity-react.unity-column-editor-react": "^1.0.1",
+    "@bit/smartworks.unity-react.unity-core-react": "^1.1.1",
     "@bit/smartworks.unity-react.unity-dropdown-react": "^1.0.0",
     "@bit/smartworks.unity-react.unity-dropzone-react": "^0.2.2",
     "@bit/smartworks.unity-react.unity-global-nav-react": "^1.0.0",
@@ -14,7 +14,7 @@
     "@bit/smartworks.unity-react.unity-modal-react": "^0.2.3",
     "@bit/smartworks.unity-react.unity-notification-react": "^1.0.1",
     "@bit/smartworks.unity-react.unity-notifications-handler-react": "^1.0.0",
-    "@bit/smartworks.unity-react.unity-page-header-react": "^1.0.1",
+    "@bit/smartworks.unity-react.unity-page-header-react": "^1.1.0",
     "@bit/smartworks.unity-react.unity-progress-react": "^0.2.2",
     "@bit/smartworks.unity-react.unity-section-react": "^0.3.4",
     "@bit/smartworks.unity-react.unity-split-pane-react": "^1.0.0",
@@ -23,7 +23,7 @@
     "@bit/smartworks.unity-react.unity-text-input-react": "^0.2.2",
     "@bit/smartworks.unity-react.unity-toggle-switch-react": "^0.2.2",
     "@bit/smartworks.unity-react.unity-typography-react": "^1.0.1",
-    "@bit/smartworks.unity.unity-core": "^1.4.11",
+    "@bit/smartworks.unity.unity-core": "^1.4.14",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -96,7 +96,8 @@
         },
         "peerDependencies": {
           "@bit/smartworks.unity-react.unity-button-react": "^1.1.0"
-        }
+        },
+        "propagate": true
       },
       "unity-notifications-handler-react": {
         "dependencies": {

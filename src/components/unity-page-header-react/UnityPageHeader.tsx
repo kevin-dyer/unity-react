@@ -1,6 +1,33 @@
-import React, { Component } from 'react'
+import React, { Component, CSSProperties, HTMLAttributes } from 'react'
 import '@bit/smartworks.unity.unity-core/unity-page-header'
-import { pageHeaderProps } from '@bit/smartworks.unity.unity-core/unity-page-header'
+
+export interface pageHeaderProps extends HTMLAttributes<HTMLElement>{
+  header?: string,
+  tabs?: object,
+  selectedTab?: string,
+  leftContent?: any,
+  centerContent?: any,
+  leftAction?: any,
+  rightAction?: any,
+  style?: pageHeaderStylesTypes,
+  onTabSelect?: Function
+}
+
+export type pageHeaderStylesTypes = CSSProperties & {
+  '--header-font-family'?: string
+  '--tab-height'?: string
+  '--tab-padding'?: string
+  '--left-wrapper-overflow'?: string
+  '--title-white-space'?: string
+  '--tab-color'?: string
+  '--page-header-padding-size'?: string
+  '--page-header-padding'?: string
+  '--page-header-border'?: string
+  '--page-header-font-size'?: string
+  '--page-header-font-weight'?: string
+  '--page-header-tabs-font-size'?: string
+  '--page-header-icon-size'?: string
+}
 
 //React component to wrap unity-page-header web component
 export default class UnityPageHeader extends Component<pageHeaderProps> {

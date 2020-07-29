@@ -2,6 +2,12 @@
 
 ## Changelog:
 
+### v1.1.0
+- Updated to unity-core 1.4.13
+- Added generic HTML attributes
+- Added CSS types
+- Added type exports
+
 ### v1.0.1
 - properly handle header arg change
 

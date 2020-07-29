@@ -70,7 +70,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-column-editor-react@1.0.0": {
+    "smartworks.unity-react/unity-column-editor-react@1.0.1": {
         "files": [
             {
                 "name": "UnityColumnEditor.tsx",
@@ -93,7 +93,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-core-react@1.1.0": {
+    "smartworks.unity-react/unity-core-react@1.1.1": {
         "files": [
             {
                 "name": "index.js",
@@ -373,7 +373,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-page-header-react@1.0.1": {
+    "smartworks.unity-react/unity-page-header-react@1.1.0": {
         "files": [
             {
                 "name": "UnityPageHeader.tsx",
