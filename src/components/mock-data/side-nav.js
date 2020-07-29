@@ -1,3 +1,22 @@
+/*Mock Navigation data to populate UnityGlobalNav
+import {
+  sideNavItems,
+  sideNavSelected,
+  sideNavStyle
+} from '@bit/smartworks.unity-react.mock-data'
+
+//SideNav Example
+<UnityGlobalNav
+  // logo={LogoIcon}
+  // headerImg={headerImg}
+  items={sideNavItems}
+  collapsible={true}
+  selected={sideNavSelected}
+  style={sideNavStyle}
+/>
+
+*/
+
 export const sideNavItems =  {
   "top": [
     {
