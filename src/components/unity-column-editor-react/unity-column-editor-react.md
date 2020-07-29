@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v1.0.1
+- Fixed peer dependencies
+
 ### v1.0.0
 - Added generic HTML attributes
 - Added unity-button-react dependency to import types
