@@ -96,7 +96,8 @@
         },
         "peerDependencies": {
           "@bit/smartworks.unity-react.unity-button-react": "^1.1.0"
-        }
+        },
+        "propagate": true
       },
       "unity-notifications-handler-react": {
         "dependencies": {
