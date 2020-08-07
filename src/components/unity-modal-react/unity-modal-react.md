@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v1.0.0
+- update to proper v1.0.0, add missing internal ref for attaching functions
+
 ### v0.2.3
 - Update unity-core v1.2.10
 
