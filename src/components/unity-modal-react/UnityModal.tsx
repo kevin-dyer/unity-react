@@ -38,6 +38,7 @@ export default class UnityModal extends Component<ModalPropsI> {
 
     return (
       <unity-modal
+        ref={this.modalRef}
         {...modalProps}
       >
          <div slot="top">
@@ -55,7 +56,7 @@ export default class UnityModal extends Component<ModalPropsI> {
 }
 
 export interface ModalPropsI extends React.HTMLAttributes<HTMLElement> {
-  title?: string 
+  title?: string
   show?: boolean
   toggle?: Function
   cancelOnOutsideClick?: boolean,
