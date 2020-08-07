@@ -25,6 +25,9 @@ export * from "@bit/smartworks.unity-react.<component-path>" //Export named expo
 
 ## Changelog:
 
+### v1.1.2
+- unity-notifications-handler-react v1.0.1
+
 ### v1.1.1
 - unity-page-header-react v1.1.0
 - unity-column-editor-react v1.0.1

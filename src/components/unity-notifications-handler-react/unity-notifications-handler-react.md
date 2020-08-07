@@ -5,6 +5,9 @@
 
 ## Changelog:
 
+### v1.0.1
+- update to fix passed down props
+
 ### v1.0.0
 - Updated to v1 to enable proper semantic versioning
 - Updated split pane peer dependency
