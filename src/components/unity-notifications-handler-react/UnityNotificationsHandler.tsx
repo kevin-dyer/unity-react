@@ -61,7 +61,9 @@ export default class UnityNotificationsHandler extends Component<NotificationsHa
       customTypes,
       allowDuplicates,
       noAnimation,
-      onClose
+      onClose,
+      target,
+      position
     } = props
     if (!!unityNotificationsHandler) {
       if (!!icons) unityNotificationsHandler.icons = icons
@@ -70,6 +72,8 @@ export default class UnityNotificationsHandler extends Component<NotificationsHa
       if (!!allowDuplicates) unityNotificationsHandler.allowDuplicates = allowDuplicates
       if (!!noAnimation) unityNotificationsHandler.noAnimation = noAnimation
       if (!!onClose) unityNotificationsHandler.onClose = onClose
+      if (!!target) unityNotificationsHandler.target = target
+      if (!!position) unityNotificationsHandler.position = position
     }
   }
 
@@ -77,11 +81,10 @@ export default class UnityNotificationsHandler extends Component<NotificationsHa
     const {
       _notificationsHandlerRef,
       props: {
-        children=[],
-        ...restOfProps
+        children=[]
       }={}
     } = this
-    
+
     if (!this.props.target) {
       console.warn(`UnityNotificationsHandler was not passed a "target" property.`)
       return (<>{children}</>)
@@ -90,7 +93,6 @@ export default class UnityNotificationsHandler extends Component<NotificationsHa
     return (
       <unity-notifications-handler
         ref={_notificationsHandlerRef}
-        {...restOfProps}
       >
         {children}
       </unity-notifications-handler>
