@@ -8,6 +8,7 @@ import {
   UnityTextInput,
   UnityTable,
   UnityTableExport,
+  UnityTag,
   UnityTypography,
   headerStyleTypes,
   UnityPageHeader,
@@ -606,6 +607,15 @@ class App extends React.Component {
                   offLabel={"Left"}
                   remark={"Remarkable"}
                   onChange={(on : boolean) => console.log(`Switch is ${on ? 'on' : 'off'}`)}
+                />
+              </UnitySection>
+              <UnitySection>
+                <UnityTag
+                  withClose
+                  label={"This is a Tag"}
+                  value={"This is the value"}
+                  onClick={(e:any, v:any)=>console.log('tag clicked with value: ', e, v)}
+                  onClose={(e:any, v:any)=>console.log('tag closed with value: ', e, v)}
                 />
               </UnitySection>
               <UnitySection>
