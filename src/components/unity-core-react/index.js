@@ -55,6 +55,9 @@ export * from "@bit/smartworks.unity-react.unity-table-export-react"
 export {default as UnityTable} from "@bit/smartworks.unity-react.unity-table-react"
 export * from "@bit/smartworks.unity-react.unity-table-react"
 
+export {default as UnityTag} from "@bit/smartworks.unity-react.unity-tag-react"
+export * from "@bit/smartworks.unity-react.unity-tag-react"
+
 export {default as UnityTextInput} from "@bit/smartworks.unity-react.unity-text-input-react"
 export * from "@bit/smartworks.unity-react.unity-text-input-react"
 
@@ -66,4 +69,3 @@ export * from "@bit/smartworks.unity-react.unity-typography-react"
 
 export {default as UnityNotificationsHandler} from "@bit/smartworks.unity-react.unity-notifications-handler-react"
 export * from "@bit/smartworks.unity-react.unity-notifications-handler-react"
-

@@ -25,6 +25,9 @@ export * from "@bit/smartworks.unity-react.<component-path>" //Export named expo
 
 ## Changelog:
 
+### v1.2.0
+- unity-tag-react v1.0.0
+
 ### v1.1.3
 - unity-modal-react v1.0.0
 
