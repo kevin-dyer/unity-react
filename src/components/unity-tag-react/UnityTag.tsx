@@ -43,11 +43,12 @@ export default class UnityTag extends Component<tagPropsType> {
 
   render() {
     const {
-      label,
-      value,
-      withClose
+      withClose,
+      onClose,
+      onClick,
+      ...otherProps
     } = this.props
-    const tagProps : tagPropsType = { label, value }
+    const tagProps : tagPropsType = otherProps
     if (withClose) tagProps.withClose = withClose
 
     return (
