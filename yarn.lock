@@ -1176,10 +1176,10 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-core-react@^1.2.0":
-  version "1.2.0"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-core-react/-/smartworks.unity-react.unity-core-react-1.2.0.tgz#64453959523a536c27cbe0b3bdb08ce1b9759f4d"
-  integrity sha1-ZEU5WVI6U2wny+CzvbCM4bl1n00=
+"@bit/smartworks.unity-react.unity-core-react@^1.2.1":
+  version "1.2.1"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-core-react/-/smartworks.unity-react.unity-core-react-1.2.1.tgz#d5b392e2822398f15e837f0cc4260e9b269ef2d2"
+  integrity sha1-1bOS4oIjmPFeg38MxCYOmyae8tI=
   dependencies:
     "@bit/smartworks.unity-react.unity-button-react" "1.1.0"
     "@bit/smartworks.unity-react.unity-code-editor-react" "1.0.0"
@@ -1190,14 +1190,14 @@
     "@bit/smartworks.unity-react.unity-json-viewer-react" "1.0.0"
     "@bit/smartworks.unity-react.unity-modal-react" "1.0.0"
     "@bit/smartworks.unity-react.unity-notification-react" "1.0.1"
-    "@bit/smartworks.unity-react.unity-notifications-handler-react" "1.0.1"
+    "@bit/smartworks.unity-react.unity-notifications-handler-react" "1.0.2"
     "@bit/smartworks.unity-react.unity-page-header-react" "1.1.0"
     "@bit/smartworks.unity-react.unity-progress-react" "0.2.2"
     "@bit/smartworks.unity-react.unity-section-react" "0.3.4"
     "@bit/smartworks.unity-react.unity-split-pane-react" "1.0.0"
     "@bit/smartworks.unity-react.unity-table-export-react" "0.2.2"
     "@bit/smartworks.unity-react.unity-table-react" "1.0.0"
-    "@bit/smartworks.unity-react.unity-tag-react" "1.0.0"
+    "@bit/smartworks.unity-react.unity-tag-react" "1.0.1"
     "@bit/smartworks.unity-react.unity-text-input-react" "0.2.2"
     "@bit/smartworks.unity-react.unity-toggle-switch-react" "0.2.2"
     "@bit/smartworks.unity-react.unity-typography-react" "1.0.1"
@@ -1250,17 +1250,7 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-notifications-handler-react@1.0.1":
-  version "1.0.1"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-notifications-handler-react/-/smartworks.unity-react.unity-notifications-handler-react-1.0.1.tgz#dd246504de566c7c831d5a26c4734a30584ad9e7"
-  integrity sha1-3SRlBN5WbHyDHVomxHNKMFhK2ec=
-  dependencies:
-    "@types/react" "16.9.11"
-    "@types/uuid" "^8.0.0"
-    react "^16.12.0"
-    uuid "3.4.0"
-
-"@bit/smartworks.unity-react.unity-notifications-handler-react@^1.0.2":
+"@bit/smartworks.unity-react.unity-notifications-handler-react@1.0.2", "@bit/smartworks.unity-react.unity-notifications-handler-react@^1.0.2":
   version "1.0.2"
   resolved "https://node.bit.dev/smartworks.unity-react.unity-notifications-handler-react/-/smartworks.unity-react.unity-notifications-handler-react-1.0.2.tgz#3f4a8e4643cda764f9bb6dd6214dde65792c65f6"
   integrity sha1-P0qORkPNp2T5u23WIU3eZXksZfY=
@@ -1318,15 +1308,7 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-tag-react@1.0.0":
-  version "1.0.0"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-tag-react/-/smartworks.unity-react.unity-tag-react-1.0.0.tgz#2f56702a5de8ff70adc31a2b6f6ecf9431db6f90"
-  integrity sha1-L1ZwKl3o/3Ctwxorb27PlDHbb5A=
-  dependencies:
-    "@types/react" "16.9.11"
-    react "^16.12.0"
-
-"@bit/smartworks.unity-react.unity-tag-react@^1.0.1":
+"@bit/smartworks.unity-react.unity-tag-react@1.0.1", "@bit/smartworks.unity-react.unity-tag-react@^1.0.1":
   version "1.0.1"
   resolved "https://node.bit.dev/smartworks.unity-react.unity-tag-react/-/smartworks.unity-react.unity-tag-react-1.0.1.tgz#f13240b180f0e099e4b172a0238d2dc64bae4458"
   integrity sha1-8TJAsYDw4JnksXKgI40txkuuRFg=
