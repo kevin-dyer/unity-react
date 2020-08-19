@@ -346,7 +346,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-notifications-handler-react@1.0.1": {
+    "smartworks.unity-react/unity-notifications-handler-react@1.0.2": {
         "files": [
             {
                 "relativePath": "src/components/unity-notifications-handler-react/UnityNotificationModal.tsx",
