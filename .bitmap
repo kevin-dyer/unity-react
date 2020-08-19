@@ -93,7 +93,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-core-react@1.2.0": {
+    "smartworks.unity-react/unity-core-react@1.2.1": {
         "files": [
             {
                 "name": "index.js",
@@ -346,7 +346,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-notifications-handler-react@1.0.1": {
+    "smartworks.unity-react/unity-notifications-handler-react@1.0.2": {
         "files": [
             {
                 "relativePath": "src/components/unity-notifications-handler-react/UnityNotificationModal.tsx",
@@ -513,7 +513,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-tag-react@1.0.0": {
+    "smartworks.unity-react/unity-tag-react@1.0.1": {
         "files": [
             {
                 "relativePath": "src/components/unity-tag-react/UnityTag.tsx",
