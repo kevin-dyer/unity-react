@@ -9,7 +9,7 @@ export interface tagPropsType extends HTMLAttributes<HTMLElement> {
   value?: string
   withClose?: boolean
   onClose?: Function
-  onClick?: (event: ReactMouseEvent<HTMLElement, MouseEvent>) => void
+  onClick?: (event: ReactMouseEvent<HTMLElement, MouseEvent>, v:any) => void
   style?: tagStyles
 }
 

@@ -614,8 +614,8 @@ class App extends React.Component {
                   withClose
                   label={"This is a Tag"}
                   value={"This is the value"}
-                  onClick={(e:any, v:any)=>console.log('tag clicked with value: ', e, v)}
-                  onClose={(e:any, v:any)=>console.log('tag closed with value: ', e, v)}
+                  onClick={()=>console.log('tag clicked')}
+                  onClose={()=>console.log('tag closed')}
                 />
               </UnitySection>
               <UnitySection>
