@@ -31,6 +31,7 @@ import {
 
 import UnityGlobalNav, { NavItemsConfigI } from './components/unity-global-nav-react/UnityGlobalNav'
 import { devices, fakeYaml } from './fakeData'
+import UnityPopover from './components/unity-popover-react/UnityPopoverReact';
 
 
 const appStyle: CSSProperties = {
@@ -64,12 +65,6 @@ const mainStyle: CSSProperties = {
   overflowY: 'auto'
 }
 
-const notificationSectionContainerStyle: CSSProperties = {
-  display: 'flex',
-  flexDirection: 'row',
-  height: 500
-}
-
 const notificationSectionStyle: NotificationStylesI = {
   display: 'flex',
   flex: 1,
@@ -77,7 +72,7 @@ const notificationSectionStyle: NotificationStylesI = {
   justifyContent: 'center',
   margin: 10,
   boxShadow: '0 0 5px 1px rgba(0,0,0,0.1)',
-  height: '100%',
+  height: '250px',
   alignItems: 'center',
   '--notification-width': '350px'
 }
@@ -227,7 +222,7 @@ const SectionForNotifications = (props?: any) => {
   } = props
 
   return (
-    <div>
+    <UnitySection>
       <div style={buttonContainerStyle}>
         <UnityButton
           type='primary'
@@ -242,15 +237,13 @@ const SectionForNotifications = (props?: any) => {
           }
         />
       </div>
-      {!!text &&
-      <div style={{
+      {!!text && <div style={{
         display: 'flex',
         justifyContent: 'center'
       }}>
         <UnityTypography>{text}</UnityTypography>
-      </div>
-      }
-    </div>
+      </div>}
+    </UnitySection>
   )
 }
 
@@ -279,8 +272,11 @@ class App extends React.Component {
     dropdownOptions,
     dropdownDisabled: false,
     yamlValue: fakeYaml,
-    yamlError: ''
+    yamlError: '',
+    showPopover: false
   }
+
+  popoverButtonRef = React.createRef<HTMLDivElement>()
 
   makeCenterContent() {
     return (<div>
@@ -305,14 +301,25 @@ class App extends React.Component {
     })
   }
 
+  renderPopover = () => (
+    <div style={{ paddingTop: 10 }}>
+      <UnityTypography size='header1'>{'Popover!'}</UnityTypography>
+      <UnityTypography size='paragraph'>{'Look at all the cool stuff you can put in a Popover.'}</UnityTypography>
+      <UnityTextInput placeholder={'Type here!'}></UnityTextInput>
+      <UnityButton label={'Button!'}></UnityButton>
+    </div>
+  )
+
   render() {
     const {
       selection,
       showModal,
       showNotificationModal,
       dropdownOptions,
-      dropdownDisabled
+      dropdownDisabled,
+      showPopover
     } = this.state
+
     const { data, columns, childKeys } = devices
 
     return (
@@ -614,8 +621,8 @@ class App extends React.Component {
                   withClose
                   label={"This is a Tag"}
                   value={"This is the value"}
-                  onClick={()=>console.log('tag clicked')}
-                  onClose={()=>console.log('tag closed')}
+                  onClick={(e, v)=>console.log('tag clicked with value: ', v, e)}
+                  onClose={(e, v)=>console.log('tag closed with value: ', v, e)}
                 />
               </UnitySection>
               <UnitySection>
@@ -644,6 +651,54 @@ class App extends React.Component {
                   </div>
                 </UnitySection>
               </UnitySection>
+          
+              <UnitySection>
+                <WithNotificationsWrappedSection
+                  text={'This text is being passed to the wrapped component as a prop.'}
+                  style={notificationSectionStyle}
+                />
+                <UnitySection style={notificationSectionStyle}>
+                  <UnityNotificationsHandler
+                    target='notifications-via-component'
+                    allowDuplicates={true}
+                    position={'top-right'}
+                    style={{ height: '100%', width: '100%'}}
+                  >
+                    <div style={buttonContainerStyle}>
+                      <UnityButton
+                        type='primary'
+                        label='Add Notification'
+                        onClick={() => addNotification({
+                          target: 'notifications-via-component',
+                          notification: {
+                            type: 'help',
+                            text: 'What a helpful Notification'
+                          },
+                          timeout: 0
+                        })}
+                      />
+                    </div>
+                  </UnityNotificationsHandler>
+                </UnitySection>
+              </UnitySection>
+
+              <UnitySection style={notificationSectionStyle}>
+                <div ref={this.popoverButtonRef} style={{ position: 'relative', top: -80 }}>
+                  <UnityButton
+                    label={`${!showPopover ? 'Open' : 'Close'} Popover`}
+                    onClick={() => this.setState({ showPopover: !showPopover })}
+                  />
+                  <UnityPopover
+                    show={showPopover}
+                    popoverContent={this.renderPopover()}
+                    withClose
+                    closeOnOutsideClick
+                    flip
+                    preventOverflow
+                  />
+                </div>
+              </UnitySection>
+
               <UnitySection style={{height: "1000px", overflow: 'scroll', "--vert-pos": "top"}}>
                 <div style={{...contentBox, display: "flex", flexDirection: "column"}}>
                     <UnitySection style={{flex: 0}}>
@@ -726,34 +781,6 @@ class App extends React.Component {
                   />
                 </div>
               </UnitySection>
-              <div
-                style={notificationSectionContainerStyle}
-              >
-                <WithNotificationsWrappedSection
-                  text={'This text is being passed to the wrapped component as a prop.'}
-                />
-                <UnityNotificationsHandler
-                  target='notifications-via-component'
-                  allowDuplicates={true}
-                  position={'top-right'}
-                  style={notificationSectionStyle}
-                >
-                  <div style={buttonContainerStyle}>
-                    <UnityButton
-                      type='primary'
-                      label='Add Notification'
-                      onClick={() => addNotification({
-                        target: 'notifications-via-component',
-                        notification: {
-                          type: 'help',
-                          text: 'What a helpful Notification'
-                        },
-                        timeout: 0
-                      })}
-                    />
-                  </div>
-                </UnityNotificationsHandler>
-              </div>
             </div>
           </div>
         </div>
