@@ -691,6 +691,8 @@ class App extends React.Component {
                   <UnityPopover
                     show={showPopover}
                     popoverContent={this.renderPopover()}
+                    onClose={() => this.setState({ showPopover: !showPopover })}
+                    distance={10}
                     withClose
                     closeOnOutsideClick
                     flip
