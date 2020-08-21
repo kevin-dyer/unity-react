@@ -1,15 +1,21 @@
-import React, { Component, CSSProperties, HTMLAttributes, MouseEvent as ReactMouseEvent } from 'react'
+import React, {
+  Component,
+  CSSProperties,
+  HTMLAttributes,
+  MouseEvent as ReactMouseEvent
+} from 'react'
 
 import '@bit/smartworks.unity.unity-core/unity-tag'
 
+type MouseEventWithValueT = (event: ReactMouseEvent<HTMLElement, MouseEvent>, v:any) => void
 
-export interface tagPropsType extends HTMLAttributes<HTMLElement> {
+export interface tagPropsType extends Omit<HTMLAttributes<HTMLElement>, 'onClick'> {
   [key: string]: any
   label: string
   value?: string
   withClose?: boolean
-  onClose?: Function
-  onClick?: (event: ReactMouseEvent<HTMLElement, MouseEvent>, v:any) => void
+  onClose?: MouseEventWithValueT
+  onClick?: MouseEventWithValueT
   style?: tagStyles
 }
 

@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v1.0.2
+- Fix interface TS error
+
 ### v1.0.1
 - Pass `style` prop into unity-tag
 - Add generic HTML attributes
