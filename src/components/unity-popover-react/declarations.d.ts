@@ -1,5 +1,3 @@
-import { ReactElement, CSSProperties } from "react";
-
 declare namespace JSX {
   interface IntrinsicElements {
     "unity-popover": any;

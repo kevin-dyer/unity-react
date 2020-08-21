@@ -2,8 +2,6 @@ import React, { Component, ReactElement, CSSProperties, HTMLAttributes } from 'r
 
 import '@bit/smartworks.unity.unity-core/unity-popover'
 
-type ValueOf<T> = T[keyof T]
-
 interface PopoverStylesI {
   '--popover-max-width'?: string,
   '--popover-min-width'?: string,

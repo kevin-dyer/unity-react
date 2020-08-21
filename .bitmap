@@ -401,6 +401,29 @@
         "origin": "AUTHORED",
         "exported": true
     },
+    "smartworks.unity-react/unity-popover-react@0.0.1": {
+        "files": [
+            {
+                "relativePath": "src/components/unity-popover-react/UnityPopoverReact.tsx",
+                "test": false,
+                "name": "UnityPopoverReact.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-popover-react/declarations.d.ts",
+                "test": false,
+                "name": "declarations.d.ts"
+            },
+            {
+                "relativePath": "src/components/unity-popover-react/unity-popover-react.md",
+                "test": false,
+                "name": "unity-popover-react.md"
+            }
+        ],
+        "mainFile": "src/components/unity-popover-react/UnityPopoverReact.tsx",
+        "trackDir": "src/components/unity-popover-react",
+        "origin": "AUTHORED",
+        "exported": true
+    },
     "smartworks.unity-react/unity-progress-react@0.2.2": {
         "files": [
             {

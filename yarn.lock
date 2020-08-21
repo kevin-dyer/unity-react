@@ -1369,10 +1369,10 @@
     lit-element "^2.0.1"
     sortablejs "^1.10.2"
 
-"@bit/smartworks.unity.unity-core@^1.6.1":
-  version "1.6.4"
-  resolved "https://node.bit.dev/smartworks.unity.unity-core/-/smartworks.unity.unity-core-1.6.4.tgz#a06a7d374c41e3b49165339596eb9a27d0439fef"
-  integrity sha1-oGp9N0xB47SRZTOVluuaJ9BDn+8=
+"@bit/smartworks.unity.unity-core@^1.6.6":
+  version "1.6.6"
+  resolved "https://node.bit.dev/smartworks.unity.unity-core/-/smartworks.unity.unity-core-1.6.6.tgz#7c5b2bc71ba0d1e0b40d0bad7bdcd9d1b142f560"
+  integrity sha1-fFsrxxug0eC0DQute9zZ0bFC9WA=
   dependencies:
     "@bit/smartworks.unity.table-cell-base" "1.0.0"
     "@bit/smartworks.unity.unity-button" "1.1.3"
@@ -1389,7 +1389,7 @@
     "@bit/smartworks.unity.unity-notification" "1.0.3"
     "@bit/smartworks.unity.unity-notifications-handler" "1.2.3"
     "@bit/smartworks.unity.unity-page-header" "1.1.3"
-    "@bit/smartworks.unity.unity-popover" "0.1.1"
+    "@bit/smartworks.unity.unity-popover" "0.1.2"
     "@bit/smartworks.unity.unity-progress" "1.0.2"
     "@bit/smartworks.unity.unity-section" "1.0.2"
     "@bit/smartworks.unity.unity-select-menu" "1.2.2"
@@ -1402,7 +1402,7 @@
     "@bit/smartworks.unity.unity-toggle-switch" "1.0.3"
     "@bit/smartworks.unity.unity-tooltip" "1.1.3"
     "@bit/smartworks.unity.unity-typography" "1.1.2"
-    "@bit/smartworks.unity.unity-utils" "0.0.4"
+    "@bit/smartworks.unity.unity-utils" "0.0.5"
 
 "@bit/smartworks.unity.unity-default-theme-styles@1.3.1":
   version "1.3.1"
@@ -1497,10 +1497,10 @@
     "@polymer/paper-tabs" "^3.1.0"
     lit-element "^2.0.1"
 
-"@bit/smartworks.unity.unity-popover@0.1.1":
-  version "0.1.1"
-  resolved "https://node.bit.dev/smartworks.unity.unity-popover/-/smartworks.unity.unity-popover-0.1.1.tgz#5ce2638286871eb7e1672adfd495ed9599e0733f"
-  integrity sha1-XOJjgoaHHrfhZyrf1JXtlZngcz8=
+"@bit/smartworks.unity.unity-popover@0.1.2":
+  version "0.1.2"
+  resolved "https://node.bit.dev/smartworks.unity.unity-popover/-/smartworks.unity.unity-popover-0.1.2.tgz#ed60e2ea9acce147b4e7ca49ee0df5027d6d34f7"
+  integrity sha1-7WDi6prM4Ue058pJ7g31An1tNPc=
   dependencies:
     "@popperjs/core" "^2.4.4"
     lit-element "^2.0.1"
@@ -1603,10 +1603,10 @@
   dependencies:
     lit-element "^2.0.1"
 
-"@bit/smartworks.unity.unity-utils@0.0.4":
-  version "0.0.4"
-  resolved "https://node.bit.dev/smartworks.unity.unity-utils/-/smartworks.unity.unity-utils-0.0.4.tgz#42e186c9443a06ff2933fd79883082a1a4cb7e0d"
-  integrity sha1-QuGGyUQ6Bv8pM/15iDCCoaTLfg0=
+"@bit/smartworks.unity.unity-utils@0.0.5":
+  version "0.0.5"
+  resolved "https://node.bit.dev/smartworks.unity.unity-utils/-/smartworks.unity.unity-utils-0.0.5.tgz#a25453e2163333e539bc0f16e638c062a9e4de55"
+  integrity sha1-olRT4hYzM+U5vA8W5jjAYqnk3lU=
 
 "@cnakazawa/watch@^1.0.3":
   version "1.0.4"

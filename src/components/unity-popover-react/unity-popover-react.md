@@ -3,4 +3,4 @@
 ## Changelog:
 
 ### v0.0.1
-- Original alpha
+- Original alpha version
