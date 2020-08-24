@@ -80,6 +80,7 @@ export default class UnityNotificationsHandler extends Component<NotificationsHa
   render() {
     const {
       _notificationsHandlerRef,
+      props,
       props: {
         children=[]
       }={}
@@ -93,6 +94,7 @@ export default class UnityNotificationsHandler extends Component<NotificationsHa
     return (
       <unity-notifications-handler
         ref={_notificationsHandlerRef}
+        {...props}
       >
         {children}
       </unity-notifications-handler>

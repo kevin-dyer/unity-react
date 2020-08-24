@@ -74,7 +74,8 @@ const notificationSectionStyle: NotificationStylesI = {
   boxShadow: '0 0 5px 1px rgba(0,0,0,0.1)',
   height: '250px',
   alignItems: 'center',
-  '--notification-width': '350px'
+  '--notification-width': '350px',
+  overflow: 'hidden'
 }
 
 const modalStyle: CSSProperties = {
