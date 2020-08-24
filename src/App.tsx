@@ -73,7 +73,6 @@ const notificationSectionStyle: NotificationStylesI = {
   margin: 10,
   boxShadow: '0 0 5px 1px rgba(0,0,0,0.1)',
   height: '250px',
-  alignItems: 'center',
   '--notification-width': '350px',
   overflow: 'hidden'
 }
@@ -98,9 +97,11 @@ const splitPaneContainerStyle: CSSProperties = {
 }
 
 const buttonContainerStyle: CSSProperties = {
-  width: '32%',
-  margin: '180px auto',
-  padding: 20,
+  flex: 1,
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  height: '100%'
 }
 
 const jsonViewerStyle: CodeEditorStylesI = {
@@ -223,7 +224,7 @@ const SectionForNotifications = (props?: any) => {
   } = props
 
   return (
-    <UnitySection>
+    <UnitySection style={{ height: '100%' }}>
       <div style={buttonContainerStyle}>
         <UnityButton
           type='primary'
@@ -240,7 +241,8 @@ const SectionForNotifications = (props?: any) => {
       </div>
       {!!text && <div style={{
         display: 'flex',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        marginRight: 40
       }}>
         <UnityTypography>{text}</UnityTypography>
       </div>}
@@ -320,6 +322,7 @@ class App extends React.Component {
       dropdownDisabled,
       showPopover
     } = this.state
+    console.log("App -> render -> showPopover", showPopover)
 
     const { data, columns, childKeys } = devices
 
@@ -656,7 +659,6 @@ class App extends React.Component {
               <UnitySection>
                 <WithNotificationsWrappedSection
                   text={'This text is being passed to the wrapped component as a prop.'}
-                  style={notificationSectionStyle}
                 />
                 <UnitySection style={notificationSectionStyle}>
                   <UnityNotificationsHandler
@@ -684,21 +686,22 @@ class App extends React.Component {
               </UnitySection>
 
               <UnitySection style={notificationSectionStyle}>
-                <div ref={this.popoverButtonRef} style={{ position: 'relative', top: -80 }}>
-                  <UnityButton
-                    label={`${!showPopover ? 'Open' : 'Close'} Popover`}
-                    onClick={() => this.setState({ showPopover: !showPopover })}
-                  />
-                  <UnityPopover
-                    show={showPopover}
-                    popoverContent={this.renderPopover()}
-                    onClose={() => this.setState({ showPopover: !showPopover })}
-                    distance={10}
-                    withClose
-                    closeOnOutsideClick
-                    flip
-                    preventOverflow
-                  />
+                <div style={buttonContainerStyle}>
+                  <div id='popover-button-container' ref={this.popoverButtonRef}>
+                    <UnityButton
+                      label={`${!showPopover ? 'Open' : 'Close'} Popover`}
+                      onClick={() => this.setState({ showPopover: !showPopover })}
+                    />
+                    <UnityPopover
+                      show={showPopover}
+                      popoverContent={this.renderPopover()}
+                      onClose={() => this.setState({ showPopover: !showPopover })}
+                      distance={10}
+                      withClose
+                      flip
+                      preventOverflow
+                    />
+                  </div>
                 </div>
               </UnitySection>
 

@@ -1250,10 +1250,20 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-notifications-handler-react@1.0.2", "@bit/smartworks.unity-react.unity-notifications-handler-react@^1.0.2":
+"@bit/smartworks.unity-react.unity-notifications-handler-react@1.0.2":
   version "1.0.2"
   resolved "https://node.bit.dev/smartworks.unity-react.unity-notifications-handler-react/-/smartworks.unity-react.unity-notifications-handler-react-1.0.2.tgz#3f4a8e4643cda764f9bb6dd6214dde65792c65f6"
   integrity sha1-P0qORkPNp2T5u23WIU3eZXksZfY=
+  dependencies:
+    "@types/react" "16.9.11"
+    "@types/uuid" "^8.0.0"
+    react "^16.12.0"
+    uuid "3.4.0"
+
+"@bit/smartworks.unity-react.unity-notifications-handler-react@^1.0.3":
+  version "1.0.3"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-notifications-handler-react/-/smartworks.unity-react.unity-notifications-handler-react-1.0.3.tgz#e9bfbad0f3fcc20bd54df62aab4eec0aafc5b051"
+  integrity sha1-6b+60PP8wgvVTfYqq07sCq/FsFE=
   dependencies:
     "@types/react" "16.9.11"
     "@types/uuid" "^8.0.0"
@@ -1268,10 +1278,10 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-popover-react@0.0.1":
-  version "0.0.1"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-popover-react/-/smartworks.unity-react.unity-popover-react-0.0.1.tgz#24ca4ba57192486f271ebf5f38e5e976e954fa9f"
-  integrity sha1-JMpLpXGSSG8nHr9fOOXpdulU+p8=
+"@bit/smartworks.unity-react.unity-popover-react@^1.0.0":
+  version "1.0.0"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-popover-react/-/smartworks.unity-react.unity-popover-react-1.0.0.tgz#7194c2c8f2bf815368a6026b183c1035ccf1c22b"
+  integrity sha1-cZTCyPK/gVNopgJrGDwQNczxwis=
   dependencies:
     "@types/react" "16.9.11"
     react "^16.12.0"
@@ -1324,10 +1334,10 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-tag-react@^1.0.2":
-  version "1.0.2"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-tag-react/-/smartworks.unity-react.unity-tag-react-1.0.2.tgz#1ede6c78483abe994a053de8eed7a47d40dafe83"
-  integrity sha1-Ht5seEg6vplKBT3o7tekfUDa/oM=
+"@bit/smartworks.unity-react.unity-tag-react@^1.0.3":
+  version "1.0.3"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-tag-react/-/smartworks.unity-react.unity-tag-react-1.0.3.tgz#ff2a597911b0b29c0f5dc30bad1cb4ba9f98da06"
+  integrity sha1-/ypZeRGwspwPXcMLrRy0up+Y2gY=
   dependencies:
     "@types/react" "16.9.11"
     react "^16.12.0"
