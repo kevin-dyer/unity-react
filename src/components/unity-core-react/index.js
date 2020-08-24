@@ -40,6 +40,9 @@ export * from "@bit/smartworks.unity-react.unity-notification-react"
 export {default as UnityPageHeader} from "@bit/smartworks.unity-react.unity-page-header-react"
 export * from "@bit/smartworks.unity-react.unity-page-header-react"
 
+export {default as UnityPopover} from "@bit/smartworks.unity-react.unity-popover-react"
+export * from "@bit/smartworks.unity-react.unity-popover-react"
+
 export {default as UnityProgress} from "@bit/smartworks.unity-react.unity-progress-react"
 export * from "@bit/smartworks.unity-react.unity-progress-react"
 

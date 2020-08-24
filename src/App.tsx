@@ -26,7 +26,8 @@ import {
   addNotification,
   UnityNotificationModal,
   UnityNotificationSplitPane,
-  UnityColumnEditor
+  UnityColumnEditor,
+  UnityPopover
 } from './components/unity-core-react'
 
 import UnityGlobalNav, { NavItemsConfigI } from './components/unity-global-nav-react/UnityGlobalNav'
@@ -64,12 +65,6 @@ const mainStyle: CSSProperties = {
   overflowY: 'auto'
 }
 
-const notificationSectionContainerStyle: CSSProperties = {
-  display: 'flex',
-  flexDirection: 'row',
-  height: 500
-}
-
 const notificationSectionStyle: NotificationStylesI = {
   display: 'flex',
   flex: 1,
@@ -77,9 +72,9 @@ const notificationSectionStyle: NotificationStylesI = {
   justifyContent: 'center',
   margin: 10,
   boxShadow: '0 0 5px 1px rgba(0,0,0,0.1)',
-  height: '100%',
-  alignItems: 'center',
-  '--notification-width': '350px'
+  height: '250px',
+  '--notification-width': '350px',
+  overflow: 'hidden'
 }
 
 const modalStyle: CSSProperties = {
@@ -102,9 +97,11 @@ const splitPaneContainerStyle: CSSProperties = {
 }
 
 const buttonContainerStyle: CSSProperties = {
-  width: '32%',
-  margin: '180px auto',
-  padding: 20,
+  flex: 1,
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  height: '100%'
 }
 
 const jsonViewerStyle: CodeEditorStylesI = {
@@ -227,7 +224,7 @@ const SectionForNotifications = (props?: any) => {
   } = props
 
   return (
-    <div>
+    <UnitySection style={{ height: '100%' }}>
       <div style={buttonContainerStyle}>
         <UnityButton
           type='primary'
@@ -242,15 +239,14 @@ const SectionForNotifications = (props?: any) => {
           }
         />
       </div>
-      {!!text &&
-      <div style={{
+      {!!text && <div style={{
         display: 'flex',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        marginRight: 40
       }}>
         <UnityTypography>{text}</UnityTypography>
-      </div>
-      }
-    </div>
+      </div>}
+    </UnitySection>
   )
 }
 
@@ -279,8 +275,11 @@ class App extends React.Component {
     dropdownOptions,
     dropdownDisabled: false,
     yamlValue: fakeYaml,
-    yamlError: ''
+    yamlError: '',
+    showPopover: false
   }
+
+  popoverButtonRef = React.createRef<HTMLDivElement>()
 
   makeCenterContent() {
     return (<div>
@@ -305,14 +304,26 @@ class App extends React.Component {
     })
   }
 
+  renderPopover = () => (
+    <div style={{ paddingTop: 10 }}>
+      <UnityTypography size='header1'>{'Popover!'}</UnityTypography>
+      <UnityTypography size='paragraph'>{'Look at all the cool stuff you can put in a Popover.'}</UnityTypography>
+      <UnityTextInput placeholder={'Type here!'}></UnityTextInput>
+      <UnityButton label={'Button!'}></UnityButton>
+    </div>
+  )
+
   render() {
     const {
       selection,
       showModal,
       showNotificationModal,
       dropdownOptions,
-      dropdownDisabled
+      dropdownDisabled,
+      showPopover
     } = this.state
+    console.log("App -> render -> showPopover", showPopover)
+
     const { data, columns, childKeys } = devices
 
     return (
@@ -614,8 +625,8 @@ class App extends React.Component {
                   withClose
                   label={"This is a Tag"}
                   value={"This is the value"}
-                  onClick={(e:any, v:any)=>console.log('tag clicked with value: ', e, v)}
-                  onClose={(e:any, v:any)=>console.log('tag closed with value: ', e, v)}
+                  onClick={(e, v)=>console.log('tag clicked with value: ', v, e)}
+                  onClose={(e, v)=>console.log('tag closed with value: ', v, e)}
                 />
               </UnitySection>
               <UnitySection>
@@ -644,6 +655,56 @@ class App extends React.Component {
                   </div>
                 </UnitySection>
               </UnitySection>
+          
+              <UnitySection>
+                <WithNotificationsWrappedSection
+                  text={'This text is being passed to the wrapped component as a prop.'}
+                />
+                <UnitySection style={notificationSectionStyle}>
+                  <UnityNotificationsHandler
+                    target='notifications-via-component'
+                    allowDuplicates={true}
+                    position={'top-right'}
+                    style={{ height: '100%', width: '100%'}}
+                  >
+                    <div style={buttonContainerStyle}>
+                      <UnityButton
+                        type='primary'
+                        label='Add Notification'
+                        onClick={() => addNotification({
+                          target: 'notifications-via-component',
+                          notification: {
+                            type: 'help',
+                            text: 'What a helpful Notification'
+                          },
+                          timeout: 0
+                        })}
+                      />
+                    </div>
+                  </UnityNotificationsHandler>
+                </UnitySection>
+              </UnitySection>
+
+              <UnitySection style={notificationSectionStyle}>
+                <div style={buttonContainerStyle}>
+                  <div id='popover-button-container' ref={this.popoverButtonRef}>
+                    <UnityButton
+                      label={`${!showPopover ? 'Open' : 'Close'} Popover`}
+                      onClick={() => this.setState({ showPopover: !showPopover })}
+                    />
+                    <UnityPopover
+                      show={showPopover}
+                      popoverContent={this.renderPopover()}
+                      onClose={() => this.setState({ showPopover: !showPopover })}
+                      distance={10}
+                      withClose
+                      flip
+                      preventOverflow
+                    />
+                  </div>
+                </div>
+              </UnitySection>
+
               <UnitySection style={{height: "1000px", overflow: 'scroll', "--vert-pos": "top"}}>
                 <div style={{...contentBox, display: "flex", flexDirection: "column"}}>
                     <UnitySection style={{flex: 0}}>
@@ -726,34 +787,6 @@ class App extends React.Component {
                   />
                 </div>
               </UnitySection>
-              <div
-                style={notificationSectionContainerStyle}
-              >
-                <WithNotificationsWrappedSection
-                  text={'This text is being passed to the wrapped component as a prop.'}
-                />
-                <UnityNotificationsHandler
-                  target='notifications-via-component'
-                  allowDuplicates={true}
-                  position={'top-right'}
-                  style={notificationSectionStyle}
-                >
-                  <div style={buttonContainerStyle}>
-                    <UnityButton
-                      type='primary'
-                      label='Add Notification'
-                      onClick={() => addNotification({
-                        target: 'notifications-via-component',
-                        notification: {
-                          type: 'help',
-                          text: 'What a helpful Notification'
-                        },
-                        timeout: 0
-                      })}
-                    />
-                  </div>
-                </UnityNotificationsHandler>
-              </div>
             </div>
           </div>
         </div>
