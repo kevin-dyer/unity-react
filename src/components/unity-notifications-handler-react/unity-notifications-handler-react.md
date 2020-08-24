@@ -5,6 +5,9 @@
 
 ## Changelog:
 
+### v1.0.3
+- Made it so NotificationsHandler passes through props (needed to accept styles)
+
 ### v1.0.2
 - Fix unity-modal-react peer dependency (updated to v1.0.0)
 

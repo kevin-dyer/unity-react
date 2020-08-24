@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v1.0.3
+- Added custom styles to interface
+
 ### v1.0.2
 - Fix interface TS error
 

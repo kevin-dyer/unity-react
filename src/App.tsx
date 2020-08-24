@@ -26,12 +26,12 @@ import {
   addNotification,
   UnityNotificationModal,
   UnityNotificationSplitPane,
-  UnityColumnEditor
+  UnityColumnEditor,
+  UnityPopover
 } from './components/unity-core-react'
 
 import UnityGlobalNav, { NavItemsConfigI } from './components/unity-global-nav-react/UnityGlobalNav'
 import { devices, fakeYaml } from './fakeData'
-import UnityPopover from './components/unity-popover-react/UnityPopoverReact';
 
 
 const appStyle: CSSProperties = {

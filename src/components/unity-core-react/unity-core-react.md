@@ -25,6 +25,11 @@ export * from "@bit/smartworks.unity-react.<component-path>" //Export named expo
 
 ## Changelog:
 
+### v1.2.3
+- unity-tag-react v1.0.3
+- unity-notifications-handler v1.0.3
+- unity-popover-react v1.0.0
+
 ### v1.2.2
 - unity-popover-react v0.0.1
 - unity-tag-react v1.0.2

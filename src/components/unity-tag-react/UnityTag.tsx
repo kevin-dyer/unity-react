@@ -24,6 +24,8 @@ export type tagStyles = CSSProperties & {
   '--tag-text-color'?: string
   '--tag-font-size'?: string
   '--tag-padding'?: string
+  '--tag-border'?: string
+  '--tag-margin'?: string
 }
 
 export default class UnityTag extends Component<tagPropsType> {

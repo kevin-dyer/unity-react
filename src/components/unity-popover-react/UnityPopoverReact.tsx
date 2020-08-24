@@ -74,7 +74,8 @@ export default class UnityPopover extends Component<PopoverPropsI> {
       preventOverflow,
       placement,
       onPageContent,
-      popoverContent
+      popoverContent,
+      ...otherProps
 
     } = this.props
 
@@ -90,6 +91,7 @@ export default class UnityPopover extends Component<PopoverPropsI> {
         ref={this._popoverRef}
         placement={placement}
         {...boolProps}
+        {...otherProps}
       >
         {!!onPageContent && <div slot='on-page-content'>{onPageContent}</div>}
         <div slot='popover-content'>{popoverContent}</div>
