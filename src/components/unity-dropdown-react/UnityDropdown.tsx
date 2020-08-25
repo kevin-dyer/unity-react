@@ -37,6 +37,7 @@ export default class UnityDropdown extends Component<dropdownPropsType> {
       selected=[],
       disabled,
       important,
+      bottomContent,
       ...otherProps
     } = this.props
     const dropdownProps : dropdownPropsType = {
@@ -50,11 +51,16 @@ export default class UnityDropdown extends Component<dropdownPropsType> {
       <unity-dropdown
         ref={this.dropdownRef}
         {...dropdownProps}
-      ></unity-dropdown>
+      >
+        {!!bottomContent &&
+          <div slot="bottom-content">
+            {bottomContent}
+          </div>
+        }
+      </unity-dropdown>
     )
   }
 }
-
 
 export type inputType = "menu" | "single-select" | "multi-select"
 export type boxType = "label" | "search" | "button-primary" | "button-secondary" | "button-borderless" | "inline"
@@ -76,21 +82,24 @@ export interface dropdownPropsType extends React.HTMLAttributes<HTMLElement> {
   onValueChange?: Function
   rightAlign?: boolean
   style?: dropdownStyleTypes
+  bottomContent?: any
 }
+
 export type dropdownStyleTypes = React.CSSProperties & {
   '--dropdown-background-color'?: string
   '--dropdown-background-color-disabled'?: string
   '--dropdown-border-color'?: string
   '--dropdown-border-color-disabled'?: string
-  '--dropdown-checkbox-unchecked-color'?:string
+  '--dropdown-checkbox-unchecked-color'?: string
   '--dropdown-color'?: string
   '--dropdown-color-dark'?: string
   '--dropdown-input-font'?: string
   '--dropdown-color-light'?: string
   '--dropdown-label-color'?: string
-  '--dropdown-line-height'?: string | number
-  '--dropdown-options-box-width'?: string | number
+  '--dropdown-line-height'?: string
+  '--dropdown-options-box-width'?: string
   '--dropdown-text-color'?: string
-  '--dropdown-text-size'?: string | number
-
+  '--dropdown-text-size'?: string
+  '--dropdown-width'?: string
+  '--dropdown-border-radius'?: string
 }

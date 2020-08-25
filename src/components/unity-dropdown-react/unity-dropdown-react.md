@@ -2,8 +2,14 @@
 
 ## Changelog:
 
+### v1.0.1
+- Updated to unity-core v1.6.10
+- Added `--dropdown-width` and `--dropdown-border-radius` to style types
+- Removed number type from custom CSS variables types, since number values from custom variables are not converted to pixels
+- Added bottomContent prop
+
 ### v1.0.0
-- Updatee unity-core v1.3.6
+- Update unity-core v1.3.6
 
 ### v0.3.2
 - Update unity-core v1.2.10
