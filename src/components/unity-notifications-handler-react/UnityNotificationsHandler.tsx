@@ -80,21 +80,31 @@ export default class UnityNotificationsHandler extends Component<NotificationsHa
   render() {
     const {
       _notificationsHandlerRef,
-      props,
       props: {
-        children=[]
+        children=[],
+        icons,
+        colors,
+        customTypes,
+        allowDuplicates,
+        noAnimation,
+        onClose,
+        ...other
       }={}
     } = this
-
+    
     if (!this.props.target) {
       console.warn(`UnityNotificationsHandler was not passed a "target" property.`)
       return (<>{children}</>)
     }
 
+    const otherProps : NotificationsHandlerPropsI = {...other} 
+    if(allowDuplicates) otherProps.allowDuplicates = allowDuplicates
+    if(noAnimation) otherProps.noAnimation = noAnimation
+
     return (
       <unity-notifications-handler
         ref={_notificationsHandlerRef}
-        {...props}
+        {...otherProps}
       >
         {children}
       </unity-notifications-handler>
