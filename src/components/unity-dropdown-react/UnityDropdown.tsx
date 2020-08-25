@@ -37,6 +37,7 @@ export default class UnityDropdown extends Component<dropdownPropsType> {
       selected=[],
       disabled,
       important,
+      bottomContent,
       ...otherProps
     } = this.props
     const dropdownProps : dropdownPropsType = {
@@ -50,11 +51,16 @@ export default class UnityDropdown extends Component<dropdownPropsType> {
       <unity-dropdown
         ref={this.dropdownRef}
         {...dropdownProps}
-      ></unity-dropdown>
+      >
+        {!!bottomContent &&
+          <div slot="bottom-content">
+            {bottomContent}
+          </div>
+        }
+      </unity-dropdown>
     )
   }
 }
-
 
 export type inputType = "menu" | "single-select" | "multi-select"
 export type boxType = "label" | "search" | "button-primary" | "button-secondary" | "button-borderless" | "inline"
@@ -76,7 +82,9 @@ export interface dropdownPropsType extends React.HTMLAttributes<HTMLElement> {
   onValueChange?: Function
   rightAlign?: boolean
   style?: dropdownStyleTypes
+  bottomContent?: any
 }
+
 export type dropdownStyleTypes = React.CSSProperties & {
   '--dropdown-background-color'?: string
   '--dropdown-background-color-disabled'?: string
