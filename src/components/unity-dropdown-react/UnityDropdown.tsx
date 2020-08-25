@@ -100,5 +100,6 @@ export type dropdownStyleTypes = React.CSSProperties & {
   '--dropdown-options-box-width'?: string
   '--dropdown-text-color'?: string
   '--dropdown-text-size'?: string
-
+  '--dropdown-width'?: string
+  '--dropdown-border-radius'?: string
 }
