@@ -97,7 +97,7 @@ export default class UnityNotificationsHandler extends Component<NotificationsHa
       return (<>{children}</>)
     }
 
-    const otherProps : NotificationsHandlerPropsI = {...other} 
+    const otherProps : NotificationsHandlerPropsI = {...other}
     if(allowDuplicates) otherProps.allowDuplicates = allowDuplicates
     if(noAnimation) otherProps.noAnimation = noAnimation
 

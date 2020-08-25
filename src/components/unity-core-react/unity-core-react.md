@@ -25,6 +25,9 @@ export * from "@bit/smartworks.unity-react.<component-path>" //Export named expo
 
 ## Changelog:
 
+### v1.2.6
+- unity-notifications-handler-react v1.0.4 (fixes app crash when using component)
+
 ### v1.2.5
 - unity-button-react v1.1.1
 - unity-dropdown-react v1.0.1
