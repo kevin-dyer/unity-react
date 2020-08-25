@@ -76,7 +76,6 @@ export default class UnityPopover extends Component<PopoverPropsI> {
       onPageContent,
       popoverContent,
       ...otherProps
-
     } = this.props
 
     const boolProps: PopoverPropsI = {}
@@ -85,6 +84,13 @@ export default class UnityPopover extends Component<PopoverPropsI> {
     if (closeOnOutsideClick) boolProps.closeOnOutsideClick = closeOnOutsideClick
     if (flip) boolProps.flip = flip
     if (preventOverflow) boolProps.preventOverflow = preventOverflow
+
+    // Remove complex data from otherProps
+    delete otherProps.onClose
+    delete otherProps.fallbackPlacements
+    delete otherProps.boundary
+    delete otherProps.referenceElement
+    delete otherProps.style
 
     return (
       <unity-popover
