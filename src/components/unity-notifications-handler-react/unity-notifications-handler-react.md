@@ -5,6 +5,9 @@
 
 ## Changelog:
 
+### v1.0.4
+- Prevent object props from being passed through directly to fix parse error in web component
+
 ### v1.0.3
 - Made it so NotificationsHandler passes through props (needed to accept styles)
 

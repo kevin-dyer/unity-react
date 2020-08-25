@@ -1176,10 +1176,10 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-core-react@^1.2.5":
-  version "1.2.5"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-core-react/-/smartworks.unity-react.unity-core-react-1.2.5.tgz#ebca5970dbc1178e6dac5172d3e0d3e01f240ed3"
-  integrity sha1-68pZcNvBF45trFFy0+DT4B8kDtM=
+"@bit/smartworks.unity-react.unity-core-react@^1.2.6":
+  version "1.2.6"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-core-react/-/smartworks.unity-react.unity-core-react-1.2.6.tgz#492b6cb051e4e1a9d106744c7181def37e5425ef"
+  integrity sha1-SStssFHk4anRBnRMcYHe835UJe8=
   dependencies:
     "@bit/smartworks.unity-react.unity-button-react" "1.1.1"
     "@bit/smartworks.unity-react.unity-code-editor-react" "1.0.0"
@@ -1190,7 +1190,7 @@
     "@bit/smartworks.unity-react.unity-json-viewer-react" "1.0.0"
     "@bit/smartworks.unity-react.unity-modal-react" "1.0.0"
     "@bit/smartworks.unity-react.unity-notification-react" "1.0.1"
-    "@bit/smartworks.unity-react.unity-notifications-handler-react" "1.0.3"
+    "@bit/smartworks.unity-react.unity-notifications-handler-react" "1.0.4"
     "@bit/smartworks.unity-react.unity-page-header-react" "1.1.0"
     "@bit/smartworks.unity-react.unity-popover-react" "1.0.1"
     "@bit/smartworks.unity-react.unity-progress-react" "0.2.2"
@@ -1251,10 +1251,10 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-notifications-handler-react@1.0.3", "@bit/smartworks.unity-react.unity-notifications-handler-react@^1.0.3":
-  version "1.0.3"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-notifications-handler-react/-/smartworks.unity-react.unity-notifications-handler-react-1.0.3.tgz#e9bfbad0f3fcc20bd54df62aab4eec0aafc5b051"
-  integrity sha1-6b+60PP8wgvVTfYqq07sCq/FsFE=
+"@bit/smartworks.unity-react.unity-notifications-handler-react@1.0.4", "@bit/smartworks.unity-react.unity-notifications-handler-react@^1.0.4":
+  version "1.0.4"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-notifications-handler-react/-/smartworks.unity-react.unity-notifications-handler-react-1.0.4.tgz#4e6df2a5e64d280d9553c54e4330272f3743357c"
+  integrity sha1-Tm3ypeZNKA2VU8VOQzAnLzdDNXw=
   dependencies:
     "@types/react" "16.9.11"
     "@types/uuid" "^8.0.0"
