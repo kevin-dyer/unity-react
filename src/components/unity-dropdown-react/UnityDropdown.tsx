@@ -90,15 +90,15 @@ export type dropdownStyleTypes = React.CSSProperties & {
   '--dropdown-background-color-disabled'?: string
   '--dropdown-border-color'?: string
   '--dropdown-border-color-disabled'?: string
-  '--dropdown-checkbox-unchecked-color'?:string
+  '--dropdown-checkbox-unchecked-color'?: string
   '--dropdown-color'?: string
   '--dropdown-color-dark'?: string
   '--dropdown-input-font'?: string
   '--dropdown-color-light'?: string
   '--dropdown-label-color'?: string
-  '--dropdown-line-height'?: string | number
-  '--dropdown-options-box-width'?: string | number
+  '--dropdown-line-height'?: string
+  '--dropdown-options-box-width'?: string
   '--dropdown-text-color'?: string
-  '--dropdown-text-size'?: string | number
+  '--dropdown-text-size'?: string
 
 }
