@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v1.1.1
+- Add --button-width to styles type
+
 ### v1.1.0
 - Added generic HTML attributes
 - Added exports for ts definitions
