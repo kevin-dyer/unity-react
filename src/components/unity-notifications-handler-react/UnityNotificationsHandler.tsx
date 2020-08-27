@@ -82,12 +82,12 @@ export default class UnityNotificationsHandler extends Component<NotificationsHa
       _notificationsHandlerRef,
       props: {
         children=[],
-        icons,
-        colors,
-        customTypes,
-        allowDuplicates,
-        noAnimation,
-        onClose,
+        icons={},
+        colors={},
+        customTypes={},
+        allowDuplicates=false,
+        noAnimation=false,
+        onClose=()=>{},
         ...other
       }={}
     } = this
@@ -97,7 +97,7 @@ export default class UnityNotificationsHandler extends Component<NotificationsHa
       return (<>{children}</>)
     }
 
-    const otherProps : NotificationsHandlerPropsI = {...other}
+    const otherProps : NotificationsHandlerPropsI = { ...other }
     if(allowDuplicates) otherProps.allowDuplicates = allowDuplicates
     if(noAnimation) otherProps.noAnimation = noAnimation
 
@@ -164,8 +164,8 @@ export function withNotifications(handlerProps: NotificationsHandlerPropsI) {
 
 export { addNotification, closeNotification, clearNotifications }
 
-export { default as UnityNotificationModal } from './UnityNotificationModal'
-export * from './UnityNotificationModal'
+export { default as UnityNotificationsModal } from './UnityNotificationsModal'
+export * from './UnityNotificationsModal'
 
-export { default as UnityNotificationSplitPane } from './UnityNotificationSplitPane'
-export * from './UnityNotificationSplitPane'
+export { default as UnityNotificationsSplitPane } from './UnityNotificationsSplitPane'
+export * from './UnityNotificationsSplitPane'

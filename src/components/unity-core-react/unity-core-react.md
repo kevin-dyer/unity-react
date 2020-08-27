@@ -25,6 +25,10 @@ export * from "@bit/smartworks.unity-react.<component-path>" //Export named expo
 
 ## Changelog:
 
+### v1.2.7
+- unity-popover-react v1.0.2
+- unity-notifications-handler-react v.1.1.0
+
 ### v1.2.6
 - unity-notifications-handler-react v1.0.4 (fixes app crash when using component)
 

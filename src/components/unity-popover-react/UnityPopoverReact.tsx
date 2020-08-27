@@ -11,6 +11,7 @@ interface PopoverStylesI {
   '--popover-shadow'?: string,
   '--popover-border'?: string,
   '--popover-close-button-color'?: string,
+  '--popover-z-index'?: string
 }
 
 interface PopoverPropsI extends HTMLAttributes<HTMLElement> {
