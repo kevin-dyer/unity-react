@@ -24,15 +24,14 @@ import {
   UnityNotificationsHandler,
   withNotifications,
   addNotification,
-  UnityNotificationModal,
-  UnityNotificationSplitPane,
+  UnityNotificationsModal,
+  UnityNotificationsSplitPane,
   UnityColumnEditor,
   UnityPopover
 } from './components/unity-core-react'
 
 import UnityGlobalNav, { NavItemsConfigI } from './components/unity-global-nav-react/UnityGlobalNav'
 import { devices, fakeYaml } from './fakeData'
-
 
 const appStyle: CSSProperties = {
   display: 'flex',
@@ -355,7 +354,7 @@ class App extends React.Component {
             show={this.state.showModal}
             style={modalStyle}
           />
-          <UnityNotificationModal
+          <UnityNotificationsModal
             top={<UnityButton centerIcon="unity:close" onClick={() => this.setState({ showNotificationModal: false })}/>}
             title="A Notification-Enabled Modal"
             body={<div style={{ padding: '100px 300px' }}>
@@ -486,7 +485,7 @@ class App extends React.Component {
                   footer={<div style={splitPaneHeaderStyle}>This is the footer</div>}
                   pane={<div style={splitPaneContainerStyle}>This is the pane content</div>}
                 />
-                <UnityNotificationSplitPane
+                <UnityNotificationsSplitPane
                   mainNotifications={{ target: 'split-pane-main-notification'}}
                   paneNotifications={{ target: 'split-pane-pane-notification'}}
                   style={{height: 400, border: '1px solid grey', margin: 20}}

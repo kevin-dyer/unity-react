@@ -5,6 +5,9 @@
 
 ## Changelog:
 
+### v1.1.0
+- Changed naming conventions for consistency
+
 ### v1.0.4
 - Prevent object props from being passed through directly to fix parse error in web component
 
@@ -25,7 +28,7 @@
 - Update unity-core v1.2.10
 
 ### v0.2.1
-- Added UnityNotificationSplitPane and UnityNotificationModal
+- Added UnityNotificationsSplitPane and UnityNotificationsModal
 
 ### v0.2.0
 - Naming convention changes

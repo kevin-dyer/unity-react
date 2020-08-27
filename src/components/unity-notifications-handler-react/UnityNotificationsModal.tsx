@@ -7,7 +7,7 @@ export interface NotificationModalPropsI extends ModalPropsI {
   notifications?: NotificationsHandlerPropsI
 }
 
-export default class UnityNotificationModal extends Component<NotificationModalPropsI>{
+export default class UnityNotificationsModal extends Component<NotificationModalPropsI>{
 
   render() {
     const {

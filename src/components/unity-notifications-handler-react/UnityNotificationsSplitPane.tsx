@@ -8,7 +8,7 @@ export interface NotificationSplitPanePropsI extends SplitPaneProps {
   paneNotifications?: NotificationsHandlerPropsI,
 }
 
-export default class UnityNotificationSplitPane extends Component<NotificationSplitPanePropsI>{
+export default class UnityNotificationsSplitPane extends Component<NotificationSplitPanePropsI>{
 
   render() {
     const {

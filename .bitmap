@@ -93,7 +93,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-core-react@1.2.6": {
+    "smartworks.unity-react/unity-core-react@1.2.7": {
         "files": [
             {
                 "name": "index.js",
@@ -346,17 +346,17 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-notifications-handler-react@1.0.4": {
+    "smartworks.unity-react/unity-notifications-handler-react@1.1.0": {
         "files": [
             {
-                "relativePath": "src/components/unity-notifications-handler-react/UnityNotificationModal.tsx",
+                "relativePath": "src/components/unity-notifications-handler-react/UnityNotificationsModal.tsx",
                 "test": false,
-                "name": "UnityNotificationModal.tsx"
+                "name": "UnityNotificationsModal.tsx"
             },
             {
-                "relativePath": "src/components/unity-notifications-handler-react/UnityNotificationSplitPane.tsx",
+                "relativePath": "src/components/unity-notifications-handler-react/UnityNotificationsSplitPane.tsx",
                 "test": false,
-                "name": "UnityNotificationSplitPane.tsx"
+                "name": "UnityNotificationsSplitPane.tsx"
             },
             {
                 "relativePath": "src/components/unity-notifications-handler-react/UnityNotificationsHandler.tsx",
@@ -401,7 +401,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-popover-react@1.0.1": {
+    "smartworks.unity-react/unity-popover-react@1.0.2": {
         "files": [
             {
                 "relativePath": "src/components/unity-popover-react/UnityPopoverReact.tsx",
