@@ -53,7 +53,7 @@ export default class UnityDropdown extends Component<dropdownPropsType> {
         {...dropdownProps}
       >
         {!!bottomContent &&
-          <div slot="bottom-content">
+          <div slot="bottom-content" style={{margin: 0, padding: 0}}>
             {bottomContent}
           </div>
         }
