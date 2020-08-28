@@ -2,6 +2,11 @@
 
 ## Changelog:
 
+### v1.0.2
+- Pass array props to wrapped web component as properties instead of attributes
+- Removed margin and padding from bottom slot div
+- Added `--dropdown-search-input-padding` to style types
+
 ### v1.0.1
 - Updated to unity-core v1.6.10
 - Added `--dropdown-width` and `--dropdown-border-radius` to style types

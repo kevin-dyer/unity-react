@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v1.1.2
+- Add `--button-padding` and `--button-hover-color` to styles type
+
 ### v1.1.1
 - Add --button-width to styles type
 

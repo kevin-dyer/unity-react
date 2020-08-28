@@ -3,6 +3,7 @@ import './App.css';
 import {
   UnityButton,
   UnityCodeEditor,
+  UnityGlobalNav, NavItemsConfigI,
   CodeEditorStylesI,
   UnityJsonViewer,
   UnityTextInput,
@@ -30,7 +31,6 @@ import {
   UnityPopover
 } from './components/unity-core-react'
 
-import UnityGlobalNav, { NavItemsConfigI } from './components/unity-global-nav-react/UnityGlobalNav'
 import { devices, fakeYaml } from './fakeData'
 
 const appStyle: CSSProperties = {

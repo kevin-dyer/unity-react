@@ -15,11 +15,15 @@ export default class UnityDropdown extends Component<dropdownPropsType> {
 
   updateProperties(oldProps: dropdownPropsType={}) {
     const {
+      options,
+      selected,
       onMenuClick,
       onValueChange,
     } = this.props
 
     const {
+      options: oldOptions,
+      selected: oldSelected,
       onMenuClick: oldOnMenuClick,
       onValueChange: oldOnValueChange
     } = oldProps
@@ -28,23 +32,21 @@ export default class UnityDropdown extends Component<dropdownPropsType> {
     if (unityDropdown) {
       if (oldOnMenuClick !== onMenuClick) unityDropdown.onMenuClick = onMenuClick
       if (oldOnValueChange !== onValueChange) unityDropdown.onValueChange = onValueChange
+      if(oldOptions !== options) unityDropdown.options = options
+      if(oldSelected !== selected) unityDropdown.selected = selected
     }
   }
 
   render() {
     const {
-      options=[],
-      selected=[],
+      options,
+      selected,
       disabled,
       important,
       bottomContent,
       ...otherProps
     } = this.props
-    const dropdownProps : dropdownPropsType = {
-      options: JSON.stringify(options),
-      selected: JSON.stringify(selected),
-      ...otherProps
-    }
+    const dropdownProps : dropdownPropsType = { ...otherProps }
     if (disabled) dropdownProps.disabled = true
     if (important) dropdownProps.important = true
     return (
@@ -53,7 +55,7 @@ export default class UnityDropdown extends Component<dropdownPropsType> {
         {...dropdownProps}
       >
         {!!bottomContent &&
-          <div slot="bottom-content">
+          <div slot="bottom-content" style={{margin: 0, padding: 0}}>
             {bottomContent}
           </div>
         }
@@ -102,4 +104,5 @@ export type dropdownStyleTypes = React.CSSProperties & {
   '--dropdown-text-size'?: string
   '--dropdown-width'?: string
   '--dropdown-border-radius'?: string
+  '--dropdown-search-input-padding'?: string
 }
