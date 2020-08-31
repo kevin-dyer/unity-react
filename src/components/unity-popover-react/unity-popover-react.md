@@ -2,6 +2,10 @@
 
 ## Changelog:
 
+### v1.0.3
+- pass `style` prop into web component as an attribute
+- added --popover-content-overflow to available css vars
+
 ### v1.0.2
 - added --popover-z-index to available css vars
 

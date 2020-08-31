@@ -12,6 +12,7 @@ interface PopoverStylesI {
   '--popover-border'?: string,
   '--popover-close-button-color'?: string,
   '--popover-z-index'?: string
+  '--popover-content-overflow'?: string
 }
 
 interface PopoverPropsI extends HTMLAttributes<HTMLElement> {
@@ -52,7 +53,6 @@ export default class UnityPopover extends Component<PopoverPropsI> {
         fallbackPlacements,
         boundary,
         referenceElement,
-        style
       }
     } = this
     const { current } = _popoverRef
@@ -62,7 +62,6 @@ export default class UnityPopover extends Component<PopoverPropsI> {
       if (!!fallbackPlacements && fallbackPlacements !== oldProps.fallbackPlacements) current.fallbackPlacements = fallbackPlacements
       if (!!boundary && boundary !== oldProps.boundary) current.boundary = boundary
       if (!!referenceElement && referenceElement !== oldProps.referenceElement) current.referenceElement = referenceElement
-      if (!!style && style !== oldProps.style) current.style = style
     }
   }
 
@@ -91,7 +90,6 @@ export default class UnityPopover extends Component<PopoverPropsI> {
     delete otherProps.fallbackPlacements
     delete otherProps.boundary
     delete otherProps.referenceElement
-    delete otherProps.style
 
     return (
       <unity-popover

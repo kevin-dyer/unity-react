@@ -26,6 +26,10 @@ export * from "@bit/smartworks.unity-react.<component-path>" //Export named expo
 ## Changelog:
 
 
+### v1.2.9
+Updated to support unity-core v1.6.15:
+- unity-popover-react v1.0.3
+
 ### v1.2.8
 Updated to support unity-core v1.6.14:
 - unity-button-react v1.1.2
