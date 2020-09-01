@@ -17,6 +17,7 @@
     "@bit/smartworks.unity-react.unity-page-header-react": "^1.1.0",
     "@bit/smartworks.unity-react.unity-popover-react": "^1.0.3",
     "@bit/smartworks.unity-react.unity-progress-react": "^0.2.2",
+    "@bit/smartworks.unity-react.unity-search-bar-react": "^1.0.0",
     "@bit/smartworks.unity-react.unity-section-react": "^0.3.4",
     "@bit/smartworks.unity-react.unity-split-pane-react": "^1.0.0",
     "@bit/smartworks.unity-react.unity-table-export-react": "^0.2.2",

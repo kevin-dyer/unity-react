@@ -156,6 +156,11 @@
                 "test": false
             },
             {
+                "relativePath": "src/components/unity-core-react/UnitySearchBar/index.js",
+                "test": false,
+                "name": "index.js"
+            },
+            {
                 "name": "index.js",
                 "relativePath": "src/components/unity-core-react/UnitySection/index.js",
                 "test": false
@@ -443,6 +448,29 @@
             }
         ],
         "mainFile": "src/components/unity-progress-react/UnityProgress.tsx",
+        "origin": "AUTHORED",
+        "exported": true
+    },
+    "smartworks.unity-react/unity-search-bar-react@1.0.0": {
+        "files": [
+            {
+                "relativePath": "src/components/unity-search-bar-react/UnitySearchBar.tsx",
+                "test": false,
+                "name": "UnitySearchBar.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-search-bar-react/declarations.d.ts",
+                "test": false,
+                "name": "declarations.d.ts"
+            },
+            {
+                "relativePath": "src/components/unity-search-bar-react/unity-search-bar-react.md",
+                "test": false,
+                "name": "unity-search-bar-react.md"
+            }
+        ],
+        "mainFile": "src/components/unity-search-bar-react/UnitySearchBar.tsx",
+        "trackDir": "src/components/unity-search-bar-react",
         "origin": "AUTHORED",
         "exported": true
     },
