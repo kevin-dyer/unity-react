@@ -1176,10 +1176,10 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-core-react@^1.2.9":
-  version "1.2.9"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-core-react/-/smartworks.unity-react.unity-core-react-1.2.9.tgz#ed0e0480b8d60dea8d3f74a915e7c10c92f62c5c"
-  integrity sha1-7Q4EgLjWDeqNP3SpFefBDJL2LFw=
+"@bit/smartworks.unity-react.unity-core-react@^1.3.0":
+  version "1.3.0"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-core-react/-/smartworks.unity-react.unity-core-react-1.3.0.tgz#57eb1e025efbf289715ff6365d905977b3157813"
+  integrity sha1-V+seAl778olxX/Y2XZBZd7MVeBM=
   dependencies:
     "@bit/smartworks.unity-react.unity-button-react" "1.1.2"
     "@bit/smartworks.unity-react.unity-code-editor-react" "1.0.0"
@@ -1194,6 +1194,7 @@
     "@bit/smartworks.unity-react.unity-page-header-react" "1.1.0"
     "@bit/smartworks.unity-react.unity-popover-react" "1.0.3"
     "@bit/smartworks.unity-react.unity-progress-react" "0.2.2"
+    "@bit/smartworks.unity-react.unity-search-bar-react" "1.0.0"
     "@bit/smartworks.unity-react.unity-section-react" "0.3.4"
     "@bit/smartworks.unity-react.unity-split-pane-react" "1.0.0"
     "@bit/smartworks.unity-react.unity-table-export-react" "0.2.2"
@@ -1285,7 +1286,7 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-search-bar-react@^1.0.0":
+"@bit/smartworks.unity-react.unity-search-bar-react@1.0.0", "@bit/smartworks.unity-react.unity-search-bar-react@^1.0.0":
   version "1.0.0"
   resolved "https://node.bit.dev/smartworks.unity-react.unity-search-bar-react/-/smartworks.unity-react.unity-search-bar-react-1.0.0.tgz#480f11caae02d4e838e45f8fb623b84092559b00"
   integrity sha1-SA8Ryq4C1Og45F+PtiO4QJJVmwA=

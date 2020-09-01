@@ -28,7 +28,8 @@ import {
   UnityNotificationsModal,
   UnityNotificationsSplitPane,
   UnityColumnEditor,
-  UnityPopover
+  UnityPopover,
+  UnitySearchBar
 } from './components/unity-core-react'
 
 import { devices, fakeYaml } from './fakeData'
@@ -46,7 +47,8 @@ const headerStyle: headerStyleTypes  = {
 
 const contentBox: CSSProperties = {
   margin: "20px",
-  width: '100%'
+  width: '100%',
+  overflow: 'visible'
 }
 
 const wrapperStyle: CSSProperties = {
@@ -213,6 +215,18 @@ const dropdownOptions: Object[] = [
     "label": "Option 3",
     "id": "3",
     // "disabled": true
+  }
+]
+
+const tagSeed: Object[] = [
+  { value: "tag 1" },
+  {
+    label: "Tag 2",
+    value: "tag 2"
+  },
+  {
+    value: "tag green",
+    styles: { "--tag-color": "green" }
   }
 ]
 
@@ -544,6 +558,12 @@ class App extends React.Component {
                   <div style={contentBox}>
                     <UnityTextInput label="Text Input"/>
                   </div>
+                  <div style={contentBox}>
+                    <UnitySearchBar
+                      tagSeed={tagSeed}
+                      onChange={(v: any) => console.log('search updated', v)}
+                    ></UnitySearchBar>
+                  </div>
                 </UnitySection>
                 <UnitySection>
                   <div style={contentBox}>
@@ -654,7 +674,7 @@ class App extends React.Component {
                   </div>
                 </UnitySection>
               </UnitySection>
-          
+
               <UnitySection>
                 <WithNotificationsWrappedSection
                   text={'This text is being passed to the wrapped component as a prop.'}
