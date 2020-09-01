@@ -1176,10 +1176,10 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-core-react@^1.2.9":
-  version "1.2.9"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-core-react/-/smartworks.unity-react.unity-core-react-1.2.9.tgz#ed0e0480b8d60dea8d3f74a915e7c10c92f62c5c"
-  integrity sha1-7Q4EgLjWDeqNP3SpFefBDJL2LFw=
+"@bit/smartworks.unity-react.unity-core-react@^1.3.0":
+  version "1.3.0"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-core-react/-/smartworks.unity-react.unity-core-react-1.3.0.tgz#57eb1e025efbf289715ff6365d905977b3157813"
+  integrity sha1-V+seAl778olxX/Y2XZBZd7MVeBM=
   dependencies:
     "@bit/smartworks.unity-react.unity-button-react" "1.1.2"
     "@bit/smartworks.unity-react.unity-code-editor-react" "1.0.0"
@@ -1194,6 +1194,7 @@
     "@bit/smartworks.unity-react.unity-page-header-react" "1.1.0"
     "@bit/smartworks.unity-react.unity-popover-react" "1.0.3"
     "@bit/smartworks.unity-react.unity-progress-react" "0.2.2"
+    "@bit/smartworks.unity-react.unity-search-bar-react" "1.0.0"
     "@bit/smartworks.unity-react.unity-section-react" "0.3.4"
     "@bit/smartworks.unity-react.unity-split-pane-react" "1.0.0"
     "@bit/smartworks.unity-react.unity-table-export-react" "0.2.2"
@@ -1281,6 +1282,14 @@
   version "0.2.2"
   resolved "https://node.bit.dev/smartworks.unity-react.unity-progress-react/-/smartworks.unity-react.unity-progress-react-0.2.2.tgz#4eac943448e445adf4f73e988f0c8b5295f76392"
   integrity sha1-TqyUNEjkRa309z6YjwyLUpX3Y5I=
+  dependencies:
+    "@types/react" "16.9.11"
+    react "^16.12.0"
+
+"@bit/smartworks.unity-react.unity-search-bar-react@1.0.0", "@bit/smartworks.unity-react.unity-search-bar-react@^1.0.0":
+  version "1.0.0"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-search-bar-react/-/smartworks.unity-react.unity-search-bar-react-1.0.0.tgz#480f11caae02d4e838e45f8fb623b84092559b00"
+  integrity sha1-SA8Ryq4C1Og45F+PtiO4QJJVmwA=
   dependencies:
     "@types/react" "16.9.11"
     react "^16.12.0"
@@ -1378,10 +1387,10 @@
     lit-element "^2.0.1"
     sortablejs "^1.10.2"
 
-"@bit/smartworks.unity.unity-core@^1.6.15":
-  version "1.6.15"
-  resolved "https://node.bit.dev/smartworks.unity.unity-core/-/smartworks.unity.unity-core-1.6.15.tgz#853282dbb9caaf7f566a0020b9dce8743880bde1"
-  integrity sha1-hTKC27nKr39WagAgudzodDiAveE=
+"@bit/smartworks.unity.unity-core@^1.7.0":
+  version "1.7.0"
+  resolved "https://node.bit.dev/smartworks.unity.unity-core/-/smartworks.unity.unity-core-1.7.0.tgz#b023a9ce65572970385f92c61c2c89b4a22c1e6c"
+  integrity sha1-sCOpzmVXKXA4X5LGHCyJtKIsHmw=
   dependencies:
     "@bit/smartworks.unity.table-cell-base" "1.0.0"
     "@bit/smartworks.unity.unity-button" "1.1.5"
@@ -1400,6 +1409,7 @@
     "@bit/smartworks.unity.unity-page-header" "1.1.3"
     "@bit/smartworks.unity.unity-popover" "1.0.3"
     "@bit/smartworks.unity.unity-progress" "1.0.2"
+    "@bit/smartworks.unity.unity-search-bar" "1.0.0"
     "@bit/smartworks.unity.unity-section" "1.0.2"
     "@bit/smartworks.unity.unity-select-menu" "1.3.0"
     "@bit/smartworks.unity.unity-split-pane" "1.1.4"
@@ -1411,7 +1421,7 @@
     "@bit/smartworks.unity.unity-toggle-switch" "1.0.3"
     "@bit/smartworks.unity.unity-tooltip" "1.1.3"
     "@bit/smartworks.unity.unity-typography" "1.1.2"
-    "@bit/smartworks.unity.unity-utils" "0.0.5"
+    "@bit/smartworks.unity.unity-utils" "1.0.1"
 
 "@bit/smartworks.unity.unity-default-theme-styles@1.3.1":
   version "1.3.1"
@@ -1522,6 +1532,14 @@
     "@polymer/paper-progress" "^3.0.1"
     lit-element "^2.0.1"
 
+"@bit/smartworks.unity.unity-search-bar@1.0.0":
+  version "1.0.0"
+  resolved "https://node.bit.dev/smartworks.unity.unity-search-bar/-/smartworks.unity.unity-search-bar-1.0.0.tgz#452b319e06f42b197f9f6b8915831ece86f35899"
+  integrity sha1-RSsxngb0Kxl/n2uJFYMezobzWJk=
+  dependencies:
+    lit-element "^2.0.1"
+    throttle-debounce "^2.3.0"
+
 "@bit/smartworks.unity.unity-section@1.0.2":
   version "1.0.2"
   resolved "https://node.bit.dev/smartworks.unity.unity-section/-/smartworks.unity.unity-section-1.0.2.tgz#5211ca8c5b9ff19e617863aa97d041b4d97ccf3b"
@@ -1612,10 +1630,10 @@
   dependencies:
     lit-element "^2.0.1"
 
-"@bit/smartworks.unity.unity-utils@0.0.5":
-  version "0.0.5"
-  resolved "https://node.bit.dev/smartworks.unity.unity-utils/-/smartworks.unity.unity-utils-0.0.5.tgz#a25453e2163333e539bc0f16e638c062a9e4de55"
-  integrity sha1-olRT4hYzM+U5vA8W5jjAYqnk3lU=
+"@bit/smartworks.unity.unity-utils@1.0.1":
+  version "1.0.1"
+  resolved "https://node.bit.dev/smartworks.unity.unity-utils/-/smartworks.unity.unity-utils-1.0.1.tgz#5f7cc7f05d437327d803133b02f162e93eef2adf"
+  integrity sha1-X3zH8F1DcyfYAxM7AvFi6T7vKt8=
 
 "@cnakazawa/watch@^1.0.3":
   version "1.0.4"
@@ -10852,6 +10870,11 @@ throat@^4.0.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/throat/-/throat-4.1.0.tgz#89037cbc92c56ab18926e6ba4cbb200e15672a6a"
   integrity sha1-iQN8vJLFarGJJua6TLsgDhVnKmo=
+
+throttle-debounce@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/throttle-debounce/-/throttle-debounce-2.3.0.tgz#fd31865e66502071e411817e241465b3e9c372e2"
+  integrity sha512-H7oLPV0P7+jgvrk+6mwwwBDmxTaxnu9HMXmloNLXwnNO0ZxZ31Orah2n8lU1eMPvsaowP2CX+USCgyovXfdOFQ==
 
 through2@^2.0.0:
   version "2.0.5"

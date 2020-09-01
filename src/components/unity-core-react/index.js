@@ -46,6 +46,9 @@ export * from "@bit/smartworks.unity-react.unity-popover-react"
 export {default as UnityProgress} from "@bit/smartworks.unity-react.unity-progress-react"
 export * from "@bit/smartworks.unity-react.unity-progress-react"
 
+export {default as UnitySearchBar} from "@bit/smartworks.unity-react.unity-search-bar-react"
+export * from "@bit/smartworks.unity-react.unity-search-bar-react"
+
 export {default as UnitySection} from "@bit/smartworks.unity-react.unity-section-react"
 export * from "@bit/smartworks.unity-react.unity-section-react"
 

@@ -25,6 +25,8 @@ export * from "@bit/smartworks.unity-react.<component-path>" //Export named expo
 
 ## Changelog:
 
+### v1.3.0
+- add unity-search-bar-react v1.0.0
 
 ### v1.2.9
 Updated to support unity-core v1.6.15:
