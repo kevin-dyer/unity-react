@@ -39,16 +39,33 @@ export default class UnityDropdown extends Component<dropdownPropsType> {
 
   render() {
     const {
-      options,
-      selected,
+      // boolean props
+      autofocus,
       disabled,
       important,
+      rightAlign,
+      searchBox,
+      selectIcon,
+      showTags,
+      // function/object props
       bottomContent,
+      onMenuClick,
+      onValueChange,
+      options,
+      selected,
       ...otherProps
     } = this.props
+
     const dropdownProps : dropdownPropsType = { ...otherProps }
+
+    if (autofocus) dropdownProps.autofocus = true
     if (disabled) dropdownProps.disabled = true
     if (important) dropdownProps.important = true
+    if (rightAlign) dropdownProps.rightAlign = true
+    if (searchBox) dropdownProps.searchBox = true
+    if (selectIcon) dropdownProps.selectIcon = true
+    if (showTags) dropdownProps.showTags = true
+    
     return (
       <unity-dropdown
         ref={this.dropdownRef}
@@ -68,23 +85,27 @@ export type inputType = "menu" | "single-select" | "multi-select"
 export type boxType = "label" | "search" | "button-primary" | "button-secondary" | "button-borderless" | "inline"
 export interface dropdownPropsType extends React.HTMLAttributes<HTMLElement> {
   [key: string]: any
-  label?: string
-  inputType?: inputType
+
   boxType?: boxType
-  important?: boolean
+  helperText?: string
+  inputType?: inputType
+  label?: string
   placeholder?: string
+  style?: dropdownStyleTypes
+
+  autofocus?: boolean
+  disabled?: boolean
+  important?: boolean
+  rightAlign?: boolean
+  searchBox?: boolean
+  selectIcon?: boolean
+  showTags?: boolean
+
+  bottomContent?: any
+  onMenuClick?: Function
+  onValueChange?: Function
   options?: Object[] | string
   selected?: string[] | string
-  disabled?: boolean
-  onMenuClick?: Function
-  selectIcon?: boolean
-  helperText?: string
-  searchBox?: boolean
-  showTags?: boolean
-  onValueChange?: Function
-  rightAlign?: boolean
-  style?: dropdownStyleTypes
-  bottomContent?: any
 }
 
 export type dropdownStyleTypes = React.CSSProperties & {
