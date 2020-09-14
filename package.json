@@ -26,7 +26,7 @@
     "@bit/smartworks.unity-react.unity-text-input-react": "^0.2.2",
     "@bit/smartworks.unity-react.unity-toggle-switch-react": "^0.2.2",
     "@bit/smartworks.unity-react.unity-typography-react": "^1.0.1",
-    "@bit/smartworks.unity.unity-core": "^1.7.0",
+    "@bit/smartworks.unity.unity-core": "^1.7.10",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
