@@ -4,7 +4,7 @@ import '@bit/smartworks.unity.unity-core/unity-text-input'
 export interface TextInputPropsI {
   [key: string]: any
 
-  error?: string
+  error?: string | boolean
   hint?: string
   innerLeftIcon?: string
   innerRightIcon?: string
@@ -23,8 +23,11 @@ export interface TextInputPropsI {
   borderEffects?: boolean
   charCount?: boolean
   disabled?: boolean
+  dirty?: boolean
   hideBorder?: boolean
   password?: boolean
+  readOnly?: boolean
+  required?: boolean
   rounded?: boolean
   showIcon?: boolean
   time?: boolean
@@ -58,16 +61,21 @@ export default class UnityTextInput extends Component<TextInputPropsI> {
   private inputRef = React.createRef<TextInputPropsI>()
 
   componentDidMount = () => {
-    const { onChange } = this.props
+    const { onChange, validation } = this.props
     const inputElement = this.inputRef.current
-    if (inputElement && !!onChange && onChange instanceof Function) inputElement.onChange = onChange
+    if (inputElement) {
+      if (!!onChange && onChange instanceof Function) inputElement.onChange = onChange
+      if (!!validation && validation instanceof Function) inputElement.validation = validation
+    }
+
   }
 
   componentDidUpdate = () => {
-    const { validation } = this.props
+    const { onChange, validation } = this.props
     const inputElement = this.inputRef.current
-    if (inputElement) { 
-      inputElement.validation = validation 
+    if (inputElement) {
+      if (onChange) inputElement.onChange = onChange
+      if (validation) inputElement.validation = validation
     }
   }
 
@@ -78,9 +86,13 @@ export default class UnityTextInput extends Component<TextInputPropsI> {
       autofocus,
       borderEffects,
       charCount,
+      dirty,
       disabled,
+      error, // can be string or boolean
       hideBorder,
       password,
+      readOnly,
+      required,
       rounded,
       showIcon,
       time,
@@ -96,9 +108,13 @@ export default class UnityTextInput extends Component<TextInputPropsI> {
     if (autofocus) inputProps.autofocus = true
     if (borderEffects) inputProps.borderEffects = true
     if (charCount) inputProps.charCount = true
+    if (dirty) inputProps.dirty = true
     if (disabled) inputProps.disabled = true
+    if (error) inputProps.error = error
     if (hideBorder) inputProps.hideBorder = true
     if (password) inputProps.password = true
+    if (readOnly) inputProps.readOnly = true
+    if (required) inputProps.required = true
     if (rounded) inputProps.rounded = true
     if (showIcon) inputProps.showIcon = true
     if (time) inputProps.time = true

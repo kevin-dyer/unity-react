@@ -25,6 +25,9 @@ export * from "@bit/smartworks.unity-react.<component-path>" //Export named expo
 
 ## Changelog:
 
+### v1.3.3
+- unity-text-input-react v1.0.2
+
 ### v1.3.2
 - unity-text-input-react v1.0.1
 

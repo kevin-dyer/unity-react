@@ -2,6 +2,11 @@
 
 ## Changelog:
 
+### v1.0.2
+- Added missing `dirty`, `readOnly` and `required` props
+- Fix `error` type, and only pass it to component when it is not false. Otherwise, `false` values will be stringified and showed as errors
+- Set `onChange` and `validation` functions both after mount and update
+
 ### v1.0.1
 - Fix bug where properties were not being properly passed to wrapped component
 
