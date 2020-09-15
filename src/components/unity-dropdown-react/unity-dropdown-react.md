@@ -2,6 +2,10 @@
 
 ## Changelog:
 
+### v1.1.0
+- Added `autofocus` prop
+- Pass `rightAlign`, `searchBox`, `selectIcon` and `showTags` boolean properties to wrapped component only when they are true
+
 ### v1.0.2
 - Pass array props to wrapped web component as properties instead of attributes
 - Removed margin and padding from bottom slot div

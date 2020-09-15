@@ -24,7 +24,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-button-react@1.1.2": {
+    "smartworks.unity-react/unity-button-react@1.1.3": {
         "files": [
             {
                 "name": "UnityButton.tsx",
@@ -93,7 +93,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-core-react@1.3.0": {
+    "smartworks.unity-react/unity-core-react@1.3.1": {
         "files": [
             {
                 "name": "index.js",
@@ -216,7 +216,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-dropdown-react@1.0.2": {
+    "smartworks.unity-react/unity-dropdown-react@1.0.3": {
         "files": [
             {
                 "name": "UnityDropdown.tsx",
@@ -329,7 +329,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-notification-react@1.0.1": {
+    "smartworks.unity-react/unity-notification-react@1.0.2": {
         "files": [
             {
                 "name": "UnityNotification.tsx",
@@ -564,7 +564,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-tag-react@1.0.3": {
+    "smartworks.unity-react/unity-tag-react@1.0.4": {
         "files": [
             {
                 "relativePath": "src/components/unity-tag-react/UnityTag.tsx",
@@ -587,7 +587,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-text-input-react@0.2.2": {
+    "smartworks.unity-react/unity-text-input-react@1.0.0": {
         "files": [
             {
                 "name": "UnityTextInput.tsx",

@@ -2,6 +2,11 @@
 
 ## Changelog:
 
+### v1.0.0
+- Update to v1 to make use of semantic versioning
+- Added types exports
+- Properly establish what should be pass into the wrapped component as attributes (strings and booleans when true)
+
 ### v0.2.2
 - Update unity-core v1.2.10
 

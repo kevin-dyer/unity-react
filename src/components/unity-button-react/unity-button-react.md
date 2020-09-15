@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v1.1.3
+- Remove unused `styles` property
+
 ### v1.1.2
 - Add `--button-padding` and `--button-hover-color` to styles type
 

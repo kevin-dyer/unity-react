@@ -1150,10 +1150,10 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
-"@bit/smartworks.unity-react.unity-button-react@1.1.2", "@bit/smartworks.unity-react.unity-button-react@^1.1.2":
-  version "1.1.2"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-button-react/-/smartworks.unity-react.unity-button-react-1.1.2.tgz#6529f8408724bd2812f981085629a7d45a4a3adc"
-  integrity sha1-ZSn4QIckvSgS+YEIVimn1FpKOtw=
+"@bit/smartworks.unity-react.unity-button-react@1.1.3", "@bit/smartworks.unity-react.unity-button-react@^1.1.3":
+  version "1.1.3"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-button-react/-/smartworks.unity-react.unity-button-react-1.1.3.tgz#612de1009bad703a4fe425bfc32cdc103a554586"
+  integrity sha1-YS3hAJutcDpP5CW/wyzcEDpVRYY=
   dependencies:
     "@types/react" "16.9.11"
     react "^16.12.0"
@@ -1176,20 +1176,20 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-core-react@^1.3.0":
-  version "1.3.0"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-core-react/-/smartworks.unity-react.unity-core-react-1.3.0.tgz#57eb1e025efbf289715ff6365d905977b3157813"
-  integrity sha1-V+seAl778olxX/Y2XZBZd7MVeBM=
+"@bit/smartworks.unity-react.unity-core-react@^1.3.1":
+  version "1.3.1"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-core-react/-/smartworks.unity-react.unity-core-react-1.3.1.tgz#ced383d20edab8ca1152aa19f56dc6fe7a8b5999"
+  integrity sha1-ztOD0g7auMoRUqoZ9W3G/nqLWZk=
   dependencies:
-    "@bit/smartworks.unity-react.unity-button-react" "1.1.2"
+    "@bit/smartworks.unity-react.unity-button-react" "1.1.3"
     "@bit/smartworks.unity-react.unity-code-editor-react" "1.0.0"
     "@bit/smartworks.unity-react.unity-column-editor-react" "1.0.1"
-    "@bit/smartworks.unity-react.unity-dropdown-react" "1.0.2"
+    "@bit/smartworks.unity-react.unity-dropdown-react" "1.0.3"
     "@bit/smartworks.unity-react.unity-dropzone-react" "0.2.2"
     "@bit/smartworks.unity-react.unity-global-nav-react" "1.0.0"
     "@bit/smartworks.unity-react.unity-json-viewer-react" "1.0.0"
     "@bit/smartworks.unity-react.unity-modal-react" "1.0.0"
-    "@bit/smartworks.unity-react.unity-notification-react" "1.0.1"
+    "@bit/smartworks.unity-react.unity-notification-react" "1.0.2"
     "@bit/smartworks.unity-react.unity-notifications-handler-react" "1.1.0"
     "@bit/smartworks.unity-react.unity-page-header-react" "1.1.0"
     "@bit/smartworks.unity-react.unity-popover-react" "1.0.3"
@@ -1199,15 +1199,15 @@
     "@bit/smartworks.unity-react.unity-split-pane-react" "1.0.0"
     "@bit/smartworks.unity-react.unity-table-export-react" "0.2.2"
     "@bit/smartworks.unity-react.unity-table-react" "1.0.0"
-    "@bit/smartworks.unity-react.unity-tag-react" "1.0.3"
-    "@bit/smartworks.unity-react.unity-text-input-react" "0.2.2"
+    "@bit/smartworks.unity-react.unity-tag-react" "1.0.4"
+    "@bit/smartworks.unity-react.unity-text-input-react" "1.0.0"
     "@bit/smartworks.unity-react.unity-toggle-switch-react" "0.2.2"
     "@bit/smartworks.unity-react.unity-typography-react" "1.0.1"
 
-"@bit/smartworks.unity-react.unity-dropdown-react@1.0.2", "@bit/smartworks.unity-react.unity-dropdown-react@^1.0.2":
-  version "1.0.2"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-dropdown-react/-/smartworks.unity-react.unity-dropdown-react-1.0.2.tgz#8f7952a173872b317885621e9c05d795f63fa7a3"
-  integrity sha1-j3lSoXOHKzF4hWIenAXXlfY/p6M=
+"@bit/smartworks.unity-react.unity-dropdown-react@1.0.3", "@bit/smartworks.unity-react.unity-dropdown-react@^1.0.3":
+  version "1.0.3"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-dropdown-react/-/smartworks.unity-react.unity-dropdown-react-1.0.3.tgz#09acc637031301bc091416774daf077482ddc393"
+  integrity sha1-CazGNwMTAbwJFBZ3Ta8HdILdw5M=
   dependencies:
     "@types/react" "16.9.11"
     react "^16.12.0"
@@ -1244,10 +1244,10 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-notification-react@1.0.1", "@bit/smartworks.unity-react.unity-notification-react@^1.0.1":
-  version "1.0.1"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-notification-react/-/smartworks.unity-react.unity-notification-react-1.0.1.tgz#5877b95d7df2dfcd7c11cf0b4697103c40d288a7"
-  integrity sha1-WHe5XX3y3818Ec8LRpcQPEDSiKc=
+"@bit/smartworks.unity-react.unity-notification-react@1.0.2", "@bit/smartworks.unity-react.unity-notification-react@^1.0.2":
+  version "1.0.2"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-notification-react/-/smartworks.unity-react.unity-notification-react-1.0.2.tgz#8629316c9fd793185623a9e5f8367879aa031ede"
+  integrity sha1-hikxbJ/XkxhWI6nl+DZ4eaoDHt4=
   dependencies:
     "@types/react" "16.9.11"
     react "^16.12.0"
@@ -1326,18 +1326,18 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-tag-react@1.0.3", "@bit/smartworks.unity-react.unity-tag-react@^1.0.3":
-  version "1.0.3"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-tag-react/-/smartworks.unity-react.unity-tag-react-1.0.3.tgz#ff2a597911b0b29c0f5dc30bad1cb4ba9f98da06"
-  integrity sha1-/ypZeRGwspwPXcMLrRy0up+Y2gY=
+"@bit/smartworks.unity-react.unity-tag-react@1.0.4", "@bit/smartworks.unity-react.unity-tag-react@^1.0.4":
+  version "1.0.4"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-tag-react/-/smartworks.unity-react.unity-tag-react-1.0.4.tgz#f05b79c0a484493a34cbf6816f3cdf2cf1a09275"
+  integrity sha1-8Ft5wKSESTo0y/aBbzzfLPGgknU=
   dependencies:
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-text-input-react@0.2.2", "@bit/smartworks.unity-react.unity-text-input-react@^0.2.2":
-  version "0.2.2"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-text-input-react/-/smartworks.unity-react.unity-text-input-react-0.2.2.tgz#f1acdbbdd1ffccfc1a1a7ee9a0e877cd04e989d6"
-  integrity sha1-8azbvdH/zPwaGn7poOh3zQTpidY=
+"@bit/smartworks.unity-react.unity-text-input-react@1.0.0", "@bit/smartworks.unity-react.unity-text-input-react@^1.0.0":
+  version "1.0.0"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-text-input-react/-/smartworks.unity-react.unity-text-input-react-1.0.0.tgz#e25012cf4fe2c1d1a10ceb2fa5a54712aa2cc31c"
+  integrity sha1-4lASz0/iwdGhDOsvpaVHEqoswxw=
   dependencies:
     "@types/react" "16.9.11"
     react "^16.12.0"
