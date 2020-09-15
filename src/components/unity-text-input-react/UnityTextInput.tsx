@@ -4,7 +4,7 @@ import '@bit/smartworks.unity.unity-core/unity-text-input'
 export interface TextInputPropsI {
   [key: string]: any
 
-  error?: string
+  error?: string | boolean
   hint?: string
   innerLeftIcon?: string
   innerRightIcon?: string
@@ -83,6 +83,7 @@ export default class UnityTextInput extends Component<TextInputPropsI> {
       charCount,
       dirty,
       disabled,
+      error, // can be string or boolean
       hideBorder,
       password,
       readOnly,
@@ -104,6 +105,7 @@ export default class UnityTextInput extends Component<TextInputPropsI> {
     if (charCount) inputProps.charCount = true
     if (dirty) inputProps.dirty = true
     if (disabled) inputProps.disabled = true
+    if (error) inputProps.error = error
     if (hideBorder) inputProps.hideBorder = true
     if (password) inputProps.password = true
     if (readOnly) inputProps.readOnly = true
