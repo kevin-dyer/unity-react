@@ -61,16 +61,21 @@ export default class UnityTextInput extends Component<TextInputPropsI> {
   private inputRef = React.createRef<TextInputPropsI>()
 
   componentDidMount = () => {
-    const { onChange } = this.props
+    const { onChange, validation } = this.props
     const inputElement = this.inputRef.current
-    if (inputElement && !!onChange && onChange instanceof Function) inputElement.onChange = onChange
+    if (inputElement) {
+      if (!!onChange && onChange instanceof Function) inputElement.onChange = onChange
+      if (!!validation && validation instanceof Function) inputElement.validation = validation
+    }
+
   }
 
   componentDidUpdate = () => {
-    const { validation } = this.props
+    const { onChange, validation } = this.props
     const inputElement = this.inputRef.current
-    if (inputElement) { 
-      inputElement.validation = validation 
+    if (inputElement) {
+      if (onChange) inputElement.onChange = onChange
+      if (validation) inputElement.validation = validation
     }
   }
 
