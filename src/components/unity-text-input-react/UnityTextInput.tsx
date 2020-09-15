@@ -23,8 +23,11 @@ export interface TextInputPropsI {
   borderEffects?: boolean
   charCount?: boolean
   disabled?: boolean
+  dirty?: boolean
   hideBorder?: boolean
   password?: boolean
+  readOnly?: boolean
+  required?: boolean
   rounded?: boolean
   showIcon?: boolean
   time?: boolean
@@ -78,9 +81,12 @@ export default class UnityTextInput extends Component<TextInputPropsI> {
       autofocus,
       borderEffects,
       charCount,
+      dirty,
       disabled,
       hideBorder,
       password,
+      readOnly,
+      required,
       rounded,
       showIcon,
       time,
@@ -96,9 +102,12 @@ export default class UnityTextInput extends Component<TextInputPropsI> {
     if (autofocus) inputProps.autofocus = true
     if (borderEffects) inputProps.borderEffects = true
     if (charCount) inputProps.charCount = true
+    if (dirty) inputProps.dirty = true
     if (disabled) inputProps.disabled = true
     if (hideBorder) inputProps.hideBorder = true
     if (password) inputProps.password = true
+    if (readOnly) inputProps.readOnly = true
+    if (required) inputProps.required = true
     if (rounded) inputProps.rounded = true
     if (showIcon) inputProps.showIcon = true
     if (time) inputProps.time = true
