@@ -25,6 +25,15 @@ export * from "@bit/smartworks.unity-react.<component-path>" //Export named expo
 
 ## Changelog:
 
+### v1.3.1
+Updates to support unity-core v1.7.10:
+- unity-button-react v1.1.3
+- unity-dropdown-react v1.0.3
+- unity-notification-react v1.0.2
+- unity-tag-react v1.0.4
+- unity-text-input-react v1.0.0
+
+
 ### v1.3.0
 - add unity-search-bar-react v1.0.0
 

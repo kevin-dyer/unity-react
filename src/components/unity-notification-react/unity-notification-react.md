@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v1.0.2
+- Added `--notification-button-padding` to styles type
+
 ### v1.0.1
 - Update unity-core v1.2.10
 

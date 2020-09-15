@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v1.0.4
+- Added `--tag-hover-text-color` to styles type
+
 ### v1.0.3
 - Added custom styles to interface
 

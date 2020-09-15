@@ -1,10 +1,61 @@
-import React, { Component } from 'react'
+import React, { Component, CSSProperties } from 'react'
 import '@bit/smartworks.unity.unity-core/unity-text-input'
-import { TextInputProps } from '@bit/smartworks.unity.unity-core/unity-text-input'
 
-export default class UnityTextInput extends Component<TextInputProps> {
+export interface TextInputPropsI {
+  [key: string]: any
 
-  private inputRef = React.createRef<TextInputProps>()
+  error?: string
+  hint?: string
+  innerLeftIcon?: string
+  innerRightIcon?: string
+  label?: string
+  maxlength?: number
+  maxLines?: number
+  minLines?: number
+  placeholder?: string
+  remark?: string
+  style?: TextInputStyles
+  units?: string
+  value?: string
+
+  area?: boolean
+  autofocus?: boolean
+  borderEffects?: boolean
+  charCount?: boolean
+  disabled?: boolean
+  hideBorder?: boolean
+  password?: boolean
+  rounded?: boolean
+  showIcon?: boolean
+  time?: boolean
+
+  onChange?: Function
+  validation?: Function
+}
+
+export type TextInputStyles = CSSProperties & {
+  '--input-font'?: string
+  '--input-label-color'?: string
+  '--input-text-color'?: string
+  '--input-text-size'?: string
+  '--input-small-text-size'?: string
+  '--input-dirty-color'?: string
+  '--input-border-color'?: string
+  '--input-border-hover-color'?: string
+  '--input-border-focus-color'?: string
+  '--input-border-readOnly-color'?: string
+  '--input-border-error-color'?: string
+  '--input-background-error-color'?: string
+  '--input-border-disabled-color'?: string
+  '--input-background-disabled-color'?: string
+  '--input-icon-hint-color'?: string
+  '--input-icon-valid-color'?: string
+  '--input-icon-error-color'?: string
+  '--inner-icon-size'?: string
+}
+export default class UnityTextInput extends Component<TextInputPropsI> {
+
+  private inputRef = React.createRef<TextInputPropsI>()
 
   componentDidMount = () => {
     const { onChange } = this.props
@@ -21,14 +72,38 @@ export default class UnityTextInput extends Component<TextInputProps> {
   }
 
   render() {
-    const {style, value, ...otherProps} = this.props
-    const inputProps : TextInputProps = {value}
-    for(const prop of Object.keys(otherProps)) {
-      if(otherProps[prop]) inputProps[prop] = otherProps[prop]
-    }
+    const {
+      // boolean props
+      area,
+      autofocus,
+      borderEffects,
+      charCount,
+      disabled,
+      hideBorder,
+      password,
+      rounded,
+      showIcon,
+      time,
+      // function/object props
+      onChange,
+      validation,
+      // string/number props
+      ...otherProps } = this.props
+
+    const inputProps : TextInputPropsI = { otherProps }
+
+    if (area) inputProps.area = true
+    if (autofocus) inputProps.autofocus = true
+    if (borderEffects) inputProps.borderEffects = true
+    if (charCount) inputProps.charCount = true
+    if (disabled) inputProps.disabled = true
+    if (hideBorder) inputProps.hideBorder = true
+    if (password) inputProps.password = true
+    if (rounded) inputProps.rounded = true
+    if (showIcon) inputProps.showIcon = true
+    if (time) inputProps.time = true
 
     return <unity-text-input
-      style={style}
       ref={this.inputRef}
       {...inputProps}
     >
