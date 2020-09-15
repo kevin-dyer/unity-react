@@ -2,7 +2,10 @@
 
 ## Changelog:
 
-### v1.0.0
+### v1.0.1
+- Fix bug where properties were not being properly passed to wrapped component
+
+### v1.0.0 - NOT WORKING
 - Update to v1 to make use of semantic versioning
 - Added types exports
 - Properly establish what should be pass into the wrapped component as attributes (strings and booleans when true)

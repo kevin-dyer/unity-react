@@ -90,7 +90,7 @@ export default class UnityTextInput extends Component<TextInputPropsI> {
       // string/number props
       ...otherProps } = this.props
 
-    const inputProps : TextInputPropsI = { otherProps }
+    const inputProps : TextInputPropsI = {...otherProps}
 
     if (area) inputProps.area = true
     if (autofocus) inputProps.autofocus = true
