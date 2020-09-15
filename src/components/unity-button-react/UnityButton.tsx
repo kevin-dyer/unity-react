@@ -65,7 +65,7 @@ export default class UnityButton extends Component<buttonPropsType> {
   }
 
   render() {
-    const {onClick, styles, ...otherProps} = this.props
+    const {onClick, ...otherProps} = this.props
     const buttonProps : buttonPropsType = {
       onClick: !otherProps.disabled ? onClick : ()=>{},
     }
