@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v1.1.1
+- added CSS Variables for z-index and background-color to CSS types
+
 ### v1.1.0
 - Updated to unity-core 1.4.13
 - Added generic HTML attributes
