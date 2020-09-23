@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v1.0.1
+- added css var --pane-z-index to style type
+
 ### v1.0.0
 - Fix header slot div not filling the whole width
 - Updated types and CSS vars
