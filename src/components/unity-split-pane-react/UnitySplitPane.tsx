@@ -102,4 +102,5 @@ export type splitPaneStyleTypes = React.CSSProperties & {
   '--bar-width'?: string
   '--header-border'?: string
   '--collapse-button-padding'?: string
+  '--pane-z-index'?: string
 }
