@@ -51,8 +51,8 @@ export default class UnitySearchBar extends Component<searchPropsType> {
   }
 
   render() {
-    const { search, debounceTime } = this.props
-    const searchProps : searchPropsType = {search, debounceTime}
+    const { search, debounceTime, style } = this.props
+    const searchProps : searchPropsType = {search, debounceTime, style}
 
     return (
       <unity-search-bar
