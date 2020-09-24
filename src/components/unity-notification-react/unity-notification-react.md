@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v1.0.3
+- Added `--notification-z-index` to styles type
+
 ### v1.0.2
 - Added `--notification-button-padding` to styles type
 

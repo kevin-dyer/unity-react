@@ -5,6 +5,9 @@
 
 ## Changelog:
 
+### v1.1.1
+- Added notificationZIndex prop
+
 ### v1.1.0
 - Changed naming conventions for consistency
 
