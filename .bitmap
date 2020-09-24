@@ -93,7 +93,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-core-react@1.3.5": {
+    "smartworks.unity-react/unity-core-react@1.3.6": {
         "files": [
             {
                 "name": "index.js",
@@ -451,7 +451,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-search-bar-react@1.0.0": {
+    "smartworks.unity-react/unity-search-bar-react@1.0.1": {
         "files": [
             {
                 "relativePath": "src/components/unity-search-bar-react/UnitySearchBar.tsx",
