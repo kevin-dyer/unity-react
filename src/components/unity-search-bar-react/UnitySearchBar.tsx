@@ -24,6 +24,7 @@ export type searchStyles = CSSProperties & {
   '--input-border-color'?: string
   '--input-border-hover-color'?: string
   '--input-border-focus-color'?: string
+  '--input-border-radius'?: string
   '--search-bar-height'?: string
 }
 
