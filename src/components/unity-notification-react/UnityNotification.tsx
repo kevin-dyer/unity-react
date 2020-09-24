@@ -49,4 +49,5 @@ export interface NotificationStylesI extends React.CSSProperties {
   '--notification-height'?: string
   '--notification-width'?: string
   '--notification-button-padding'?: string
+  '--notification-z-index'?: string | number
 }
