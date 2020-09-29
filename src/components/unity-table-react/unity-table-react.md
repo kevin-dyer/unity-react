@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v1.0.1
+- added prop rightActionsContent to insert react content into the right-actions table slot.
+
 ### v1.0.0
 - Added generic HTML attributes
 - Added `slotIdExtractor`, `onExpandedChange`, `headless`, `startExpanded` and `columnFilter` props
