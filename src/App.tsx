@@ -562,6 +562,7 @@ class App extends React.Component {
                     <UnitySearchBar
                       tagSeed={tagSeed}
                       onChange={(v: any) => console.log('search updated', v)}
+                      style={{"--input-border-radius": "30px"}}
                     ></UnitySearchBar>
                   </div>
                 </UnitySection>

@@ -6,7 +6,9 @@ import { buttonPropsType } from "@bit/smartworks.unity-react.unity-button-react"
     columns?: Object[],
     selectedColumns?: Object[],
     onUpdate?: Function,
-    buttonProps?: buttonPropsType
+    buttonProps?: buttonPropsType,
+    modalOnly?: boolean,
+    show?: boolean,
     style?: ColumnEditorStyles
   }
 
@@ -65,10 +67,27 @@ export default class UnityColumnEditor extends Component<ColumnEditorProps> {
   }
 
   render() {
-    const { columns, selectedColumns, onUpdate, buttonProps, ...otherProps } = this.props
+    const {
+      columns,
+      selectedColumns,
+      onUpdate,
+      buttonProps,
+      modalOnly,
+      show,
+      ...otherProps
+    } = this.props
+    let boolProps : ColumnEditorProps = {}
+
+    if (modalOnly) {
+      boolProps.modalOnly = true
+    }
+    if (show) {
+      boolProps.show = true
+    }
     return (
       <unity-column-editor
         ref={this.colEditorRef}
+        {...boolProps}
         {...otherProps}
       ></unity-column-editor>
     )
