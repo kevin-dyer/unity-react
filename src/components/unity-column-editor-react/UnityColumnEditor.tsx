@@ -9,6 +9,7 @@ import { buttonPropsType } from "@bit/smartworks.unity-react.unity-button-react"
     buttonProps?: buttonPropsType,
     modalOnly?: boolean,
     show?: boolean,
+    onClose?: Function,
     style?: ColumnEditorStyles
   }
 
@@ -37,14 +38,16 @@ export default class UnityColumnEditor extends Component<ColumnEditorProps> {
       columns,
       selectedColumns,
       onUpdate,
-      buttonProps
+      buttonProps,
+      onClose
     } : ColumnEditorProps = this.props
 
     const {
       columns: oldColumns,
       selectedColumns: oldSelectedColumns,
       onUpdate: oldOnUpdate,
-      buttonProps: oldButtonProps
+      buttonProps: oldButtonProps,
+      onClose: oldOnClose,
     } : ColumnEditorProps = oldProps
 
     const colEditor = this.colEditorRef.current
@@ -62,6 +65,10 @@ export default class UnityColumnEditor extends Component<ColumnEditorProps> {
 
       if (oldButtonProps !== buttonProps) {
         colEditor.buttonProps = buttonProps
+      }
+
+      if (oldOnClose !== onClose) {
+        colEditor.onClose = onClose
       }
     }
   }

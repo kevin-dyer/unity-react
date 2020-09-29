@@ -289,7 +289,8 @@ class App extends React.Component {
     dropdownDisabled: false,
     yamlValue: fakeYaml,
     yamlError: '',
-    showPopover: false
+    showPopover: false,
+    showColumnEditor: false
   }
 
   popoverButtonRef = React.createRef<HTMLDivElement>()
@@ -317,6 +318,12 @@ class App extends React.Component {
     })
   }
 
+  toggleColumnEditor = (show : any) => {
+    this.setState({
+      showColumnEditor: typeof show === 'boolean' ? show : !this.state.showColumnEditor
+    })
+  }
+
   renderPopover = () => (
     <div style={{ paddingTop: 10 }}>
       <UnityTypography size='header1'>{'Popover!'}</UnityTypography>
@@ -333,7 +340,8 @@ class App extends React.Component {
       showNotificationModal,
       dropdownOptions,
       dropdownDisabled,
-      showPopover
+      showPopover,
+      showColumnEditor
     } = this.state
     console.log("App -> render -> showPopover", showPopover)
 
@@ -785,26 +793,33 @@ class App extends React.Component {
                             />
                           </UnityTableExport>
                         }
-                        <UnityColumnEditor
-                          columns={columns}
-                          buttonProps={{
-                            label: 'Adjust Columns',
-                            leftIcon: 'icons:view-column',
-                            type: 'borderless'
-                          }}
-                        />
                       </UnitySection>
                     </UnitySection>
-                  <UnityTable
-                    ref={this.tableRef}
-                    data={data}
-                    columns={columns}
-                    childKeys={childKeys}
-                    selected={selection}
-                    keyExtractor={(node: any) => node.id}
-                    selectable
-                    onSelectionChange={(selection: []) => console.log(`new selection:`, selection)}
-                  />
+                    <UnitySection>
+                      <div style={{position: 'relative'}}>
+                      <UnityTable
+                        ref={this.tableRef}
+                        data={data}
+                        columns={columns}
+                        childKeys={childKeys}
+                        selected={selection}
+                        keyExtractor={(node: any) => node.id}
+                        selectable
+                        onSelectionChange={(selection: []) => console.log(`new selection:`, selection)}
+                        rightActionsContent={<UnityButton
+                          centerIcon="icons:settings"
+                          type="borderless"
+                          onClick={this.toggleColumnEditor}
+                        />}
+                      />
+                      <UnityColumnEditor
+                          columns={columns}
+                          modalOnly={true}
+                          show={showColumnEditor}
+                          onClose={() => this.toggleColumnEditor(false)}
+                        />
+                      </div>
+                    </UnitySection>
                 </div>
               </UnitySection>
             </div>
