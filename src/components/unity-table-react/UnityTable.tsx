@@ -1,4 +1,4 @@
-import React, { Component, CSSProperties, HTMLAttributes } from 'react'
+import React, { Component, CSSProperties, HTMLAttributes, ReactElement } from 'react'
 import '@bit/smartworks.unity.unity-core/unity-table'
 
 export interface TablePropsI extends HTMLAttributes<HTMLElement> {
@@ -25,7 +25,8 @@ export interface TablePropsI extends HTMLAttributes<HTMLElement> {
   compact?: boolean
   headless?: boolean
   startExpanded?: boolean
-  columnFilter?: Object[]
+  columnFilter?: Object[],
+  rightActionsContent?: ReactElement | HTMLElement,
   style?: TableStyles
 }
 
@@ -223,6 +224,14 @@ export default class UnityTable extends Component<TablePropsI> {
     return slots
   }
 
+  renderRightActionsContent = () => {
+    const {rightActionsContent} = this.props
+
+    if (!!rightActionsContent) {
+      return <div slot="right-actions">{rightActionsContent}</div>
+    }
+  }
+
 
 headless?: boolean
 startExpanded?: boolean 
@@ -267,6 +276,7 @@ startExpanded?: boolean
         {...booleanProps}
       >
         {this.renderCustomContent()}
+        {this.renderRightActionsContent()}
         {children}
       </unity-table>
     )
