@@ -3,6 +3,9 @@
 ## Changelog:
 
 ### v1.0.1
+- added `modalOnly` and `show` props to ColumnEditorProps interface
+
+### v1.0.1
 - Fixed peer dependencies
 
 ### v1.0.0
