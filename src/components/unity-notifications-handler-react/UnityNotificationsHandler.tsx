@@ -13,7 +13,6 @@ export interface NotificationsHandlerPropsI extends React.HTMLAttributes<HTMLEle
   customTypes?: object,
   allowDuplicates?: boolean,
   noAnimation?: boolean,
-  notificationZIndex?: string | number,
   onClose?: () => boolean | Promise<boolean>,
   // component?: React.ComponentType | React.ElementType
   style?: CSSProperties & NotificationStylesI,
@@ -65,8 +64,6 @@ export default class UnityNotificationsHandler extends Component<NotificationsHa
       onClose,
       target,
       position,
-      notificationZIndex,
-      style={}
     } = props
     if (!!unityNotificationsHandler) {
       if (!!icons) unityNotificationsHandler.icons = icons
@@ -77,8 +74,6 @@ export default class UnityNotificationsHandler extends Component<NotificationsHa
       if (!!onClose) unityNotificationsHandler.onClose = onClose
       if (!!target) unityNotificationsHandler.target = target
       if (!!position) unityNotificationsHandler.position = position
-      unityNotificationsHandler.style = { ...style }
-      if (!!notificationZIndex) unityNotificationsHandler.style['--notification-z-index'] = notificationZIndex
     }
   }
 
@@ -128,7 +123,6 @@ export function withNotifications(handlerProps: NotificationsHandlerPropsI) {
         customTypes,
         allowDuplicates,
         noAnimation,
-        notificationZIndex,
         onClose,
         style={}
       } = handlerProps || {}
@@ -146,9 +140,6 @@ export function withNotifications(handlerProps: NotificationsHandlerPropsI) {
         if (!!noAnimation) notificationsHandler.noAnimation = noAnimation
         if (!!onClose) notificationsHandler.onClose = onClose
       }
-
-      const notificationsHandlerStyles: NotificationStylesI = { ...style }
-      if (!!notificationZIndex) notificationsHandlerStyles['--notification-z-index'] = notificationZIndex
 
       return (
         <unity-notifications-handler
