@@ -42,9 +42,9 @@ export type TableStyles = CSSProperties & {
   '--thead-compact-height'?: string 
   '--trow-height'?: string 
   '--trow-compact-height'?: string 
-  '--default-hover-color'?: string 
-  '--default-highlight-color'?: string 
-  '--default-hover-highlight-color'?: string 
+  '--hover-color'?: string 
+  '--highlight-color'?: string 
+  '--hover-highlight-color'?: string 
   '--paper-checkbox-ink-size'?: string 
   '--paper-icon-button-ink-color'?: string 
   '--padding-small'?: string 
@@ -246,7 +246,8 @@ startExpanded?: boolean
       endReachedThreshold=200,
       compact,
       headless,
-      startExpanded
+      startExpanded,
+      style
     } = this.props
     let booleanProps : TablePropsI = {}
 
@@ -273,6 +274,7 @@ startExpanded?: boolean
         emptyDisplay={emptyText}
         highlightedRow={highlightedRow}
         endReachedThreshold={endReachedThreshold}
+        style={style}
         {...booleanProps}
       >
         {this.renderCustomContent()}
