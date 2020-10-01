@@ -2,6 +2,10 @@
 
 ## Changelog:
 
+### v1.0.2
+- Pass style prop into web component. Generic HTML attributes are not being passed and must be fixed.
+- Updated style types.
+
 ### v1.0.1
 - added prop rightActionsContent to insert react content into the right-actions table slot.
 
