@@ -63,7 +63,7 @@ export default class UnityNotificationsHandler extends Component<NotificationsHa
       noAnimation,
       onClose,
       target,
-      position
+      position,
     } = props
     if (!!unityNotificationsHandler) {
       if (!!icons) unityNotificationsHandler.icons = icons
@@ -124,13 +124,14 @@ export function withNotifications(handlerProps: NotificationsHandlerPropsI) {
         allowDuplicates,
         noAnimation,
         onClose,
-        style
+        style={}
       } = handlerProps || {}
       const _uniqueName: string = target || uuid()
       const _notificationsHandlerRef: React.RefObject<NotificationsHandlerPropsI> = React.createRef()
       const {
         current: notificationsHandler=null
       } = _notificationsHandlerRef || {}
+
       if (!!notificationsHandler) {
         if (!!icons) notificationsHandler.icons = icons
         if (!!colors) notificationsHandler.colors = colors

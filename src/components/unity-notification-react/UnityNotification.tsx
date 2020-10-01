@@ -43,10 +43,10 @@ export interface NotificationPropsI extends React.HTMLAttributes<HTMLElement> {
   style?: NotificationStylesI
 }
 
-
 export interface NotificationStylesI extends React.CSSProperties {
   '--notification-color'?: string
   '--notification-height'?: string
   '--notification-width'?: string
   '--notification-button-padding'?: string
+  '--notification-z-index'?: string | number
 }

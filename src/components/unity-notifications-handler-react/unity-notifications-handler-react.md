@@ -5,6 +5,13 @@
 
 ## Changelog:
 
+### v1.1.2
+- Remove notificationZIndex prop
+- Pass style prop to web component only as attribute
+
+### v1.1.1
+- Added notificationZIndex prop
+
 ### v1.1.0
 - Changed naming conventions for consistency
 

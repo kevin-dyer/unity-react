@@ -1168,37 +1168,37 @@
     react "^16.12.0"
     react-ace "^8.0.0"
 
-"@bit/smartworks.unity-react.unity-column-editor-react@1.0.1", "@bit/smartworks.unity-react.unity-column-editor-react@^1.0.1":
-  version "1.0.1"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-column-editor-react/-/smartworks.unity-react.unity-column-editor-react-1.0.1.tgz#02213538075fbcf1b00438682056cb62b2b355ea"
-  integrity sha1-AiE1OAdfvPGwBDhoIFbLYrKzVeo=
+"@bit/smartworks.unity-react.unity-column-editor-react@1.0.3", "@bit/smartworks.unity-react.unity-column-editor-react@^1.0.3":
+  version "1.0.3"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-column-editor-react/-/smartworks.unity-react.unity-column-editor-react-1.0.3.tgz#6db9b105efcd207f7b44fdc7ebe7b67a574f5398"
+  integrity sha1-bbmxBe/NIH97RP3H6+e2eldPU5g=
   dependencies:
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-core-react@^1.3.3":
-  version "1.3.3"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-core-react/-/smartworks.unity-react.unity-core-react-1.3.3.tgz#f4cc5009b3c684f88057e802a75b556f824d8e53"
-  integrity sha1-9MxQCbPGhPiAV+gCp1tVb4JNjlM=
+"@bit/smartworks.unity-react.unity-core-react@^1.3.12":
+  version "1.3.12"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-core-react/-/smartworks.unity-react.unity-core-react-1.3.12.tgz#de1878a3c1205df6287fbd4d2def282d9be583ae"
+  integrity sha1-3hh4o8EgXfYof71NLe8oLZvlg64=
   dependencies:
     "@bit/smartworks.unity-react.unity-button-react" "1.1.3"
     "@bit/smartworks.unity-react.unity-code-editor-react" "1.0.0"
-    "@bit/smartworks.unity-react.unity-column-editor-react" "1.0.1"
+    "@bit/smartworks.unity-react.unity-column-editor-react" "1.0.3"
     "@bit/smartworks.unity-react.unity-dropdown-react" "1.0.3"
     "@bit/smartworks.unity-react.unity-dropzone-react" "0.2.2"
     "@bit/smartworks.unity-react.unity-global-nav-react" "1.0.0"
     "@bit/smartworks.unity-react.unity-json-viewer-react" "1.0.0"
     "@bit/smartworks.unity-react.unity-modal-react" "1.0.0"
-    "@bit/smartworks.unity-react.unity-notification-react" "1.0.2"
-    "@bit/smartworks.unity-react.unity-notifications-handler-react" "1.1.0"
-    "@bit/smartworks.unity-react.unity-page-header-react" "1.1.0"
+    "@bit/smartworks.unity-react.unity-notification-react" "1.0.3"
+    "@bit/smartworks.unity-react.unity-notifications-handler-react" "1.1.2"
+    "@bit/smartworks.unity-react.unity-page-header-react" "1.1.1"
     "@bit/smartworks.unity-react.unity-popover-react" "1.0.3"
     "@bit/smartworks.unity-react.unity-progress-react" "0.2.2"
-    "@bit/smartworks.unity-react.unity-search-bar-react" "1.0.0"
+    "@bit/smartworks.unity-react.unity-search-bar-react" "1.0.2"
     "@bit/smartworks.unity-react.unity-section-react" "0.3.4"
-    "@bit/smartworks.unity-react.unity-split-pane-react" "1.0.0"
+    "@bit/smartworks.unity-react.unity-split-pane-react" "1.0.1"
     "@bit/smartworks.unity-react.unity-table-export-react" "0.2.2"
-    "@bit/smartworks.unity-react.unity-table-react" "1.0.0"
+    "@bit/smartworks.unity-react.unity-table-react" "1.0.2"
     "@bit/smartworks.unity-react.unity-tag-react" "1.0.4"
     "@bit/smartworks.unity-react.unity-text-input-react" "1.0.2"
     "@bit/smartworks.unity-react.unity-toggle-switch-react" "0.2.2"
@@ -1244,28 +1244,28 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-notification-react@1.0.2", "@bit/smartworks.unity-react.unity-notification-react@^1.0.2":
-  version "1.0.2"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-notification-react/-/smartworks.unity-react.unity-notification-react-1.0.2.tgz#8629316c9fd793185623a9e5f8367879aa031ede"
-  integrity sha1-hikxbJ/XkxhWI6nl+DZ4eaoDHt4=
+"@bit/smartworks.unity-react.unity-notification-react@1.0.3", "@bit/smartworks.unity-react.unity-notification-react@^1.0.3":
+  version "1.0.3"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-notification-react/-/smartworks.unity-react.unity-notification-react-1.0.3.tgz#9e47b302ef51bc778ff9e6f42d4bd863b4ad2ecc"
+  integrity sha1-nkezAu9RvHeP+eb0LUvYY7StLsw=
   dependencies:
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-notifications-handler-react@1.1.0", "@bit/smartworks.unity-react.unity-notifications-handler-react@^1.1.0":
-  version "1.1.0"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-notifications-handler-react/-/smartworks.unity-react.unity-notifications-handler-react-1.1.0.tgz#1f5633a7bd33bbeffeb8f09f68b23bba3606c75b"
-  integrity sha1-H1Yzp70zu+/+uPCfaLI7ujYGx1s=
+"@bit/smartworks.unity-react.unity-notifications-handler-react@1.1.2", "@bit/smartworks.unity-react.unity-notifications-handler-react@^1.1.2":
+  version "1.1.2"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-notifications-handler-react/-/smartworks.unity-react.unity-notifications-handler-react-1.1.2.tgz#7b634075197a2215bf3dacdb1ac15beeb5f18c78"
+  integrity sha1-e2NAdRl6IhW/PazbGsFb7rXxjHg=
   dependencies:
     "@types/react" "16.9.11"
     "@types/uuid" "^8.0.0"
     react "^16.12.0"
     uuid "3.4.0"
 
-"@bit/smartworks.unity-react.unity-page-header-react@1.1.0", "@bit/smartworks.unity-react.unity-page-header-react@^1.1.0":
-  version "1.1.0"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-page-header-react/-/smartworks.unity-react.unity-page-header-react-1.1.0.tgz#b19bf5ea20b106c54782071441d93777bfef74d4"
-  integrity sha1-sZv16iCxBsVHggcUQdk3d7/vdNQ=
+"@bit/smartworks.unity-react.unity-page-header-react@1.1.1", "@bit/smartworks.unity-react.unity-page-header-react@^1.1.1":
+  version "1.1.1"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-page-header-react/-/smartworks.unity-react.unity-page-header-react-1.1.1.tgz#37eaf320dfe79ecd39b5c838f90ee501023eac39"
+  integrity sha1-N+rzIN/nns05tcg4+Q7lAQI+rDk=
   dependencies:
     "@types/react" "16.9.11"
     react "^16.12.0"
@@ -1286,10 +1286,10 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-search-bar-react@1.0.0", "@bit/smartworks.unity-react.unity-search-bar-react@^1.0.0":
-  version "1.0.0"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-search-bar-react/-/smartworks.unity-react.unity-search-bar-react-1.0.0.tgz#480f11caae02d4e838e45f8fb623b84092559b00"
-  integrity sha1-SA8Ryq4C1Og45F+PtiO4QJJVmwA=
+"@bit/smartworks.unity-react.unity-search-bar-react@1.0.2", "@bit/smartworks.unity-react.unity-search-bar-react@^1.0.2":
+  version "1.0.2"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-search-bar-react/-/smartworks.unity-react.unity-search-bar-react-1.0.2.tgz#821206750dd93edb2657d1dd03f94ed7dac9b5b9"
+  integrity sha1-ghIGdQ3ZPtsmV9HdA/lO19rJtbk=
   dependencies:
     "@types/react" "16.9.11"
     react "^16.12.0"
@@ -1302,10 +1302,10 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-split-pane-react@1.0.0", "@bit/smartworks.unity-react.unity-split-pane-react@^1.0.0":
-  version "1.0.0"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-split-pane-react/-/smartworks.unity-react.unity-split-pane-react-1.0.0.tgz#1e4b238509f0169fa8d26776f0d373577655181a"
-  integrity sha1-HksjhQnwFp+o0md28NNzV3ZVGBo=
+"@bit/smartworks.unity-react.unity-split-pane-react@1.0.1", "@bit/smartworks.unity-react.unity-split-pane-react@^1.0.1":
+  version "1.0.1"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-split-pane-react/-/smartworks.unity-react.unity-split-pane-react-1.0.1.tgz#5f1d18f20b82036ebbd7bd4f8ad2f984a707c5de"
+  integrity sha1-Xx0Y8guCA267171PitL5hKcHxd4=
   dependencies:
     "@types/react" "16.9.11"
     react "^16.12.0"
@@ -1318,10 +1318,10 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-table-react@1.0.0", "@bit/smartworks.unity-react.unity-table-react@^1.0.0":
-  version "1.0.0"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-table-react/-/smartworks.unity-react.unity-table-react-1.0.0.tgz#fbd5c89cc306610df9ca82212042fd051558c2da"
-  integrity sha1-+9XInMMGYQ35yoIhIEL9BRVYwto=
+"@bit/smartworks.unity-react.unity-table-react@1.0.2", "@bit/smartworks.unity-react.unity-table-react@^1.0.2":
+  version "1.0.2"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-table-react/-/smartworks.unity-react.unity-table-react-1.0.2.tgz#9cfa3c7b1df8febcb662da4287e1754db6454ef7"
+  integrity sha1-nPo8ex34/ry2YtpCh+F1TbZFTvc=
   dependencies:
     "@types/react" "16.9.11"
     react "^16.12.0"
@@ -1376,10 +1376,10 @@
     "@polymer/paper-spinner" "^3.0.2"
     lit-element "^2.0.1"
 
-"@bit/smartworks.unity.unity-column-editor@1.1.4":
-  version "1.1.4"
-  resolved "https://node.bit.dev/smartworks.unity.unity-column-editor/-/smartworks.unity.unity-column-editor-1.1.4.tgz#ef185a1c79c7ba0f23ee8f5280b7545ff42fed7d"
-  integrity sha1-7xhaHHnHug8j7o9SgLdUX/Qv7X0=
+"@bit/smartworks.unity.unity-column-editor@1.1.7":
+  version "1.1.7"
+  resolved "https://node.bit.dev/smartworks.unity.unity-column-editor/-/smartworks.unity.unity-column-editor-1.1.7.tgz#c92cc817b7c9842f43f141ffa4adf9baafa525aa"
+  integrity sha1-ySzIF7fJhC9D8UH/pK35uq+lJao=
   dependencies:
     "@polymer/iron-icons" "^3.0.1"
     "@polymer/paper-checkbox" "^3.1.0"
@@ -1387,14 +1387,14 @@
     lit-element "^2.0.1"
     sortablejs "^1.10.2"
 
-"@bit/smartworks.unity.unity-core@^1.7.10":
-  version "1.7.10"
-  resolved "https://node.bit.dev/smartworks.unity.unity-core/-/smartworks.unity.unity-core-1.7.10.tgz#d21e420a17fcec28e0a8142e45df551876973036"
-  integrity sha1-0h5CChf87CjgqBQuRd9VGHaXMDY=
+"@bit/smartworks.unity.unity-core@^1.7.23":
+  version "1.7.28"
+  resolved "https://node.bit.dev/smartworks.unity.unity-core/-/smartworks.unity.unity-core-1.7.28.tgz#8101d21aa885d25491ae8e88718b0bf4e1d5a3ff"
+  integrity sha1-gQHSGqiF0lSRro6IcYsL9OHVo/8=
   dependencies:
     "@bit/smartworks.unity.table-cell-base" "1.0.0"
     "@bit/smartworks.unity.unity-button" "1.1.7"
-    "@bit/smartworks.unity.unity-column-editor" "1.1.4"
+    "@bit/smartworks.unity.unity-column-editor" "1.1.7"
     "@bit/smartworks.unity.unity-default-theme-styles" "1.3.1"
     "@bit/smartworks.unity.unity-dropdown" "1.3.0"
     "@bit/smartworks.unity.unity-dropzone" "1.0.3"
@@ -1404,17 +1404,17 @@
     "@bit/smartworks.unity.unity-icon" "1.1.3"
     "@bit/smartworks.unity.unity-icon-set" "1.0.0"
     "@bit/smartworks.unity.unity-modal" "1.0.6"
-    "@bit/smartworks.unity.unity-notification" "1.1.0"
-    "@bit/smartworks.unity.unity-notifications-handler" "1.2.3"
-    "@bit/smartworks.unity.unity-page-header" "1.2.0"
+    "@bit/smartworks.unity.unity-notification" "1.1.3"
+    "@bit/smartworks.unity.unity-notifications-handler" "1.2.8"
+    "@bit/smartworks.unity.unity-page-header" "1.2.3"
     "@bit/smartworks.unity.unity-popover" "1.0.4"
     "@bit/smartworks.unity.unity-progress" "1.0.2"
-    "@bit/smartworks.unity.unity-search-bar" "1.0.2"
+    "@bit/smartworks.unity.unity-search-bar" "1.0.3"
     "@bit/smartworks.unity.unity-section" "1.0.3"
     "@bit/smartworks.unity.unity-select-menu" "1.3.1"
-    "@bit/smartworks.unity.unity-split-pane" "1.1.4"
-    "@bit/smartworks.unity.unity-table" "1.0.13"
-    "@bit/smartworks.unity.unity-table-cell" "1.0.6"
+    "@bit/smartworks.unity.unity-split-pane" "1.1.5"
+    "@bit/smartworks.unity.unity-table" "1.0.16"
+    "@bit/smartworks.unity.unity-table-cell" "1.0.7"
     "@bit/smartworks.unity.unity-table-export" "1.0.6"
     "@bit/smartworks.unity.unity-tag" "1.1.3"
     "@bit/smartworks.unity.unity-text-input" "1.2.0"
@@ -1493,26 +1493,25 @@
   dependencies:
     lit-element "^2.0.1"
 
-"@bit/smartworks.unity.unity-notification@1.1.0":
-  version "1.1.0"
-  resolved "https://node.bit.dev/smartworks.unity.unity-notification/-/smartworks.unity.unity-notification-1.1.0.tgz#85dbf1eeab06fa7a6458cc5a4348853ad3d025c4"
-  integrity sha1-hdvx7qsG+npkWMxaQ0iFOtPQJcQ=
+"@bit/smartworks.unity.unity-notification@1.1.3":
+  version "1.1.3"
+  resolved "https://node.bit.dev/smartworks.unity.unity-notification/-/smartworks.unity.unity-notification-1.1.3.tgz#b058953a51f0ee117ba47075ac3a0c8d2a8586ae"
+  integrity sha1-sFiVOlHw7hF7pHB1rDoMjSqFhq4=
   dependencies:
     lit-element "^2.0.1"
 
-"@bit/smartworks.unity.unity-notifications-handler@1.2.3":
+"@bit/smartworks.unity.unity-notifications-handler@1.2.8":
+  version "1.2.8"
+  resolved "https://node.bit.dev/smartworks.unity.unity-notifications-handler/-/smartworks.unity.unity-notifications-handler-1.2.8.tgz#eb9de80e120bd43533aff2004e6c57b29f34ca9e"
+  integrity sha1-653oDhIL1DUzr/IATmxXsp80yp4=
+  dependencies:
+    lit-element "^2.0.1"
+
+"@bit/smartworks.unity.unity-page-header@1.2.3":
   version "1.2.3"
-  resolved "https://node.bit.dev/smartworks.unity.unity-notifications-handler/-/smartworks.unity.unity-notifications-handler-1.2.3.tgz#bcdce2d17bbb61cbf3bfbbe79f5888212991aab5"
-  integrity sha1-vNzi0Xu7Ycvzv7vnn1iIISmRqrU=
+  resolved "https://node.bit.dev/smartworks.unity.unity-page-header/-/smartworks.unity.unity-page-header-1.2.3.tgz#e6794177666d4137fdbc079f9613487cd7a352f2"
+  integrity sha1-5nlBd2ZtQTf9vAeflhNIfNejUvI=
   dependencies:
-    lit-element "^2.0.1"
-
-"@bit/smartworks.unity.unity-page-header@1.2.0":
-  version "1.2.0"
-  resolved "https://node.bit.dev/smartworks.unity.unity-page-header/-/smartworks.unity.unity-page-header-1.2.0.tgz#5d97bf081d0fbfa8c5c69f0b53ce4a6b76aca142"
-  integrity sha1-XZe/CB0Pv6jFxp8LU85Ka3asoUI=
-  dependencies:
-    "@polymer/paper-icon-button" "^3.0.2"
     "@polymer/paper-tabs" "^3.1.0"
     lit-element "^2.0.1"
 
@@ -1532,10 +1531,10 @@
     "@polymer/paper-progress" "^3.0.1"
     lit-element "^2.0.1"
 
-"@bit/smartworks.unity.unity-search-bar@1.0.2":
-  version "1.0.2"
-  resolved "https://node.bit.dev/smartworks.unity.unity-search-bar/-/smartworks.unity.unity-search-bar-1.0.2.tgz#b6a36bbff69c93553542caa02a6edd133e2479cf"
-  integrity sha1-tqNrv/ack1U1QsqgKm7dEz4kec8=
+"@bit/smartworks.unity.unity-search-bar@1.0.3":
+  version "1.0.3"
+  resolved "https://node.bit.dev/smartworks.unity.unity-search-bar/-/smartworks.unity.unity-search-bar-1.0.3.tgz#77c278ce725314bfba85c3154f66ba5d85538cd4"
+  integrity sha1-d8J4znJTFL+6hcMVT2a6XYVTjNQ=
   dependencies:
     lit-element "^2.0.1"
     throttle-debounce "^2.3.0"
@@ -1554,17 +1553,17 @@
   dependencies:
     lit-element "^2.0.1"
 
-"@bit/smartworks.unity.unity-split-pane@1.1.4":
-  version "1.1.4"
-  resolved "https://node.bit.dev/smartworks.unity.unity-split-pane/-/smartworks.unity.unity-split-pane-1.1.4.tgz#a150dc06f6609f6f78f64ade888177b21b78e8c9"
-  integrity sha1-oVDcBvZgn2949kreiIF3sht46Mk=
+"@bit/smartworks.unity.unity-split-pane@1.1.5":
+  version "1.1.5"
+  resolved "https://node.bit.dev/smartworks.unity.unity-split-pane/-/smartworks.unity.unity-split-pane-1.1.5.tgz#5c2180281bc71f937c5a483acf0c0fa43d16c8e3"
+  integrity sha1-XCGAKBvHH5N8Wkg6zwwPpD0WyOM=
   dependencies:
     lit-element "^2.0.1"
 
-"@bit/smartworks.unity.unity-table-cell@1.0.6":
-  version "1.0.6"
-  resolved "https://node.bit.dev/smartworks.unity.unity-table-cell/-/smartworks.unity.unity-table-cell-1.0.6.tgz#a73f9bb68286a077bfcbf86413def3503d55dd6c"
-  integrity sha1-pz+btoKGoHe/y/hkE97zUD1V3Ww=
+"@bit/smartworks.unity.unity-table-cell@1.0.7":
+  version "1.0.7"
+  resolved "https://node.bit.dev/smartworks.unity.unity-table-cell/-/smartworks.unity.unity-table-cell-1.0.7.tgz#4eb93c9ec6f275eb7b5f2de6c89ee793fa15e36e"
+  integrity sha1-Trk8nsbydet7Xy3myJ7nk/oV424=
   dependencies:
     "@polymer/iron-icons" "^3.0.1"
     "@polymer/paper-checkbox" "^3.1.0"
@@ -1580,10 +1579,10 @@
     "@polymer/paper-icon-button" "^3.0.2"
     lit-element "^2.0.1"
 
-"@bit/smartworks.unity.unity-table@1.0.13":
-  version "1.0.13"
-  resolved "https://node.bit.dev/smartworks.unity.unity-table/-/smartworks.unity.unity-table-1.0.13.tgz#42a54f5077ce4f440744b3f9bf744d32f7bd83b9"
-  integrity sha1-QqVPUHfOT0QHRLP5v3RNMve9g7k=
+"@bit/smartworks.unity.unity-table@1.0.16":
+  version "1.0.16"
+  resolved "https://node.bit.dev/smartworks.unity.unity-table/-/smartworks.unity.unity-table-1.0.16.tgz#61162f53b258415b07fcd7c836c05cb10c92f0e6"
+  integrity sha1-YRYvU7JYQVsH/NfINsBcsQyS8OY=
   dependencies:
     "@polymer/iron-icons" "^3.0.1"
     "@polymer/iron-scroll-threshold" "^3.0.1"
