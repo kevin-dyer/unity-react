@@ -29,6 +29,7 @@ export type pageHeaderStylesTypes = CSSProperties & {
   '--page-header-icon-size'?: string
   '--page-header-z-index'?: string
   '--page-header-background-color'?: string
+  '--separator-color'?: string
 }
 
 //React component to wrap unity-page-header web component
