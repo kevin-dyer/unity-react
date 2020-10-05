@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v1.0.2
+- hide overflow in main and pane so children will define scrolling
+
 ### v1.0.1
 - added css var --pane-z-index to style type
 
