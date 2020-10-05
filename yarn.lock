@@ -1176,10 +1176,10 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-core-react@^1.3.12":
-  version "1.3.12"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-core-react/-/smartworks.unity-react.unity-core-react-1.3.12.tgz#de1878a3c1205df6287fbd4d2def282d9be583ae"
-  integrity sha1-3hh4o8EgXfYof71NLe8oLZvlg64=
+"@bit/smartworks.unity-react.unity-core-react@^1.3.14":
+  version "1.3.14"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-core-react/-/smartworks.unity-react.unity-core-react-1.3.14.tgz#4b82e19babb7f666b9d2de8891a555d19a86d2b3"
+  integrity sha1-S4Lhm6u39ma50t6IkaVV0ZqG0rM=
   dependencies:
     "@bit/smartworks.unity-react.unity-button-react" "1.1.3"
     "@bit/smartworks.unity-react.unity-code-editor-react" "1.0.0"
@@ -1191,12 +1191,12 @@
     "@bit/smartworks.unity-react.unity-modal-react" "1.0.0"
     "@bit/smartworks.unity-react.unity-notification-react" "1.0.3"
     "@bit/smartworks.unity-react.unity-notifications-handler-react" "1.1.2"
-    "@bit/smartworks.unity-react.unity-page-header-react" "1.1.1"
+    "@bit/smartworks.unity-react.unity-page-header-react" "1.1.2"
     "@bit/smartworks.unity-react.unity-popover-react" "1.0.3"
     "@bit/smartworks.unity-react.unity-progress-react" "0.2.2"
     "@bit/smartworks.unity-react.unity-search-bar-react" "1.0.2"
     "@bit/smartworks.unity-react.unity-section-react" "0.3.4"
-    "@bit/smartworks.unity-react.unity-split-pane-react" "1.0.1"
+    "@bit/smartworks.unity-react.unity-split-pane-react" "1.0.2"
     "@bit/smartworks.unity-react.unity-table-export-react" "0.2.2"
     "@bit/smartworks.unity-react.unity-table-react" "1.0.2"
     "@bit/smartworks.unity-react.unity-tag-react" "1.0.4"
@@ -1262,10 +1262,10 @@
     react "^16.12.0"
     uuid "3.4.0"
 
-"@bit/smartworks.unity-react.unity-page-header-react@1.1.1", "@bit/smartworks.unity-react.unity-page-header-react@^1.1.1":
-  version "1.1.1"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-page-header-react/-/smartworks.unity-react.unity-page-header-react-1.1.1.tgz#37eaf320dfe79ecd39b5c838f90ee501023eac39"
-  integrity sha1-N+rzIN/nns05tcg4+Q7lAQI+rDk=
+"@bit/smartworks.unity-react.unity-page-header-react@1.1.2", "@bit/smartworks.unity-react.unity-page-header-react@^1.1.2":
+  version "1.1.2"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-page-header-react/-/smartworks.unity-react.unity-page-header-react-1.1.2.tgz#4b61ae32dd68784f60dc83fe49de39cf15408188"
+  integrity sha1-S2GuMt1oeE9g3IP+Sd45zxVAgYg=
   dependencies:
     "@types/react" "16.9.11"
     react "^16.12.0"
@@ -1302,10 +1302,10 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-split-pane-react@1.0.1", "@bit/smartworks.unity-react.unity-split-pane-react@^1.0.1":
-  version "1.0.1"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-split-pane-react/-/smartworks.unity-react.unity-split-pane-react-1.0.1.tgz#5f1d18f20b82036ebbd7bd4f8ad2f984a707c5de"
-  integrity sha1-Xx0Y8guCA267171PitL5hKcHxd4=
+"@bit/smartworks.unity-react.unity-split-pane-react@1.0.2", "@bit/smartworks.unity-react.unity-split-pane-react@^1.0.2":
+  version "1.0.2"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-split-pane-react/-/smartworks.unity-react.unity-split-pane-react-1.0.2.tgz#2843f60abf47ff0509ad7404de60d88100f59d00"
+  integrity sha1-KEP2Cr9H/wUJrXQE3mDYgQD1nQA=
   dependencies:
     "@types/react" "16.9.11"
     react "^16.12.0"

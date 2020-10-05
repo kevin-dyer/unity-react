@@ -25,6 +25,9 @@ export * from "@bit/smartworks.unity-react.<component-path>" //Export named expo
 
 ## Changelog:
 
+### v1.3.14
+- unity-split-pane-react v1.0.2
+
 ### v1.3.12
 - unity-notifications-handler-react v1.1.2
 - unity-table-react v1.0.2
