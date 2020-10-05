@@ -60,10 +60,10 @@ export default class UnitySplitPane extends Component<SplitPaneProps> {
         <div slot="header" style={{flex: 1}}>
           {header}
         </div>
-        <div slot="main" style={{height: '100%', display: 'flex'}}>
+        <div slot="main" style={{height: '100%', display: 'flex', overflow: 'hidden'}}>
           {main}
         </div>
-        <div slot="pane" style={{height: '100%', display: 'flex', zIndex: 3}}>
+        <div slot="pane" style={{height: '100%', display: 'flex', overflow: 'hidden', zIndex: 3}}>
           {pane}
         </div>
         <div slot="footer">
