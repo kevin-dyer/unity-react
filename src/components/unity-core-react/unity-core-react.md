@@ -25,6 +25,9 @@ export * from "@bit/smartworks.unity-react.<component-path>" //Export named expo
 
 ## Changelog:
 
+### v1.3.15
+- unity-split-pane-react v1.0.3
+
 ### v1.3.14
 - unity-split-pane-react v1.0.2
 
