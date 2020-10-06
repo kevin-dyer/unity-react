@@ -1302,10 +1302,18 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-split-pane-react@1.0.2", "@bit/smartworks.unity-react.unity-split-pane-react@^1.0.2":
+"@bit/smartworks.unity-react.unity-split-pane-react@1.0.2":
   version "1.0.2"
   resolved "https://node.bit.dev/smartworks.unity-react.unity-split-pane-react/-/smartworks.unity-react.unity-split-pane-react-1.0.2.tgz#2843f60abf47ff0509ad7404de60d88100f59d00"
   integrity sha1-KEP2Cr9H/wUJrXQE3mDYgQD1nQA=
+  dependencies:
+    "@types/react" "16.9.11"
+    react "^16.12.0"
+
+"@bit/smartworks.unity-react.unity-split-pane-react@^1.0.3":
+  version "1.0.3"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-split-pane-react/-/smartworks.unity-react.unity-split-pane-react-1.0.3.tgz#b45088f79f65570d17ff04fa48550b744fb003e7"
+  integrity sha1-tFCI959lVw0X/wT6SFULdE+wA+c=
   dependencies:
     "@types/react" "16.9.11"
     react "^16.12.0"

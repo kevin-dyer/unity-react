@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v1.0.3
+- give header slot proper boundary
+
 ### v1.0.2
 - hide overflow in main and pane so children will define scrolling
 
