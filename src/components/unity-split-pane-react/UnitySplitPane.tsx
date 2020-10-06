@@ -57,7 +57,7 @@ export default class UnitySplitPane extends Component<SplitPaneProps> {
         ref={this.splitPaneRef}
         {...splitPaneArgs}
       >
-        <div slot="header" style={{flex: 1}}>
+        <div slot="header" style={{flex: 1, width: '100%'}}>
           {header}
         </div>
         <div slot="main" style={{height: '100%', display: 'flex', overflow: 'hidden'}}>
