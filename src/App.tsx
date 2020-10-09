@@ -32,6 +32,8 @@ import {
   UnitySearchBar
 } from './components/unity-core-react'
 
+import UnityCheckbox from './components/unity-checkbox-react/UnityCheckbox'
+
 import { devices, fakeYaml } from './fakeData'
 
 const appStyle: CSSProperties = {
@@ -632,6 +634,15 @@ class App extends React.Component {
                     offLabel={"Left"}
                     remark={"Remarkable"}
                     onChange={(on : boolean) => console.log(`Switch is ${on ? 'on' : 'off'}`)}
+                  />
+                  <UnityCheckbox
+                    indeterminate
+                    label="Checkbox"
+                  />
+                  <UnityCheckbox
+                    checked
+                    disabled
+                    label="Disabled"
                   />
                 </UnitySection>
                 <UnitySection>
