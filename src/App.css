@@ -1,4 +1,5 @@
 .App {
+  --primary-color: var(--primary-color);
 }
 
 .App-logo {
