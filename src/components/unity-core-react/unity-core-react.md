@@ -25,6 +25,9 @@ export * from "@bit/smartworks.unity-react.<component-path>" //Export named expo
 
 ## Changelog:
 
+### v1.3.16
+- unity-checkbox-react v1.0.0
+
 ### v1.3.15
 - unity-split-pane-react v1.0.3
 

@@ -13,6 +13,9 @@
 export {default as UnityButton} from "@bit/smartworks.unity-react.unity-button-react"
 export * from "@bit/smartworks.unity-react.unity-button-react"
 
+export {default as UnityCheckbox} from "@bit/smartworks.unity-react.unity-checkbox-react"
+export * from "@bit/smartworks.unity-react.unity-checkbox-react"
+
 export {default as UnityCodeEditor} from "@bit/smartworks.unity-react.unity-code-editor-react"
 export * from "@bit/smartworks.unity-react.unity-code-editor-react"
 
