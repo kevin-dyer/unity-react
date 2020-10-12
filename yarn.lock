@@ -1158,6 +1158,14 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
+"@bit/smartworks.unity-react.unity-checkbox-react@^1.0.0":
+  version "1.0.0"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-checkbox-react/-/smartworks.unity-react.unity-checkbox-react-1.0.0.tgz#c134a79610b71adea59a9b8affe9d15e5b00d729"
+  integrity sha1-wTSnlhC3Gt6lmpuK/+nRXlsA1yk=
+  dependencies:
+    "@types/react" "16.9.11"
+    react "^16.12.0"
+
 "@bit/smartworks.unity-react.unity-code-editor-react@1.0.0", "@bit/smartworks.unity-react.unity-code-editor-react@^1.0.0":
   version "1.0.0"
   resolved "https://node.bit.dev/smartworks.unity-react.unity-code-editor-react/-/smartworks.unity-react.unity-code-editor-react-1.0.0.tgz#1ce3c1b9f21688e7ef0247fe39087c360cafe245"
