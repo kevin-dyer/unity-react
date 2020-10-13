@@ -26,6 +26,7 @@ export interface NavPropsI extends HTMLAttributes<HTMLElement> {
   grid?: boolean
   children?: any
   style?: NavStyles
+  customHeader?: any
 }
 
 export type NavStyles = CSSProperties & {
@@ -81,11 +82,13 @@ export default class UnityGlobalNav extends Component<NavPropsI> {
   updateProps = (oldProps={}) => {
     const {
       items={},
-      onSelect
+      onSelect,
+      customHeader
     } : NavPropsI = this.props
     const {
       items: oldItems,
-      onSelect: oldOnSelect
+      onSelect: oldOnSelect,
+      customHeader: oldCustomHeader
     } : NavPropsI = oldProps
     const nav = this.navRef.current
 
@@ -96,6 +99,10 @@ export default class UnityGlobalNav extends Component<NavPropsI> {
 
       if (onSelect !== oldOnSelect) {
         nav.onSelect = onSelect
+      }
+
+      if (customHeader !== oldCustomHeader) {
+        nav.customHeader = customHeader
       }
     }
   }
@@ -109,6 +116,7 @@ export default class UnityGlobalNav extends Component<NavPropsI> {
       style: stylesProp,
       items,
       onSelect,
+      customHeader,
       ...otherProps
     } : NavPropsI = this.props
     let sideNavProps : NavPropsI = otherProps 
@@ -117,13 +125,18 @@ export default class UnityGlobalNav extends Component<NavPropsI> {
     if (!!collapsed) sideNavProps.collapsed = collapsed
     if (!!grid) sideNavProps.grid = grid
 
-
     return (
       <unity-global-nav-base
         ref={this.navRef}
         style={stylesProp}
         {...sideNavProps}
       >
+        {!!customHeader? 
+          <div slot="customHeader">
+            {customHeader}
+          </div>
+          : {}
+        }
       </unity-global-nav-base>
     )
   }
