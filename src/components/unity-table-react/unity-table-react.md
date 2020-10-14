@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v1.0.3
+- Prevent horizontal overflow of custom table cell content by setting max-width of slot to 100%.
+
 ### v1.0.2
 - Pass style prop into web component. Generic HTML attributes are not being passed and must be fixed.
 - Updated style types.
