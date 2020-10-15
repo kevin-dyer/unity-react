@@ -116,7 +116,11 @@
         "origin": "AUTHORED",
         "exported": true
     },
+<<<<<<< HEAD
     "smartworks.unity-react/unity-core-react@1.3.17": {
+=======
+    "smartworks.unity-react/unity-core-react@1.3.18": {
+>>>>>>> 96c42792662a342e70f5d1d70b210c48c064a0ec
         "files": [
             {
                 "name": "index.js",
@@ -124,9 +128,9 @@
                 "test": false
             },
             {
+                "name": "index.js",
                 "relativePath": "src/components/unity-core-react/UnityCheckbox/index.js",
-                "test": false,
-                "name": "index.js"
+                "test": false
             },
             {
                 "name": "index.js",
@@ -569,7 +573,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-table-react@1.0.2": {
+    "smartworks.unity-react/unity-table-react@1.0.3": {
         "files": [
             {
                 "name": "UnityTable.tsx",

@@ -69,7 +69,8 @@ const slotStyles : CSSProperties = {
   flex: 1,
   minHeight: 'var(--trow-height)',
   display: 'flex',
-  alignItems: 'center'
+  alignItems: 'center',
+  maxWidth: '100%'
 }
 
 export default class UnityTable extends Component<TablePropsI> {
