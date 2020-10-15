@@ -7,11 +7,7 @@
     "@bit/smartworks.unity-react.unity-checkbox-react": "^1.0.0",
     "@bit/smartworks.unity-react.unity-code-editor-react": "^1.0.0",
     "@bit/smartworks.unity-react.unity-column-editor-react": "^1.0.3",
-<<<<<<< HEAD
-    "@bit/smartworks.unity-react.unity-core-react": "^1.3.17",
-=======
     "@bit/smartworks.unity-react.unity-core-react": "^1.3.18",
->>>>>>> 96c42792662a342e70f5d1d70b210c48c064a0ec
     "@bit/smartworks.unity-react.unity-dropdown-react": "^1.0.3",
     "@bit/smartworks.unity-react.unity-dropzone-react": "^0.2.2",
     "@bit/smartworks.unity-react.unity-global-nav-react": "^1.1.0",
