@@ -25,6 +25,15 @@ export * from "@bit/smartworks.unity-react.<component-path>" //Export named expo
 
 ## Changelog:
 
+### v1.3.19
+- Updated @bit dependencies
+
+### v1.3.18
+- unity-global-nav-react v1.2.0
+
+### v1.3.17
+- unity-global-nav-react 1.1.0
+
 ### v1.3.16
 - unity-checkbox-react v1.0.0
 
