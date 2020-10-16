@@ -3,7 +3,7 @@ import './App.css';
 import {
   UnityButton,
   UnityCodeEditor,
-  UnityGlobalNav, NavItemsConfigI,
+  NavItemsConfigI,
   CodeEditorStylesI,
   UnityJsonViewer,
   UnityTextInput,
@@ -33,6 +33,8 @@ import {
 } from './components/unity-core-react'
 
 import UnityCheckbox from './components/unity-checkbox-react/UnityCheckbox'
+import UnityGlobalNav from './components/unity-global-nav-react/UnityGlobalNav'
+import logo192 from './temp/logo192.png'
 
 import { devices, fakeYaml } from './fakeData'
 
@@ -416,6 +418,16 @@ class App extends React.Component {
               grid
               header='ProductName'
               onSelect={(e) => console.log(`Menu item ${e} clicked`)}
+              customHeader={(
+                <span> 
+                  <img src={logo192} style={{height: '25px'}}/>
+                </span>
+              )}
+              customCollapsibleContent={(
+                <span>
+                  text
+                </span>
+              )}
             />
             <div className="main" style={mainStyle}>
               <UnitySection>

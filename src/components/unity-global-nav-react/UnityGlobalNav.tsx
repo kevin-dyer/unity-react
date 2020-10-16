@@ -80,25 +80,6 @@ export default class UnityGlobalNav extends Component<NavPropsI> {
    this.updateProps(oldProps)
  }
  
- makeCollapsibleContent = () => {
-   const {
-     collapsed,
-     customCollapsibleContent
-   } : NavPropsI = this.props
- 
-   if (!collapsed) {
-     return (
-       <span slot="customCollapsibleContent">
-         {customCollapsibleContent}
-       </span>
-     )
-   }
- }
- 
- 
- 
- 
- 
  updateProps = (oldProps={}) => {
    const {
      items={},
