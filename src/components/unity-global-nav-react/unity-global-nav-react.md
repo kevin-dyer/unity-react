@@ -2,6 +2,12 @@
 
 ## Changelog:
 
+### v1.2.0
+- Added new prop: customExpandedHeader
+
+### v1.1.0
+- Added new prop: customHeader
+
 ### v1.0.0
 - Added generic HTML attributes
 - Updated to v1 to enable proper semantic versioning
