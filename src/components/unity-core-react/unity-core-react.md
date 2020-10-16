@@ -25,6 +25,9 @@ export * from "@bit/smartworks.unity-react.<component-path>" //Export named expo
 
 ## Changelog:
 
+### v1.3.19
+- Updated @bit dependencies
+
 ### v1.3.18
 - unity-global-nav-react v1.2.0
 
