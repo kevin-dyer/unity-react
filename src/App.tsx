@@ -423,7 +423,7 @@ class App extends React.Component {
                   <img src={logo192} style={{height: '25px'}}/>
                 </span>
               )}
-              customCollapsibleContent={(
+              customExpandedHeader={(
                 <span>
                   text
                 </span>

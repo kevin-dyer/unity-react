@@ -27,7 +27,7 @@ export interface NavPropsI extends HTMLAttributes<HTMLElement> {
  children?: any
  style?: NavStyles
  customHeader?: any,
- customCollapsibleContent?: any
+ customExpandedHeader?: any
 }
  
 export type NavStyles = CSSProperties & {
@@ -85,13 +85,13 @@ export default class UnityGlobalNav extends Component<NavPropsI> {
      items={},
      onSelect,
      customHeader,
-     customCollapsibleContent
+     customExpandedHeader
    } : NavPropsI = this.props
    const {
      items: oldItems,
      onSelect: oldOnSelect,
      customHeader: oldCustomHeader,
-     customCollapsibleContent: oldCustomCollapsibleContent
+     customExpandedHeader: oldCustomExpandedHeader
    } : NavPropsI = oldProps
    const nav = this.navRef.current
  
@@ -108,8 +108,8 @@ export default class UnityGlobalNav extends Component<NavPropsI> {
        nav.customHeader = customHeader
      }
  
-     if (customCollapsibleContent !== oldCustomCollapsibleContent) {
-       nav.customCollapsibleContent = customCollapsibleContent
+     if (customExpandedHeader !== oldCustomExpandedHeader) {
+       nav.customExpandedHeader = customExpandedHeader
      }
    }
  }
@@ -124,7 +124,7 @@ export default class UnityGlobalNav extends Component<NavPropsI> {
      items,
      onSelect,
      customHeader,
-     customCollapsibleContent,
+     customExpandedHeader,
      ...otherProps
    } : NavPropsI = this.props
    let sideNavProps : NavPropsI = otherProps
@@ -143,9 +143,9 @@ export default class UnityGlobalNav extends Component<NavPropsI> {
          <span slot="customHeader">
            {customHeader}
          </span>}
-       {!!customCollapsibleContent &&       
-           <span slot="customCollapsibleContent">
-           {customCollapsibleContent}
+       {!!customExpandedHeader &&       
+           <span slot="customExpandedHeader">
+           {customExpandedHeader}
          </span>}
      </unity-global-nav-base>
    )
