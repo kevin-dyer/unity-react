@@ -23,6 +23,7 @@ interface PopoverPropsI extends HTMLAttributes<HTMLElement> {
   preventOverflow?: boolean,
   placement?: string,
   distance?: number,
+  offsetModifier?: Function,
   onClose?: Function,
   fallbackPlacements?: Array<string>,
   boundary?: HTMLElement | ReactElement,
@@ -48,20 +49,20 @@ export default class UnityPopover extends Component<PopoverPropsI> {
     const {
       _popoverRef,
       props: {
-        distance,
         onClose,
         fallbackPlacements,
         boundary,
         referenceElement,
+        offsetModifier
       }
     } = this
     const { current } = _popoverRef
     if (!!current) {
-      if (!!distance && distance !== oldProps.distance) current.distance = distance
       if (!!onClose && onClose !== oldProps.onClose) current.onClose = onClose
       if (!!fallbackPlacements && fallbackPlacements !== oldProps.fallbackPlacements) current.fallbackPlacements = fallbackPlacements
       if (!!boundary && boundary !== oldProps.boundary) current.boundary = boundary
       if (!!referenceElement && referenceElement !== oldProps.referenceElement) current.referenceElement = referenceElement
+      if (!!offsetModifier && offsetModifier !== oldProps.offsetModifier) current.offsetModifier = offsetModifier
     }
   }
 
@@ -75,6 +76,7 @@ export default class UnityPopover extends Component<PopoverPropsI> {
       placement,
       onPageContent,
       popoverContent,
+      offsetModifier,
       ...otherProps
     } = this.props
 

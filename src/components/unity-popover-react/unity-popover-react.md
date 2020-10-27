@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v1.0.4
+- pass `offsetModifier` prop (func) to web component. Function used to define Popper.js offset modifier config.
+
 ### v1.0.3
 - pass `style` prop into web component as an attribute
 - added --popover-content-overflow to available css vars
