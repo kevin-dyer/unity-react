@@ -59,6 +59,8 @@ export default class UnityStepper extends Component<StepperProps> {
       hideButton,
       backtrack,
       style: stylesProps,
+      steps,
+      onChangeStep,
       ...otherProps
     } : StepperProps = this.props
     let stepperProps : StepperProps = otherProps
