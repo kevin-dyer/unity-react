@@ -29,10 +29,11 @@ import {
   UnityNotificationsSplitPane,
   UnityColumnEditor,
   UnityPopover,
-  UnitySearchBar
+  UnitySearchBar,
+  UnityCheckbox
 } from './components/unity-core-react'
 
-import UnityCheckbox from './components/unity-checkbox-react/UnityCheckbox'
+import UnityStepper from './components/unity-stepper-react/UnityStepper'
 
 import { devices, fakeYaml } from './fakeData'
 
@@ -832,6 +833,15 @@ class App extends React.Component {
                       </div>
                     </UnitySection>
                 </div>
+              </UnitySection>
+              <UnitySection>
+                <UnityStepper
+                  steps={['Step 1', {name:'Step2', buttonText:'Authorize'}, {name:'Step 3',key:'test'}]}
+                  totalSteps={4}
+                  valid
+                  backtrack
+                  onChangeStep={(step:any) => console.log('step', step)}
+                />
               </UnitySection>
             </div>
           </div>
