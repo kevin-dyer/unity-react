@@ -58,6 +58,9 @@ export * from "@bit/smartworks.unity-react.unity-section-react"
 export {default as UnitySplitPane} from "@bit/smartworks.unity-react.unity-split-pane-react"
 export * from "@bit/smartworks.unity-react.unity-split-pane-react"
 
+export {default as UnityStepper} from "@bit/smartworks.unity-react.unity-stepper-react"
+export * from "@bit/smartworks.unity-react.unity-stepper-react"
+
 export {default as UnityTableExport} from "@bit/smartworks.unity-react.unity-table-export-react"
 export * from "@bit/smartworks.unity-react.unity-table-export-react"
 
