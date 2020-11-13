@@ -25,6 +25,9 @@ export * from "@bit/smartworks.unity-react.<component-path>" //Export named expo
 
 ## Changelog:
 
+### v1.3.21
+- unity-stepper-react v1.0.0
+
 ### v1.3.19
 - Updated @bit dependencies
 
