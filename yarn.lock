@@ -1319,6 +1319,14 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
+"@bit/smartworks.unity-react.unity-stepper-react@^1.0.0":
+  version "1.0.0"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-stepper-react/-/smartworks.unity-react.unity-stepper-react-1.0.0.tgz#6ea67d9ebfada90eb58c92bb782678bd3c3db996"
+  integrity sha1-bqZ9nr+tqQ61jJK7eCZ4vTw9uZY=
+  dependencies:
+    "@types/react" "16.9.11"
+    react "^16.12.0"
+
 "@bit/smartworks.unity-react.unity-table-export-react@0.2.2", "@bit/smartworks.unity-react.unity-table-export-react@^0.2.2":
   version "0.2.2"
   resolved "https://node.bit.dev/smartworks.unity-react.unity-table-export-react/-/smartworks.unity-react.unity-table-export-react-0.2.2.tgz#51fa8ac6f351ad92c7ce0a0b2b41601477ba1d4c"

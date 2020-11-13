@@ -116,7 +116,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-core-react@1.3.20": {
+    "smartworks.unity-react/unity-core-react@1.3.21": {
         "files": [
             {
                 "name": "index.js",
@@ -197,6 +197,11 @@
                 "name": "index.js",
                 "relativePath": "src/components/unity-core-react/UnitySplitPane/index.js",
                 "test": false
+            },
+            {
+                "relativePath": "src/components/unity-core-react/UnityStepper/index.js",
+                "test": false,
+                "name": "index.js"
             },
             {
                 "name": "index.js",
@@ -543,6 +548,29 @@
             }
         ],
         "mainFile": "src/components/unity-split-pane-react/UnitySplitPane.tsx",
+        "origin": "AUTHORED",
+        "exported": true
+    },
+    "smartworks.unity-react/unity-stepper-react@1.0.0": {
+        "files": [
+            {
+                "relativePath": "src/components/unity-stepper-react/UnityStepper.tsx",
+                "test": false,
+                "name": "UnityStepper.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-stepper-react/declarations.d.ts",
+                "test": false,
+                "name": "declarations.d.ts"
+            },
+            {
+                "relativePath": "src/components/unity-stepper-react/unity-stepper-react.md",
+                "test": false,
+                "name": "unity-stepper-react.md"
+            }
+        ],
+        "mainFile": "src/components/unity-stepper-react/UnityStepper.tsx",
+        "trackDir": "src/components/unity-stepper-react",
         "origin": "AUTHORED",
         "exported": true
     },
