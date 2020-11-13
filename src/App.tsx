@@ -30,10 +30,9 @@ import {
   UnityColumnEditor,
   UnityPopover,
   UnitySearchBar,
-  UnityCheckbox
+  UnityCheckbox,
+  UnityStepper
 } from './components/unity-core-react'
-
-import UnityStepper from './components/unity-stepper-react/UnityStepper'
 
 import { devices, fakeYaml } from './fakeData'
 
