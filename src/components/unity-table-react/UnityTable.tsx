@@ -64,7 +64,9 @@ export interface TableColumnI {
   key?: string,
   label?: string,
   formatLabel?: Function,
-  renderCustomContent?: Function
+  renderCustomContent?: Function,
+  inputType?: string,
+  centered?: boolean
 }
 
 const slotStyles : CSSProperties = {
