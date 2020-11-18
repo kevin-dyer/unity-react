@@ -25,8 +25,10 @@ export interface TablePropsI extends HTMLAttributes<HTMLElement> {
   compact?: boolean
   headless?: boolean
   startExpanded?: boolean
-  columnFilter?: Object[],
-  rightActionsContent?: ReactElement | HTMLElement,
+  columnFilter?: Object[]
+  rightActionsContent?: ReactElement | HTMLElement
+  disableColumnResize?: boolean
+  hideFilterIcons?: boolean
   style?: TableStyles
 }
 
@@ -62,7 +64,9 @@ export interface TableColumnI {
   key?: string,
   label?: string,
   formatLabel?: Function,
-  renderCustomContent?: Function
+  renderCustomContent?: Function,
+  inputType?: string,
+  centered?: boolean
 }
 
 const slotStyles : CSSProperties = {
@@ -233,9 +237,6 @@ export default class UnityTable extends Component<TablePropsI> {
     }
   }
 
-
-headless?: boolean
-startExpanded?: boolean 
   render() {
     const {
       selectable=false,
@@ -248,7 +249,26 @@ startExpanded?: boolean
       compact,
       headless,
       startExpanded,
-      style
+      disableColumnResize,
+      hideFilterIcons,
+      style,
+      // function and complex objects, destructured so that they are not added as props
+      data,
+      columns,
+      selected,
+      childKeys,
+      keyExtractor,
+      slotIdExtractor,
+      onClickRow,
+      onSelectionChange,
+      onDisplayColumnsChange,
+      onColumnChange,
+      onEndReached,
+      onHighlight,
+      onExpandedChange,
+      columnFilter,
+      rightActionsContent,
+      ...otherProps
     } = this.props
     let booleanProps : TablePropsI = {}
 
@@ -268,6 +288,12 @@ startExpanded?: boolean
     if (startExpanded) {
       booleanProps.startExpanded = startExpanded
     }
+    if (disableColumnResize) {
+      booleanProps.disableColumnResize = disableColumnResize
+    }
+    if (hideFilterIcons) {
+      booleanProps.hideFilterIcons = hideFilterIcons
+    }
     return ( 
       <unity-table
         ref={this.tableRef}
@@ -277,6 +303,7 @@ startExpanded?: boolean
         endReachedThreshold={endReachedThreshold}
         style={style}
         {...booleanProps}
+        {...otherProps}
       >
         {this.renderCustomContent()}
         {this.renderRightActionsContent()}
