@@ -255,6 +255,23 @@ startExpanded?: boolean
       disableColumnResize,
       hideFilterIcons,
       style,
+      // function and complex objects, destructured so that they are not added as props
+      data,
+      columns,
+      selected,
+      childKeys,
+      keyExtractor,
+      slotIdExtractor,
+      onClickRow,
+      onSelectionChange,
+      onDisplayColumnsChange,
+      onColumnChange,
+      onEndReached,
+      onHighlight,
+      onExpandedChange,
+      columnFilter,
+      rightActionsContent,
+      ...otherProps
     } = this.props
     let booleanProps : TablePropsI = {}
 
@@ -289,6 +306,7 @@ startExpanded?: boolean
         endReachedThreshold={endReachedThreshold}
         style={style}
         {...booleanProps}
+        {...otherProps}
       >
         {this.renderCustomContent()}
         {this.renderRightActionsContent()}
