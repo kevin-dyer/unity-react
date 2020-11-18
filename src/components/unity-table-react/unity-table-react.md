@@ -2,6 +2,11 @@
 
 ## Changelog:
 
+### v1.1.0
+- Added `disableColumnResize` and `hideFilterIcons` props
+- Added `inputType` and `centered` properties to tableColumn type
+- Pass global HTML attributes into wrapped component
+
 ### v1.0.3
 - Prevent horizontal overflow of custom table cell content by setting max-width of slot to 100%.
 
