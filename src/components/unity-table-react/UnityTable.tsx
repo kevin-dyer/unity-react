@@ -237,9 +237,6 @@ export default class UnityTable extends Component<TablePropsI> {
     }
   }
 
-
-headless?: boolean
-startExpanded?: boolean 
   render() {
     const {
       selectable=false,
