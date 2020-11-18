@@ -25,8 +25,10 @@ export interface TablePropsI extends HTMLAttributes<HTMLElement> {
   compact?: boolean
   headless?: boolean
   startExpanded?: boolean
-  columnFilter?: Object[],
-  rightActionsContent?: ReactElement | HTMLElement,
+  columnFilter?: Object[]
+  rightActionsContent?: ReactElement | HTMLElement
+  disableColumnResize?: boolean
+  hideFilterIcons?: boolean
   style?: TableStyles
 }
 
@@ -248,7 +250,9 @@ startExpanded?: boolean
       compact,
       headless,
       startExpanded,
-      style
+      disableColumnResize,
+      hideFilterIcons,
+      style,
     } = this.props
     let booleanProps : TablePropsI = {}
 
@@ -267,6 +271,12 @@ startExpanded?: boolean
     }
     if (startExpanded) {
       booleanProps.startExpanded = startExpanded
+    }
+    if (disableColumnResize) {
+      booleanProps.disableColumnResize = disableColumnResize
+    }
+    if (hideFilterIcons) {
+      booleanProps.hideFilterIcons = hideFilterIcons
     }
     return ( 
       <unity-table
