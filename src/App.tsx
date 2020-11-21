@@ -33,8 +33,10 @@ import {
   UnityCheckbox,
   UnityStepper
 } from './components/unity-core-react'
+import UnityHistogram from './components/unity-histogram/UnityHistogram'
 
 import { devices, fakeYaml } from './fakeData'
+import moment from 'moment'
 
 const appStyle: CSSProperties = {
   display: 'flex',
@@ -292,10 +294,26 @@ class App extends React.Component {
     yamlValue: fakeYaml,
     yamlError: '',
     showPopover: false,
-    showColumnEditor: false
+    showColumnEditor: false,
+    fakeHistData: []
   }
 
   popoverButtonRef = React.createRef<HTMLDivElement>()
+
+  private histInterval?: ReturnType<typeof setTimeout>
+
+  componentDidMount() {
+    //simulate real time data
+    this.histInterval = setInterval(() => {
+      this.setState({
+        fakeHistData: [...this.state.fakeHistData, {timestamp: moment().format(), value: Math.random()}]
+      })
+    }, 3000)
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.histInterval!)
+  }
 
   makeCenterContent() {
     return (<div>
@@ -343,7 +361,8 @@ class App extends React.Component {
       dropdownOptions,
       dropdownDisabled,
       showPopover,
-      showColumnEditor
+      showColumnEditor,
+      fakeHistData
     } = this.state
     console.log("App -> render -> showPopover", showPopover)
 
@@ -418,6 +437,12 @@ class App extends React.Component {
               onSelect={(e) => console.log(`Menu item ${e} clicked`)}
             />
             <div className="main" style={mainStyle}>
+              <UnitySection>
+                <div style={{flex: 1, display: 'flex', height: 250}}>
+                  <UnityHistogram data={fakeHistData}/>
+                </div>
+              </UnitySection>
+
               <UnitySection>
                 <div style={contentBox}>
                   <UnityPageHeader
