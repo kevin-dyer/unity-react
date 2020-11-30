@@ -905,7 +905,10 @@ class App extends React.Component {
               <UnitySection>
                 <div style={{flex: 1}}>
                   <div style={{flex: 1, display: 'flex', height: 250}}>
-                    <UnityHistogram data={fakeHistData.slice(-100)}/>
+                    <UnityHistogram
+                      data={fakeHistData.slice(-100)}
+                      tooltipFormatter={(params: any) => `${moment(params['value'][0]).fromNow()}: ${Math.round(params['value'][1] * 100)}% CPU`}
+                    />
                   </div>
                   <UnityButton
                     onClick={this.toggleHistogramStream}
