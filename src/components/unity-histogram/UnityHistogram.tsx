@@ -34,7 +34,7 @@ function formatSeriesData(data: histData[]) {
 }
 
 const formatTooltip = (params: any) => {
-    return `${moment(params['value'][0]).fromNow()}: ${Math.round(params['value'][1] * 100)}% CPU`
+    return `${moment(params['value'][0]).fromNow()}: ${params['value'][1]}`
   }
 
 export default class UnityHistogram extends Component<UnityHistogramProps> {
