@@ -1,4 +1,4 @@
-import React from "react";
+import React, {HTMLAttributes, createRef, Component} from "react";
 import echarts from 'echarts'
 import {debounce} from 'throttle-debounce'
 import moment from 'moment'
@@ -8,10 +8,11 @@ import moment from 'moment'
  * <UnityHistogram/>
  */
 
-export interface UnityHistogramProps extends React.HTMLAttributes<HTMLElement> {
+export interface UnityHistogramProps extends HTMLAttributes<HTMLElement> {
   data?: histData[]
   children?: any
-  style?: any
+  barColor?: string,
+  tooltipFormatter?: echarts.EChartOption.Tooltip.Formatter
 }
 
 export interface histData {
@@ -23,79 +24,28 @@ export interface formatParam {
   value?: any
 }
 
+
 function formatSeriesData(data: histData[]) {
   return data.map(({timestamp, value}) => ({
-    name: moment(timestamp).fromNow(),
+    name: timestamp,
+    timestamp,
     value: [timestamp, value]
   }))
 }
 
 const formatTooltip = (params: any) => {
-    return `${moment(params['value'][0]).fromNow()}: ${params['value'][1] * 100}% cpu`
+    return `${moment(params['value'][0]).fromNow()}: ${Math.round(params['value'][1] * 100)}% CPU`
   }
 
-const createChartOptions = (data: histData[]): echarts.EChartOption => ({
-  title: {
-    text: 'hist'
-  },
-  grid:{
-    containLabel:false
-  },
-  tooltip: {
-    transitionDuration: 0.2,
-    formatter: formatTooltip,
-  },
-  xAxis: {
-    show:true,
-    type: 'time',
-    splitLine: {
-        show: false
-    }
-  },
-  yAxis: {
-    show: false,
-    type: 'value'
-  },
-  series: [{
-    name: 'bar',
-    type: 'bar',
-    data: formatSeriesData(data),
-    animationDelay: function (idx: number) {
-      return idx;
-    }
-  }],
-  animationEasing: 'elasticOut',
-  animationDelayUpdate: function (idx: number) {
-    return idx * 5;
-  }
-})
-
-export default class UnityHistogram extends React.Component<UnityHistogramProps> {
-  private histRef = React.createRef<HTMLDivElement>()
+export default class UnityHistogram extends Component<UnityHistogramProps> {
+  private histRef = createRef<HTMLDivElement>()
   private resizeObserver?: ResizeObserver
   private chart?: echarts.ECharts
 
   componentDidMount() {
-    const {data=[]} = this.props
     //NOTE: using ! to remove null/undefined from the type definition
     this.chart = echarts.init(this.histRef.current!)
-
-    // var xAxisData = [];
-    // var data1 = [];
-    // for (var i = 0; i < 100; i++) {
-    //   xAxisData.push(i);
-    //   data1.push((Math.sin(i / 5) * (i / 5 -10) + i / 6) * 5);
-    // }
-
-    // const xAxisData = data.map(({timestamp}) => timestamp)
-    // const seriesData = data.map(({value}) => value)
-    // const seriesData = data.map(({timestamp, value}) => ({
-    //   name: moment(timestamp).fromNow(),
-    //   value: [timestamp, value]
-    // }))
-
-    const options = createChartOptions(data)
-    console.log({options})
+    const options = this.createChartOptions()
     this.chart.setOption(options)
 
     this.resizeObserver = new ResizeObserver(this.resizeChart);
@@ -105,10 +55,10 @@ export default class UnityHistogram extends React.Component<UnityHistogramProps>
 
   componentDidUpdate(prevProps: UnityHistogramProps) {
     const {data=[]} = this.props
+
     if (prevProps?.data !== data && !!this.chart) {
-      // console.log("updating hist data! formatSeriesData(data): ", formatSeriesData(data))
-      // 
-      const newOptions = createChartOptions(data)
+      const newOptions = this.createChartOptions()
+
       this.chart.setOption(newOptions)
     }
   }
@@ -122,6 +72,46 @@ export default class UnityHistogram extends React.Component<UnityHistogramProps>
     this.chart?.resize()
   })
 
+  createChartOptions = (): echarts.EChartOption => {
+    const {
+      data=[],
+      barColor='#92b4dd',
+      tooltipFormatter=formatTooltip
+    } = this.props
+
+    return {
+      title: {
+        text: 'hist'
+      },
+      grid:{
+        containLabel:false
+      },
+      tooltip: {
+        transitionDuration: 0.2,
+        formatter: tooltipFormatter,
+      },
+      xAxis: {
+        show:true,
+        type: 'time',
+        splitLine: {
+            show: false
+        }
+      },
+      yAxis: {
+        show: false,
+        type: 'value'
+      },
+      series: [{
+        name: 'bar',
+        type: 'bar',
+        data: formatSeriesData(data),
+      }],
+      animation: true,
+      color: barColor ? [barColor] : undefined,
+      animationDuration: 200
+    }
+  }
+
   render() {
     return <div
       style={styles.container}
@@ -133,9 +123,7 @@ export default class UnityHistogram extends React.Component<UnityHistogramProps>
 
 const styles = {
   container: {
-    // height: '300px',
     minWidth: 0,
-    backgroundColor: 'pink',
     flex: '1 1 auto'
   }
 }
