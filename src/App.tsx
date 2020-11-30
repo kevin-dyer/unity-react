@@ -33,7 +33,7 @@ import {
   UnityCheckbox,
   UnityStepper
 } from './components/unity-core-react'
-import UnityHistogram from './components/unity-histogram/UnityHistogram'
+import UnityHistogram, {histData} from './components/unity-histogram/UnityHistogram'
 
 import { devices, fakeYaml } from './fakeData'
 import moment from 'moment'
@@ -234,6 +234,18 @@ const tagSeed: Object[] = [
   }
 ]
 
+
+
+const histSeed: histData[] = []
+
+for(let i = 0; i < 100; i++) {
+  const timestamp = moment(Date.now() - 100 * 1000 + i * 1000).format()
+  histSeed.push({
+    timestamp,
+    value: Number(Math.random().toFixed(2))
+  })
+}
+
 const SectionForNotifications = (props?: any) => {
   const {
     addNotification=()=>console.log(`no add notification function!`),
@@ -295,21 +307,15 @@ class App extends React.Component {
     yamlError: '',
     showPopover: false,
     showColumnEditor: false,
-    fakeHistData: []
+    fakeHistData: [...histSeed],
+    streamHistData: false
   }
 
   popoverButtonRef = React.createRef<HTMLDivElement>()
 
   private histInterval?: ReturnType<typeof setTimeout>
+  private histUpdateCount: number = 0
 
-  componentDidMount() {
-    //simulate real time data
-    this.histInterval = setInterval(() => {
-      this.setState({
-        fakeHistData: [...this.state.fakeHistData, {timestamp: moment().format(), value: Math.random()}]
-      })
-    }, 3000)
-  }
 
   componentWillUnmount() {
     clearInterval(this.histInterval!)
@@ -344,6 +350,41 @@ class App extends React.Component {
     })
   }
 
+  //simulate real time histogram data
+  startHistStream = () => {
+    this.histInterval = setInterval(() => {
+      const timestamp = moment().format()
+      this.setState({
+        fakeHistData: [
+          ...this.state.fakeHistData,
+          {
+            timestamp,
+            value: Math.random().toFixed(2)
+          }
+        ]
+      })
+
+      //limit number of updates
+      if (this.histUpdateCount++ > 50) {
+        console.log("Stopping Histogram updates. Refresh page to see update animations.")
+        clearInterval(this.histInterval!)
+      }
+    }, 3000)
+  }
+
+  toggleHistogramStream = () => {
+    const {streamHistData} = this.state
+    this.setState({
+      streamHistData: !streamHistData
+    })
+
+    if (streamHistData) {
+      clearInterval(this.histInterval!)
+    } else {
+      this.startHistStream()
+    }
+  }
+
   renderPopover = () => (
     <div style={{ paddingTop: 10 }}>
       <UnityTypography size='header1'>{'Popover!'}</UnityTypography>
@@ -362,10 +403,9 @@ class App extends React.Component {
       dropdownDisabled,
       showPopover,
       showColumnEditor,
-      fakeHistData
+      fakeHistData,
+      streamHistData
     } = this.state
-    console.log("App -> render -> showPopover", showPopover)
-
     const { data, columns, childKeys } = devices
 
     return (
@@ -437,12 +477,6 @@ class App extends React.Component {
               onSelect={(e) => console.log(`Menu item ${e} clicked`)}
             />
             <div className="main" style={mainStyle}>
-              <UnitySection>
-                <div style={{flex: 1, display: 'flex', height: 250}}>
-                  <UnityHistogram data={fakeHistData}/>
-                </div>
-              </UnitySection>
-
               <UnitySection>
                 <div style={contentBox}>
                   <UnityPageHeader
@@ -866,6 +900,18 @@ class App extends React.Component {
                   backtrack
                   onChangeStep={(step:any) => console.log('step', step)}
                 />
+              </UnitySection>
+
+              <UnitySection>
+                <div style={{flex: 1}}>
+                  <div style={{flex: 1, display: 'flex', height: 250}}>
+                    <UnityHistogram data={fakeHistData.slice(-100)}/>
+                  </div>
+                  <UnityButton
+                    onClick={this.toggleHistogramStream}
+                    label={!streamHistData ? "Start Streaming" : "Stop Streaming"}
+                  />
+                </div>
               </UnitySection>
             </div>
           </div>
