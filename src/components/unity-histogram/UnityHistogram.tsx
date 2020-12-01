@@ -3,7 +3,7 @@ import echarts from 'echarts'
 import {debounce} from 'throttle-debounce'
 import moment from 'moment'
 /**
- * A readOnly collapsible json tree viewer based on UnityCodeEditor
+ * A Histogram chart based on ECharts. Responds to parent container resize as well as new data.
  * @param {function} tooltipFormatter - function to format the tooltip text. The first parameter params is the data that the formatter needs. See ECharts tooltip formatter callback function: https://echarts.apache.org/en/option.html#tooltip.formatter
  * @param {object[]} data - array of timeseries data, each with a timestamp and value. Assuming timestamps are unique.
  * @param {string} barColor - color value of bar segments. Defaults to light blue.
