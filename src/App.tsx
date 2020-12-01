@@ -33,8 +33,10 @@ import {
   UnityCheckbox,
   UnityStepper
 } from './components/unity-core-react'
+import UnityHistogram, {histData} from './components/unity-histogram/UnityHistogram'
 
 import { devices, fakeYaml } from './fakeData'
+import moment from 'moment'
 
 const appStyle: CSSProperties = {
   display: 'flex',
@@ -232,6 +234,18 @@ const tagSeed: Object[] = [
   }
 ]
 
+
+
+const histSeed: histData[] = []
+
+for(let i = 0; i < 100; i++) {
+  const timestamp = moment(Date.now() - 100 * 1000 + i * 1000).format()
+  histSeed.push({
+    timestamp,
+    value: Number(Math.random().toFixed(2))
+  })
+}
+
 const SectionForNotifications = (props?: any) => {
   const {
     addNotification=()=>console.log(`no add notification function!`),
@@ -292,10 +306,20 @@ class App extends React.Component {
     yamlValue: fakeYaml,
     yamlError: '',
     showPopover: false,
-    showColumnEditor: false
+    showColumnEditor: false,
+    fakeHistData: [...histSeed],
+    streamHistData: false
   }
 
   popoverButtonRef = React.createRef<HTMLDivElement>()
+
+  private histInterval?: ReturnType<typeof setTimeout>
+  private histUpdateCount: number = 0
+
+
+  componentWillUnmount() {
+    clearInterval(this.histInterval!)
+  }
 
   makeCenterContent() {
     return (<div>
@@ -326,6 +350,41 @@ class App extends React.Component {
     })
   }
 
+  //simulate real time histogram data
+  startHistStream = () => {
+    this.histInterval = setInterval(() => {
+      const timestamp = moment().format()
+      this.setState({
+        fakeHistData: [
+          ...this.state.fakeHistData,
+          {
+            timestamp,
+            value: Math.random().toFixed(2)
+          }
+        ]
+      })
+
+      //limit number of updates
+      if (this.histUpdateCount++ > 50) {
+        console.log("Stopping Histogram updates. Refresh page to see update animations.")
+        clearInterval(this.histInterval!)
+      }
+    }, 3000)
+  }
+
+  toggleHistogramStream = () => {
+    const {streamHistData} = this.state
+    this.setState({
+      streamHistData: !streamHistData
+    })
+
+    if (streamHistData) {
+      clearInterval(this.histInterval!)
+    } else {
+      this.startHistStream()
+    }
+  }
+
   renderPopover = () => (
     <div style={{ paddingTop: 10 }}>
       <UnityTypography size='header1'>{'Popover!'}</UnityTypography>
@@ -343,10 +402,10 @@ class App extends React.Component {
       dropdownOptions,
       dropdownDisabled,
       showPopover,
-      showColumnEditor
+      showColumnEditor,
+      fakeHistData,
+      streamHistData
     } = this.state
-    console.log("App -> render -> showPopover", showPopover)
-
     const { data, columns, childKeys } = devices
 
     return (
@@ -841,6 +900,21 @@ class App extends React.Component {
                   backtrack
                   onChangeStep={(step:any) => console.log('step', step)}
                 />
+              </UnitySection>
+
+              <UnitySection>
+                <div style={{flex: 1}}>
+                  <div style={{flex: 1, display: 'flex', height: 250}}>
+                    <UnityHistogram
+                      data={fakeHistData.slice(-100)}
+                      tooltipFormatter={(params: any) => `${moment(params['value'][0]).fromNow()}: ${Math.round(params['value'][1] * 100)}% CPU`}
+                    />
+                  </div>
+                  <UnityButton
+                    onClick={this.toggleHistogramStream}
+                    label={!streamHistData ? "Start Streaming" : "Stop Streaming"}
+                  />
+                </div>
               </UnitySection>
             </div>
           </div>
