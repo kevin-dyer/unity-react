@@ -116,7 +116,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-core-react@1.3.22": {
+    "smartworks.unity-react/unity-core-react@1.3.23": {
         "files": [
             {
                 "name": "index.js",
@@ -152,6 +152,11 @@
                 "name": "index.js",
                 "relativePath": "src/components/unity-core-react/UnityGlobalNav/index.js",
                 "test": false
+            },
+            {
+                "relativePath": "src/components/unity-core-react/UnityHistogram/index.js",
+                "test": false,
+                "name": "index.js"
             },
             {
                 "name": "index.js",
@@ -314,6 +319,19 @@
         ],
         "mainFile": "src/components/unity-global-nav-react/UnityGlobalNav.tsx",
         "trackDir": "src/components/unity-global-nav-react",
+        "origin": "AUTHORED",
+        "exported": true
+    },
+    "smartworks.unity-react/unity-histogram@0.0.1": {
+        "files": [
+            {
+                "relativePath": "src/components/unity-histogram/UnityHistogram.tsx",
+                "test": false,
+                "name": "UnityHistogram.tsx"
+            }
+        ],
+        "mainFile": "src/components/unity-histogram/UnityHistogram.tsx",
+        "trackDir": "src/components/unity-histogram",
         "origin": "AUTHORED",
         "exported": true
     },
