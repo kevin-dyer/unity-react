@@ -123,7 +123,7 @@ export default class UnityHistogram extends Component<UnityHistogramProps> {
   }
 
   render() {
-    const {data, options, style, ...rest} = this.props
+    const {data, options, tooltipFormatter, barColor, style, ...rest} = this.props
     return <div
       style={{...styles.container, ...style}}
       ref={this.histRef}
