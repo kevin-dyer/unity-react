@@ -1,4 +1,4 @@
-import React, {HTMLAttributes, createRef, Component} from "react";
+import React, {HTMLAttributes, createRef, Component, CSSProperties} from "react";
 import echarts from 'echarts'
 import {debounce} from 'throttle-debounce'
 import moment from 'moment'
@@ -7,6 +7,8 @@ import moment from 'moment'
  * @param {function} tooltipFormatter - function to format the tooltip text. The first parameter params is the data that the formatter needs. See ECharts tooltip formatter callback function: https://echarts.apache.org/en/option.html#tooltip.formatter
  * @param {object[]} data - array of timeseries data, each with a timestamp and value. Assuming timestamps are unique.
  * @param {string} barColor - color value of bar segments. Defaults to light blue.
+ * @param {object} options - optional EChart options for complete control over chart conviguration. See Echarts options: https://echarts.apache.org/en/option.html
+ * @param {CSSProperties} style - style object
  * @example
  * <UnityHistogram/>
  */
@@ -14,7 +16,9 @@ import moment from 'moment'
 export interface UnityHistogramProps extends HTMLAttributes<HTMLElement> {
   data?: histData[]
   barColor?: string,
-  tooltipFormatter?: echarts.EChartOption.Tooltip.Formatter
+  options?: echarts.EChartOption,
+  tooltipFormatter?: echarts.EChartOption.Tooltip.Formatter,
+  style?: CSSProperties
 }
 
 export interface histData {
@@ -56,9 +60,9 @@ export default class UnityHistogram extends Component<UnityHistogramProps> {
   }
 
   componentDidUpdate(prevProps: UnityHistogramProps) {
-    const {data=[]} = this.props
+    const {data=[], options={}} = this.props
 
-    if (prevProps?.data !== data && !!this.chart) {
+    if ((prevProps?.data !== data && prevProps?.options !== options) && !!this.chart) {
       const newOptions = this.createChartOptions()
 
       this.chart.setOption(newOptions)
@@ -78,10 +82,11 @@ export default class UnityHistogram extends Component<UnityHistogramProps> {
     const {
       data=[],
       barColor='#92b4dd',
-      tooltipFormatter=formatTooltip
+      tooltipFormatter=formatTooltip,
+      options={}
     } = this.props
 
-    return {
+    const defaultOptions: echarts.EChartOption =  {
       title: {
         text: 'hist'
       },
@@ -112,12 +117,17 @@ export default class UnityHistogram extends Component<UnityHistogramProps> {
       color: barColor ? [barColor] : undefined,
       animationDuration: 200
     }
+
+    return {...defaultOptions, ...options}
+    // return defaultOptions
   }
 
   render() {
+    const {data, options, style, ...rest} = this.props
     return <div
-      style={styles.container}
+      style={{...styles.container, ...style}}
       ref={this.histRef}
+      {...rest}
     >
     </div>
   }
