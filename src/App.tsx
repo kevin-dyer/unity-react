@@ -33,8 +33,9 @@ import {
   UnityCheckbox,
   UnityStepper,
   UnitySelectMenu
+  UnityHistogram,
+  histData
 } from './components/unity-core-react'
-import UnityHistogram, {histData} from './components/unity-histogram/UnityHistogram'
 
 import { devices, fakeYaml, selectMenuItems } from './fakeData'
 import moment from 'moment'
