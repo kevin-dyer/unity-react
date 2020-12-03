@@ -2,7 +2,10 @@
 
 ## Changelog:
 
-### v1.1.0
+### v1.0.4
+- Added `expanded` and `onExpandedChange`
+
+### v1.0.3
 - Added `autofocus` prop
 - Pass `rightAlign`, `searchBox`, `selectIcon` and `showTags` boolean properties to wrapped component only when they are true
 

@@ -2,38 +2,41 @@ import React, { Component } from 'react'
 
 import '@bit/smartworks.unity.unity-core/unity-dropdown'
 
-export default class UnityDropdown extends Component<dropdownPropsType> {
-  private dropdownRef = React.createRef<dropdownPropsType>()
+export default class UnityDropdown extends Component<DropdownPropsI> {
+  private dropdownRef = React.createRef<DropdownPropsI>()
 
   componentDidMount = () => {
     this.updateProperties()
   }
 
-  componentDidUpdate(oldProps: dropdownPropsType) {
+  componentDidUpdate(oldProps: DropdownPropsI) {
     this.updateProperties(oldProps)
   }
 
-  updateProperties(oldProps: dropdownPropsType={}) {
+  updateProperties(oldProps: DropdownPropsI={}) {
     const {
       options,
       selected,
       onMenuClick,
       onValueChange,
+      onExpandedChange
     } = this.props
 
     const {
       options: oldOptions,
       selected: oldSelected,
       onMenuClick: oldOnMenuClick,
-      onValueChange: oldOnValueChange
+      onValueChange: oldOnValueChange,
+      onExpandedChange: oldOnExpandedChange
     } = oldProps
 
     const unityDropdown = this.dropdownRef.current
     if (unityDropdown) {
       if (oldOnMenuClick !== onMenuClick) unityDropdown.onMenuClick = onMenuClick
       if (oldOnValueChange !== onValueChange) unityDropdown.onValueChange = onValueChange
-      if(oldOptions !== options) unityDropdown.options = options
-      if(oldSelected !== selected) unityDropdown.selected = selected
+      if (oldOnExpandedChange !== onExpandedChange) unityDropdown.onExpandedChange = onExpandedChange
+      if (oldOptions !== options) unityDropdown.options = options
+      if (oldSelected !== selected) unityDropdown.selected = selected
     }
   }
 
@@ -42,6 +45,7 @@ export default class UnityDropdown extends Component<dropdownPropsType> {
       // boolean props
       autofocus,
       disabled,
+      expanded,
       important,
       rightAlign,
       searchBox,
@@ -51,15 +55,17 @@ export default class UnityDropdown extends Component<dropdownPropsType> {
       bottomContent,
       onMenuClick,
       onValueChange,
+      onExpandedChange,
       options,
       selected,
       ...otherProps
     } = this.props
 
-    const dropdownProps : dropdownPropsType = { ...otherProps }
+    const dropdownProps : DropdownPropsI = { ...otherProps }
 
     if (autofocus) dropdownProps.autofocus = true
     if (disabled) dropdownProps.disabled = true
+    if (expanded) dropdownProps.expanded = true
     if (important) dropdownProps.important = true
     if (rightAlign) dropdownProps.rightAlign = true
     if (searchBox) dropdownProps.searchBox = true
@@ -83,7 +89,7 @@ export default class UnityDropdown extends Component<dropdownPropsType> {
 
 export type inputType = "menu" | "single-select" | "multi-select"
 export type boxType = "label" | "search" | "button-primary" | "button-secondary" | "button-borderless" | "inline"
-export interface dropdownPropsType extends React.HTMLAttributes<HTMLElement> {
+export interface DropdownPropsI extends React.HTMLAttributes<HTMLElement> {
   [key: string]: any
 
   boxType?: boxType
@@ -91,7 +97,7 @@ export interface dropdownPropsType extends React.HTMLAttributes<HTMLElement> {
   inputType?: inputType
   label?: string
   placeholder?: string
-  style?: dropdownStyleTypes
+  style?: DropdownStylesT
 
   autofocus?: boolean
   disabled?: boolean
@@ -100,15 +106,17 @@ export interface dropdownPropsType extends React.HTMLAttributes<HTMLElement> {
   searchBox?: boolean
   selectIcon?: boolean
   showTags?: boolean
+  expanded?: boolean
 
   bottomContent?: any
   onMenuClick?: Function
   onValueChange?: Function
+  onExpandedChange?: Function
   options?: Object[] | string
   selected?: string[] | string
 }
 
-export type dropdownStyleTypes = React.CSSProperties & {
+export type DropdownStylesT = React.CSSProperties & {
   '--dropdown-background-color'?: string
   '--dropdown-background-color-disabled'?: string
   '--dropdown-border-color'?: string
