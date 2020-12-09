@@ -15,18 +15,18 @@ export default class UnitySelectMenu extends Component<SelectMenuPropsI> {
 
   updateProperties(oldProps?: SelectMenuPropsI) {
     const {
-      items,
+      options,
       onMenuClick,
     } = this.props
 
     const {
-      items: oldItems,
+      options: oldOptions,
       onMenuClick: oldOnMenuClick
     } = oldProps || {}
 
     const unitySelectMenu = this.selectMenuRef.current
     if (unitySelectMenu) {
-      if (oldItems !== items) unitySelectMenu.items = items
+      if (oldOptions !== options) unitySelectMenu.options = options
       if (oldOnMenuClick !== onMenuClick) unitySelectMenu.onMenuClick = onMenuClick
     }
   }
@@ -59,7 +59,7 @@ interface MenuItemI {
 
 export interface SelectMenuPropsI extends React.HTMLAttributes<HTMLElement> {
   [key: string]: any
-  items?: MenuItemI[]
+  options?: MenuItemI[]
   onMenuClick?: Function
   borderless?: boolean
 }
