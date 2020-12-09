@@ -51,10 +51,10 @@ export default class UnitySelectMenu extends Component<SelectMenuPropsI> {
 }
 
 interface MenuItemI {
-  id: string | number
-  label: string
-  disabled: boolean
-  submenu: MenuItemI[]
+  id?: string | number
+  label?: string
+  disabled?: boolean
+  submenu?: MenuItemI[]
 }
 
 export interface SelectMenuPropsI extends React.HTMLAttributes<HTMLElement> {
@@ -62,7 +62,6 @@ export interface SelectMenuPropsI extends React.HTMLAttributes<HTMLElement> {
   items?: MenuItemI[]
   onMenuClick?: Function
   borderless?: boolean
-
 }
 
 export type SelectMenuStylesT = React.CSSProperties & {
