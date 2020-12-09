@@ -1,20 +1,20 @@
 import React, { Component } from 'react'
 
 import '@bit/smartworks.unity.unity-core/unity-checkbox'
-import { checkboxType } from '@bit/smartworks.unity.unity-core/unity-checkbox'
+import { CheckboxPropsI } from '@bit/smartworks.unity.unity-core/unity-checkbox'
 
-export default class UnityCheckbox extends Component<checkboxType> {
-  private checkboxRef = React.createRef<checkboxType>()
+export default class UnityCheckbox extends Component<CheckboxPropsI> {
+  private checkboxRef = React.createRef<CheckboxPropsI>()
 
   componentDidMount = () => {
     this.updateProperties()
   }
 
-  componentDidUpdate(oldProps: checkboxType) {
+  componentDidUpdate(oldProps: CheckboxPropsI) {
     this.updateProperties(oldProps)
   }
 
-  updateProperties(oldProps: checkboxType={}) {
+  updateProperties(oldProps: CheckboxPropsI={}) {
     const {
       onChange
     } = this.props
@@ -35,10 +35,11 @@ export default class UnityCheckbox extends Component<checkboxType> {
       checked,
       indeterminate,
       disabled,
+      ignoreClicks,
       ...otherProps
     } = this.props
 
-    const checkboxProps : checkboxType = otherProps
+    const checkboxProps : CheckboxPropsI = otherProps
 
     if(checked) {
       checkboxProps.checked = checked
@@ -48,6 +49,9 @@ export default class UnityCheckbox extends Component<checkboxType> {
     }
     if (disabled) {
       checkboxProps.disabled = disabled
+    }
+    if (ignoreClicks) {
+      checkboxProps.ignoreClicks = ignoreClicks
     }
 
     return (
