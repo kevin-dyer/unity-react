@@ -34,6 +34,8 @@ export default class UnitySelectMenu extends Component<SelectMenuPropsI> {
   render() {
     const {
       borderless,
+      onMenuClick,
+      options,
       ...otherProps
     } = this.props
 
