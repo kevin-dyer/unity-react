@@ -55,6 +55,9 @@ export * from "@bit/smartworks.unity-react.unity-search-bar-react"
 export { default as UnitySection } from "@bit/smartworks.unity-react.unity-section-react"
 export * from "@bit/smartworks.unity-react.unity-section-react"
 
+export { default as UnitySelectMenu } from "@bit/smartworks.unity-react.unity-select-menu-react"
+export * from "@bit/smartworks.unity-react.unity-select-menu-react"
+
 export { default as UnitySplitPane } from "@bit/smartworks.unity-react.unity-split-pane-react"
 export * from "@bit/smartworks.unity-react.unity-split-pane-react"
 

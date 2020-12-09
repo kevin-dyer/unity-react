@@ -31,11 +31,12 @@ import {
   UnityPopover,
   UnitySearchBar,
   UnityCheckbox,
-  UnityStepper
+  UnityStepper,
+  UnitySelectMenu
 } from './components/unity-core-react'
 import UnityHistogram, {histData} from './components/unity-histogram/UnityHistogram'
 
-import { devices, fakeYaml } from './fakeData'
+import { devices, fakeYaml, selectMenuItems } from './fakeData'
 import moment from 'moment'
 
 const appStyle: CSSProperties = {
@@ -683,6 +684,13 @@ class App extends React.Component {
                       this.setState({ dropdownOptions: newDropdownOptions })
                     }}
                     label={"Add/Remove Item"}
+                  />
+                </UnitySection>
+                <UnitySection>
+                  <UnitySelectMenu
+                    label={"This is a Select Menu"}
+                    onMenuClick={(...args:any) => console.log(`Menu item clicked: `, args)}
+                    items={selectMenuItems}
                   />
                 </UnitySection>
                 <UnitySection>

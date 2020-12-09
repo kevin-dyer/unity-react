@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v1.1.0
+- Changed "items" prop to "options"
+
 ### v1.0.1
 - added ignoreClicks prop
 
