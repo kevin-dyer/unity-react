@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v1.1.1
+- documentation change
+
 ### v1.1.0
 - Changed "items" prop to "options"
 
