@@ -1,4 +1,5 @@
 
+
 //Extra rows of fake data to test infinite scroll
 let fillerRows = []
 for(let i=0; i<200; i++) {
@@ -386,3 +387,52 @@ integration-test:
   tags:
     - shell
 `;
+
+export const selectMenuItems = [
+  {
+    "id": "1",
+    "label": "Option 1",
+    "submenu": [
+      {
+        "id": "1_1",
+        "label": "Option 1"
+      },
+      {
+        "id": "1_2",
+        "label": "Option 2"
+      },
+      {
+        "id": "1_3",
+        "label": "Option 3"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "label": "Option 2",
+    "submenu": [
+      {
+        "id": "2_1",
+        "label": "Option 1",
+        "submenu": [
+          {
+            "id": "2_1_1",
+            "label": "Option 1"
+          },
+          {
+            "id": "2_1_2",
+            "label": "Option 2"
+          }
+        ]
+      },
+      {
+        "id": "2_2",
+        "label": "Option 2"
+      },
+      {
+        "id": "2_3",
+        "label": "Option 3"
+      }
+    ]
+  }
+]
