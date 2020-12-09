@@ -25,6 +25,9 @@ export * from "@bit/smartworks.unity-react.<component-path>" //Export named expo
 
 ## Changelog:
 
+### v1.4.1
+- unity-checkbox-react v1.0.1
+
 ### v1.3.23
 - unity-dropdown-react v1.0.4
 
