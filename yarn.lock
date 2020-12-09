@@ -1335,6 +1335,14 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
+"@bit/smartworks.unity-react.unity-select-menu-react@^0.1.1":
+  version "0.1.1"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-select-menu-react/-/smartworks.unity-react.unity-select-menu-react-0.1.1.tgz#787b41f7d720658ddec6c0a9b42180a1191170dc"
+  integrity sha1-eHtB99cgZY3exsCptCGAoRkRcNw=
+  dependencies:
+    "@types/react" "16.9.11"
+    react "^16.12.0"
+
 "@bit/smartworks.unity-react.unity-split-pane-react@1.0.3", "@bit/smartworks.unity-react.unity-split-pane-react@^1.0.3":
   version "1.0.3"
   resolved "https://node.bit.dev/smartworks.unity-react.unity-split-pane-react/-/smartworks.unity-react.unity-split-pane-react-1.0.3.tgz#b45088f79f65570d17ff04fa48550b744fb003e7"
