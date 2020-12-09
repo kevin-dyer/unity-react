@@ -13,7 +13,7 @@ export default class UnitySelectMenu extends Component<SelectMenuPropsI> {
     this.updateProperties(oldProps)
   }
 
-  updateProperties(oldProps: SelectMenuPropsI={}) {
+  updateProperties(oldProps?: SelectMenuPropsI) {
     const {
       items,
       onMenuClick,
@@ -22,7 +22,7 @@ export default class UnitySelectMenu extends Component<SelectMenuPropsI> {
     const {
       items: oldItems,
       onMenuClick: oldOnMenuClick
-    } = oldProps
+    } = oldProps || {}
 
     const unitySelectMenu = this.selectMenuRef.current
     if (unitySelectMenu) {
@@ -59,7 +59,7 @@ interface MenuItemI {
 
 export interface SelectMenuPropsI extends React.HTMLAttributes<HTMLElement> {
   [key: string]: any
-  items: MenuItemI[]
+  items?: MenuItemI[]
   onMenuClick?: Function
   borderless?: boolean
 
