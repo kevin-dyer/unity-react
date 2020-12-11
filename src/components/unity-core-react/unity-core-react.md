@@ -25,6 +25,9 @@ export * from "@bit/smartworks.unity-react.<component-path>" //Export named expo
 
 ## Changelog:
 
+### v1.3.33
+- unity-dropdown-react v1.0.4
+
 ### v1.3.29
 - documentation correction
 
