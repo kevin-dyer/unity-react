@@ -2,6 +2,10 @@
 
 ## Changelog:
 
+### v1.0.5
+- Added `showCheckboxes`
+
+
 ### v1.0.4
 - Added `expanded` and `onExpandedChange`
 
