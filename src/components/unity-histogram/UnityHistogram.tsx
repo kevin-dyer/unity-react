@@ -89,21 +89,36 @@ export default class UnityHistogram extends Component<UnityHistogramProps> {
 
     const defaultOptions: echarts.EChartOption =  {
       title: {
-        text: 'hist'
       },
-      grid:{
-        containLabel:false
+      grid: {
+        show: true,
+        containLabel: false,
+        top: 0,
+        left: 25,
+        right: 25,
+        bottom: 20,
+        borderColor: '#454545',
+        borderWidth: 1,
       },
       tooltip: {
         transitionDuration: 0.2,
         formatter: tooltipFormatter,
+        textStyle: {
+          fontFamily: 'Noto',
+          fontSize: 12
+        }
       },
       xAxis: {
         show:true,
         type: 'time',
         splitLine: {
             show: false
-        }
+        },
+        axisLabel: {
+          fontSize: 10,
+          fontFamily: 'Noto'
+        },
+        splitNumber: 3
       },
       yAxis: {
         show: false,
@@ -112,7 +127,7 @@ export default class UnityHistogram extends Component<UnityHistogramProps> {
       series: [{
         name: 'bar',
         type: 'bar',
-        data: formatSeriesData(data),
+        data: formatSeriesData(data)
       }],
       animation: true,
       color: barColor ? [barColor] : undefined,
