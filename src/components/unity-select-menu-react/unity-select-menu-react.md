@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v0.1.2
+- Fixed issue where we were passing properties that could not be managed by wrapped component
+
 ### v0.1.1
 - Made submenu items optional
 
