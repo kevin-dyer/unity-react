@@ -5,11 +5,12 @@ declare namespace JSX {
 }
 
 declare module '@bit/smartworks.unity.unity-core/unity-checkbox' {
-  export interface checkboxType {
+  export interface CheckboxPropsI {
     label?: string,
     checked?: boolean,
     indeterminate?: boolean,
     disabled?: boolean,
+    ignoreClicks?: boolean,
     onChange?: Function,
   }
 }

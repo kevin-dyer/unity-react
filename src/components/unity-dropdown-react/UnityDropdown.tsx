@@ -50,6 +50,7 @@ export default class UnityDropdown extends Component<DropdownPropsI> {
       rightAlign,
       searchBox,
       selectIcon,
+      showCheckboxes,
       showTags,
       // function/object props
       bottomContent,
@@ -70,6 +71,7 @@ export default class UnityDropdown extends Component<DropdownPropsI> {
     if (rightAlign) dropdownProps.rightAlign = true
     if (searchBox) dropdownProps.searchBox = true
     if (selectIcon) dropdownProps.selectIcon = true
+    if (showCheckboxes) dropdownProps.showCheckboxes = true
     if (showTags) dropdownProps.showTags = true
     
     return (
@@ -105,6 +107,7 @@ export interface DropdownPropsI extends React.HTMLAttributes<HTMLElement> {
   rightAlign?: boolean
   searchBox?: boolean
   selectIcon?: boolean
+  showCheckboxes?: boolean
   showTags?: boolean
   expanded?: boolean
 
