@@ -1,5 +1,6 @@
 import React, { Component, CSSProperties, HTMLAttributes, ReactElement } from 'react'
 import '@bit/smartworks.unity.unity-core/unity-table'
+import deepEqual from 'deep-equal'
 
 export interface TablePropsI extends HTMLAttributes<HTMLElement> {
   data?: Object[]
@@ -125,17 +126,20 @@ export default class UnityTable extends Component<TablePropsI> {
 
     const unityTable = this.tableRef.current
     if(unityTable) {
+
+      //To prevent unnecessary updates to the web component, doing deep comparison of prop
+      if (!deepEqual(oldColumns, columns)) {
+        unityTable.columns = columns
+      }
+      if (!deepEqual(oldData, data)) {
+        unityTable.data = data
+      }
+
       if (oldChildKeys !== childKeys) {
         unityTable.childKeys = childKeys
       }
-      if (oldColumns !== columns) {
-        unityTable.columns = columns
-      }
       if (oldSelected !== selected) {
         unityTable.selected = selected
-      }
-      if (oldData !== data) {
-        unityTable.data = data
       }
       if (oldKeyExtractor !== keyExtractor) {
         unityTable.keyExtractor = keyExtractor
