@@ -2,11 +2,17 @@
 
 ## Changelog:
 
-### v0.1.2
+### v1.1.4
+- Added `highlighted` prop
+
+### v1.1.3
+- documentation and versioning fix
+
+### v1.1.2
 - Fixed issue where we were passing properties that could not be managed by wrapped component
 
-### v0.1.1
+### v1.1.1
 - Made submenu items optional
 
-### v0.1.0
+### v1.1.0
 - Initial wrapper for component

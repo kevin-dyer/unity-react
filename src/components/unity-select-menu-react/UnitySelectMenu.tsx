@@ -16,17 +16,20 @@ export default class UnitySelectMenu extends Component<SelectMenuPropsI> {
   updateProperties(oldProps?: SelectMenuPropsI) {
     const {
       options,
+      highlighted,
       onMenuClick,
     } = this.props
 
     const {
       options: oldOptions,
+      highlighted: oldHighlighted,
       onMenuClick: oldOnMenuClick
     } = oldProps || {}
 
     const unitySelectMenu = this.selectMenuRef.current
     if (unitySelectMenu) {
       if (oldOptions !== options) unitySelectMenu.options = options
+      if (oldHighlighted !== highlighted) unitySelectMenu.highlighted = highlighted
       if (oldOnMenuClick !== onMenuClick) unitySelectMenu.onMenuClick = onMenuClick
     }
   }
@@ -36,6 +39,7 @@ export default class UnitySelectMenu extends Component<SelectMenuPropsI> {
       borderless,
       onMenuClick,
       options,
+      highlighted,
       ...otherProps
     } = this.props
 
@@ -62,6 +66,7 @@ interface MenuItemI {
 export interface SelectMenuPropsI extends React.HTMLAttributes<HTMLElement> {
   [key: string]: any
   options?: MenuItemI[]
+  highlighted?: String[]
   onMenuClick?: Function
   borderless?: boolean
 }

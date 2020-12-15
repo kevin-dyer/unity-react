@@ -1158,15 +1158,7 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-checkbox-react@1.0.0":
-  version "1.0.0"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-checkbox-react/-/smartworks.unity-react.unity-checkbox-react-1.0.0.tgz#c134a79610b71adea59a9b8affe9d15e5b00d729"
-  integrity sha1-wTSnlhC3Gt6lmpuK/+nRXlsA1yk=
-  dependencies:
-    "@types/react" "16.9.11"
-    react "^16.12.0"
-
-"@bit/smartworks.unity-react.unity-checkbox-react@^1.1.1":
+"@bit/smartworks.unity-react.unity-checkbox-react@1.1.1", "@bit/smartworks.unity-react.unity-checkbox-react@^1.1.1":
   version "1.1.1"
   resolved "https://node.bit.dev/smartworks.unity-react.unity-checkbox-react/-/smartworks.unity-react.unity-checkbox-react-1.1.1.tgz#027efa11ed91bf2b71d125e659c916a0c81f5971"
   integrity sha1-An76Ee2Rvytx0SXmWckWoMgfWXE=
@@ -1192,16 +1184,16 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-core-react@^1.3.32":
-  version "1.3.32"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-core-react/-/smartworks.unity-react.unity-core-react-1.3.32.tgz#20cf3daff331401493a06bc3e382ff6dbb032d94"
-  integrity sha1-IM89r/MxQBSToGvD44L/bbsDLZQ=
+"@bit/smartworks.unity-react.unity-core-react@^1.3.34":
+  version "1.3.34"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-core-react/-/smartworks.unity-react.unity-core-react-1.3.34.tgz#c2ccd5ea005a0563d6e38b01a39ac13214c027cb"
+  integrity sha1-wszV6gBaBWPW44sBo5rBMhTAJ8s=
   dependencies:
     "@bit/smartworks.unity-react.unity-button-react" "1.1.3"
-    "@bit/smartworks.unity-react.unity-checkbox-react" "1.0.0"
+    "@bit/smartworks.unity-react.unity-checkbox-react" "1.1.1"
     "@bit/smartworks.unity-react.unity-code-editor-react" "1.0.0"
     "@bit/smartworks.unity-react.unity-column-editor-react" "1.0.3"
-    "@bit/smartworks.unity-react.unity-dropdown-react" "1.0.4"
+    "@bit/smartworks.unity-react.unity-dropdown-react" "1.0.5"
     "@bit/smartworks.unity-react.unity-dropzone-react" "0.2.2"
     "@bit/smartworks.unity-react.unity-global-nav-react" "1.2.0"
     "@bit/smartworks.unity-react.unity-histogram" "0.0.2"
@@ -1214,7 +1206,7 @@
     "@bit/smartworks.unity-react.unity-progress-react" "0.2.2"
     "@bit/smartworks.unity-react.unity-search-bar-react" "1.0.2"
     "@bit/smartworks.unity-react.unity-section-react" "0.3.4"
-    "@bit/smartworks.unity-react.unity-select-menu-react" "1.1.3"
+    "@bit/smartworks.unity-react.unity-select-menu-react" "1.1.4"
     "@bit/smartworks.unity-react.unity-split-pane-react" "1.0.3"
     "@bit/smartworks.unity-react.unity-stepper-react" "1.0.0"
     "@bit/smartworks.unity-react.unity-table-export-react" "0.2.2"
@@ -1224,15 +1216,7 @@
     "@bit/smartworks.unity-react.unity-toggle-switch-react" "0.2.2"
     "@bit/smartworks.unity-react.unity-typography-react" "1.0.1"
 
-"@bit/smartworks.unity-react.unity-dropdown-react@1.0.4":
-  version "1.0.4"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-dropdown-react/-/smartworks.unity-react.unity-dropdown-react-1.0.4.tgz#16675c12f9a848d27d8186c1da881cc76070c961"
-  integrity sha1-FmdcEvmoSNJ9gYbB2ogcx2BwyWE=
-  dependencies:
-    "@types/react" "16.9.11"
-    react "^16.12.0"
-
-"@bit/smartworks.unity-react.unity-dropdown-react@^1.0.5":
+"@bit/smartworks.unity-react.unity-dropdown-react@1.0.5", "@bit/smartworks.unity-react.unity-dropdown-react@^1.0.5":
   version "1.0.5"
   resolved "https://node.bit.dev/smartworks.unity-react.unity-dropdown-react/-/smartworks.unity-react.unity-dropdown-react-1.0.5.tgz#b407178ce248c282b1f54038fb56326ec5f1e43b"
   integrity sha1-tAcXjOJIwoKx9UA4+1YybsXx5Ds=
@@ -1344,18 +1328,10 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-select-menu-react@1.1.3":
-  version "1.1.3"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-select-menu-react/-/smartworks.unity-react.unity-select-menu-react-1.1.3.tgz#668ab0c2b3f53f74c7734a8aee7e6286b2432ebe"
-  integrity sha1-ZoqwwrP1P3THc0qK7n5ihrJDLr4=
-  dependencies:
-    "@types/react" "16.9.11"
-    react "^16.12.0"
-
-"@bit/smartworks.unity-react.unity-select-menu-react@^1.1.0":
-  version "1.1.0"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-select-menu-react/-/smartworks.unity-react.unity-select-menu-react-1.1.0.tgz#56ed87df579b17b8d9639a2521b16cb44a9db3f5"
-  integrity sha1-Vu2H31ebF7jZY5olIbFstEqds/U=
+"@bit/smartworks.unity-react.unity-select-menu-react@1.1.4", "@bit/smartworks.unity-react.unity-select-menu-react@^1.1.4":
+  version "1.1.4"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-select-menu-react/-/smartworks.unity-react.unity-select-menu-react-1.1.4.tgz#3ed244c743de9602e5cd88f284dd8da07cbac15a"
+  integrity sha1-PtJEx0PelgLlzYjyhN2NoHy6wVo=
   dependencies:
     "@types/react" "16.9.11"
     react "^16.12.0"
