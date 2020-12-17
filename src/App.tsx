@@ -2,9 +2,12 @@ import React, { CSSProperties } from 'react';
 import './App.css';
 import {
   UnityButton,
+  UnityCard,
   UnityCodeEditor,
   UnityGlobalNav, NavItemsConfigI,
   CodeEditorStylesI,
+  UnityHistogram,
+  histData,
   UnityJsonViewer,
   UnityTextInput,
   UnityTable,
@@ -32,11 +35,8 @@ import {
   UnitySearchBar,
   UnityCheckbox,
   UnityStepper,
-  UnitySelectMenu
-  UnityHistogram,
-  histData
+  UnitySelectMenu,
 } from './components/unity-core-react'
-
 import { devices, fakeYaml, selectMenuItems } from './fakeData'
 import moment from 'moment'
 
@@ -488,6 +488,7 @@ class App extends React.Component {
                   />
                 </div>
               </UnitySection>
+
               <UnitySection>
                 <UnityProgress
                   label="Unity Progress"
@@ -924,6 +925,12 @@ class App extends React.Component {
                     label={!streamHistData ? "Start Streaming" : "Stop Streaming"}
                   />
                 </div>
+              </UnitySection>
+
+              <UnitySection>
+                <UnityCard
+                  title="Test Card"
+                />
               </UnitySection>
             </div>
           </div>
