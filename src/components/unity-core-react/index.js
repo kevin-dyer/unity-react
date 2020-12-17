@@ -13,6 +13,9 @@
 export { default as UnityButton } from "@bit/smartworks.unity-react.unity-button-react"
 export * from "@bit/smartworks.unity-react.unity-button-react"
 
+export { default as UnityCard } from "@bit/smartworks.unity-react.unity-card-react"
+export * from "@bit/smartworks.unity-react.unity-card-react"
+
 export { default as UnityCheckbox } from "@bit/smartworks.unity-react.unity-checkbox-react"
 export * from "@bit/smartworks.unity-react.unity-checkbox-react"
 
