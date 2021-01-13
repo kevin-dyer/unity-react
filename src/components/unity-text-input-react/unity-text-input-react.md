@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v1.0.3
+- Extended text input props with html attributes.
+
 ### v1.0.2
 - Added missing `dirty`, `readOnly` and `required` props
 - Fix `error` type, and only pass it to component when it is not false. Otherwise, `false` values will be stringified and showed as errors
