@@ -1,4 +1,4 @@
-import React, { Component, CSSProperties, HTMLAttributes } from 'react'
+import React, { Component, CSSProperties, HTMLAttributes, FormEvent } from 'react'
 import '@bit/smartworks.unity.unity-core/unity-text-input'
 
 export interface TextInputPropsI extends HTMLAttributes<HTMLElement>{
@@ -32,7 +32,7 @@ export interface TextInputPropsI extends HTMLAttributes<HTMLElement>{
   showIcon?: boolean
   time?: boolean
 
-  onChange?: Function
+  onChange?(event: FormEvent<HTMLInputElement>): void
   validation?: Function
 }
 
