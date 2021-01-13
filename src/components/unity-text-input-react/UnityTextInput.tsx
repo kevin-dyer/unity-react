@@ -1,7 +1,7 @@
-import React, { Component, CSSProperties } from 'react'
+import React, { Component, CSSProperties, HTMLAttributes } from 'react'
 import '@bit/smartworks.unity.unity-core/unity-text-input'
 
-export interface TextInputPropsI {
+export interface TextInputPropsI extends HTMLAttributes<HTMLElement>{
   [key: string]: any
 
   error?: string | boolean
