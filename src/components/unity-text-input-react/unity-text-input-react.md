@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v1.1.0
+- Added `prefixedText` and related CSS vars to component types.
+
 ### v1.0.3
 - Extended text input props with html attributes.
 

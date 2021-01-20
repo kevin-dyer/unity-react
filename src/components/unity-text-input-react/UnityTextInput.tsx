@@ -13,6 +13,7 @@ export interface TextInputPropsI extends HTMLAttributes<HTMLElement>{
   maxLines?: number
   minLines?: number
   placeholder?: string
+  prefixedText?: string
   remark?: string
   style?: TextInputStyles
   units?: string
@@ -54,6 +55,8 @@ export type TextInputStyles = CSSProperties & {
   '--input-icon-hint-color'?: string
   '--input-icon-valid-color'?: string
   '--input-icon-error-color'?: string
+  '--input-prefixed-text-color'?: string
+  '--input-prefixed-text-padding'?: string
   '--inner-icon-size'?: string
 }
 export default class UnityTextInput extends Component<TextInputPropsI> {
