@@ -27,7 +27,8 @@ export interface NavPropsI extends HTMLAttributes<HTMLElement> {
  children?: any
  style?: NavStyles
  customHeader?: any,
- customExpandedHeader?: any
+ customExpandedHeader?: any,
+ onToggleCollapse?: ((collapsed: boolean) => void)
 }
  
 export type NavStyles = CSSProperties & {
@@ -85,13 +86,15 @@ export default class UnityGlobalNav extends Component<NavPropsI> {
      items={},
      onSelect,
      customHeader,
-     customExpandedHeader
+     customExpandedHeader,
+     onToggleCollapse
    } : NavPropsI = this.props
    const {
      items: oldItems,
      onSelect: oldOnSelect,
      customHeader: oldCustomHeader,
-     customExpandedHeader: oldCustomExpandedHeader
+     customExpandedHeader: oldCustomExpandedHeader,
+     onToggleCollapse: oldOnToggleCollapse
    } : NavPropsI = oldProps
    const nav = this.navRef.current
  
@@ -111,6 +114,10 @@ export default class UnityGlobalNav extends Component<NavPropsI> {
      if (customExpandedHeader !== oldCustomExpandedHeader) {
        nav.customExpandedHeader = customExpandedHeader
      }
+
+     if (onToggleCollapse !== oldOnToggleCollapse) {
+       nav.onToggleCollapse = onToggleCollapse
+     }
    }
  }
  
@@ -125,6 +132,7 @@ export default class UnityGlobalNav extends Component<NavPropsI> {
      onSelect,
      customHeader,
      customExpandedHeader,
+     onToggleCollapse,
      ...otherProps
    } : NavPropsI = this.props
    let sideNavProps : NavPropsI = otherProps

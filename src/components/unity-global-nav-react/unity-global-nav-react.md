@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v1.2.1
+- Added new prop: onToggleCollapse
+
 ### v1.2.0
 - Added new prop: customExpandedHeader
 
