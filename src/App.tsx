@@ -477,6 +477,7 @@ class App extends React.Component {
               grid
               header='ProductName'
               onSelect={(e) => console.log(`Menu item ${e} clicked`)}
+              onToggleCollapse={collapsed => console.log("onToggleCollapse ", {collapsed})}
             />
             <div className="main" style={mainStyle}>
               <UnitySection>
