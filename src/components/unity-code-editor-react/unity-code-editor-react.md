@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v1.0.1
+- Added support for golang
+
 ### v1.0.0
 - Updated unity-typography-react v1.0.0
 - Updated to v1 to enable proper semantic versioning
