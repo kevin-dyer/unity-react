@@ -5,6 +5,7 @@ import AceEditor from "react-ace";
 import "ace-builds/src-noconflict/mode-json5";
 import "ace-builds/src-noconflict/mode-javascript";
 import "ace-builds/src-noconflict/mode-python";
+import "ace-builds/src-noconflict/mode-golang";
 import "ace-builds/src-noconflict/mode-sql";
 import "ace-builds/src-noconflict/mode-dockerfile";
 import "ace-builds/src-noconflict/mode-markdown";
@@ -21,7 +22,7 @@ import './UnityCodeEditor.css';
  * <CodeEditor mode="javascript" label="JSON editor"/>
  */
 
-export type EditorType = "json" | "json5" | "javascript" | "python" | "sql" | "dockerfile" | "markdown" | "html" | "yaml";
+export type EditorType = "json" | "json5" | "javascript" | "python" | "golang" | "sql" | "dockerfile" | "markdown" | "html" | "yaml";
 
 export interface CodeEditorStylesI extends React.CSSProperties {
   '--gutter-color'?: string,
