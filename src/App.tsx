@@ -529,7 +529,7 @@ class App extends React.Component {
                   />
                 </div>
 
-                <div style={contentBox}>
+                <div style={{...contentBox, height: 400}}>
                   <UnityCodeEditor
                     label="YAML editor"
                     mode="yaml"
@@ -537,8 +537,7 @@ class App extends React.Component {
                       this.setState({yamlValue: value, yamlError: error})
                     }}
                     value={this.state.yamlValue}
-                    minLines={7}
-                    maxLines={19}
+                    flexibleHeight
                   />
                 </div>
                 <div style={contentBox}>
