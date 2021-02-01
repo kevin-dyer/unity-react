@@ -1,4 +1,4 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 import AceEditor from "react-ace";
 //NOTE: webpack-resolver prevents this component from being used in apps without webpack
 // import "ace-builds/webpack-resolver.js"
@@ -24,7 +24,7 @@ import './UnityCodeEditor.css';
 
 export type EditorType = "json" | "json5" | "javascript" | "python" | "golang" | "sql" | "dockerfile" | "markdown" | "html" | "yaml";
 
-export interface CodeEditorStylesI extends React.CSSProperties {
+export interface CodeEditorStylesI extends CSSProperties {
   '--gutter-color'?: string,
   '--fold-color'?: string,
   '--active-color'?: string
@@ -44,6 +44,7 @@ export interface CodeEditorProps {
   highlightActiveLine?: boolean,
   showLineNumbers?: boolean,
   tabSize?: number,
+  flexibleHeight?: boolean,
   style?: CodeEditorStylesI
 }
 
@@ -120,10 +121,15 @@ class UnityCodeEditor extends React.Component<CodeEditorProps, CodeEditorState> 
       readOnly=false,
       highlightActiveLine=true,
       showLineNumbers=true,
-      tabSize=2
+      tabSize=2,
+      flexibleHeight=false
     } = this.props
     const { error='' } = this.state
     const editorWrapperClass = (errorText || error)? "editor-wrapper invalid" : "editor-wrapper"
+
+    const editorStyle : CSSProperties = { width: '100%' }
+    if (flexibleHeight) editorStyle.position = 'absolute' // needed for scrolling
+
     return (
       <div className={editorWrapperClass}>
         <div className="code-editor-paragraph label">
@@ -136,13 +142,13 @@ class UnityCodeEditor extends React.Component<CodeEditorProps, CodeEditorState> 
           {!!dirty && <div className="dirty-gutter"/>}
           <AceEditor
             value={value}
-            style={{width: "100%", height: "100%"}}
+            style={editorStyle}
             theme={"textmate"}
             mode={mode === 'json' ? 'json5' : mode}
             editorProps={{ $blockScrolling: true }}
             onChange={this.handleChange}
-            minLines={minLines}
-            maxLines={maxLines}
+            minLines={flexibleHeight? Infinity : minLines}
+            maxLines={flexibleHeight? Infinity : maxLines}
             readOnly={readOnly}
             highlightActiveLine={highlightActiveLine}
             setOptions={{

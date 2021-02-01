@@ -2,6 +2,12 @@
 
 ## Changelog:
 
+### v1.1.1
+- Fixed changes from v1.1.0 not properly exported
+
+### v1.1.0
+- Added `flexibleHeight` prop to allow code editor to fit to parent div height.
+
 ### v1.0.1
 - Added support for golang
 

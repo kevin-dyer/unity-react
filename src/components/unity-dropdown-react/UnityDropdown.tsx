@@ -137,4 +137,5 @@ export type DropdownStylesT = React.CSSProperties & {
   '--dropdown-width'?: string
   '--dropdown-border-radius'?: string
   '--dropdown-search-input-padding'?: string
+  '--dropdown-options-list-max-height'?: string
 }

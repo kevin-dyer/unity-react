@@ -1,3 +1,11 @@
+#ace-editor {
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
 .editor-wrapper {
   --internal-active-color: var(--active-color, var(--primary-brand-color, var(--default-primary-brand-color)));
   --internal-gutter-color: var(--gutter-color, var(--primary-brand-color-light, var(--default-primary-brand-color-light)));
@@ -25,6 +33,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
 }
 
 .dirty-gutter {

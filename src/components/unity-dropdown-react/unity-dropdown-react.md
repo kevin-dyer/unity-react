@@ -2,9 +2,11 @@
 
 ## Changelog:
 
+### v1.0.6
+- Added `--dropdown-options-list-max-height` to css types
+
 ### v1.0.5
 - Added `showCheckboxes`
-
 
 ### v1.0.4
 - Added `expanded` and `onExpandedChange`
