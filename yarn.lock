@@ -1174,10 +1174,10 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-code-editor-react@1.1.1", "@bit/smartworks.unity-react.unity-code-editor-react@^1.1.1":
-  version "1.1.1"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-code-editor-react/-/smartworks.unity-react.unity-code-editor-react-1.1.1.tgz#babdd09b4e1d132984b9bcd7fffe7e56e469729a"
-  integrity sha1-ur3Qm04dEymEubzX//5+VuRpcpo=
+"@bit/smartworks.unity-react.unity-code-editor-react@1.2.0", "@bit/smartworks.unity-react.unity-code-editor-react@^1.2.0":
+  version "1.2.0"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-code-editor-react/-/smartworks.unity-react.unity-code-editor-react-1.2.0.tgz#72c8d7b45913076164b50a9c667cd2e75f71f65f"
+  integrity sha1-csjXtFkTB2FktQqcZnzS519x9l8=
   dependencies:
     "@types/react" "16.9.11"
     ace-builds "1.4.11"
@@ -1192,15 +1192,15 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-core-react@^1.5.1":
-  version "1.5.1"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-core-react/-/smartworks.unity-react.unity-core-react-1.5.1.tgz#2ceecbd30ea283bccbe1771c040a930de9bb6bfd"
-  integrity sha1-LO7L0w6ig7zL4XccBAqTDem7a/0=
+"@bit/smartworks.unity-react.unity-core-react@^1.6.0":
+  version "1.6.0"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-core-react/-/smartworks.unity-react.unity-core-react-1.6.0.tgz#c24b69c6cb12648ff7a124fdf2cda802e67a254c"
+  integrity sha1-wktpxssSZI/3oST98s2oAuZ6JUw=
   dependencies:
     "@bit/smartworks.unity-react.unity-button-react" "1.1.3"
     "@bit/smartworks.unity-react.unity-card-react" "0.0.1"
     "@bit/smartworks.unity-react.unity-checkbox-react" "1.1.1"
-    "@bit/smartworks.unity-react.unity-code-editor-react" "1.1.1"
+    "@bit/smartworks.unity-react.unity-code-editor-react" "1.2.0"
     "@bit/smartworks.unity-react.unity-column-editor-react" "1.0.3"
     "@bit/smartworks.unity-react.unity-dropdown-react" "1.0.6"
     "@bit/smartworks.unity-react.unity-dropzone-react" "0.2.2"

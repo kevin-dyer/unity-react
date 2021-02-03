@@ -2,6 +2,11 @@
 
 ## Changelog:
 
+### v1.2.0
+- Added `embedded` prop to embed the editor in a wrapper container.
+- Replace horizontal scrolling for line wrapping.
+- Fixed issues with height and paddings.
+ 
 ### v1.1.1
 - Fixed changes from v1.1.0 not properly exported
 
