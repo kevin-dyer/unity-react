@@ -138,8 +138,9 @@ class UnityCodeEditor extends React.Component<CodeEditorProps, CodeEditorState> 
           </UnityTypography>
         </div>
 
-        <div className="editor-container">
-          {!!dirty && <div className="dirty-gutter"/>}
+        {!!dirty && <div className={dirtyGutterClass}/>}
+
+        <div className={editorContainerClass}>
           <AceEditor
             value={value}
             style={editorStyle}

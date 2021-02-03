@@ -14,6 +14,7 @@
   --internal-validation-color: var(--validation-color, red);
   --internal-dirty-color: var(--dirty-color, var(--danger-color, var(--default-danger-color)));
   --internal-label-color: var(--label-color, var(--medium-grey-text-color, var(--default-medium-grey-text-color)));
+  position: relative;
   width: 100%;
   height: 100%;
   display: "flex";
@@ -38,13 +39,14 @@
 
 .dirty-gutter {
   width: 5px;
-  height: calc(100% + 2px);
+  height: calc(100% - 20px);
   background-color: var(--internal-dirty-color);
   position: absolute;
-  top: -1px;
+  top: 0;
   left: -11px;
 }
 
+  left: 0;
 .code-editor-paragraph {
   margin: 6px 0;
 }
