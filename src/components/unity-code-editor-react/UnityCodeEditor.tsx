@@ -155,6 +155,7 @@ class UnityCodeEditor extends React.Component<CodeEditorProps, CodeEditorState> 
               showLineNumbers
             }}
             tabSize={tabSize}
+            wrapEnabled
           />
         </div>
         {(errorText || error) &&
