@@ -45,6 +45,7 @@ export interface CodeEditorProps {
   showLineNumbers?: boolean,
   tabSize?: number,
   flexibleHeight?: boolean,
+  embedded?: boolean,
   style?: CodeEditorStylesI
 }
 
@@ -74,8 +75,9 @@ class UnityCodeEditor extends React.Component<CodeEditorProps, CodeEditorState> 
   }
 
   getValidationMessage(message: string)  {
+    const { embedded } = this.props
     return (
-      <div className="code-editor-paragraph invalid">
+      <div className={`code-editor-error ${embedded? 'embedded' : ''}`}>
         <UnityTypography color="medium" style={{"--font-color-medium": "var(--internal-validation-color)"}} size="paragraph">
           {message}
         </UnityTypography>
@@ -122,24 +124,32 @@ class UnityCodeEditor extends React.Component<CodeEditorProps, CodeEditorState> 
       highlightActiveLine=true,
       showLineNumbers=true,
       tabSize=2,
-      flexibleHeight=false
+      flexibleHeight=false,
+      embedded=false
     } = this.props
     const { error='' } = this.state
-    const editorWrapperClass = (errorText || error)? "editor-wrapper invalid" : "editor-wrapper"
+    
+    const editorWrapperClass = (!(errorText || error) && !embedded)? "editor-wrapper padded" : "editor-wrapper"
+    const dirtyGutterClass = embedded? "dirty-gutter embedded" : "dirty-gutter"
+    const editorContainerClass = embedded? "editor-container embedded" : "editor-container"
 
     const editorStyle : CSSProperties = { width: '100%' }
+
     if (flexibleHeight) editorStyle.position = 'absolute' // needed for scrolling
 
     return (
       <div className={editorWrapperClass}>
-        <div className="code-editor-paragraph label">
-          <UnityTypography color="medium" size="paragraph">
-            {label}
-          </UnityTypography>
-        </div>
+        {label && !embedded &&
+          <div className="code-editor-label">
+            <UnityTypography color="medium" size="paragraph">
+              {label}
+            </UnityTypography>
+          </div>
+        }
 
-        <div className="editor-container">
-          {!!dirty && <div className="dirty-gutter"/>}
+        {!!dirty && <div className={dirtyGutterClass}/>}
+
+        <div className={editorContainerClass}>
           <AceEditor
             value={value}
             style={editorStyle}
@@ -155,7 +165,8 @@ class UnityCodeEditor extends React.Component<CodeEditorProps, CodeEditorState> 
               showLineNumbers
             }}
             tabSize={tabSize}
-          />
+            wrapEnabled
+          />           
         </div>
         {(errorText || error) &&
           this.getValidationMessage(errorText || error)

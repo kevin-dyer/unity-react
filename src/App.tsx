@@ -529,7 +529,10 @@ class App extends React.Component {
                   />
                 </div>
 
-                <div style={{...contentBox, height: 400}}>
+                <UnityTypography>Embedded YAML editor</UnityTypography>
+
+                <div style={{...contentBox, height: 400, border: '1px solid blue'}}>
+
                   <UnityCodeEditor
                     label="YAML editor"
                     mode="yaml"
@@ -538,6 +541,9 @@ class App extends React.Component {
                     }}
                     value={this.state.yamlValue}
                     flexibleHeight
+                    error='Example error'
+                    embedded
+                    dirty
                   />
                 </div>
                 <div style={contentBox}>

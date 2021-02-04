@@ -25,6 +25,12 @@ export * from "@bit/smartworks.unity-react.<component-path>" //Export named expo
 
 ## Changelog:
 
+### v1.6.1
+- unity-code-editor-react v1.2.1
+
+### v1.6.0
+- unity-code-editor-react v1.2.0
+
 ### v1.5.1
 - unity-code-editor-react v1.1.1
 
