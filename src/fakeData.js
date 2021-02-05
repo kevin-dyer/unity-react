@@ -238,31 +238,32 @@ export const devices = {
     {
       key: 'deployments',
       label: 'Used in Deployments',
-      formatLabel: (deployments='') => deployments
+      format: (deployments='') => deployments
     },
     {
       key: 'firmwareVersion',
       label: 'Firmware Version',
-      formatLabel: (version='') => version
+      format: (version='') => version
     },
     {
       key: 'description',
       label: 'Description',
-      formatLabel: (description='') => description
+      format: (description='') => description
     },
     {
       key: 'status',
       label: 'Status',
-      formatLabel: (status='...') => status
+      format: (status='...') => status
     },
     {
       key: 'createdAt',
       label: 'Created at',
-      formatLabel: (createdAt='') => createdAt
+      format: (createdAt='') => createdAt
     },
     {
       key: 'labels',
       label: 'Labels',
+      format: (val) => val,
       renderCustomContent: (value=[]) => {
         if (!Array.isArray(value)) return
         return value.map((label, index) => <UnityTag
