@@ -2,6 +2,10 @@
 
 ## Changelog:
 
+### v1.1.2
+- Added type to column object to allow customFilter
+- Made function types more specific
+
 ### v1.1.1
 - Fixed type for filter
 
