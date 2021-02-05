@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v1.1.1
+- Fixed type for filter
+
 ### v1.1.0
 - Added `disableColumnResize` and `hideFilterIcons` props
 - Added `inputType` and `centered` properties to tableColumn type
