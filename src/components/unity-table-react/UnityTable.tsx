@@ -14,7 +14,7 @@ export interface TablePropsI extends HTMLAttributes<HTMLElement> {
   onColumnChange?: Function
   onExpandedChange?: Function
   selectable?: boolean
-  filter?: Object[]
+  filter?: String
   emptyText?: string
   isLoading?: boolean
   onEndReached?: Function
