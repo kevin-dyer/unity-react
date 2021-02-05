@@ -1,4 +1,4 @@
-import React, { Component, CSSProperties, HTMLAttributes, ReactElement } from 'react'
+import React, { Component, CSSProperties, HTMLAttributes, ReactElement, ReactNode } from 'react'
 import '@bit/smartworks.unity.unity-core/unity-table'
 
 export interface TablePropsI extends HTMLAttributes<HTMLElement> {
@@ -63,10 +63,12 @@ export type TableStyles = CSSProperties & {
 export interface TableColumnI {
   key?: string,
   label?: string,
-  formatLabel?: Function,
-  renderCustomContent?: Function,
   inputType?: string,
-  centered?: boolean
+  centered?: boolean,
+  width?: number,
+  formatLabel?: (value: any) => string,
+  customFilter?: (filter?: string, value?: any) => boolean
+  renderCustomContent?: (value?: any, node?: Object) => ReactNode,
 }
 
 const slotStyles : CSSProperties = {
@@ -215,7 +217,7 @@ export default class UnityTable extends Component<TablePropsI> {
     //Extract cell content and append to slots array
     nodes.forEach((node: any={}) => {
       colsWithContent.forEach((column={}) => {
-        const {key='', renderCustomContent=()=>{}}: TableColumnI = column
+        const { key='', renderCustomContent=()=>(<></>) }: TableColumnI = column
         const cellValue: string = node[key]
         const customContent: any = renderCustomContent(cellValue, node)
         const slotId: string = this._slotIdExtractor(node, column)
