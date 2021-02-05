@@ -821,68 +821,73 @@ class App extends React.Component {
 
               <UnitySection style={{height: "1000px", overflow: 'scroll', "--vert-pos": "top"}}>
                 <div style={{...contentBox, display: "flex", flexDirection: "column"}}>
-                    <UnitySection style={{flex: 0}}>
+                    <UnitySection style={{
+                      '--horz-pos': 'space-between',
+                      flex: 0
+                    }}>
                       <h3>UnityTable</h3>
-                      <UnitySection style={{"--horz-pos": "right"}}>
-                        <UnityDropdown
-                          label='Change Selection'
-                          inputType='multi-select'
-                          placeholder='Pick some'
-                          options={[
-                            {
-                              label: 'Africa',
-                              id: 'africa'
-                            },
-                            {
-                              label: 'Asia',
-                              id: 'asia'
-                            },
-                            {
-                              label: 'Australia',
-                              id: 'australia'
-                            },
-                            {
-                              label: 'Europe',
-                              id: 'europe'
-                            },
-                          ]}
-                          onValueChange={(selectedElements: string[], selected: boolean) => {
-                            const newSelection: string[] = [...this.state.selection]
-                            selectedElements.forEach((element: string) => {
-                              if (selected) {
-                                newSelection.push(element)
-                                return
-                              }
-                              if (newSelection.includes(element)) {
-                                newSelection.splice(newSelection.indexOf(element), 1)
-                              }
-                            })
-                            this.setState({ selection: newSelection })
+                      <UnityDropdown
+                        label='Manually Change Selection'
+                        inputType='multi-select'
+                        placeholder='Pick some'
+                        options={[
+                          {
+                            label: 'Africa',
+                            id: 'africa'
+                          },
+                          {
+                            label: 'Asia',
+                            id: 'asia'
+                          },
+                          {
+                            label: 'Australia',
+                            id: 'australia'
+                          },
+                          {
+                            label: 'Europe',
+                            id: 'europe'
+                          },
+                        ]}
+                        onValueChange={(selectedElements: string[], selected: boolean) => {
+                          const newSelection: string[] = [...this.state.selection]
+                          selectedElements.forEach((element: string) => {
+                            if (selected) {
+                              newSelection.push(element)
+                              return
+                            }
+                            if (newSelection.includes(element)) {
+                              newSelection.splice(newSelection.indexOf(element), 1)
+                            }
+                          })
+                          this.setState({ selection: newSelection })
+                        }}
+                        showTags
+                        style={{
+                          marginLeft: '44px',
+                          '--dropdown-width': '320px'
+                        }}
+                      />
+                      {!!this.tableRef && !!this.tableRef.current &&
+                        <UnityTableExport
+                          style={{margin: "4px", alignSelf: "flex-end", marginLeft: 40}}
+                          tableRef={this.tableRef.current.tableRef}
+                          beforeExport={(data: object) => {
+                            console.log(`processing data: `, data);
+                            return data
                           }}
-                          showTags
-                        />
-                        {!!this.tableRef && !!this.tableRef.current &&
-                          <UnityTableExport
-                            style={{margin: "4px", alignSelf: "flex-end", marginLeft: 40}}
-                            tableRef={this.tableRef.current.tableRef}
-                            beforeExport={(data: object) => {
-                              console.log(`processing data: `, data);
-                              return data
-                            }}
-                            onExport={() => console.log(`Exported table data`)}
-                          >
-                            <UnityButton
-                              type="primary"
-                              label="Export"
-                              rightIcon="unity:file_download"
-                              onClick={() => console.log(`UnityButton child on UnityTableExport received click event`)}
-                            />
-                          </UnityTableExport>
-                        }
-                      </UnitySection>
+                          onExport={() => console.log(`Exported table data`)}
+                        >
+                          <UnityButton
+                            type="primary"
+                            label="Export"
+                            rightIcon="unity:file_download"
+                            onClick={() => console.log(`UnityButton child on UnityTableExport received click event`)}
+                          />
+                        </UnityTableExport>
+                      }
                     </UnitySection>
-                    <UnitySection>
-                      <div style={{position: 'relative'}}>
+                    <UnitySection style={{ alignItems: 'baseline' }}>
+                      <div>
                       <UnityTable
                         ref={this.tableRef}
                         data={data}
