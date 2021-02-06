@@ -1369,10 +1369,18 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-table-react@1.1.0", "@bit/smartworks.unity-react.unity-table-react@^1.1.0":
+"@bit/smartworks.unity-react.unity-table-react@1.1.0":
   version "1.1.0"
   resolved "https://node.bit.dev/smartworks.unity-react.unity-table-react/-/smartworks.unity-react.unity-table-react-1.1.0.tgz#5c635e7cc4058b58fba3607a3b21aecedfa78b5f"
   integrity sha1-XGNefMQFi1j7o2B6OyGuzt+ni18=
+  dependencies:
+    "@types/react" "16.9.11"
+    react "^16.12.0"
+
+"@bit/smartworks.unity-react.unity-table-react@^1.1.1":
+  version "1.1.1"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-table-react/-/smartworks.unity-react.unity-table-react-1.1.1.tgz#a0d2f13f4fd19f3a656fc3cbf5cc0c36cabf84f2"
+  integrity sha1-oNLxP0/Rnzplb8PL9cwMNsq/hPI=
   dependencies:
     "@types/react" "16.9.11"
     react "^16.12.0"

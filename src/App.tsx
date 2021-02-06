@@ -10,7 +10,7 @@ import {
   histData,
   UnityJsonViewer,
   UnityTextInput,
-  UnityTable,
+  // UnityTable,
   UnityTableExport,
   UnityTag,
   UnityTypography,
@@ -37,6 +37,7 @@ import {
   UnityStepper,
   UnitySelectMenu,
 } from './components/unity-core-react'
+import UnityTable from '../src/components/unity-table-react/UnityTable'
 import { devices, fakeYaml, selectMenuItems } from './fakeData'
 import moment from 'moment'
 
@@ -303,6 +304,7 @@ class App extends React.Component {
     fileType: '',
     fileContent: '',
     selection: [],
+    tableSearchText: '',
     dropdownOptions,
     dropdownDisabled: false,
     yamlValue: fakeYaml,
@@ -329,7 +331,7 @@ class App extends React.Component {
       </div>)
   }
 
-  setFile = async (file:any) => {
+  setFile = async (file: any) => {
     console.log('setting file with', file)
     this.setState({
       fileName: file.name,
@@ -346,11 +348,13 @@ class App extends React.Component {
     })
   }
 
-  toggleColumnEditor = (show : any) => {
+  toggleColumnEditor = (show: any) => {
     this.setState({
       showColumnEditor: typeof show === 'boolean' ? show : !this.state.showColumnEditor
     })
   }
+
+  updateTableSearchText = (val: String) => this.setState({ tableSearchText: val })
 
   //simulate real time histogram data
   startHistStream = () => {
@@ -406,7 +410,8 @@ class App extends React.Component {
       showPopover,
       showColumnEditor,
       fakeHistData,
-      streamHistData
+      streamHistData,
+      tableSearchText
     } = this.state
     const { data, columns, childKeys } = devices
 
@@ -821,84 +826,100 @@ class App extends React.Component {
 
               <UnitySection style={{height: "1000px", overflow: 'scroll', "--vert-pos": "top"}}>
                 <div style={{...contentBox, display: "flex", flexDirection: "column"}}>
-                    <UnitySection style={{flex: 0}}>
+                    <UnitySection style={{
+                      '--horz-pos': 'space-between',
+                      '--vert-pos': 'flex-end',
+                      flex: 0
+                    }}>
                       <h3>UnityTable</h3>
-                      <UnitySection style={{"--horz-pos": "right"}}>
-                        <UnityDropdown
-                          label='Change Selection'
-                          inputType='multi-select'
-                          placeholder='Pick some'
-                          options={[
-                            {
-                              label: 'Africa',
-                              id: 'africa'
-                            },
-                            {
-                              label: 'Asia',
-                              id: 'asia'
-                            },
-                            {
-                              label: 'Australia',
-                              id: 'australia'
-                            },
-                            {
-                              label: 'Europe',
-                              id: 'europe'
-                            },
-                          ]}
-                          onValueChange={(selectedElements: string[], selected: boolean) => {
-                            const newSelection: string[] = [...this.state.selection]
-                            selectedElements.forEach((element: string) => {
-                              if (selected) {
-                                newSelection.push(element)
-                                return
-                              }
-                              if (newSelection.includes(element)) {
-                                newSelection.splice(newSelection.indexOf(element), 1)
-                              }
-                            })
-                            this.setState({ selection: newSelection })
-                          }}
-                          showTags
-                        />
-                        {!!this.tableRef && !!this.tableRef.current &&
-                          <UnityTableExport
-                            style={{margin: "4px", alignSelf: "flex-end", marginLeft: 40}}
-                            tableRef={this.tableRef.current.tableRef}
-                            beforeExport={(data: object) => {
-                              console.log(`processing data: `, data);
-                              return data
-                            }}
-                            onExport={() => console.log(`Exported table data`)}
-                          >
-                            <UnityButton
-                              type="primary"
-                              label="Export"
-                              rightIcon="unity:file_download"
-                              onClick={() => console.log(`UnityButton child on UnityTableExport received click event`)}
-                            />
-                          </UnityTableExport>
-                        }
-                      </UnitySection>
-                    </UnitySection>
-                    <UnitySection>
-                      <div style={{position: 'relative'}}>
-                      <UnityTable
-                        ref={this.tableRef}
-                        data={data}
-                        columns={columns}
-                        childKeys={childKeys}
-                        selected={selection}
-                        keyExtractor={(node: any) => node.id}
-                        selectable
-                        onSelectionChange={(selection: []) => console.log(`new selection:`, selection)}
-                        rightActionsContent={<UnityButton
-                          centerIcon="icons:settings"
-                          type="borderless"
-                          onClick={this.toggleColumnEditor}
-                        />}
+                      <UnityDropdown
+                        label='Manually Change Selection'
+                        inputType='multi-select'
+                        placeholder='Pick some'
+                        options={[
+                          {
+                            label: 'Africa',
+                            id: 'africa'
+                          },
+                          {
+                            label: 'Asia',
+                            id: 'asia'
+                          },
+                          {
+                            label: 'Australia',
+                            id: 'australia'
+                          },
+                          {
+                            label: 'Europe',
+                            id: 'europe'
+                          },
+                        ]}
+                        onValueChange={(selectedElements: string[], selected: boolean) => {
+                          const newSelection: string[] = [...this.state.selection]
+                          selectedElements.forEach((element: string) => {
+                            if (selected) {
+                              newSelection.push(element)
+                              return
+                            }
+                            if (newSelection.includes(element)) {
+                              newSelection.splice(newSelection.indexOf(element), 1)
+                            }
+                          })
+                          this.setState({ selection: newSelection })
+                        }}
+                        showTags
+                        style={{
+                          marginLeft: '44px',
+                          '--dropdown-width': '320px'
+                        }}
                       />
-                      <UnityColumnEditor
+                      <div style={{ width: '320px' }}>
+                        <UnitySearchBar
+                          search={tableSearchText}
+                          onChange={({ text }: { text: String }) => {
+                            console.log("🚀 ~ file: App.tsx ~ line 881 ~ App ~ render ~ tableSearchText", text)
+                            this.updateTableSearchText(text)
+                          }}
+                        />
+                      </div>
+                      {!!this.tableRef && !!this.tableRef.current &&
+                        <UnityTableExport
+                          style={{margin: "4px", alignSelf: "flex-end", marginLeft: 40}}
+                          tableRef={this.tableRef.current.tableRef}
+                          beforeExport={(data: object) => {
+                            console.log(`processing data: `, data);
+                            return data
+                          }}
+                          onExport={() => console.log(`Exported table data`)}
+                        >
+                          <UnityButton
+                            type="primary"
+                            label="Export"
+                            rightIcon="unity:file_download"
+                            onClick={() => console.log(`UnityButton child on UnityTableExport received click event`)}
+                          />
+                        </UnityTableExport>
+                      }
+                    </UnitySection>
+                    <UnitySection style={{ alignItems: 'baseline' }}>
+                      <div>
+                        <UnityTable
+                          ref={this.tableRef}
+                          data={data}
+                          columns={columns}
+                          childKeys={childKeys}
+                          selected={selection}
+                          keyExtractor={(node: any) => node.id}
+                          selectable
+                          filter={tableSearchText}
+                          onSelectionChange={(selection: []) => console.log(`new selection:`, selection)}
+                          rightActionsContent={<UnityButton
+                            centerIcon="icons:settings"
+                            type="borderless"
+                            onClick={this.toggleColumnEditor}
+                          />}
+                        />
+                        <UnityColumnEditor
                           columns={columns}
                           modalOnly={true}
                           show={showColumnEditor}

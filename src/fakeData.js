@@ -1,3 +1,5 @@
+import React from 'react'
+import { UnityTag } from "./components/unity-core-react"
 
 
 //Extra rows of fake data to test infinite scroll
@@ -23,6 +25,7 @@ export const devices = {
       id: 'root',
       name: 'Global',
       icon: 'icons:folder',
+      labels: [],
       groups: [
         {
           id: 'africa',
@@ -31,6 +34,7 @@ export const devices = {
           description: 'Device Group',
           deployments: 'Test App, Control center Video Wall',
           createdAt: 'January 12, 2018 7:06pm',
+          labels: ['continent', 'southern hemisphere'],
           devices: [],
         },
         {
@@ -40,6 +44,7 @@ export const devices = {
           description: 'Device Group',
           deployments: 'Test App, Control center Video Wall',
           createdAt: 'January 12, 2018 7:06pm',
+          labels: ['continent', 'northern hemisphere'],
         },
         {
           id: 'australia',
@@ -48,6 +53,7 @@ export const devices = {
           description: 'Device Group',
           deployments: 'Test App, Control center Video Wall',
           createdAt: 'January 12, 2018 7:06pm',
+          labels: ['continent', 'southern hemisphere'],
         },
         {
           id: 'europe',
@@ -56,6 +62,7 @@ export const devices = {
           description: 'Device Group',
           deployments: 'Test App, Control center Video Wall',
           createdAt: 'January 12, 2018 7:06pm',
+          labels: ['continent', 'northern hemisphere'],
         },
         {
           id: 'northAmerica',
@@ -64,6 +71,7 @@ export const devices = {
           description: 'Device Group',
           deployments: 'Test App, Control center Video Wall',
           createdAt: 'January 12, 2018 7:06pm',
+          labels: ['continent', 'northern hemisphere'],
           groups: [
             {
               id: 'canada',
@@ -72,6 +80,7 @@ export const devices = {
               description: 'Device Group',
               deployments: 'Test App, Control center Video Wall',
               createdAt: 'January 12, 2018 7:06pm',
+              labels: ['country'],
             },
             {
               id: 'mexico',
@@ -80,6 +89,7 @@ export const devices = {
               description: 'Device Group',
               deployments: 'Test App, Control center Video Wall',
               createdAt: 'January 12, 2018 7:06pm',
+              labels: ['country'],
             },
             {
               id: 'us',
@@ -88,6 +98,7 @@ export const devices = {
               description: 'Device Group',
               deployments: 'Test App, Control center Video Wall',
               createdAt: 'January 12, 2018 7:06pm',
+              labels: ['country'],
               devices: [
                 {
                   id: 'abc001',
@@ -98,6 +109,7 @@ export const devices = {
                   firmwareVersion: '1.0.1 (latest)',
                   status: 'Not Responding',
                   createdAt: 'January 12, 2018 7:06pm',
+                  labels: ['device'],
                 },
                 {
                   id: 'abc002',
@@ -108,6 +120,7 @@ export const devices = {
                   firmwareVersion: '1.0.0',
                   status: 'Active',
                   createdAt: 'January 12, 2018 7:06pm',
+                  labels: ['device'],
                 },
                 {
                   id: 'abc003',
@@ -118,6 +131,7 @@ export const devices = {
                   firmwareVersion: '1.0.0',
                   status: 'Active',
                   createdAt: 'January 12, 2018 7:06pm',
+                  labels: ['device'],
                 },
                 {
                   id: 'abc004',
@@ -128,6 +142,7 @@ export const devices = {
                   firmwareVersion: '1.0.0',
                   status: 'Probable to fail',
                   createdAt: 'January 12, 2018 7:06pm',
+                  labels: ['device'],
                 },
                 {
                   id: 'abc005',
@@ -138,6 +153,7 @@ export const devices = {
                   firmwareVersion: '1.0.0',
                   status: 'Active',
                   createdAt: 'January 12, 2018 7:06pm',
+                  labels: ['device'],
                 },
                 {
                   id: 'abc006',
@@ -148,6 +164,7 @@ export const devices = {
                   firmwareVersion: '1.0.0',
                   status: 'Active',
                   createdAt: 'January 12, 2018 7:06pm',
+                  labels: ['device'],
                 },
 
                 {
@@ -159,6 +176,7 @@ export const devices = {
                   firmwareVersion: '1.0.0',
                   status: 'Active',
                   createdAt: 'January 12, 2018 7:06pm',
+                  labels: ['device'],
                 },
                 {
                   id: 'abc008',
@@ -169,6 +187,7 @@ export const devices = {
                   firmwareVersion: '1.0.0',
                   status: 'Active',
                   createdAt: 'January 12, 2018 7:06pm',
+                  labels: ['device'],
                 },
                 {
                   id: 'abc009',
@@ -179,6 +198,7 @@ export const devices = {
                   firmwareVersion: '1.0.0',
                   status: 'Active',
                   createdAt: 'January 12, 2018 7:06pm',
+                  labels: ['device'],
                 },
                 {
                   id: 'abc010',
@@ -189,6 +209,7 @@ export const devices = {
                   firmwareVersion: '1.0.0',
                   status: 'Active',
                   createdAt: 'January 12, 2018 7:06pm',
+                  labels: ['device'],
                 },
                 {
                   id: 'abc011',
@@ -199,6 +220,7 @@ export const devices = {
                   firmwareVersion: '1.0.0',
                   status: 'Active',
                   createdAt: 'January 12, 2018 7:06pm',
+                  labels: ['device'],
                 },
                 ...fillerRows
               ]
@@ -216,28 +238,43 @@ export const devices = {
     {
       key: 'deployments',
       label: 'Used in Deployments',
-      formatLabel: (deployments='') => deployments
+      format: (deployments='') => deployments
     },
     {
       key: 'firmwareVersion',
       label: 'Firmware Version',
-      formatLabel: (version='') => version
+      format: (version='') => version
     },
     {
       key: 'description',
       label: 'Description',
-      formatLabel: (description='') => description
+      format: (description='') => description
     },
     {
       key: 'status',
       label: 'Status',
-      formatLabel: (status='...') => status
+      format: (status='...') => status
     },
     {
       key: 'createdAt',
       label: 'Created at',
-      formatLabel: (createdAt='') => createdAt
+      format: (createdAt='') => createdAt
     },
+    {
+      key: 'labels',
+      label: 'Labels',
+      format: (val) => val,
+      renderCustomContent: (value=[]) => {
+        if (!Array.isArray(value)) return
+        return value.map((label, index) => <UnityTag
+          key={index}
+          label={label}
+          style={{
+            height: '32px'
+          }}
+        />)
+      }
+    }
   ]
   ,
   //filters: [{column: "status", values: ["Active"], include: true} ],
