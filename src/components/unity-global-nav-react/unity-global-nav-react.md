@@ -2,6 +2,13 @@
 
 ## Changelog:
 
+### v1.3.0
+- Added `borderWhenClosed` prop for nav items
+- Added `subHeader` and `subHeaderBorder` props
+- Added `openStates` and `onOpenStateChange` props
+- Added `alwaysShowBordersTop` and `alwaysShowBordersBottom` props
+- Added `bubbleBottomItems` prop
+
 ### v1.2.1
 - Added new prop: onToggleCollapse
 
