@@ -1192,10 +1192,10 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-core-react@^1.6.3":
-  version "1.6.3"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-core-react/-/smartworks.unity-react.unity-core-react-1.6.3.tgz#e6ab77b0249fd01cdbcf7b00db944f46d13e932d"
-  integrity sha1-5qt3sCSf0Bzbz3sA25RPRtE+ky0=
+"@bit/smartworks.unity-react.unity-core-react@^1.6.4":
+  version "1.6.4"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-core-react/-/smartworks.unity-react.unity-core-react-1.6.4.tgz#16e0ff3daeddcf4899278e9f8539a46675085b4f"
+  integrity sha1-FuD/Pa7dz0iZJ46fhTmkZnUIW08=
   dependencies:
     "@bit/smartworks.unity-react.unity-button-react" "1.1.3"
     "@bit/smartworks.unity-react.unity-card-react" "0.0.1"
@@ -1204,7 +1204,7 @@
     "@bit/smartworks.unity-react.unity-column-editor-react" "1.0.3"
     "@bit/smartworks.unity-react.unity-dropdown-react" "1.0.6"
     "@bit/smartworks.unity-react.unity-dropzone-react" "0.2.2"
-    "@bit/smartworks.unity-react.unity-global-nav-react" "1.2.1"
+    "@bit/smartworks.unity-react.unity-global-nav-react" "1.3.0"
     "@bit/smartworks.unity-react.unity-histogram" "0.0.2"
     "@bit/smartworks.unity-react.unity-json-viewer-react" "1.0.0"
     "@bit/smartworks.unity-react.unity-modal-react" "1.0.0"
@@ -1241,15 +1241,7 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-global-nav-react@1.2.1":
-  version "1.2.1"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-global-nav-react/-/smartworks.unity-react.unity-global-nav-react-1.2.1.tgz#6088d598cd2318f7db5165fef9a08adca848a274"
-  integrity sha1-YIjVmM0jGPfbUWX++aCK3KhIonQ=
-  dependencies:
-    "@types/react" "16.9.11"
-    react "^16.12.0"
-
-"@bit/smartworks.unity-react.unity-global-nav-react@^1.3.0":
+"@bit/smartworks.unity-react.unity-global-nav-react@1.3.0", "@bit/smartworks.unity-react.unity-global-nav-react@^1.3.0":
   version "1.3.0"
   resolved "https://node.bit.dev/smartworks.unity-react.unity-global-nav-react/-/smartworks.unity-react.unity-global-nav-react-1.3.0.tgz#457c86465770bb74809fe84dac98a37eaf3cabbd"
   integrity sha1-RXyGRldwu3SAn+hNrJijfq88q70=
