@@ -2,59 +2,70 @@ import React, { CSSProperties, Component, HTMLAttributes, SyntheticEvent, ReactN
 import '@bit/smartworks.unity.unity-core/unity-global-nav-base'
 
 export interface NavItemI {
-key: string
-label: string
-short?: boolean
-icon?: string
-children?: NavItemI[]
-disabled?: boolean
+  key: string
+  label: string
+  short?: boolean
+  icon?: string
+  children?: NavItemI[]
+  disabled?: boolean
+  borderWhenClosed?: boolean
 }
 export interface NavItemsConfigI {
-top?: NavItemI[]
-bottom?: NavItemI[]
+  top?: NavItemI[]
+  bottom?: NavItemI[]
 }
+
+export type OpenStatesT = {
+  [itemKey: string]: boolean
+}
+
 export interface NavPropsI extends HTMLAttributes<HTMLElement> {
-gutter?: boolean
-logo?: string
-selected?: string
-collapsible?: boolean
-collapsed?: boolean
-items?: NavItemsConfigI
-onSelect?: ((event: SyntheticEvent<HTMLElement, Event>) => void) // this seems to be the correct type for extending HTMLAttributes
-header?: string
-headerImg?: string
-grid?: boolean
-children?: any
-style?: NavStyles
-customHeader?: ReactNode,
-customExpandedHeader?: ReactNode,
-onToggleCollapse?: (collapsed: boolean) => void,
-subHeader?: ReactNode,
-subHeaderBorder?: boolean
+  gutter?: boolean
+  logo?: string
+  selected?: string
+  collapsible?: boolean
+  collapsed?: boolean
+  items?: NavItemsConfigI
+  onSelect?: (event: SyntheticEvent<HTMLElement, Event>) => void // this seems to be the correct type for extending HTMLAttributes
+  header?: string
+  headerImg?: string
+  grid?: boolean
+  children?: any
+  style?: NavStyles
+  customHeader?: ReactNode,
+  customExpandedHeader?: ReactNode,
+  subHeader?: ReactNode,
+  subHeaderBorder?: boolean,
+  onToggleCollapse?: (collapsed: boolean) => void,
+  onOpenStateChange?: (openStates: OpenStatesT, key?: string, openState?: boolean) => void,
+  openStates?: OpenStatesT,
+  alwaysShowBordersTop?: boolean
+  alwaysShowBordersBottom?: boolean
+  bubbleBottomItems?: boolean
 }
 
 export type NavStyles = CSSProperties & {
-'--primary-menu-color'?: string
-'--gutter-color'?: string
-'--logo-height'?: string
-'--global-nav-background-color'?: string
-'--global-nav-border-color'?: string
-'--global-nav-margin-size'?: string
-'--global-nav-padding-size'?: string
-'--global-nav-padding-size-sm'?: string
-'--global-nav-highlight-color'?: string
-'--global-nav-hover-color'?: string
-'--global-nav-text-color'?: string
-'--global-nav-light-text-color'?: string
-'--global-nav-gutter-color'?: string
-'--global-nav-header-font-size'?: string
-'--global-nav-font-size'?: string
-'--global-nav-short-row'?: string
-'--global-nav-large-row'?: string
-'--global-nav-expanded-width'?: string
-'--global-nav-collapsed-width'?: string
-'--global-nav-logo-size'?: string
-'--global-nav-menu-shadow'?: string
+  '--primary-menu-color'?: string
+  '--gutter-color'?: string
+  '--logo-height'?: string
+  '--global-nav-background-color'?: string
+  '--global-nav-border-color'?: string
+  '--global-nav-margin-size'?: string
+  '--global-nav-padding-size'?: string
+  '--global-nav-padding-size-sm'?: string
+  '--global-nav-highlight-color'?: string
+  '--global-nav-hover-color'?: string
+  '--global-nav-text-color'?: string
+  '--global-nav-light-text-color'?: string
+  '--global-nav-gutter-color'?: string
+  '--global-nav-header-font-size'?: string
+  '--global-nav-font-size'?: string
+  '--global-nav-short-row'?: string
+  '--global-nav-large-row'?: string
+  '--global-nav-expanded-width'?: string
+  '--global-nav-collapsed-width'?: string
+  '--global-nav-logo-size'?: string
+  '--global-nav-menu-shadow'?: string
 }
 /*
   Takes property.object `items`
@@ -87,20 +98,24 @@ export default class UnityGlobalNav extends Component<NavPropsI> {
     const {
       items={},
       onSelect,
-      onToggleCollapse
+      onToggleCollapse,
+      onOpenStateChange,
+      openStates,
     } : NavPropsI = this.props
     const {
       items: oldItems,
       onSelect: oldOnSelect,
-      onToggleCollapse: oldOnToggleCollapse
+      onToggleCollapse: oldOnToggleCollapse,
+      onOpenStateChange: oldOnOpenStateChange,
+      openStates: oldOpenStates,
     } : NavPropsI = oldProps
     const nav = this.navRef.current
-
+ 
     if (!!nav) {
       if (items !== oldItems) {
         nav.items = items
       }
-
+ 
       if (onSelect !== oldOnSelect) {
         nav.onSelect = onSelect
       }
@@ -108,9 +123,18 @@ export default class UnityGlobalNav extends Component<NavPropsI> {
       if (onToggleCollapse !== oldOnToggleCollapse) {
         nav.onToggleCollapse = onToggleCollapse
       }
+
+      if (onOpenStateChange !== oldOnOpenStateChange) {
+        nav.onOpenStateChange = onOpenStateChange
+      }
+
+      if (openStates !== oldOpenStates) {
+          nav.openStates = openStates
+      }
+
     }
   }
-
+ 
   render() {
     const {
       gutter,
@@ -118,6 +142,9 @@ export default class UnityGlobalNav extends Component<NavPropsI> {
       collapsed,
       grid,
       subHeaderBorder,
+      alwaysShowBordersTop,
+      alwaysShowBordersBottom,
+      bubbleBottomItems,
       style: stylesProp,
       items,
       onSelect,
@@ -133,7 +160,10 @@ export default class UnityGlobalNav extends Component<NavPropsI> {
     if (!!collapsed) sideNavProps.collapsed = collapsed
     if (!!grid) sideNavProps.grid = grid
     if (!!subHeaderBorder) sideNavProps.subHeaderBorder = subHeaderBorder
-
+    if (!!alwaysShowBordersTop) sideNavProps.alwaysShowBordersTop = alwaysShowBordersTop
+    if (!!alwaysShowBordersBottom) sideNavProps.alwaysShowBordersBottom = alwaysShowBordersBottom
+    if (!!bubbleBottomItems) sideNavProps.bubbleBottomItems = bubbleBottomItems
+  
     return (
       <unity-global-nav-base
         ref={this.navRef}
@@ -143,15 +173,18 @@ export default class UnityGlobalNav extends Component<NavPropsI> {
         {!!customHeader &&
           <span slot="customHeader">
             {customHeader}
-          </span>}
-        {!!customExpandedHeader &&       
+          </span>
+        }
+        {!!customExpandedHeader &&
           <span slot="customExpandedHeader">
-          {customExpandedHeader}
-        </span>}
-      {!!subHeader &&       
-        <span slot="subHeader">
-        {subHeader}
-      </span>}
+            {customExpandedHeader}
+          </span>
+        }
+        {!!subHeader &&
+          <span slot="subHeader">
+            {subHeader}
+          </span>
+        }
       </unity-global-nav-base>
     )
   }
