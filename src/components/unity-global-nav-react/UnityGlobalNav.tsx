@@ -1,6 +1,6 @@
-import React, { CSSProperties, Component, HTMLAttributes, SyntheticEvent } from 'react'
+import React, { CSSProperties, Component, HTMLAttributes, SyntheticEvent, ReactNode } from 'react'
 import '@bit/smartworks.unity.unity-core/unity-global-nav-base'
- 
+
 export interface NavItemI {
   key: string
   label: string
@@ -32,8 +32,10 @@ export interface NavPropsI extends HTMLAttributes<HTMLElement> {
   grid?: boolean
   children?: any
   style?: NavStyles
-  customHeader?: any,
-  customExpandedHeader?: any,
+  customHeader?: ReactNode,
+  customExpandedHeader?: ReactNode,
+  subHeader?: ReactNode,
+  subHeaderBorder?: boolean,
   onToggleCollapse?: (collapsed: boolean) => void,
   onOpenStateChange?: (openStates: OpenStatesT, key?: string, openState?: boolean) => void,
   openStates?: OpenStatesT,
@@ -41,7 +43,7 @@ export interface NavPropsI extends HTMLAttributes<HTMLElement> {
   alwaysShowBordersBottom?: boolean
   bubbleBottomItems?: boolean
 }
- 
+
 export type NavStyles = CSSProperties & {
   '--primary-menu-color'?: string
   '--gutter-color'?: string
@@ -66,38 +68,36 @@ export type NavStyles = CSSProperties & {
   '--global-nav-menu-shadow'?: string
 }
 /*
-   Takes property.oject `items`
-   This is an object with a top and bottom object attributes.
-   Top is an array that controls the top aligned items
-   Each index is an item.object:
-     {
-       key: '',
-       label: '',
-       icon: '',
-       selected: bool,
-       onSelect: ()=>{},
-       children: [{item.object}, ...]
-     }
-   `item.children` is as above, but lacks the children property.
-   If an item.object has a `children` array of non-Zero size, onSelect is ignored
+  Takes property.object `items`
+  This is an object with a top and bottom object attributes.
+  Top is an array that controls the top aligned items
+  Each index is an item.object:
+    {
+      key: '',
+      label: '',
+      icon: '',
+      selected: bool,
+      onSelect: ()=>{},
+      children: [{item.object}, ...]
+    }
+  `item.children` is as above, but lacks the children property.
+  If an item.object has a `children` array of non-Zero size, onSelect is ignored
 */
- 
+
 export default class UnityGlobalNav extends Component<NavPropsI> {
   private navRef = React.createRef<NavPropsI>()
   componentDidMount = () => {
     this.updateProps({})
   }
-  
+
   componentDidUpdate = (oldProps : NavPropsI) => {
     this.updateProps(oldProps)
   }
-  
+
   updateProps = (oldProps={}) => {
     const {
       items={},
       onSelect,
-      customHeader,
-      customExpandedHeader,
       onToggleCollapse,
       onOpenStateChange,
       openStates,
@@ -105,29 +105,19 @@ export default class UnityGlobalNav extends Component<NavPropsI> {
     const {
       items: oldItems,
       onSelect: oldOnSelect,
-      customHeader: oldCustomHeader,
-      customExpandedHeader: oldCustomExpandedHeader,
       onToggleCollapse: oldOnToggleCollapse,
       onOpenStateChange: oldOnOpenStateChange,
       openStates: oldOpenStates,
     } : NavPropsI = oldProps
     const nav = this.navRef.current
-  
+ 
     if (!!nav) {
       if (items !== oldItems) {
         nav.items = items
       }
-  
+ 
       if (onSelect !== oldOnSelect) {
         nav.onSelect = onSelect
-      }
-  
-      if (customHeader !== oldCustomHeader) {
-        nav.customHeader = customHeader
-      }
-  
-      if (customExpandedHeader !== oldCustomExpandedHeader) {
-        nav.customExpandedHeader = customExpandedHeader
       }
 
       if (onToggleCollapse !== oldOnToggleCollapse) {
@@ -137,20 +127,21 @@ export default class UnityGlobalNav extends Component<NavPropsI> {
       if (onOpenStateChange !== oldOnOpenStateChange) {
         nav.onOpenStateChange = onOpenStateChange
       }
-    
+
       if (openStates !== oldOpenStates) {
           nav.openStates = openStates
       }
 
     }
   }
-  
+ 
   render() {
     const {
       gutter,
       collapsible,
       collapsed,
       grid,
+      subHeaderBorder,
       alwaysShowBordersTop,
       alwaysShowBordersBottom,
       bubbleBottomItems,
@@ -159,6 +150,7 @@ export default class UnityGlobalNav extends Component<NavPropsI> {
       onSelect,
       customHeader,
       customExpandedHeader,
+      subHeader,
       onToggleCollapse,
       ...otherProps
     } : NavPropsI = this.props
@@ -167,6 +159,7 @@ export default class UnityGlobalNav extends Component<NavPropsI> {
     if (!!collapsible) sideNavProps.collapsible = collapsible
     if (!!collapsed) sideNavProps.collapsed = collapsed
     if (!!grid) sideNavProps.grid = grid
+    if (!!subHeaderBorder) sideNavProps.subHeaderBorder = subHeaderBorder
     if (!!alwaysShowBordersTop) sideNavProps.alwaysShowBordersTop = alwaysShowBordersTop
     if (!!alwaysShowBordersBottom) sideNavProps.alwaysShowBordersBottom = alwaysShowBordersBottom
     if (!!bubbleBottomItems) sideNavProps.bubbleBottomItems = bubbleBottomItems
@@ -180,14 +173,21 @@ export default class UnityGlobalNav extends Component<NavPropsI> {
         {!!customHeader &&
           <span slot="customHeader">
             {customHeader}
-          </span>}
-        {!!customExpandedHeader &&       
-            <span slot="customExpandedHeader">
+          </span>
+        }
+        {!!customExpandedHeader &&
+          <span slot="customExpandedHeader">
             {customExpandedHeader}
-          </span>}
+          </span>
+        }
+        {!!subHeader &&
+          <span slot="subHeader">
+            {subHeader}
+          </span>
+        }
       </unity-global-nav-base>
     )
   }
 }
- 
+
 // const styles : NavStylesI = { zIndex: 10 }
