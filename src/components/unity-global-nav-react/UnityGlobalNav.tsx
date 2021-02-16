@@ -2,57 +2,64 @@ import React, { CSSProperties, Component, HTMLAttributes, SyntheticEvent } from 
 import '@bit/smartworks.unity.unity-core/unity-global-nav-base'
  
 export interface NavItemI {
- key: string
- label: string
- short?: boolean
- icon?: string
- children?: NavItemI[]
- disabled?: boolean
+  key: string
+  label: string
+  short?: boolean
+  icon?: string
+  children?: NavItemI[]
+  disabled?: boolean
 }
 export interface NavItemsConfigI {
- top?: NavItemI[]
- bottom?: NavItemI[]
+  top?: NavItemI[]
+  bottom?: NavItemI[]
 }
+
+export type OpenStatesT = {
+  [itemKey: string]: boolean
+}
+
 export interface NavPropsI extends HTMLAttributes<HTMLElement> {
- gutter?: boolean
- logo?: string
- selected?: string
- collapsible?: boolean
- collapsed?: boolean
- items?: NavItemsConfigI
- onSelect?: ((event: SyntheticEvent<HTMLElement, Event>) => void) // this seems to be the correct type for extending HTMLAttributes
- header?: string
- headerImg?: string
- grid?: boolean
- children?: any
- style?: NavStyles
- customHeader?: any,
- customExpandedHeader?: any,
- onToggleCollapse?: ((collapsed: boolean) => void)
+  gutter?: boolean
+  logo?: string
+  selected?: string
+  collapsible?: boolean
+  collapsed?: boolean
+  items?: NavItemsConfigI
+  onSelect?: (event: SyntheticEvent<HTMLElement, Event>) => void // this seems to be the correct type for extending HTMLAttributes
+  header?: string
+  headerImg?: string
+  grid?: boolean
+  children?: any
+  style?: NavStyles
+  customHeader?: any,
+  customExpandedHeader?: any,
+  onToggleCollapse?: (collapsed: boolean) => void,
+  onItemOpenStateChange?: (openStates: OpenStatesT, key?: string, openState?: boolean) => void,
+  openStates?: OpenStatesT
 }
  
 export type NavStyles = CSSProperties & {
- '--primary-menu-color'?: string
- '--gutter-color'?: string
- '--logo-height'?: string
- '--global-nav-background-color'?: string
- '--global-nav-border-color'?: string
- '--global-nav-margin-size'?: string
- '--global-nav-padding-size'?: string
- '--global-nav-padding-size-sm'?: string
- '--global-nav-highlight-color'?: string
- '--global-nav-hover-color'?: string
- '--global-nav-text-color'?: string
- '--global-nav-light-text-color'?: string
- '--global-nav-gutter-color'?: string
- '--global-nav-header-font-size'?: string
- '--global-nav-font-size'?: string
- '--global-nav-short-row'?: string
- '--global-nav-large-row'?: string
- '--global-nav-expanded-width'?: string
- '--global-nav-collapsed-width'?: string
- '--global-nav-logo-size'?: string
- '--global-nav-menu-shadow'?: string
+  '--primary-menu-color'?: string
+  '--gutter-color'?: string
+  '--logo-height'?: string
+  '--global-nav-background-color'?: string
+  '--global-nav-border-color'?: string
+  '--global-nav-margin-size'?: string
+  '--global-nav-padding-size'?: string
+  '--global-nav-padding-size-sm'?: string
+  '--global-nav-highlight-color'?: string
+  '--global-nav-hover-color'?: string
+  '--global-nav-text-color'?: string
+  '--global-nav-light-text-color'?: string
+  '--global-nav-gutter-color'?: string
+  '--global-nav-header-font-size'?: string
+  '--global-nav-font-size'?: string
+  '--global-nav-short-row'?: string
+  '--global-nav-large-row'?: string
+  '--global-nav-expanded-width'?: string
+  '--global-nav-collapsed-width'?: string
+  '--global-nav-logo-size'?: string
+  '--global-nav-menu-shadow'?: string
 }
 /*
    Takes property.oject `items`
@@ -72,92 +79,105 @@ export type NavStyles = CSSProperties & {
 */
  
 export default class UnityGlobalNav extends Component<NavPropsI> {
- private navRef = React.createRef<NavPropsI>()
- componentDidMount = () => {
-   this.updateProps({})
- }
- 
- componentDidUpdate = (oldProps : NavPropsI) => {
-   this.updateProps(oldProps)
- }
- 
- updateProps = (oldProps={}) => {
-   const {
-     items={},
-     onSelect,
-     customHeader,
-     customExpandedHeader,
-     onToggleCollapse
-   } : NavPropsI = this.props
-   const {
-     items: oldItems,
-     onSelect: oldOnSelect,
-     customHeader: oldCustomHeader,
-     customExpandedHeader: oldCustomExpandedHeader,
-     onToggleCollapse: oldOnToggleCollapse
-   } : NavPropsI = oldProps
-   const nav = this.navRef.current
- 
-   if (!!nav) {
-     if (items !== oldItems) {
-       nav.items = items
-     }
- 
-     if (onSelect !== oldOnSelect) {
-       nav.onSelect = onSelect
-     }
- 
-     if (customHeader !== oldCustomHeader) {
-       nav.customHeader = customHeader
-     }
- 
-     if (customExpandedHeader !== oldCustomExpandedHeader) {
-       nav.customExpandedHeader = customExpandedHeader
-     }
+  private navRef = React.createRef<NavPropsI>()
+  componentDidMount = () => {
+    this.updateProps({})
+  }
+  
+  componentDidUpdate = (oldProps : NavPropsI) => {
+    this.updateProps(oldProps)
+  }
+  
+  updateProps = (oldProps={}) => {
+    const {
+      items={},
+      onSelect,
+      customHeader,
+      customExpandedHeader,
+      onToggleCollapse,
+      onItemOpenStateChange,
+      openStates,
+    } : NavPropsI = this.props
+    const {
+      items: oldItems,
+      onSelect: oldOnSelect,
+      customHeader: oldCustomHeader,
+      customExpandedHeader: oldCustomExpandedHeader,
+      onToggleCollapse: oldOnToggleCollapse,
+      onItemOpenStateChange: oldOnItemOpenStateChange,
+      openStates: oldOpenStates,
+    } : NavPropsI = oldProps
+    const nav = this.navRef.current
+  
+    if (!!nav) {
+      if (items !== oldItems) {
+        nav.items = items
+      }
+  
+      if (onSelect !== oldOnSelect) {
+        nav.onSelect = onSelect
+      }
+  
+      if (customHeader !== oldCustomHeader) {
+        nav.customHeader = customHeader
+      }
+  
+      if (customExpandedHeader !== oldCustomExpandedHeader) {
+        nav.customExpandedHeader = customExpandedHeader
+      }
 
-     if (onToggleCollapse !== oldOnToggleCollapse) {
-       nav.onToggleCollapse = onToggleCollapse
-     }
-   }
- }
- 
- render() {
-   const {
-     gutter,
-     collapsible,
-     collapsed,
-     grid,
-     style: stylesProp,
-     items,
-     onSelect,
-     customHeader,
-     customExpandedHeader,
-     onToggleCollapse,
-     ...otherProps
-   } : NavPropsI = this.props
-   let sideNavProps : NavPropsI = otherProps
-   if (!!gutter) sideNavProps.gutter = gutter
-   if (!!collapsible) sideNavProps.collapsible = collapsible
-   if (!!collapsed) sideNavProps.collapsed = collapsed
-   if (!!grid) sideNavProps.grid = grid
- 
-   return (
-     <unity-global-nav-base
-       ref={this.navRef}
-       style={stylesProp}
-       {...sideNavProps}
-     >
-       {!!customHeader &&
-         <span slot="customHeader">
-           {customHeader}
-         </span>}
-       {!!customExpandedHeader &&       
-           <span slot="customExpandedHeader">
-           {customExpandedHeader}
-         </span>}
-     </unity-global-nav-base>
-   )
- }
+      if (onToggleCollapse !== oldOnToggleCollapse) {
+        nav.onToggleCollapse = onToggleCollapse
+      }
+
+      if (onItemOpenStateChange !== oldOnItemOpenStateChange) {
+        nav.onItemOpenStateChange = onItemOpenStateChange
+      }
+    
+      if (openStates !== oldOpenStates) {
+          nav.openStates = openStates
+      }
+
+    }
+  }
+  
+  render() {
+    const {
+      gutter,
+      collapsible,
+      collapsed,
+      grid,
+      style: stylesProp,
+      items,
+      onSelect,
+      customHeader,
+      customExpandedHeader,
+      onToggleCollapse,
+      ...otherProps
+    } : NavPropsI = this.props
+    let sideNavProps : NavPropsI = otherProps
+    if (!!gutter) sideNavProps.gutter = gutter
+    if (!!collapsible) sideNavProps.collapsible = collapsible
+    if (!!collapsed) sideNavProps.collapsed = collapsed
+    if (!!grid) sideNavProps.grid = grid
+  
+    return (
+      <unity-global-nav-base
+        ref={this.navRef}
+        style={stylesProp}
+        {...sideNavProps}
+      >
+        {!!customHeader &&
+          <span slot="customHeader">
+            {customHeader}
+          </span>}
+        {!!customExpandedHeader &&       
+            <span slot="customExpandedHeader">
+            {customExpandedHeader}
+          </span>}
+      </unity-global-nav-base>
+    )
+  }
 }
  
 // const styles : NavStylesI = { zIndex: 10 }
