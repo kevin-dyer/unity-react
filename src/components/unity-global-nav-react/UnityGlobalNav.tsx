@@ -8,6 +8,7 @@ export interface NavItemI {
   icon?: string
   children?: NavItemI[]
   disabled?: boolean
+  borderWhenClosed?: boolean
 }
 export interface NavItemsConfigI {
   top?: NavItemI[]
@@ -35,7 +36,10 @@ export interface NavPropsI extends HTMLAttributes<HTMLElement> {
   customExpandedHeader?: any,
   onToggleCollapse?: (collapsed: boolean) => void,
   onItemOpenStateChange?: (openStates: OpenStatesT, key?: string, openState?: boolean) => void,
-  openStates?: OpenStatesT
+  openStates?: OpenStatesT,
+  alwaysShowBordersTop?: boolean
+  alwaysShowBordersBottom?: boolean
+  bubbleBottomItems?: boolean
 }
  
 export type NavStyles = CSSProperties & {
@@ -147,6 +151,9 @@ export default class UnityGlobalNav extends Component<NavPropsI> {
       collapsible,
       collapsed,
       grid,
+      alwaysShowBordersTop,
+      alwaysShowBordersBottom,
+      bubbleBottomItems,
       style: stylesProp,
       items,
       onSelect,
@@ -160,6 +167,9 @@ export default class UnityGlobalNav extends Component<NavPropsI> {
     if (!!collapsible) sideNavProps.collapsible = collapsible
     if (!!collapsed) sideNavProps.collapsed = collapsed
     if (!!grid) sideNavProps.grid = grid
+    if (!!alwaysShowBordersTop) sideNavProps.alwaysShowBordersTop = alwaysShowBordersTop
+    if (!!alwaysShowBordersBottom) sideNavProps.alwaysShowBordersBottom = alwaysShowBordersBottom
+    if (!!bubbleBottomItems) sideNavProps.bubbleBottomItems = bubbleBottomItems
   
     return (
       <unity-global-nav-base
