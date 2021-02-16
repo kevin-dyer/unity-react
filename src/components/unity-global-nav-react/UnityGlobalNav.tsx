@@ -35,7 +35,7 @@ export interface NavPropsI extends HTMLAttributes<HTMLElement> {
   customHeader?: any,
   customExpandedHeader?: any,
   onToggleCollapse?: (collapsed: boolean) => void,
-  onItemOpenStateChange?: (openStates: OpenStatesT, key?: string, openState?: boolean) => void,
+  onOpenStateChange?: (openStates: OpenStatesT, key?: string, openState?: boolean) => void,
   openStates?: OpenStatesT,
   alwaysShowBordersTop?: boolean
   alwaysShowBordersBottom?: boolean
@@ -99,7 +99,7 @@ export default class UnityGlobalNav extends Component<NavPropsI> {
       customHeader,
       customExpandedHeader,
       onToggleCollapse,
-      onItemOpenStateChange,
+      onOpenStateChange,
       openStates,
     } : NavPropsI = this.props
     const {
@@ -108,7 +108,7 @@ export default class UnityGlobalNav extends Component<NavPropsI> {
       customHeader: oldCustomHeader,
       customExpandedHeader: oldCustomExpandedHeader,
       onToggleCollapse: oldOnToggleCollapse,
-      onItemOpenStateChange: oldOnItemOpenStateChange,
+      onOpenStateChange: oldOnOpenStateChange,
       openStates: oldOpenStates,
     } : NavPropsI = oldProps
     const nav = this.navRef.current
@@ -134,8 +134,8 @@ export default class UnityGlobalNav extends Component<NavPropsI> {
         nav.onToggleCollapse = onToggleCollapse
       }
 
-      if (onItemOpenStateChange !== oldOnItemOpenStateChange) {
-        nav.onItemOpenStateChange = onItemOpenStateChange
+      if (onOpenStateChange !== oldOnOpenStateChange) {
+        nav.onOpenStateChange = onOpenStateChange
       }
     
       if (openStates !== oldOpenStates) {
