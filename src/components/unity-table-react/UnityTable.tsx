@@ -69,6 +69,8 @@ export interface TableColumnI {
   formatLabel?: (value: any) => string,
   customFilter?: (filter?: string, value?: any) => boolean
   renderCustomContent?: (value?: any, node?: Object) => ReactNode,
+  hideFilter?: boolean,
+  hideSort?: boolean
 }
 
 const slotStyles : CSSProperties = {
