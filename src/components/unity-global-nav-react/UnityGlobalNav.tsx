@@ -1,4 +1,4 @@
-import React, { CSSProperties, Component, HTMLAttributes, SyntheticEvent, ReactNode } from 'react'
+import React, { CSSProperties, Component, HTMLAttributes, ReactNode } from 'react'
 import '@bit/smartworks.unity.unity-core/unity-global-nav-base'
 
 export interface NavItemI {
@@ -26,7 +26,7 @@ export interface NavPropsI extends HTMLAttributes<HTMLElement> {
   collapsible?: boolean
   collapsed?: boolean
   items?: NavItemsConfigI
-  onSelect?: (event: SyntheticEvent<HTMLElement, Event>) => void // this seems to be the correct type for extending HTMLAttributes
+  onSelect?: (key: any) => void // this seems to be the correct type for extending HTMLAttributes
   header?: string
   headerImg?: string
   grid?: boolean
@@ -42,6 +42,7 @@ export interface NavPropsI extends HTMLAttributes<HTMLElement> {
   alwaysShowBordersTop?: boolean
   alwaysShowBordersBottom?: boolean
   bubbleBottomItems?: boolean
+  selectFirstChildOnExpand?: boolean
 }
 
 export type NavStyles = CSSProperties & {
