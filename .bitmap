@@ -134,7 +134,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-core-react@1.6.4": {
+    "smartworks.unity-react/unity-core-react@1.6.5": {
         "files": [
             {
                 "name": "index.js",
@@ -282,7 +282,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-dropdown-react@1.0.6": {
+    "smartworks.unity-react/unity-dropdown-react@1.0.7": {
         "files": [
             {
                 "name": "UnityDropdown.tsx",
@@ -575,7 +575,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-select-menu-react@1.1.4": {
+    "smartworks.unity-react/unity-select-menu-react@1.1.5": {
         "files": [
             {
                 "name": "UnitySelectMenu.tsx",

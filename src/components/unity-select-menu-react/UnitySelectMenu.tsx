@@ -78,4 +78,7 @@ export type SelectMenuStylesT = React.CSSProperties & {
   '--text-size'?: string
   '--border-color'?: string
   '--menu-hover-color'?: string
+  '--background-color'?: string
+  '--highlighted-option-color'?: string
+  '--highlighted-option-hover-color'?: string
 }

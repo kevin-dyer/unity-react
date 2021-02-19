@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v1.0.7
+- Added css vars for `--dropdown-highlighted-option-color` and `--dropdown-highlighted-option-hover-color`
+
 ### v1.0.6
 - Added `--dropdown-options-list-max-height` to css types
 

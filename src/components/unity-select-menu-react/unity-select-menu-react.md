@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v1.1.5
+- Added css vars `--background-color`, `--highlighted-option-color`, and `--highlighted-option-hover-color`
+
 ### v1.1.4
 - Added `highlighted` prop
 
