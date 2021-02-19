@@ -2,6 +2,13 @@
 
 ## Changelog:
 
+### v1.4.1
+- Typescript requirements (no functional change)
+
+### v1.4.0
+- Added `selectFirstChildOnExpand`
+- Fixed type for `onSelect` function
+
 ### v1.3.0
 - Added `borderWhenClosed` prop for nav items
 - Added `subHeader` and `subHeaderBorder` props

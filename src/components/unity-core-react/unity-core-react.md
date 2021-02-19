@@ -25,6 +25,10 @@ export * from "@bit/smartworks.unity-react.<component-path>" //Export named expo
 
 ## Changelog:
 
+### v1.6.7
+- unity-global-nav-react v1.4.1
+- unity-global-nav-react v1.4.0
+
 ### v1.6.5
 - unity-dropdown-react 1.0.7
 - unity-select-menu-react 1.1.5
