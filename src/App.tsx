@@ -36,6 +36,7 @@ import {
   UnityCheckbox,
   UnityStepper,
   UnitySelectMenu,
+  NavStyles
 } from './components/unity-core-react'
 import UnityTable from '../src/components/unity-table-react/UnityTable'
 import { devices, fakeYaml, selectMenuItems } from './fakeData'
@@ -46,6 +47,10 @@ const appStyle: CSSProperties = {
   flexDirection: 'column',
   height: '100vh',
   width: '100%'
+}
+
+const globalNavStyle: NavStyles = {
+  '--global-nav-background-color': '#2dccd3'
 }
 
 const headerStyle: headerStyleTypes  = {
@@ -294,6 +299,7 @@ class App extends React.Component {
   private tableRef = React.createRef<UnityTable>()
 
   state = {
+    selectedNavItem: '',
     value: '',
     error: '',
     showPane: true,
@@ -323,6 +329,11 @@ class App extends React.Component {
 
   componentWillUnmount() {
     clearInterval(this.histInterval!)
+  }
+
+  handleSelectNavItem(key: string)  {
+    console.log(`Menu item ${key} clicked`)
+    this.setState({ selectedNavItem: key })
   }
 
   makeCenterContent() {
@@ -402,6 +413,7 @@ class App extends React.Component {
 
   render() {
     const {
+      selectedNavItem,
       selection,
       showModal,
       showNotificationModal,
@@ -481,8 +493,10 @@ class App extends React.Component {
               collapsible
               grid
               header='ProductName'
-              onSelect={(e) => console.log(`Menu item ${e} clicked`)}
+              onSelect={this.handleSelectNavItem.bind(this)}
+              selected={selectedNavItem}
               onToggleCollapse={collapsed => console.log("onToggleCollapse ", {collapsed})}
+              style={globalNavStyle}
             />
             <div className="main" style={mainStyle}>
               <UnitySection>
