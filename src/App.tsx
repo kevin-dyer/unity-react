@@ -550,7 +550,7 @@ class App extends React.Component {
 
                 <UnityTypography>Embedded YAML editor</UnityTypography>
 
-                <div style={{...contentBox, height: 400, border: '1px solid blue'}}>
+                <div style={{ ...contentBox, height: 800, border: '1px solid blue' }}>
 
                   <UnityCodeEditor
                     label="YAML editor"
@@ -559,7 +559,6 @@ class App extends React.Component {
                       this.setState({yamlValue: value, yamlError: error})
                     }}
                     value={this.state.yamlValue}
-                    flexibleHeight
                     error='Example error'
                     embedded
                     dirty

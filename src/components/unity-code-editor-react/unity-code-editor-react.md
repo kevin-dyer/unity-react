@@ -2,6 +2,13 @@
 
 ## Changelog:
 
+### v2.0.1
+- Fixed embedded error positioning.
+
+### v2.0.0
+- Updated editor to fill its parent's height when minLines and maxLines have not been set.
+- Removed `flexibleHeight` prop.
+
 ### v1.2.1
 - Fixed flexible height editor having no height when the parent was not a flex container.
 

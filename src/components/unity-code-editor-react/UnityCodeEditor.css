@@ -81,11 +81,11 @@
 }
 
 .code-editor-error.embedded {
-  position: absolute;
   bottom: 0;
   right: 6px;
   background-color: white;
   padding: 0 6px;
+  position: absolute;
 }
 
 

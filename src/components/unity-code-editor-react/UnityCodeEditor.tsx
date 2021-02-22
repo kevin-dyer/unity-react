@@ -44,12 +44,16 @@ export interface CodeEditorProps {
   highlightActiveLine?: boolean,
   showLineNumbers?: boolean,
   tabSize?: number,
-  flexibleHeight?: boolean,
   embedded?: boolean,
   style?: CodeEditorStylesI
 }
 
 export interface CodeEditorState {error: string}
+
+interface LineProps { 
+  minLines?: number
+  maxLines?: number
+}
 
 class UnityCodeEditor extends React.Component<CodeEditorProps, CodeEditorState> {
 
@@ -117,14 +121,13 @@ class UnityCodeEditor extends React.Component<CodeEditorProps, CodeEditorState> 
       mode,
       label,
       dirty,
-      minLines=8,
-      maxLines=16,
+      minLines,
+      maxLines,
       error: errorText='',
       readOnly=false,
       highlightActiveLine=true,
       showLineNumbers=true,
       tabSize=2,
-      flexibleHeight=false,
       embedded=false
     } = this.props
     const { error='' } = this.state
@@ -133,9 +136,14 @@ class UnityCodeEditor extends React.Component<CodeEditorProps, CodeEditorState> 
     const dirtyGutterClass = embedded? "dirty-gutter embedded" : "dirty-gutter"
     const editorContainerClass = embedded? "editor-container embedded" : "editor-container"
 
-    const editorStyle : CSSProperties = { width: '100%' }
+    const editorStyle : CSSProperties = { width: '100%'}
 
-    if (flexibleHeight) editorStyle.position = 'absolute' // needed for scrolling
+    // This allows having the editor fill the parent container if minLines and maxLines are not passed into the component
+    const lineProps : LineProps = {} 
+    if(minLines) lineProps.minLines = minLines
+    if(maxLines) lineProps.maxLines = maxLines
+    if(!minLines && !maxLines) editorStyle.flex = 1
+
 
     return (
       <div className={editorWrapperClass}>
@@ -157,8 +165,6 @@ class UnityCodeEditor extends React.Component<CodeEditorProps, CodeEditorState> 
             mode={mode === 'json' ? 'json5' : mode}
             editorProps={{ $blockScrolling: true }}
             onChange={this.handleChange}
-            minLines={flexibleHeight? Infinity : minLines}
-            maxLines={flexibleHeight? Infinity : maxLines}
             readOnly={readOnly}
             highlightActiveLine={highlightActiveLine}
             setOptions={{
@@ -166,6 +172,7 @@ class UnityCodeEditor extends React.Component<CodeEditorProps, CodeEditorState> 
             }}
             tabSize={tabSize}
             wrapEnabled
+            {...lineProps}
           />           
         </div>
         {(errorText || error) &&
