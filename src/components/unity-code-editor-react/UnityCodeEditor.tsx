@@ -12,6 +12,7 @@ import "ace-builds/src-noconflict/mode-markdown";
 import "ace-builds/src-noconflict/mode-html";
 import "ace-builds/src-noconflict/mode-yaml";
 import "ace-builds/src-noconflict/theme-textmate";
+import "ace-builds/src-noconflict/ext-searchbox";
 import UnityTypography from "@bit/smartworks.unity-react.unity-typography-react";
 
 import './UnityCodeEditor.css';
@@ -50,7 +51,7 @@ export interface CodeEditorProps {
 
 export interface CodeEditorState {error: string}
 
-interface LineProps { 
+interface LineProps {
   minLines?: number
   maxLines?: number
 }
@@ -131,7 +132,7 @@ class UnityCodeEditor extends React.Component<CodeEditorProps, CodeEditorState> 
       embedded=false
     } = this.props
     const { error='' } = this.state
-    
+
     const editorWrapperClass = (!(errorText || error) && !embedded)? "editor-wrapper padded" : "editor-wrapper"
     const dirtyGutterClass = embedded? "dirty-gutter embedded" : "dirty-gutter"
     const editorContainerClass = embedded? "editor-container embedded" : "editor-container"
@@ -139,7 +140,7 @@ class UnityCodeEditor extends React.Component<CodeEditorProps, CodeEditorState> 
     const editorStyle : CSSProperties = { width: '100%'}
 
     // This allows having the editor fill the parent container if minLines and maxLines are not passed into the component
-    const lineProps : LineProps = {} 
+    const lineProps : LineProps = {}
     if(minLines) lineProps.minLines = minLines
     if(maxLines) lineProps.maxLines = maxLines
     if(!minLines && !maxLines) editorStyle.flex = 1
@@ -173,7 +174,7 @@ class UnityCodeEditor extends React.Component<CodeEditorProps, CodeEditorState> 
             tabSize={tabSize}
             wrapEnabled
             {...lineProps}
-          />           
+          />
         </div>
         {(errorText || error) &&
           this.getValidationMessage(errorText || error)
