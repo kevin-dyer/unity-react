@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v2.0.2
+- Fixed Search Box functionality
+
 ### v2.0.1
 - Fixed embedded error positioning.
 
