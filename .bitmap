@@ -88,7 +88,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-code-editor-react@2.0.1": {
+    "smartworks.unity-react/unity-code-editor-react@2.0.2": {
         "files": [
             {
                 "name": "UnityCodeEditor.css",
@@ -134,7 +134,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-core-react@2.0.1": {
+    "smartworks.unity-react/unity-core-react@2.0.2": {
         "files": [
             {
                 "name": "index.js",
