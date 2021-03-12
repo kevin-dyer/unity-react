@@ -36,9 +36,11 @@ import {
   UnityCheckbox,
   UnityStepper,
   UnitySelectMenu,
+  // UnityMultiPane,
   NavStyles
 } from './components/unity-core-react'
 import UnityTable from '../src/components/unity-table-react/UnityTable'
+import UnityMultiPane from '../src/components/unity-multi-pane-react/UnityMultiPane'
 import { devices, fakeYaml, selectMenuItems } from './fakeData'
 import moment from 'moment'
 
@@ -318,7 +320,9 @@ class App extends React.Component {
     showPopover: false,
     showColumnEditor: false,
     fakeHistData: [...histSeed],
-    streamHistData: false
+    streamHistData: false,
+    secondPane: false,
+    thirdPane: false
   }
 
   popoverButtonRef = React.createRef<HTMLDivElement>()
@@ -423,9 +427,15 @@ class App extends React.Component {
       showColumnEditor,
       fakeHistData,
       streamHistData,
-      tableSearchText
+      tableSearchText,
+      secondPane,
+      thirdPane
     } = this.state
     const { data, columns, childKeys } = devices
+
+    let mpVisible = ["first"]
+    secondPane && mpVisible.push("second")
+    thirdPane && mpVisible.push("third")
 
     return (
       <div className="App" style={appStyle}>
@@ -594,6 +604,37 @@ class App extends React.Component {
                   }
                   footer={<div style={splitPaneHeaderStyle}>This is the footer</div>}
                   pane={<div style={splitPaneContainerStyle}>This is the pane content</div>}
+                />
+                <UnityMultiPane
+                  style={{ height: 400, border: '1px solid grey', margin: 20 }}
+                  closeButton
+                  collapseButton
+                  onClose={(closed:any) => this.setState({ [`${closed}Pane`]: false })}
+                  visiblePanes={mpVisible}
+                  panes={[{
+                    key: "first",
+                    header: (<div style={splitPaneHeaderStyle}>This is the header</div>),
+                    body: (<div style={splitPaneContainerStyle}>
+                      <UnityButton
+                        label="Toggle Second Pane"
+                        type="primary"
+                        onClick={() => this.setState({ secondPane: !this.state.secondPane})}
+                      />
+                    </div>),
+                    footer: (<div style={splitPaneHeaderStyle}>This is the footer</div>)
+                  }, {
+                    key: "second",
+                    body: (<div style={splitPaneContainerStyle}>
+                      <UnityButton
+                        label="Toggle Third Pane"
+                        type="primary"
+                        onClick={() => this.setState({ thirdPane: !this.state.thirdPane})}
+                      />
+                    </div>)
+                  }, {
+                    key: "third",
+                    body: (<div style={splitPaneContainerStyle}>This is the Third Pane</div>)
+                  }]}
                 />
                 <UnityNotificationsSplitPane
                   mainNotifications={{ target: 'split-pane-main-notification'}}

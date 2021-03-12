@@ -40,6 +40,9 @@ export * from "@bit/smartworks.unity-react.unity-json-viewer-react"
 export { default as UnityModal } from "@bit/smartworks.unity-react.unity-modal-react"
 export * from "@bit/smartworks.unity-react.unity-modal-react"
 
+export { default as UnityMultiPane } from "@bit/smartworks.unity-react.unity-multi-pane-react"
+export * from "@bit/smartworks.unity-react.unity-multi-pane-react"
+
 export { default as UnityNotification } from "@bit/smartworks.unity-react.unity-notification-react"
 export * from "@bit/smartworks.unity-react.unity-notification-react"
 
