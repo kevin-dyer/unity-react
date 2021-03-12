@@ -15,6 +15,7 @@
     "@bit/smartworks.unity-react.unity-histogram": "0.0.2",
     "@bit/smartworks.unity-react.unity-json-viewer-react": "^1.0.0",
     "@bit/smartworks.unity-react.unity-modal-react": "^1.0.0",
+    "@bit/smartworks.unity-react.unity-multi-pane-react": "^1.0.0",
     "@bit/smartworks.unity-react.unity-notification-react": "^1.0.3",
     "@bit/smartworks.unity-react.unity-notifications-handler-react": "^1.1.2",
     "@bit/smartworks.unity-react.unity-page-header-react": "^1.1.2",
