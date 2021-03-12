@@ -4,19 +4,19 @@
     "smartworks.unity-react/mock-data@0.0.2": {
         "files": [
             {
+                "name": "index.js",
                 "relativePath": "src/components/mock-data/index.js",
-                "test": false,
-                "name": "index.js"
+                "test": false
             },
             {
+                "name": "side-nav.js",
                 "relativePath": "src/components/mock-data/side-nav.js",
-                "test": false,
-                "name": "side-nav.js"
+                "test": false
             },
             {
+                "name": "things.js",
                 "relativePath": "src/components/mock-data/things.js",
-                "test": false,
-                "name": "things.js"
+                "test": false
             }
         ],
         "mainFile": "src/components/mock-data/index.js",
@@ -50,14 +50,14 @@
     "smartworks.unity-react/unity-card-react@0.0.1": {
         "files": [
             {
+                "name": "UnityCard.tsx",
                 "relativePath": "src/components/unity-card-react/UnityCard.tsx",
-                "test": false,
-                "name": "UnityCard.tsx"
+                "test": false
             },
             {
+                "name": "declarations.d.ts",
                 "relativePath": "src/components/unity-card-react/declarations.d.ts",
-                "test": false,
-                "name": "declarations.d.ts"
+                "test": false
             }
         ],
         "mainFile": "src/components/unity-card-react/UnityCard.tsx",
@@ -68,19 +68,19 @@
     "smartworks.unity-react/unity-checkbox-react@1.1.1": {
         "files": [
             {
+                "name": "UnityCheckbox.tsx",
                 "relativePath": "src/components/unity-checkbox-react/UnityCheckbox.tsx",
-                "test": false,
-                "name": "UnityCheckbox.tsx"
+                "test": false
             },
             {
+                "name": "declarations.d.ts",
                 "relativePath": "src/components/unity-checkbox-react/declarations.d.ts",
-                "test": false,
-                "name": "declarations.d.ts"
+                "test": false
             },
             {
+                "name": "unity-checkbox-react.md",
                 "relativePath": "src/components/unity-checkbox-react/unity-checkbox-react.md",
-                "test": false,
-                "name": "unity-checkbox-react.md"
+                "test": false
             }
         ],
         "mainFile": "src/components/unity-checkbox-react/UnityCheckbox.tsx",
@@ -134,7 +134,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-core-react@2.0.2": {
+    "smartworks.unity-react/unity-core-react@2.1.0": {
         "files": [
             {
                 "name": "index.js",
@@ -142,9 +142,9 @@
                 "test": false
             },
             {
+                "name": "index.js",
                 "relativePath": "src/components/unity-core-react/UnityCard/index.js",
-                "test": false,
-                "name": "index.js"
+                "test": false
             },
             {
                 "name": "index.js",
@@ -358,9 +358,9 @@
     "smartworks.unity-react/unity-histogram@0.0.2": {
         "files": [
             {
+                "name": "UnityHistogram.tsx",
                 "relativePath": "src/components/unity-histogram/UnityHistogram.tsx",
-                "test": false,
-                "name": "UnityHistogram.tsx"
+                "test": false
             }
         ],
         "mainFile": "src/components/unity-histogram/UnityHistogram.tsx",
@@ -368,22 +368,22 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-json-viewer-react@1.0.0": {
+    "smartworks.unity-react/unity-json-viewer-react@1.0.1": {
         "files": [
             {
+                "name": "UnityJsonViewer.css",
                 "relativePath": "src/components/unity-json-viewer-react/UnityJsonViewer.css",
-                "test": false,
-                "name": "UnityJsonViewer.css"
+                "test": false
             },
             {
+                "name": "UnityJsonViewer.tsx",
                 "relativePath": "src/components/unity-json-viewer-react/UnityJsonViewer.tsx",
-                "test": false,
-                "name": "UnityJsonViewer.tsx"
+                "test": false
             },
             {
+                "name": "unity-json-viewer-react.md",
                 "relativePath": "src/components/unity-json-viewer-react/unity-json-viewer-react.md",
-                "test": false,
-                "name": "unity-json-viewer-react.md"
+                "test": false
             }
         ],
         "mainFile": "src/components/unity-json-viewer-react/UnityJsonViewer.tsx",
@@ -413,22 +413,22 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-multi-pane-react@1.0.0": {
+    "smartworks.unity-react/unity-multi-pane-react@1.0.1": {
         "files": [
             {
+                "name": "UnityMultiPane.tsx",
                 "relativePath": "src/components/unity-multi-pane-react/UnityMultiPane.tsx",
-                "test": false,
-                "name": "UnityMultiPane.tsx"
+                "test": false
             },
             {
+                "name": "declarations.d.ts",
                 "relativePath": "src/components/unity-multi-pane-react/declarations.d.ts",
-                "test": false,
-                "name": "declarations.d.ts"
+                "test": false
             },
             {
+                "name": "unity-multi-pane-react.md",
                 "relativePath": "src/components/unity-multi-pane-react/unity-multi-pane-react.md",
-                "test": false,
-                "name": "unity-multi-pane-react.md"
+                "test": false
             }
         ],
         "mainFile": "src/components/unity-multi-pane-react/UnityMultiPane.tsx",
@@ -461,17 +461,18 @@
     "smartworks.unity-react/unity-notifications-handler-react@1.1.2": {
         "files": [
             {
-                "relativePath": "src/components/unity-notifications-handler-react/UnityNotificationsModal.tsx",
-                "test": false,
-                "name": "UnityNotificationsModal.tsx"
-            },
-            {
-                "relativePath": "src/components/unity-notifications-handler-react/UnityNotificationsSplitPane.tsx",
-                "test": false,
-                "name": "UnityNotificationsSplitPane.tsx"
-            },
-            {
+                "name": "UnityNotificationsHandler.tsx",
                 "relativePath": "src/components/unity-notifications-handler-react/UnityNotificationsHandler.tsx",
+                "test": false
+            },
+            {
+                "name": "UnityNotificationsModal.tsx",
+                "relativePath": "src/components/unity-notifications-handler-react/UnityNotificationsModal.tsx",
+                "test": false
+            },
+            {
+                "name": "UnityNotificationsSplitPane.tsx",
+                "relativePath": "src/components/unity-notifications-handler-react/UnityNotificationsSplitPane.tsx",
                 "test": false
             },
             {
@@ -516,19 +517,19 @@
     "smartworks.unity-react/unity-popover-react@1.0.4": {
         "files": [
             {
+                "name": "UnityPopoverReact.tsx",
                 "relativePath": "src/components/unity-popover-react/UnityPopoverReact.tsx",
-                "test": false,
-                "name": "UnityPopoverReact.tsx"
+                "test": false
             },
             {
+                "name": "declarations.d.ts",
                 "relativePath": "src/components/unity-popover-react/declarations.d.ts",
-                "test": false,
-                "name": "declarations.d.ts"
+                "test": false
             },
             {
+                "name": "unity-popover-react.md",
                 "relativePath": "src/components/unity-popover-react/unity-popover-react.md",
-                "test": false,
-                "name": "unity-popover-react.md"
+                "test": false
             }
         ],
         "mainFile": "src/components/unity-popover-react/UnityPopoverReact.tsx",
@@ -561,19 +562,19 @@
     "smartworks.unity-react/unity-search-bar-react@1.0.2": {
         "files": [
             {
+                "name": "UnitySearchBar.tsx",
                 "relativePath": "src/components/unity-search-bar-react/UnitySearchBar.tsx",
-                "test": false,
-                "name": "UnitySearchBar.tsx"
+                "test": false
             },
             {
+                "name": "declarations.d.ts",
                 "relativePath": "src/components/unity-search-bar-react/declarations.d.ts",
-                "test": false,
-                "name": "declarations.d.ts"
+                "test": false
             },
             {
+                "name": "unity-search-bar-react.md",
                 "relativePath": "src/components/unity-search-bar-react/unity-search-bar-react.md",
-                "test": false,
-                "name": "unity-search-bar-react.md"
+                "test": false
             }
         ],
         "mainFile": "src/components/unity-search-bar-react/UnitySearchBar.tsx",
@@ -651,19 +652,19 @@
     "smartworks.unity-react/unity-stepper-react@1.0.0": {
         "files": [
             {
+                "name": "UnityStepper.tsx",
                 "relativePath": "src/components/unity-stepper-react/UnityStepper.tsx",
-                "test": false,
-                "name": "UnityStepper.tsx"
+                "test": false
             },
             {
+                "name": "declarations.d.ts",
                 "relativePath": "src/components/unity-stepper-react/declarations.d.ts",
-                "test": false,
-                "name": "declarations.d.ts"
+                "test": false
             },
             {
+                "name": "unity-stepper-react.md",
                 "relativePath": "src/components/unity-stepper-react/unity-stepper-react.md",
-                "test": false,
-                "name": "unity-stepper-react.md"
+                "test": false
             }
         ],
         "mainFile": "src/components/unity-stepper-react/UnityStepper.tsx",
@@ -720,19 +721,19 @@
     "smartworks.unity-react/unity-tag-react@1.0.4": {
         "files": [
             {
+                "name": "UnityTag.tsx",
                 "relativePath": "src/components/unity-tag-react/UnityTag.tsx",
-                "test": false,
-                "name": "UnityTag.tsx"
+                "test": false
             },
             {
+                "name": "declarations.d.ts",
                 "relativePath": "src/components/unity-tag-react/declarations.d.ts",
-                "test": false,
-                "name": "declarations.d.ts"
+                "test": false
             },
             {
+                "name": "unity-tag-react.md",
                 "relativePath": "src/components/unity-tag-react/unity-tag-react.md",
-                "test": false,
-                "name": "unity-tag-react.md"
+                "test": false
             }
         ],
         "mainFile": "src/components/unity-tag-react/UnityTag.tsx",

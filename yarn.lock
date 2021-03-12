@@ -1164,10 +1164,10 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-core-react@^2.0.2":
-  version "2.0.2"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-core-react/-/smartworks.unity-react.unity-core-react-2.0.2.tgz"
-  integrity sha1-C9sKLLS52Fp073mR4C/nFIHY9UM=
+"@bit/smartworks.unity-react.unity-core-react@^2.1.0":
+  version "2.1.0"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-core-react/-/smartworks.unity-react.unity-core-react-2.1.0.tgz#1951b410804627b2a9e47333b20381ff25bfa866"
+  integrity sha1-GVG0EIBGJ7Kp5HMzsgOB/yW/qGY=
   dependencies:
     "@bit/smartworks.unity-react.unity-button-react" "1.1.3"
     "@bit/smartworks.unity-react.unity-card-react" "0.0.1"
@@ -1178,8 +1178,9 @@
     "@bit/smartworks.unity-react.unity-dropzone-react" "0.2.2"
     "@bit/smartworks.unity-react.unity-global-nav-react" "1.4.1"
     "@bit/smartworks.unity-react.unity-histogram" "0.0.2"
-    "@bit/smartworks.unity-react.unity-json-viewer-react" "1.0.0"
+    "@bit/smartworks.unity-react.unity-json-viewer-react" "1.0.1"
     "@bit/smartworks.unity-react.unity-modal-react" "1.0.0"
+    "@bit/smartworks.unity-react.unity-multi-pane-react" "1.0.1"
     "@bit/smartworks.unity-react.unity-notification-react" "1.0.3"
     "@bit/smartworks.unity-react.unity-notifications-handler-react" "1.1.2"
     "@bit/smartworks.unity-react.unity-page-header-react" "1.1.2"
@@ -1221,7 +1222,7 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-histogram@0.0.2":
+"@bit/smartworks.unity-react.unity-histogram@0.0.2", "@bit/smartworks.unity-react.unity-histogram@^0.0.2":
   version "0.0.2"
   resolved "https://node.bit.dev/smartworks.unity-react.unity-histogram/-/smartworks.unity-react.unity-histogram-0.0.2.tgz"
   integrity sha1-5aXoBXXwkOEF3YeeA0c8f9QR22k=
@@ -1235,11 +1236,12 @@
     resize-observer-polyfill "^1.5.1"
     throttle-debounce "^3.0.1"
 
-"@bit/smartworks.unity-react.unity-json-viewer-react@1.0.0", "@bit/smartworks.unity-react.unity-json-viewer-react@^1.0.0":
-  version "1.0.0"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-json-viewer-react/-/smartworks.unity-react.unity-json-viewer-react-1.0.0.tgz"
-  integrity sha1-kwlDKSlJRkfwDPKe/a7k33QfnWI=
+"@bit/smartworks.unity-react.unity-json-viewer-react@1.0.1", "@bit/smartworks.unity-react.unity-json-viewer-react@^1.0.1":
+  version "1.0.1"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-json-viewer-react/-/smartworks.unity-react.unity-json-viewer-react-1.0.1.tgz#66232bddfcdbc24978790e0520eb472c994c5673"
+  integrity sha1-ZiMr3fzbwkl4eQ4FIOtHLJlMVnM=
   dependencies:
+    "@bit/smartworks.unity-react.unity-code-editor-react" "2.0.2"
     "@types/react" "16.9.11"
     react "^16.12.0"
 
@@ -1251,10 +1253,10 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-multi-pane-react@^1.0.0":
-  version "1.0.0"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-multi-pane-react/-/smartworks.unity-react.unity-multi-pane-react-1.0.0.tgz"
-  integrity sha1-wpGaPPO8h3PlqH8QR5E3Lbz/L7M=
+"@bit/smartworks.unity-react.unity-multi-pane-react@1.0.1", "@bit/smartworks.unity-react.unity-multi-pane-react@^1.0.1":
+  version "1.0.1"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-multi-pane-react/-/smartworks.unity-react.unity-multi-pane-react-1.0.1.tgz#bffa666ca84157cdf7c16e1ac0034fb533f056ad"
+  integrity sha1-v/pmbKhBV833wW4awANPtTPwVq0=
   dependencies:
     "@types/react" "16.9.11"
     react "^16.12.0"
@@ -1432,7 +1434,7 @@
     lit-element "^2.0.1"
     sortablejs "^1.10.2"
 
-"@bit/smartworks.unity.unity-core@^1.13.1":
+"@bit/smartworks.unity.unity-core@^1.13.3":
   version "1.13.3"
   resolved "https://node.bit.dev/smartworks.unity.unity-core/-/smartworks.unity.unity-core-1.13.3.tgz"
   integrity sha1-Yr0EdUpsSRvcuBOrKgjqypnyOHE=
