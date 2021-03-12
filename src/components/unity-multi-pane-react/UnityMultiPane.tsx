@@ -46,8 +46,9 @@ export default class UnityMultiPane extends Component<MultiPaneProps> {
         ref={this.multiPaneRef}
         {...multiPaneArgs}
       >
-        {panes.map(({key, header, body, footer}) => (<>
-          {!!header && (
+        {panes.map(({key, header, body, footer}) => {
+          let slots = []
+          if (!!header) slots.push((
             <div
               slot={`${key}::header`}
               key={`${key}-header`}
@@ -55,15 +56,17 @@ export default class UnityMultiPane extends Component<MultiPaneProps> {
             >
               {header}
             </div>
-          )}
-          <div
-            slot={key}
-            key={key}
-            style={{flex: 1, width: '100%', display: 'flex'}}
-          >
-            {body}
-          </div>
-          {!!footer && (
+          ))
+          slots.push((
+            <div
+              slot={key}
+              key={`${key}-body`}
+              style={{flex: 1, width: '100%', display: 'flex'}}
+            >
+              {body}
+            </div>
+          ))
+          if (!!footer) slots.push((
             <div
               slot={`${key}::footer`}
               key={`${key}-footer`}
@@ -71,8 +74,9 @@ export default class UnityMultiPane extends Component<MultiPaneProps> {
             >
               {footer}
             </div>
-          )}
-        </>))}
+          ))
+          return slots
+        })}
       </unity-multi-pane>
     )
   }
