@@ -26,7 +26,8 @@ export * from "@bit/smartworks.unity-react.<component-path>" //Export named expo
 ## Changelog:
 
 ### v2.1.0
-- unity-multi-pane-react v1.0.0
+- unity-json-viewer-react v1.0.1
+- unity-multi-pane-react v1.0.1
 
 ### v2.0.1
 - unity-code-editor-react v2.0.1
