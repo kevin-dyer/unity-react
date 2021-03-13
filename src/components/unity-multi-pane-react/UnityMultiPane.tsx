@@ -16,13 +16,11 @@ export default class UnityMultiPane extends Component<MultiPaneProps> {
   updateProperties = () => {
     const { props, multiPaneRef } = this
     const unityMultiPane = multiPaneRef.current
-    const { panes, visiblePanes, collapsedPanes, onClose, onCollapseChange, closeButton, collapseButton } = props
+    const { panes, onClose, onCollapseChange, closeButton, collapseButton } = props
     if (unityMultiPane) {
       unityMultiPane.onClose = onClose || (() => {})
       unityMultiPane.onCollapseChange = onCollapseChange || (() => {})
       unityMultiPane.panes = panes
-      unityMultiPane.visiblePanes = visiblePanes
-      unityMultiPane.collapsedPanes = collapsedPanes
       if (closeButton) unityMultiPane.closeButton = closeButton
       if (collapseButton) unityMultiPane.collapseButton = collapseButton
     }
@@ -33,6 +31,9 @@ export default class UnityMultiPane extends Component<MultiPaneProps> {
       panes=[],
       closeButton,
       collapseButton,
+      labels,
+      visiblePanes,
+      collapsedPanes,
       ...otherProps
     } = this.props
     let multiPaneArgs : MultiPaneProps = {...otherProps}
@@ -44,6 +45,9 @@ export default class UnityMultiPane extends Component<MultiPaneProps> {
       <unity-multi-pane
         className="ump-wrapper"
         ref={this.multiPaneRef}
+        labels={JSON.stringify(labels)}
+        visiblePanes={JSON.stringify(visiblePanes)}
+        collapsedPanes={JSON.stringify(collapsedPanes)}
         {...multiPaneArgs}
       >
         {panes.map(({key, header, body, footer}) => {
