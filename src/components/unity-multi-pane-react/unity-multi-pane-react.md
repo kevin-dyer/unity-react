@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v1.0.2
+- fix obj/arr argument parsing issue
+
 ### v1.0.1
 - Fix key issue
 
