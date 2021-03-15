@@ -1253,10 +1253,18 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-multi-pane-react@1.0.1", "@bit/smartworks.unity-react.unity-multi-pane-react@^1.0.1":
+"@bit/smartworks.unity-react.unity-multi-pane-react@1.0.1":
   version "1.0.1"
   resolved "https://node.bit.dev/smartworks.unity-react.unity-multi-pane-react/-/smartworks.unity-react.unity-multi-pane-react-1.0.1.tgz#bffa666ca84157cdf7c16e1ac0034fb533f056ad"
   integrity sha1-v/pmbKhBV833wW4awANPtTPwVq0=
+  dependencies:
+    "@types/react" "16.9.11"
+    react "^16.12.0"
+
+"@bit/smartworks.unity-react.unity-multi-pane-react@^1.0.2":
+  version "1.0.2"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-multi-pane-react/-/smartworks.unity-react.unity-multi-pane-react-1.0.2.tgz#f600a8c2d2be826386c2f2dca34b0e1967f73e58"
+  integrity sha1-9gCowtK+gmOGwvLco0sOGWf3Plg=
   dependencies:
     "@types/react" "16.9.11"
     react "^16.12.0"
