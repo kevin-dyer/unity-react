@@ -34,13 +34,14 @@ import {
   UnityPopover,
   UnitySearchBar,
   UnityCheckbox,
-  UnityStepper,
+  // UnityStepper,
   UnitySelectMenu,
   // UnityMultiPane,
   NavStyles
 } from './components/unity-core-react'
 import UnityTable from '../src/components/unity-table-react/UnityTable'
 import UnityMultiPane from '../src/components/unity-multi-pane-react/UnityMultiPane'
+import UnityStepper from '../src/components/unity-stepper-react/UnityStepper'
 import { devices, fakeYaml, selectMenuItems } from './fakeData'
 import moment from 'moment'
 
@@ -322,7 +323,8 @@ class App extends React.Component {
     fakeHistData: [...histSeed],
     streamHistData: false,
     secondPane: false,
-    thirdPane: false
+    thirdPane: false,
+    stepperValid: false
   }
 
   popoverButtonRef = React.createRef<HTMLDivElement>()
@@ -429,7 +431,8 @@ class App extends React.Component {
       streamHistData,
       tableSearchText,
       secondPane,
-      thirdPane
+      thirdPane,
+      stepperValid
     } = this.state
     const { data, columns, childKeys } = devices
 
@@ -987,9 +990,19 @@ class App extends React.Component {
                 <UnityStepper
                   steps={['Step 1', {name:'Step2', buttonText:'Authorize'}, {name:'Step 3',key:'test'}]}
                   totalSteps={4}
-                  valid
+                  valid={stepperValid}
+                  cancelButton
                   backtrack
-                  onChangeStep={(step:any) => console.log('step', step)}
+                  onChangeStep={(step:any) => {
+                    this.setState({ stepperValid: false })
+                    console.log('step', step)
+                  }}
+                  onCancel={(step:any) => console.log('canceled', step)}
+                />
+                <UnityButton
+                  type="primary"
+                  label={stepperValid ? "Invalidate" : "Validate"}
+                  onClick={() => this.setState({ stepperValid: !stepperValid })}
                 />
               </UnitySection>
 
