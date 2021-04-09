@@ -134,7 +134,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-core-react@2.1.1": {
+    "smartworks.unity-react/unity-core-react@2.1.2": {
         "files": [
             {
                 "name": "index.js",
@@ -649,7 +649,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-stepper-react@1.0.0": {
+    "smartworks.unity-react/unity-stepper-react@1.1.0": {
         "files": [
             {
                 "name": "UnityStepper.tsx",

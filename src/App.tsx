@@ -10,7 +10,7 @@ import {
   histData,
   UnityJsonViewer,
   UnityTextInput,
-  // UnityTable,
+  UnityTable,
   UnityTableExport,
   UnityTag,
   UnityTypography,
@@ -34,14 +34,11 @@ import {
   UnityPopover,
   UnitySearchBar,
   UnityCheckbox,
-  // UnityStepper,
+  UnityStepper,
   UnitySelectMenu,
-  // UnityMultiPane,
+  UnityMultiPane,
   NavStyles
 } from './components/unity-core-react'
-import UnityTable from '../src/components/unity-table-react/UnityTable'
-import UnityMultiPane from '../src/components/unity-multi-pane-react/UnityMultiPane'
-import UnityStepper from '../src/components/unity-stepper-react/UnityStepper'
 import { devices, fakeYaml, selectMenuItems } from './fakeData'
 import moment from 'moment'
 

@@ -1164,10 +1164,10 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-core-react@^2.1.0":
-  version "2.1.0"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-core-react/-/smartworks.unity-react.unity-core-react-2.1.0.tgz#1951b410804627b2a9e47333b20381ff25bfa866"
-  integrity sha1-GVG0EIBGJ7Kp5HMzsgOB/yW/qGY=
+"@bit/smartworks.unity-react.unity-core-react@^2.1.2":
+  version "2.1.2"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-core-react/-/smartworks.unity-react.unity-core-react-2.1.2.tgz#c659ebfcbe3ffa102c4786447524d8f78f695e9a"
+  integrity sha1-xlnr/L4/+hAsR4ZEdSTY949pXpo=
   dependencies:
     "@bit/smartworks.unity-react.unity-button-react" "1.1.3"
     "@bit/smartworks.unity-react.unity-card-react" "0.0.1"
@@ -1180,7 +1180,7 @@
     "@bit/smartworks.unity-react.unity-histogram" "0.0.2"
     "@bit/smartworks.unity-react.unity-json-viewer-react" "1.0.1"
     "@bit/smartworks.unity-react.unity-modal-react" "1.0.0"
-    "@bit/smartworks.unity-react.unity-multi-pane-react" "1.0.1"
+    "@bit/smartworks.unity-react.unity-multi-pane-react" "1.0.2"
     "@bit/smartworks.unity-react.unity-notification-react" "1.0.3"
     "@bit/smartworks.unity-react.unity-notifications-handler-react" "1.1.2"
     "@bit/smartworks.unity-react.unity-page-header-react" "1.1.2"
@@ -1190,7 +1190,7 @@
     "@bit/smartworks.unity-react.unity-section-react" "0.3.4"
     "@bit/smartworks.unity-react.unity-select-menu-react" "1.1.5"
     "@bit/smartworks.unity-react.unity-split-pane-react" "1.0.3"
-    "@bit/smartworks.unity-react.unity-stepper-react" "1.0.0"
+    "@bit/smartworks.unity-react.unity-stepper-react" "1.1.0"
     "@bit/smartworks.unity-react.unity-table-export-react" "0.2.2"
     "@bit/smartworks.unity-react.unity-table-react" "1.1.3"
     "@bit/smartworks.unity-react.unity-tag-react" "1.0.4"
@@ -1253,15 +1253,7 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-multi-pane-react@1.0.1":
-  version "1.0.1"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-multi-pane-react/-/smartworks.unity-react.unity-multi-pane-react-1.0.1.tgz#bffa666ca84157cdf7c16e1ac0034fb533f056ad"
-  integrity sha1-v/pmbKhBV833wW4awANPtTPwVq0=
-  dependencies:
-    "@types/react" "16.9.11"
-    react "^16.12.0"
-
-"@bit/smartworks.unity-react.unity-multi-pane-react@^1.0.2":
+"@bit/smartworks.unity-react.unity-multi-pane-react@1.0.2", "@bit/smartworks.unity-react.unity-multi-pane-react@^1.0.2":
   version "1.0.2"
   resolved "https://node.bit.dev/smartworks.unity-react.unity-multi-pane-react/-/smartworks.unity-react.unity-multi-pane-react-1.0.2.tgz#f600a8c2d2be826386c2f2dca34b0e1967f73e58"
   integrity sha1-9gCowtK+gmOGwvLco0sOGWf3Plg=
@@ -1343,10 +1335,10 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-stepper-react@1.0.0", "@bit/smartworks.unity-react.unity-stepper-react@^1.0.0":
-  version "1.0.0"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-stepper-react/-/smartworks.unity-react.unity-stepper-react-1.0.0.tgz"
-  integrity sha1-bqZ9nr+tqQ61jJK7eCZ4vTw9uZY=
+"@bit/smartworks.unity-react.unity-stepper-react@1.1.0", "@bit/smartworks.unity-react.unity-stepper-react@^1.1.0":
+  version "1.1.0"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-stepper-react/-/smartworks.unity-react.unity-stepper-react-1.1.0.tgz#0987a9f87ddb21cd795cd1a04c81c424fef2939c"
+  integrity sha1-CYep+H3bIc15XNGgTIHEJP7yk5w=
   dependencies:
     "@types/react" "16.9.11"
     react "^16.12.0"
