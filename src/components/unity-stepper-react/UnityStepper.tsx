@@ -7,8 +7,11 @@ export interface StepperProps extends HTMLAttributes<HTMLElement> {
   currentStep?: number,
   valid?: boolean,
   hideButton?: boolean,
+  cancelButton?: boolean,
   backtrack?: boolean,
-  onChangeStep?: ((event: SyntheticEvent<HTMLElement, Event>) => void)
+  cancelText?: string,
+  onChangeStep?: ((event: SyntheticEvent<HTMLElement, Event>) => void),
+  onCancel?: ((event: SyntheticEvent<HTMLElement, Event>) => void)
 }
 
 export type StepperStyles = CSSProperties & {
@@ -35,11 +38,13 @@ export default class UnityStepper extends Component<StepperProps> {
   updateProps = (oldProps={}) => {
     const {
       steps,
-      onChangeStep
+      onChangeStep,
+      onCancel
     } : StepperProps = this.props
     const {
       steps: oldSteps,
-      onChangeStep: oldOnChangeStep
+      onChangeStep: oldOnChangeStep,
+      onCancel: oldOnCancel
     } : StepperProps = oldProps
     const stepper = this.stepperRef.current
 
@@ -50,6 +55,9 @@ export default class UnityStepper extends Component<StepperProps> {
       if (onChangeStep !== oldOnChangeStep) {
         stepper.onChangeStep = onChangeStep
       }
+      if (onCancel !== oldOnCancel) {
+        stepper.onCancel = onCancel
+      }
     }
   }
 
@@ -57,15 +65,18 @@ export default class UnityStepper extends Component<StepperProps> {
     const {
       valid,
       hideButton,
+      cancelButton,
       backtrack,
       style: stylesProps,
       steps,
       onChangeStep,
+      onCancel,
       ...otherProps
     } : StepperProps = this.props
     let stepperProps : StepperProps = otherProps
     if (!!valid) stepperProps.valid = valid
     if (!!hideButton) stepperProps.hideButton = hideButton
+    if (!!cancelButton) stepperProps.cancelButton = cancelButton
     if (!!backtrack) stepperProps.backtrack = backtrack
 
     return (
