@@ -39,6 +39,9 @@ import {
   UnityMultiPane,
   NavStyles
 } from './components/unity-core-react'
+
+import UnityUtilityBelt from './components/unity-utility-belt-react/UnityUtilityBelt'
+
 import { devices, fakeYaml, selectMenuItems } from './fakeData'
 import moment from 'moment'
 
@@ -1021,6 +1024,20 @@ class App extends React.Component {
               <UnitySection>
                 <UnityCard
                   title="Test Card"
+                />
+              </UnitySection>
+
+              <UnitySection>
+                <UnityUtilityBelt
+                  tabs={[
+                    {
+                      name: 'first tab',
+                      id: 'tab1',
+                      renderPane: () => (
+                        <div>This is the rendered pane content!!!!</div>
+                      )
+                    }
+                  ]}
                 />
               </UnitySection>
             </div>

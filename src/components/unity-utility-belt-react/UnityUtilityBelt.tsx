@@ -56,12 +56,21 @@ export default class UnityUtilityBelt extends Component<UtilityBeltPropsI> {
     ))
   }
 
+  renderMainContent = () => {
+    const {children} = this.props
+
+    return children
+      ? <div slot='main' style={styles.mainContainer}>{children}</div>
+      : null
+  }
+
   render() {
     const {
       tabs,
       onTabSelect,
       onTabClose,
       resizable,
+      children,
       ...otherProps
     } = this.props
     // const formattedTabs = this.formatTabs()
@@ -77,12 +86,18 @@ export default class UnityUtilityBelt extends Component<UtilityBeltPropsI> {
         ref={this.beltRef}
         {...beltProps}
       >
+        {this.renderMainContent()}
         {this.renderPaneSlots()}
       </unity-utility-belt>
     )
   }
 }
 
+const styles = {
+  mainContainer: {
+    flex: 1
+  }
+}
 
 export interface UtilityBeltPropsI extends React.HTMLAttributes<HTMLElement> {
   tabs?: UtilityTabI[],
