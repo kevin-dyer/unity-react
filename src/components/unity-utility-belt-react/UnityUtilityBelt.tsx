@@ -16,31 +16,24 @@ export default class UnityUtilityBelt extends Component<UtilityBeltPropsI> {
 
   updateProperties(oldProps: UtilityBeltPropsI={}) {
     const {
-      // tabs,
-      // selectedTab,
       onTabSelect,
       onTabClose
     } = this.props
 
     const {
-      // tabs: oldTabs,
-      // selectedTab: oldSelectedTab,
       onTabSelect: oldOnTabSelect,
       onTabClose: oldOnTabClose
     } = oldProps
 
     const unityUtilityBelt = this.beltRef.current
     if (unityUtilityBelt) {
-      // if (oldOnChange !== onChange) unityUtilityBelt.onChange = onChange
-      // if (oldTabs !== tabs) unityUtilityBelt.tabs = tabs
       unityUtilityBelt.tabs = this.formatTabs()
-      // if (oldSelectedTab !== selectedTab) unityUtilityBelt.selectedTab = selectedTab
       if (oldOnTabSelect !== onTabSelect) unityUtilityBelt.onTabSelect = onTabSelect
       if (oldOnTabClose !== onTabClose) unityUtilityBelt.onTabClose = onTabClose
     }
   }
 
-  //Remove render
+  //Remove renderPane method from tabs
   formatTabs = () => {
     const {tabs=[]} = this.props
     return tabs.map(({renderPane, ...restOfTab}) => restOfTab)
@@ -73,13 +66,9 @@ export default class UnityUtilityBelt extends Component<UtilityBeltPropsI> {
       children,
       ...otherProps
     } = this.props
-    // const formattedTabs = this.formatTabs()
     const beltProps : UtilityBeltPropsI = otherProps
 
     if (resizable) beltProps.resizable = resizable
-    // beltProps.tabs = formattedTabs
-
-  // console.log(JSON.parse(beltProps.tabs))
 
     return (
       <unity-utility-belt
