@@ -37,11 +37,9 @@ import {
   UnityStepper,
   UnitySelectMenu,
   UnityMultiPane,
-  NavStyles
+  NavStyles,
+  UnityUtilityBelt
 } from './components/unity-core-react'
-
-import UnityUtilityBelt from './components/unity-utility-belt-react/UnityUtilityBelt'
-
 import { devices, fakeYaml, selectMenuItems } from './fakeData'
 import moment from 'moment'
 
