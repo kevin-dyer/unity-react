@@ -93,3 +93,6 @@ export * from "@bit/smartworks.unity-react.unity-notifications-handler-react"
 
 export { default as UnityHistogram } from "@bit/smartworks.unity-react.unity-histogram"
 export * from "@bit/smartworks.unity-react.unity-histogram"
+
+export { default as UnityUtilityBelt } from "@bit/smartworks.unity-react.unity-utility-belt-react"
+export * from "@bit/smartworks.unity-react.unity-utility-belt-react"

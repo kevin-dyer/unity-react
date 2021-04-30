@@ -134,7 +134,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-core-react@2.1.2": {
+    "smartworks.unity-react/unity-core-react@2.1.3": {
         "files": [
             {
                 "name": "index.js",
@@ -270,6 +270,11 @@
                 "name": "index.js",
                 "relativePath": "src/components/unity-core-react/UnityTypography/index.js",
                 "test": false
+            },
+            {
+                "relativePath": "src/components/unity-core-react/UnityUtilityBelt/index.js",
+                "test": false,
+                "name": "index.js"
             },
             {
                 "name": "index.js",
@@ -806,6 +811,24 @@
             }
         ],
         "mainFile": "src/components/unity-typography-react/UnityTypography.tsx",
+        "origin": "AUTHORED",
+        "exported": true
+    },
+    "smartworks.unity-react/unity-utility-belt-react@0.0.1": {
+        "files": [
+            {
+                "relativePath": "src/components/unity-utility-belt-react/UnityUtilityBelt.tsx",
+                "test": false,
+                "name": "UnityUtilityBelt.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-utility-belt-react/declarations.d.ts",
+                "test": false,
+                "name": "declarations.d.ts"
+            }
+        ],
+        "mainFile": "src/components/unity-utility-belt-react/UnityUtilityBelt.tsx",
+        "trackDir": "src/components/unity-utility-belt-react",
         "origin": "AUTHORED",
         "exported": true
     },
