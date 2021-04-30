@@ -809,5 +809,23 @@
         "origin": "AUTHORED",
         "exported": true
     },
+    "smartworks.unity-react/unity-utility-belt-react@0.0.1": {
+        "files": [
+            {
+                "relativePath": "src/components/unity-utility-belt-react/UnityUtilityBelt.tsx",
+                "test": false,
+                "name": "UnityUtilityBelt.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-utility-belt-react/declarations.d.ts",
+                "test": false,
+                "name": "declarations.d.ts"
+            }
+        ],
+        "mainFile": "src/components/unity-utility-belt-react/UnityUtilityBelt.tsx",
+        "trackDir": "src/components/unity-utility-belt-react",
+        "origin": "AUTHORED",
+        "exported": true
+    },
     "version": "14.8.8"
 }
