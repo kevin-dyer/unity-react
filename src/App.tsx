@@ -1027,7 +1027,7 @@ class App extends React.Component {
                 />
               </UnitySection>
 
-              <UnitySection>
+              <UnitySection style={{height: 400}}>
                 <UnityUtilityBelt
                   tabs={[
                     {
@@ -1038,7 +1038,9 @@ class App extends React.Component {
                       )
                     }
                   ]}
-                />
+                >
+                  <h2>Main Content inside utility belt</h2>
+                </UnityUtilityBelt>
               </UnitySection>
             </div>
           </div>
