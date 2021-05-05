@@ -16,6 +16,7 @@ export default class UnityUtilityBelt extends Component<UtilityBeltPropsI> {
 
   updateProperties(oldProps: UtilityBeltPropsI={}) {
     const {
+      selectedTab,
       onTabSelect,
       onTabClose
     } = this.props
@@ -43,7 +44,7 @@ export default class UnityUtilityBelt extends Component<UtilityBeltPropsI> {
     const {tabs=[]} = this.props
 
     return tabs.map((tab, index) => (
-      <div slot={tab.id} key={tab.id}>
+      <div slot={tab.id} key={tab.id} style={styles.pane}>
         {tab.renderPane && tab.renderPane(tab, index)}
       </div>
     ))
@@ -85,6 +86,10 @@ export default class UnityUtilityBelt extends Component<UtilityBeltPropsI> {
 const styles = {
   mainContainer: {
     flex: 1
+  },
+  pane: {
+    flex: 1,
+    height: '100%'
   }
 }
 
