@@ -44,9 +44,18 @@ export default class UnityUtilityBelt extends Component<UtilityBeltPropsI> {
     const {tabs=[]} = this.props
 
     return tabs.map((tab, index) => (
-      <div slot={tab.id} key={tab.id} style={styles.pane}>
-        {tab.renderPane && tab.renderPane(tab, index)}
-      </div>
+      <>
+        <div slot={'left-content'} key={'left-content'} style={styles.leftContent}>
+          {tab.renderHeaderLeftContent && tab.renderHeaderLeftContent(tab, index)}
+        </div>
+        <div slot={'left-action'} key={'left-action'} style={styles.rightContent}>
+          {tab.renderHeaderRightContent && tab.renderHeaderRightContent(tab, index)}
+        </div>
+        <div slot={'left-content'} key={'left-content'} style={styles.leftContent}>
+        <div slot={tab.id} key={tab.id} style={styles.pane}>
+          {tab.renderPane && tab.renderPane(tab, index)}
+        </div>
+      </>
     ))
   }
 
