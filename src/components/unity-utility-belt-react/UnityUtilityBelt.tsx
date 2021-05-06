@@ -16,7 +16,6 @@ export default class UnityUtilityBelt extends Component<UtilityBeltPropsI> {
 
   updateProperties(oldProps: UtilityBeltPropsI={}) {
     const {
-      selectedTab,
       onTabSelect,
       onTabClose
     } = this.props
@@ -51,7 +50,6 @@ export default class UnityUtilityBelt extends Component<UtilityBeltPropsI> {
         <div slot={'left-action'} key={'left-action'} style={styles.rightContent}>
           {tab.renderHeaderRightContent && tab.renderHeaderRightContent(tab, index)}
         </div>
-        <div slot={'left-content'} key={'left-content'} style={styles.leftContent}>
         <div slot={tab.id} key={tab.id} style={styles.pane}>
           {tab.renderPane && tab.renderPane(tab, index)}
         </div>
@@ -99,6 +97,12 @@ const styles = {
   pane: {
     flex: 1,
     height: '100%'
+  },
+  leftContent: {
+
+  },
+  rightContent: {
+
   }
 }
 
@@ -114,7 +118,9 @@ export interface UtilityTabI {
     name?: string,
     icon?: string,
     id: string,
-    renderPane?: Function
+    renderPane?: Function,
+    renderHeaderLeftContent?: Function,
+    renderHeaderRightContent?: Function
   }
 
 export interface BeltStylesI extends React.CSSProperties {
