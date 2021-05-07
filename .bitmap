@@ -134,7 +134,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-core-react@2.1.5": {
+    "smartworks.unity-react/unity-core-react@2.1.6": {
         "files": [
             {
                 "name": "index.js",
@@ -814,7 +814,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-utility-belt-react@0.0.3": {
+    "smartworks.unity-react/unity-utility-belt-react@0.0.4": {
         "files": [
             {
                 "relativePath": "src/components/unity-utility-belt-react/UnityUtilityBelt.tsx",
