@@ -44,13 +44,13 @@ export default class UnityUtilityBelt extends Component<UtilityBeltPropsI> {
 
     return tabs.map((tab, index) => (
       <>
-        <div slot={'left-content'} key={'left-content'} style={styles.leftContent}>
+        <div slot={`left-content-${tab.id}`} key={`${tab.id}-left-content`} style={styles.leftContent}>
           {tab.renderHeaderLeftContent && tab.renderHeaderLeftContent(tab, index)}
         </div>
-        <div slot={'left-action'} key={'left-action'} style={styles.rightContent}>
+        <div slot={`left-action-${tab.id}`} key={`${tab.id}-left-action`} style={styles.rightContent}>
           {tab.renderHeaderRightContent && tab.renderHeaderRightContent(tab, index)}
         </div>
-        <div slot={tab.id} key={tab.id} style={styles.pane}>
+        <div slot={`pane-${tab.id}`} key={tab.id} style={styles.pane}>
           {tab.renderPane && tab.renderPane(tab, index)}
         </div>
       </>
