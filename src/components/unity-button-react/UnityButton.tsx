@@ -39,6 +39,7 @@ export type buttonStyles = CSSProperties & {
   '--button-width'?: string
   '--button-padding'?: string
   '--button-hover-color'?: string
+  '--icon-button-size'?: string
 }
 
 export default class UnityButton extends Component<buttonPropsType> {
