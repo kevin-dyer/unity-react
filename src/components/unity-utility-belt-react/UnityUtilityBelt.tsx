@@ -50,7 +50,7 @@ export default class UnityUtilityBelt extends Component<UtilityBeltPropsI> {
         <div slot={`left-action-${tab.id}`} key={`${tab.id}-left-action`} style={styles.rightContent}>
           {tab.renderHeaderRightContent && tab.renderHeaderRightContent(tab, index)}
         </div>
-        <div slot={`pane-${tab.id}`} key={tab.id} style={styles.pane}>
+        <div slot={`pane-${tab.id}`} key={`${tab.id}-pane`} style={styles.pane}>
           {tab.renderPane && tab.renderPane(tab, index)}
         </div>
       </>
@@ -61,8 +61,18 @@ export default class UnityUtilityBelt extends Component<UtilityBeltPropsI> {
     const {children} = this.props
 
     return children
-      ? <div slot='main' style={styles.mainContainer}>{children}</div>
+      ? <div slot='main' style={styles.mainContainer} key="main-content">{children}</div>
       : null
+  }
+
+  renderFooterRightActions = () => {
+    const {renderFooterRightActions} = this.props
+
+    if (renderFooterRightActions) {
+      return <div slot="right-actions" key="footer-right-actions" style={styles.footerRightActions}>
+        {renderFooterRightActions()}
+      </div>
+    }
   }
 
   render() {
@@ -85,6 +95,7 @@ export default class UnityUtilityBelt extends Component<UtilityBeltPropsI> {
       >
         {this.renderMainContent()}
         {this.renderPaneSlots()}
+        {this.renderFooterRightActions()}
       </unity-utility-belt>
     )
   }
@@ -103,6 +114,8 @@ const styles = {
   },
   rightContent: {
 
+  },
+  footerRightActions: {
   }
 }
 
@@ -111,7 +124,8 @@ export interface UtilityBeltPropsI extends React.HTMLAttributes<HTMLElement> {
   selectedTab?: string,
   resizable?: boolean,
   onTabSelect?: Function,
-  onTabClose?: Function
+  onTabClose?: Function,
+  renderFooterRightActions?: Function,
 }
 
 export interface UtilityTabI {
@@ -120,11 +134,11 @@ export interface UtilityTabI {
     id: string,
     renderPane?: Function,
     renderHeaderLeftContent?: Function,
-    renderHeaderRightContent?: Function
+    renderHeaderRightContent?: Function,
   }
 
 export interface BeltStylesI extends React.CSSProperties {
   '--tab-width'?: string,
   '--tab-height'?: string,
-  '--selected-tab-background'?: string
+  '--selected-tab-background'?: string,
 }
