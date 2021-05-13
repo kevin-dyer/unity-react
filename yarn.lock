@@ -1164,17 +1164,17 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-core-react@^2.1.8":
-  version "2.1.8"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-core-react/-/smartworks.unity-react.unity-core-react-2.1.8.tgz#2a2369a0fcaee6f098a95f27ea23047e29fcfc6e"
-  integrity sha1-KiNpoPyu5vCYqV8n6iMEfin8/G4=
+"@bit/smartworks.unity-react.unity-core-react@^2.1.9":
+  version "2.1.9"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-core-react/-/smartworks.unity-react.unity-core-react-2.1.9.tgz#24e83770264d8492dcba89eb5e6264151957fbc5"
+  integrity sha1-JOg3cCZNhJLcuonrXmJkFRlX+8U=
   dependencies:
     "@bit/smartworks.unity-react.unity-button-react" "1.1.4"
     "@bit/smartworks.unity-react.unity-card-react" "0.0.1"
     "@bit/smartworks.unity-react.unity-checkbox-react" "1.1.1"
     "@bit/smartworks.unity-react.unity-code-editor-react" "2.0.2"
     "@bit/smartworks.unity-react.unity-column-editor-react" "1.0.3"
-    "@bit/smartworks.unity-react.unity-dropdown-react" "1.0.7"
+    "@bit/smartworks.unity-react.unity-dropdown-react" "1.0.8"
     "@bit/smartworks.unity-react.unity-dropzone-react" "0.2.2"
     "@bit/smartworks.unity-react.unity-global-nav-react" "1.4.1"
     "@bit/smartworks.unity-react.unity-histogram" "0.0.2"
@@ -1199,15 +1199,7 @@
     "@bit/smartworks.unity-react.unity-typography-react" "1.0.1"
     "@bit/smartworks.unity-react.unity-utility-belt-react" "0.0.5"
 
-"@bit/smartworks.unity-react.unity-dropdown-react@1.0.7":
-  version "1.0.7"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-dropdown-react/-/smartworks.unity-react.unity-dropdown-react-1.0.7.tgz"
-  integrity sha1-tUlNKeHQ9uy0XbUJutMDv0lun4U=
-  dependencies:
-    "@types/react" "16.9.11"
-    react "^16.12.0"
-
-"@bit/smartworks.unity-react.unity-dropdown-react@^1.0.8":
+"@bit/smartworks.unity-react.unity-dropdown-react@1.0.8", "@bit/smartworks.unity-react.unity-dropdown-react@^1.0.8":
   version "1.0.8"
   resolved "https://node.bit.dev/smartworks.unity-react.unity-dropdown-react/-/smartworks.unity-react.unity-dropdown-react-1.0.8.tgz#c0fb296f2a365b1566445d011936ecc296cb6fc7"
   integrity sha1-wPspbyo2WxVmRF0BGTbswpbLb8c=
