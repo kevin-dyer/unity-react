@@ -292,7 +292,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-dropdown-react@1.0.7": {
+    "smartworks.unity-react/unity-dropdown-react@1.0.8": {
         "files": [
             {
                 "name": "UnityDropdown.tsx",
