@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v1.0.8
+- added preventUnselect prop
+
 ### v1.0.7
 - Added css vars for `--dropdown-highlighted-option-color` and `--dropdown-highlighted-option-hover-color`
 
