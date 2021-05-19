@@ -508,6 +508,8 @@ class App extends React.Component {
               selected={selectedNavItem}
               onToggleCollapse={collapsed => console.log("onToggleCollapse ", {collapsed})}
               style={globalNavStyle}
+              subHeader={<p>SubHeader</p>}
+              collapsedSubHeader={<p>SH</p>}
             />
             <div className="main" style={mainStyle}>
               <UnitySection>

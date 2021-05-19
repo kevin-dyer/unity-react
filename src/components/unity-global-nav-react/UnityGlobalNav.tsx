@@ -35,6 +35,7 @@ export interface NavPropsI extends HTMLAttributes<HTMLElement> {
   customHeader?: ReactNode,
   customExpandedHeader?: ReactNode,
   subHeader?: ReactNode,
+  collapsedSubHeader?: ReactNode,
   subHeaderBorder?: boolean,
   onToggleCollapse?: (collapsed: boolean) => void,
   onOpenStateChange?: (openStates: OpenStatesT, key?: string, openState?: boolean) => void,
@@ -152,6 +153,7 @@ export default class UnityGlobalNav extends Component<NavPropsI> {
       customHeader,
       customExpandedHeader,
       subHeader,
+      collapsedSubHeader,
       onToggleCollapse,
       ...otherProps
     } : NavPropsI = this.props
@@ -184,6 +186,11 @@ export default class UnityGlobalNav extends Component<NavPropsI> {
         {!!subHeader &&
           <span slot="subHeader">
             {subHeader}
+          </span>
+        }
+        {(!!collapsible && !!collapsedSubHeader) &&
+          <span slot="collapsedSubHeader">
+            {collapsedSubHeader}
           </span>
         }
       </unity-global-nav-base>
