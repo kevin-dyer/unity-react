@@ -1443,10 +1443,10 @@
     lit-element "^2.0.1"
     sortablejs "^1.10.2"
 
-"@bit/smartworks.unity.unity-core@^1.15.1":
-  version "1.15.2"
-  resolved "https://node.bit.dev/smartworks.unity.unity-core/-/smartworks.unity.unity-core-1.15.2.tgz#1ca9ebccce850505dfe4e51cb813527eb05aa9e3"
-  integrity sha1-HKnrzM6FBQXf5OUcuBNSfrBaqeM=
+"@bit/smartworks.unity.unity-core@^1.16.1":
+  version "1.16.1"
+  resolved "https://node.bit.dev/smartworks.unity.unity-core/-/smartworks.unity.unity-core-1.16.1.tgz#b2178064ecadc86d77faaacd175b31ae2d0ec9da"
+  integrity sha1-sheAZOytyG13+qrNF1sxri0Oydo=
   dependencies:
     "@bit/smartworks.unity.table-cell-base" "1.0.0"
     "@bit/smartworks.unity.unity-button" "1.1.11"
@@ -1456,7 +1456,7 @@
     "@bit/smartworks.unity.unity-default-theme-styles" "1.3.3"
     "@bit/smartworks.unity.unity-dropdown" "1.6.2"
     "@bit/smartworks.unity.unity-dropzone" "1.0.5"
-    "@bit/smartworks.unity.unity-global-nav-base" "1.5.1"
+    "@bit/smartworks.unity.unity-global-nav-base" "1.6.0"
     "@bit/smartworks.unity.unity-global-nav-inner-item" "1.3.2"
     "@bit/smartworks.unity.unity-global-nav-top-item" "1.3.2"
     "@bit/smartworks.unity.unity-icon" "1.1.6"
@@ -1466,7 +1466,7 @@
     "@bit/smartworks.unity.unity-notification" "1.1.5"
     "@bit/smartworks.unity.unity-notifications-handler" "1.3.4"
     "@bit/smartworks.unity.unity-page-header" "1.2.7"
-    "@bit/smartworks.unity.unity-popover" "1.0.11"
+    "@bit/smartworks.unity.unity-popover" "1.0.12"
     "@bit/smartworks.unity.unity-progress" "1.0.4"
     "@bit/smartworks.unity.unity-search-bar" "1.0.9"
     "@bit/smartworks.unity.unity-section" "1.0.5"
@@ -1509,10 +1509,10 @@
     "@spectrum-web-components/dropzone" "^0.2.5"
     lit-element "^2.0.1"
 
-"@bit/smartworks.unity.unity-global-nav-base@1.5.1":
-  version "1.5.1"
-  resolved "https://node.bit.dev/smartworks.unity.unity-global-nav-base/-/smartworks.unity.unity-global-nav-base-1.5.1.tgz#f9edadd5594691b00ea00c2f5b4bf6dcdcca1cfc"
-  integrity sha1-+e2t1VlGkbAOoAwvW0v23NzKHPw=
+"@bit/smartworks.unity.unity-global-nav-base@1.6.0":
+  version "1.6.0"
+  resolved "https://node.bit.dev/smartworks.unity.unity-global-nav-base/-/smartworks.unity.unity-global-nav-base-1.6.0.tgz#ac189ba1e5de35270025d600cbc8ca080e5895ba"
+  integrity sha1-rBiboeXeNScAJdYAy8jKCA5Ylbo=
   dependencies:
     lit-element "^2.0.1"
 
@@ -1583,10 +1583,10 @@
     "@polymer/paper-tabs" "^3.1.0"
     lit-element "^2.0.1"
 
-"@bit/smartworks.unity.unity-popover@1.0.11":
-  version "1.0.11"
-  resolved "https://node.bit.dev/smartworks.unity.unity-popover/-/smartworks.unity.unity-popover-1.0.11.tgz#54fb05ffe72bd4b66e4825f1acfb9c0f15f097b9"
-  integrity sha1-VPsF/+cr1LZuSCXxrPucDxXwl7k=
+"@bit/smartworks.unity.unity-popover@1.0.12":
+  version "1.0.12"
+  resolved "https://node.bit.dev/smartworks.unity.unity-popover/-/smartworks.unity.unity-popover-1.0.12.tgz#ca0b0aac12039d7fb9b0c57ac503d52d1d9b8aa5"
+  integrity sha1-ygsKrBIDnX+5sMV6xQPVLR2biqU=
   dependencies:
     "@popperjs/core" "^2.4.4"
     lit-element "^2.0.1"
