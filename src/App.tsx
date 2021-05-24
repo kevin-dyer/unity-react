@@ -4,7 +4,7 @@ import {
   UnityButton,
   UnityCard,
   UnityCodeEditor,
-  UnityGlobalNav, NavItemsConfigI,
+  // UnityGlobalNav, NavItemsConfigI,
   CodeEditorStylesI,
   UnityHistogram,
   histData,
@@ -42,6 +42,8 @@ import {
 } from './components/unity-core-react'
 import { devices, fakeYaml, selectMenuItems } from './fakeData'
 import moment from 'moment'
+import UnityGlobalNav, { NavItemsConfigI } from './components/unity-global-nav-react/UnityGlobalNav'
+
 
 const appStyle: CSSProperties = {
   display: 'flex',

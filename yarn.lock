@@ -1164,10 +1164,10 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-core-react@^2.1.9":
-  version "2.1.9"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-core-react/-/smartworks.unity-react.unity-core-react-2.1.9.tgz#24e83770264d8492dcba89eb5e6264151957fbc5"
-  integrity sha1-JOg3cCZNhJLcuonrXmJkFRlX+8U=
+"@bit/smartworks.unity-react.unity-core-react@^2.2.0":
+  version "2.2.0"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-core-react/-/smartworks.unity-react.unity-core-react-2.2.0.tgz#5aa56e71396e6296f70918e8eebb610f8ae6cc74"
+  integrity sha1-WqVucTluYpb3CRjo7rthD4rmzHQ=
   dependencies:
     "@bit/smartworks.unity-react.unity-button-react" "1.1.4"
     "@bit/smartworks.unity-react.unity-card-react" "0.0.1"
@@ -1176,7 +1176,7 @@
     "@bit/smartworks.unity-react.unity-column-editor-react" "1.0.3"
     "@bit/smartworks.unity-react.unity-dropdown-react" "1.0.8"
     "@bit/smartworks.unity-react.unity-dropzone-react" "0.2.2"
-    "@bit/smartworks.unity-react.unity-global-nav-react" "1.4.1"
+    "@bit/smartworks.unity-react.unity-global-nav-react" "1.5.0"
     "@bit/smartworks.unity-react.unity-histogram" "0.0.2"
     "@bit/smartworks.unity-react.unity-json-viewer-react" "1.0.1"
     "@bit/smartworks.unity-react.unity-modal-react" "1.0.0"
@@ -1215,10 +1215,10 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-global-nav-react@1.4.1", "@bit/smartworks.unity-react.unity-global-nav-react@^1.4.1":
-  version "1.4.1"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-global-nav-react/-/smartworks.unity-react.unity-global-nav-react-1.4.1.tgz"
-  integrity sha1-/DFxX8EsN3JXQs22oSCxDUnUYoU=
+"@bit/smartworks.unity-react.unity-global-nav-react@1.5.0", "@bit/smartworks.unity-react.unity-global-nav-react@^1.5.0":
+  version "1.5.0"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-global-nav-react/-/smartworks.unity-react.unity-global-nav-react-1.5.0.tgz#e3f4538fb9835f13fd73f9b3ef52f3c3db142d19"
+  integrity sha1-4/RTj7mDXxP9c/mz71Lzw9sULRk=
   dependencies:
     "@types/react" "16.9.11"
     react "^16.12.0"
