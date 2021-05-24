@@ -35,6 +35,7 @@ export interface NavPropsI extends HTMLAttributes<HTMLElement> {
   customHeader?: ReactNode,
   customExpandedHeader?: ReactNode,
   subHeader?: ReactNode,
+  collapsedSubHeader?: ReactNode,
   subHeaderBorder?: boolean,
   onToggleCollapse?: (collapsed: boolean) => void,
   onOpenStateChange?: (openStates: OpenStatesT, key?: string, openState?: boolean) => void,
@@ -86,7 +87,13 @@ export type NavStyles = CSSProperties & {
 */
 
 export default class UnityGlobalNav extends Component<NavPropsI> {
+
+  state  = {
+    collapsed: this.props.collapsed || false
+  }
+
   private navRef = React.createRef<NavPropsI>()
+
   componentDidMount = () => {
     this.updateProps({})
   }
@@ -122,7 +129,7 @@ export default class UnityGlobalNav extends Component<NavPropsI> {
       }
 
       if (onToggleCollapse !== oldOnToggleCollapse) {
-        nav.onToggleCollapse = onToggleCollapse
+        nav.onToggleCollapse = this.handleToggleCollapse // use handleToggleCollapse to track collapsed state
       }
 
       if (onOpenStateChange !== oldOnOpenStateChange) {
@@ -135,6 +142,13 @@ export default class UnityGlobalNav extends Component<NavPropsI> {
 
     }
   }
+
+  handleToggleCollapse = (collapsed : boolean) => {
+    const { onToggleCollapse } = this.props
+    this.setState({collapsed}) //track collapsed state in component state
+    if(onToggleCollapse) onToggleCollapse(collapsed) //fire prop callback passed into react component
+   }
+    
  
   render() {
     const {
@@ -152,9 +166,11 @@ export default class UnityGlobalNav extends Component<NavPropsI> {
       customHeader,
       customExpandedHeader,
       subHeader,
+      collapsedSubHeader,
       onToggleCollapse,
       ...otherProps
     } : NavPropsI = this.props
+    const { collapsed: collapsedState } = this.state
     let sideNavProps : NavPropsI = otherProps
     if (!!gutter) sideNavProps.gutter = gutter
     if (!!collapsible) sideNavProps.collapsible = collapsible
@@ -181,9 +197,14 @@ export default class UnityGlobalNav extends Component<NavPropsI> {
             {customExpandedHeader}
           </span>
         }
-        {!!subHeader &&
+        {!collapsedState?
+          !!subHeader &&
           <span slot="subHeader">
             {subHeader}
+          </span>
+        : !!collapsedSubHeader &&
+          <span slot="collapsedSubHeader">
+            {collapsedSubHeader}
           </span>
         }
       </unity-global-nav-base>

@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v1.5.0
+- Added `collapsedSubHeader` prop
+
 ### v1.4.1
 - Typescript requirements (no functional change)
 
