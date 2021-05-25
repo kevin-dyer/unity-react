@@ -34,6 +34,7 @@ export default class UnityMultiPane extends Component<MultiPaneProps> {
       labels,
       visiblePanes,
       collapsedPanes,
+      paneWidths,
       ...otherProps
     } = this.props
     let multiPaneArgs : MultiPaneProps = {...otherProps}
@@ -48,6 +49,7 @@ export default class UnityMultiPane extends Component<MultiPaneProps> {
         labels={JSON.stringify(labels)}
         visiblePanes={JSON.stringify(visiblePanes)}
         collapsedPanes={JSON.stringify(collapsedPanes)}
+        paneWidths={JSON.stringify(paneWidths)}
         {...multiPaneArgs}
       >
         {panes.map(({key, header, body, footer}) => {
@@ -92,6 +94,7 @@ export interface MultiPaneProps extends React.HTMLAttributes<HTMLElement>{
   panes?: Panes[]
   visiblePanes?: string[]
   collapsedPanes?: string[]
+  paneWidths?: object,
   label?: string
   closeButton?: boolean
   onClose?: Function
