@@ -96,6 +96,9 @@ export default class UnityGlobalNav extends Component<NavPropsI> {
 
   componentDidMount = () => {
     this.updateProps({})
+
+    const nav = this.navRef.current
+    if (!!nav) nav.onToggleCollapse = this.handleToggleCollapse // needs to be assigned even if the onToggleCollapse prop is undefined
   }
 
   componentDidUpdate = (oldProps : NavPropsI) => {
@@ -106,14 +109,12 @@ export default class UnityGlobalNav extends Component<NavPropsI> {
     const {
       items={},
       onSelect,
-      onToggleCollapse,
       onOpenStateChange,
       openStates,
     } : NavPropsI = this.props
     const {
       items: oldItems,
       onSelect: oldOnSelect,
-      onToggleCollapse: oldOnToggleCollapse,
       onOpenStateChange: oldOnOpenStateChange,
       openStates: oldOpenStates,
     } : NavPropsI = oldProps
@@ -128,10 +129,6 @@ export default class UnityGlobalNav extends Component<NavPropsI> {
         nav.onSelect = onSelect
       }
 
-      if (onToggleCollapse !== oldOnToggleCollapse) {
-        nav.onToggleCollapse = this.handleToggleCollapse // use handleToggleCollapse to track collapsed state
-      }
-
       if (onOpenStateChange !== oldOnOpenStateChange) {
         nav.onOpenStateChange = onOpenStateChange
       }
@@ -143,9 +140,12 @@ export default class UnityGlobalNav extends Component<NavPropsI> {
     }
   }
 
-  handleToggleCollapse = (collapsed : boolean) => {
+  /**
+   * Tracks collapsed state in the component and calls onToggleCollapse if it's defined
+   **/
+   handleToggleCollapse = (collapsed : boolean) => {
     const { onToggleCollapse } = this.props
-    this.setState({collapsed}) //track collapsed state in component state
+    this.setState({collapsed})
     if(onToggleCollapse) onToggleCollapse(collapsed) //fire prop callback passed into react component
    }
     
