@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 
 import '@bit/smartworks.unity.unity-core/unity-utility-belt'
 import { UtilityBeltPropsI } from '@bit/smartworks.unity.unity-core/unity-utility-belt'
@@ -43,7 +43,7 @@ export default class UnityUtilityBelt extends Component<UtilityBeltPropsI> {
     const {tabs=[]} = this.props
 
     return tabs.map((tab, index) => (
-      <>
+      <Fragment key={`framgment-${tab.id}`}>
         <div slot={`left-content-${tab.id}`} key={`${tab.id}-left-content`} style={styles.leftContent}>
           {tab.renderHeaderLeftContent && tab.renderHeaderLeftContent(tab, index)}
         </div>
@@ -53,7 +53,7 @@ export default class UnityUtilityBelt extends Component<UtilityBeltPropsI> {
         <div slot={`pane-${tab.id}`} key={`${tab.id}-pane`} style={styles.pane}>
           {tab.renderPane && tab.renderPane(tab, index)}
         </div>
-      </>
+      </Fragment>
     ))
   }
 
@@ -130,6 +130,7 @@ export interface UtilityBeltPropsI extends React.HTMLAttributes<HTMLElement> {
 
 export interface UtilityTabI {
     name?: string,
+    header?: string,
     icon?: string,
     id: string,
     renderPane?: Function,
@@ -141,4 +142,5 @@ export interface BeltStylesI extends React.CSSProperties {
   '--tab-width'?: string,
   '--tab-height'?: string,
   '--selected-tab-background'?: string,
+  '--page-header-left-wrapper-overflow'?: string
 }
