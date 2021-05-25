@@ -134,7 +134,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-core-react@2.2.2": {
+    "smartworks.unity-react/unity-core-react@2.2.3": {
         "files": [
             {
                 "name": "index.js",
@@ -418,7 +418,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-multi-pane-react@1.0.2": {
+    "smartworks.unity-react/unity-multi-pane-react@1.0.3": {
         "files": [
             {
                 "name": "UnityMultiPane.tsx",
