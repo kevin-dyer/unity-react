@@ -52,6 +52,7 @@ export default class UnityDropdown extends Component<DropdownPropsI> {
       selectIcon,
       showCheckboxes,
       showTags,
+      preventUnselect,
       // function/object props
       bottomContent,
       onMenuClick,
@@ -73,6 +74,7 @@ export default class UnityDropdown extends Component<DropdownPropsI> {
     if (selectIcon) dropdownProps.selectIcon = true
     if (showCheckboxes) dropdownProps.showCheckboxes = true
     if (showTags) dropdownProps.showTags = true
+    if (preventUnselect) dropdownProps.preventUnselect = true
     
     return (
       <unity-dropdown
@@ -110,6 +112,7 @@ export interface DropdownPropsI extends React.HTMLAttributes<HTMLElement> {
   showCheckboxes?: boolean
   showTags?: boolean
   expanded?: boolean
+  preventUnselect?: boolean
 
   bottomContent?: any
   onMenuClick?: Function

@@ -2,6 +2,12 @@
 
 ## Changelog:
 
+### v1.5.1
+- Fixed `collapsedSubHeader` not being attached to component if `onToggleCollapse` was not defined.
+
+### v1.5.0
+- Added `collapsedSubHeader` prop
+
 ### v1.4.1
 - Typescript requirements (no functional change)
 

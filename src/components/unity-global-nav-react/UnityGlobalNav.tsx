@@ -35,6 +35,7 @@ export interface NavPropsI extends HTMLAttributes<HTMLElement> {
   customHeader?: ReactNode,
   customExpandedHeader?: ReactNode,
   subHeader?: ReactNode,
+  collapsedSubHeader?: ReactNode,
   subHeaderBorder?: boolean,
   onToggleCollapse?: (collapsed: boolean) => void,
   onOpenStateChange?: (openStates: OpenStatesT, key?: string, openState?: boolean) => void,
@@ -86,9 +87,18 @@ export type NavStyles = CSSProperties & {
 */
 
 export default class UnityGlobalNav extends Component<NavPropsI> {
+
+  state  = {
+    collapsed: this.props.collapsed || false
+  }
+
   private navRef = React.createRef<NavPropsI>()
+
   componentDidMount = () => {
     this.updateProps({})
+
+    const nav = this.navRef.current
+    if (!!nav) nav.onToggleCollapse = this.handleToggleCollapse // needs to be assigned even if the onToggleCollapse prop is undefined
   }
 
   componentDidUpdate = (oldProps : NavPropsI) => {
@@ -99,14 +109,12 @@ export default class UnityGlobalNav extends Component<NavPropsI> {
     const {
       items={},
       onSelect,
-      onToggleCollapse,
       onOpenStateChange,
       openStates,
     } : NavPropsI = this.props
     const {
       items: oldItems,
       onSelect: oldOnSelect,
-      onToggleCollapse: oldOnToggleCollapse,
       onOpenStateChange: oldOnOpenStateChange,
       openStates: oldOpenStates,
     } : NavPropsI = oldProps
@@ -121,10 +129,6 @@ export default class UnityGlobalNav extends Component<NavPropsI> {
         nav.onSelect = onSelect
       }
 
-      if (onToggleCollapse !== oldOnToggleCollapse) {
-        nav.onToggleCollapse = onToggleCollapse
-      }
-
       if (onOpenStateChange !== oldOnOpenStateChange) {
         nav.onOpenStateChange = onOpenStateChange
       }
@@ -135,6 +139,16 @@ export default class UnityGlobalNav extends Component<NavPropsI> {
 
     }
   }
+
+  /**
+   * Tracks collapsed state in the component and calls onToggleCollapse if it's defined
+   **/
+   handleToggleCollapse = (collapsed : boolean) => {
+    const { onToggleCollapse } = this.props
+    this.setState({collapsed})
+    if(onToggleCollapse) onToggleCollapse(collapsed) //fire prop callback passed into react component
+   }
+    
  
   render() {
     const {
@@ -152,9 +166,11 @@ export default class UnityGlobalNav extends Component<NavPropsI> {
       customHeader,
       customExpandedHeader,
       subHeader,
+      collapsedSubHeader,
       onToggleCollapse,
       ...otherProps
     } : NavPropsI = this.props
+    const { collapsed: collapsedState } = this.state
     let sideNavProps : NavPropsI = otherProps
     if (!!gutter) sideNavProps.gutter = gutter
     if (!!collapsible) sideNavProps.collapsible = collapsible
@@ -181,9 +197,14 @@ export default class UnityGlobalNav extends Component<NavPropsI> {
             {customExpandedHeader}
           </span>
         }
-        {!!subHeader &&
+        {!collapsedState?
+          !!subHeader &&
           <span slot="subHeader">
             {subHeader}
+          </span>
+        : !!collapsedSubHeader &&
+          <span slot="collapsedSubHeader">
+            {collapsedSubHeader}
           </span>
         }
       </unity-global-nav-base>
