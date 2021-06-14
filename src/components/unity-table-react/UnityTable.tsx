@@ -29,6 +29,8 @@ export interface TablePropsI extends HTMLAttributes<HTMLElement> {
   rightActionsContent?: ReactElement | HTMLElement
   disableColumnResize?: boolean
   hideFilterIcons?: boolean
+  initialSortBy?: SortByI
+  onColumnSort?: Function
   style?: TableStyles
 }
 
@@ -81,6 +83,13 @@ const slotStyles : CSSProperties = {
   maxWidth: '100%'
 }
 
+export type sortDirectionType = 'Ascending' | 'Descending' | 'Unsorted'
+
+export interface SortByI {
+  column: string,
+  direction: sortDirectionType
+}
+
 export default class UnityTable extends Component<TablePropsI> {
 
   public tableRef = React.createRef<TablePropsI>()
@@ -108,7 +117,8 @@ export default class UnityTable extends Component<TablePropsI> {
       onEndReached,
       onHighlight,
       onExpandedChange,
-      columnFilter
+      columnFilter,
+      onColumnSort,
     } = this.props
     const {
       data: oldData,
@@ -124,7 +134,8 @@ export default class UnityTable extends Component<TablePropsI> {
       onEndReached: oldOnEndReached,
       onHighlight: oldOnHighlight,
       onExpandedChange: oldOnExpandedChange,
-      columnFilter: oldColumnFilter
+      columnFilter: oldColumnFilter,
+      onColumnSort: oldOnColumnSort
     } : TablePropsI = oldProps
 
     const unityTable = this.tableRef.current
@@ -174,6 +185,10 @@ export default class UnityTable extends Component<TablePropsI> {
       }
       if (oldColumnFilter !== columnFilter) {
         unityTable.columnFilter = columnFilter
+      }
+
+      if (oldOnColumnSort !== onColumnSort) {
+        unityTable.onColumnSort = onColumnSort
       }
     }
   }
@@ -272,6 +287,7 @@ export default class UnityTable extends Component<TablePropsI> {
       onExpandedChange,
       columnFilter,
       rightActionsContent,
+      onColumnSort,
       ...otherProps
     } = this.props
     let booleanProps : TablePropsI = {}
