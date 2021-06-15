@@ -26,12 +26,14 @@ export interface TextInputPropsI extends HTMLAttributes<HTMLElement>{
   disabled?: boolean
   dirty?: boolean
   hideBorder?: boolean
+  hideErrors?: boolean
   password?: boolean
   readOnly?: boolean
   required?: boolean
   rounded?: boolean
   showIcon?: boolean
   time?: boolean
+  wrapErrors?: boolean
 
   onChange?(event: FormEvent<HTMLInputElement>): void
   validation?: Function
@@ -93,12 +95,14 @@ export default class UnityTextInput extends Component<TextInputPropsI> {
       disabled,
       error, // can be string or boolean
       hideBorder,
+      hideErrors,
       password,
       readOnly,
       required,
       rounded,
       showIcon,
       time,
+      wrapErrors,
       // function/object props
       onChange,
       validation,
@@ -115,12 +119,14 @@ export default class UnityTextInput extends Component<TextInputPropsI> {
     if (disabled) inputProps.disabled = true
     if (error) inputProps.error = error
     if (hideBorder) inputProps.hideBorder = true
+    if (hideErrors) inputProps.hideErrors = true
     if (password) inputProps.password = true
     if (readOnly) inputProps.readOnly = true
     if (required) inputProps.required = true
     if (rounded) inputProps.rounded = true
     if (showIcon) inputProps.showIcon = true
     if (time) inputProps.time = true
+    if (wrapErrors) inputProps.wrapErrors = true
 
     return <unity-text-input
       ref={this.inputRef}
