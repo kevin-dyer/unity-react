@@ -1164,10 +1164,10 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-core-react@2.2.4":
-  version "2.2.4"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-core-react/-/smartworks.unity-react.unity-core-react-2.2.4.tgz#448f13117f224c3f359f8afd16f0f9763b357ddc"
-  integrity sha1-RI8TEX8iTD81n4r9FvD5djs1fdw=
+"@bit/smartworks.unity-react.unity-core-react@2.3.0":
+  version "2.3.0"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-core-react/-/smartworks.unity-react.unity-core-react-2.3.0.tgz#92dd1b1988a2c241d73794ae6d72636be7e7d57e"
+  integrity sha1-kt0bGYiiwkHXN5SubXJja+fn1X4=
   dependencies:
     "@bit/smartworks.unity-react.unity-button-react" "1.1.4"
     "@bit/smartworks.unity-react.unity-card-react" "0.0.1"
@@ -1194,7 +1194,7 @@
     "@bit/smartworks.unity-react.unity-table-export-react" "0.2.2"
     "@bit/smartworks.unity-react.unity-table-react" "1.1.4"
     "@bit/smartworks.unity-react.unity-tag-react" "1.0.4"
-    "@bit/smartworks.unity-react.unity-text-input-react" "1.1.0"
+    "@bit/smartworks.unity-react.unity-text-input-react" "1.2.0"
     "@bit/smartworks.unity-react.unity-toggle-switch-react" "0.2.2"
     "@bit/smartworks.unity-react.unity-typography-react" "1.0.1"
     "@bit/smartworks.unity-react.unity-utility-belt-react" "0.0.6"
@@ -1368,10 +1368,10 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-text-input-react@1.1.0", "@bit/smartworks.unity-react.unity-text-input-react@^1.1.0":
-  version "1.1.0"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-text-input-react/-/smartworks.unity-react.unity-text-input-react-1.1.0.tgz"
-  integrity sha1-QkzXYCywUkDW6TJ9gT9paZmdPcI=
+"@bit/smartworks.unity-react.unity-text-input-react@1.2.0", "@bit/smartworks.unity-react.unity-text-input-react@^1.2.0":
+  version "1.2.0"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-text-input-react/-/smartworks.unity-react.unity-text-input-react-1.2.0.tgz#c784fb73c5d2fe669c6904c0b9a1b993eab1f452"
+  integrity sha1-x4T7c8XS/macaQTAuaG5k+qx9FI=
   dependencies:
     "@types/react" "16.9.11"
     react "^16.12.0"
