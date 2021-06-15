@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v1.2.0
+- Added `hideErrors` and `wrapErrors` props
+
 ### v1.1.0
 - Added `prefixedText` and related CSS vars to component types.
 
