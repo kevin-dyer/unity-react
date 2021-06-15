@@ -11,7 +11,7 @@
     "@bit/smartworks.unity-react.unity-core-react": "2.2.4",
     "@bit/smartworks.unity-react.unity-dropdown-react": "^1.0.8",
     "@bit/smartworks.unity-react.unity-dropzone-react": "^0.2.2",
-    "@bit/smartworks.unity-react.unity-global-nav-react": "^1.5.0",
+    "@bit/smartworks.unity-react.unity-global-nav-react": "^1.5.1",
     "@bit/smartworks.unity-react.unity-histogram": "^0.0.2",
     "@bit/smartworks.unity-react.unity-json-viewer-react": "^1.0.1",
     "@bit/smartworks.unity-react.unity-modal-react": "^1.0.0",
