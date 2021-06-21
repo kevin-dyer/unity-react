@@ -212,6 +212,11 @@
                 "test": false
             },
             {
+                "relativePath": "src/components/unity-core-react/UnityPopover/index.js",
+                "test": false,
+                "name": "index.js"
+            },
+            {
                 "name": "index.js",
                 "relativePath": "src/components/unity-core-react/UnityProgress/index.js",
                 "test": false
