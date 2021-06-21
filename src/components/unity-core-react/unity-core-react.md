@@ -25,6 +25,10 @@ export * from "@bit/smartworks.unity-react.<component-path>" //Export named expo
 
 ## Changelog:
 
+### v2.4.0
+- Fixed UnitySelectMenu path export
+- Added UnityPopover path export
+
 ### v2.3.0
 - unity-text-input-react v1.2.0
 
