@@ -134,7 +134,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-core-react@2.3.0": {
+    "smartworks.unity-react/unity-core-react@2.4.0": {
         "files": [
             {
                 "name": "index.js",

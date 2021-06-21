@@ -1164,10 +1164,10 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-core-react@2.3.0":
-  version "2.3.0"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-core-react/-/smartworks.unity-react.unity-core-react-2.3.0.tgz#92dd1b1988a2c241d73794ae6d72636be7e7d57e"
-  integrity sha1-kt0bGYiiwkHXN5SubXJja+fn1X4=
+"@bit/smartworks.unity-react.unity-core-react@2.4.0":
+  version "2.4.0"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-core-react/-/smartworks.unity-react.unity-core-react-2.4.0.tgz#e60ec9def67d3e00c12ebf1c1dc8dbf5824b22d5"
+  integrity sha1-5g7J3vZ9PgDBLr8cHcjb9YJLItU=
   dependencies:
     "@bit/smartworks.unity-react.unity-button-react" "1.1.4"
     "@bit/smartworks.unity-react.unity-card-react" "0.0.1"
