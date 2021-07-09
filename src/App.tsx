@@ -8,6 +8,7 @@ import {
   CodeEditorStylesI,
   UnityHistogram,
   histData,
+  UnityIcon,
   UnityJsonViewer,
   UnityTextInput,
   UnityTable,
