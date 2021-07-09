@@ -2,13 +2,13 @@ import React, { CSSProperties } from 'react';
 import './App.css';
 import {
   UnityButton,
+  UnityIcon,
   UnityCard,
   UnityCodeEditor,
   // UnityGlobalNav, NavItemsConfigI,
   CodeEditorStylesI,
   UnityHistogram,
   histData,
-  UnityIcon,
   UnityJsonViewer,
   UnityTextInput,
   UnityTable,
@@ -1027,6 +1027,12 @@ class App extends React.Component {
               <UnitySection>
                 <UnityCard
                   title="Test Card"
+                />
+              </UnitySection>
+
+              <UnitySection>
+                <UnityIcon
+                  icon="unity:close"
                 />
               </UnitySection>
 
