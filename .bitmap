@@ -88,7 +88,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-code-editor-react@2.0.2": {
+    "smartworks.unity-react/unity-code-editor-react@2.0.3": {
         "files": [
             {
                 "name": "UnityCodeEditor.css",
@@ -134,7 +134,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-core-react@2.4.0": {
+    "smartworks.unity-react/unity-core-react@2.4.2": {
         "files": [
             {
                 "name": "index.js",
@@ -183,6 +183,11 @@
             },
             {
                 "name": "index.js",
+                "relativePath": "src/components/unity-core-react/UnityIcon/index.js",
+                "test": false
+            },
+            {
+                "name": "index.js",
                 "relativePath": "src/components/unity-core-react/UnityJsonViewer/index.js",
                 "test": false
             },
@@ -192,9 +197,9 @@
                 "test": false
             },
             {
+                "name": "index.js",
                 "relativePath": "src/components/unity-core-react/UnityMultiPane/index.js",
-                "test": false,
-                "name": "index.js"
+                "test": false
             },
             {
                 "name": "index.js",
@@ -212,9 +217,9 @@
                 "test": false
             },
             {
+                "name": "index.js",
                 "relativePath": "src/components/unity-core-react/UnityPopover/index.js",
-                "test": false,
-                "name": "index.js"
+                "test": false
             },
             {
                 "name": "index.js",
@@ -277,9 +282,9 @@
                 "test": false
             },
             {
+                "name": "index.js",
                 "relativePath": "src/components/unity-core-react/UnityUtilityBelt/index.js",
-                "test": false,
-                "name": "index.js"
+                "test": false
             },
             {
                 "name": "index.js",
@@ -378,7 +383,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-json-viewer-react@1.0.1": {
+    "smartworks.unity-react/unity-json-viewer-react@1.0.2": {
         "files": [
             {
                 "name": "UnityJsonViewer.css",

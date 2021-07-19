@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v2.0.3
+- Added id='code-editor-error-text' to code editor error text.
+
 ### v2.0.2
 - Fixed Search Box functionality
 
