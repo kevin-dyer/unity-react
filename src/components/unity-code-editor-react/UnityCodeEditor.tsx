@@ -83,7 +83,12 @@ class UnityCodeEditor extends React.Component<CodeEditorProps, CodeEditorState> 
     const { embedded } = this.props
     return (
       <div className={`code-editor-error ${embedded? 'embedded' : ''}`}>
-        <UnityTypography color="medium" style={{"--font-color-medium": "var(--internal-validation-color)"}} size="paragraph">
+        <UnityTypography
+          id="code-editor-error-text"
+          color="medium"
+          style={{"--font-color-medium": "var(--internal-validation-color)"}}
+          size="paragraph"
+        >
           {message}
         </UnityTypography>
       </div>
