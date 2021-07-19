@@ -82,9 +82,11 @@ class UnityCodeEditor extends React.Component<CodeEditorProps, CodeEditorState> 
   getValidationMessage(message: string)  {
     const { embedded } = this.props
     return (
-      <div className={`code-editor-error ${embedded? 'embedded' : ''}`}>
+      <div
+        className={`code-editor-error ${embedded? 'embedded' : ''}`}
+        id="code-editor-error-text"
+      >
         <UnityTypography
-          id="code-editor-error-text"
           color="medium"
           style={{"--font-color-medium": "var(--internal-validation-color)"}}
           size="paragraph"
