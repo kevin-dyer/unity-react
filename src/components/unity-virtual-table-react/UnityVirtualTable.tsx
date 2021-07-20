@@ -315,7 +315,7 @@ export default class UnityVirtualTable extends Component<TablePropsI> {
       booleanProps.hideFilterIcons = hideFilterIcons
     }
     return ( 
-      <unity-table
+      <unity-virtual-table
         ref={this.tableRef}
         filter={filter}
         emptyDisplay={emptyText}
@@ -328,7 +328,7 @@ export default class UnityVirtualTable extends Component<TablePropsI> {
         {this.renderCustomContent()}
         {this.renderRightActionsContent()}
         {children}
-      </unity-table>
+      </unity-virtual-table>
     )
   }
 }
