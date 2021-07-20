@@ -842,5 +842,28 @@
         "origin": "AUTHORED",
         "exported": true
     },
+    "smartworks.unity-react/unity-virtual-table-react@0.0.1": {
+        "files": [
+            {
+                "relativePath": "src/components/unity-virtual-table-react/UnityVirtualTable.tsx",
+                "test": false,
+                "name": "UnityVirtualTable.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-virtual-table-react/declarations.d.ts",
+                "test": false,
+                "name": "declarations.d.ts"
+            },
+            {
+                "relativePath": "src/components/unity-virtual-table-react/unity-virtual-table-react.md",
+                "test": false,
+                "name": "unity-virtual-table-react.md"
+            }
+        ],
+        "mainFile": "src/components/unity-virtual-table-react/UnityVirtualTable.tsx",
+        "trackDir": "src/components/unity-virtual-table-react",
+        "origin": "AUTHORED",
+        "exported": true
+    },
     "version": "14.8.8"
 }
