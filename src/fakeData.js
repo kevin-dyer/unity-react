@@ -233,11 +233,13 @@ export const devices = {
   columns: [
     {
       key: 'name',
-      label: 'Name'
+      label: 'Name',
+      showFilter: true
     },
     {
       key: 'deployments',
       label: 'Used in Deployments',
+      showFilter: true,
       format: (deployments='') => deployments
     },
     {

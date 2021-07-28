@@ -25,12 +25,12 @@ export interface TablePropsI extends HTMLAttributes<HTMLElement> {
   compact?: boolean
   headless?: boolean
   startExpanded?: boolean
-  columnFilter?: Object[]
+  columnFilters?: ColumnFiltersI,
   rightActionsContent?: ReactElement | HTMLElement
   disableColumnResize?: boolean
-  hideFilterIcons?: boolean
   initialSortBy?: SortByI
   onColumnSort?: Function
+  onColumnFilter?: Function
   style?: TableStyles
 }
 
@@ -71,8 +71,19 @@ export interface TableColumnI {
   formatLabel?: (value: any) => string,
   customFilter?: (filter?: string, value?: any) => boolean
   renderCustomContent?: (value?: any, node?: Object) => ReactNode,
-  hideFilter?: boolean,
+  showFilter?: boolean,
   hideSort?: boolean
+}
+
+export type expressionType = 'eq' | 'neq' | 'gt' | 'gte' | 'lt' | 'lte'
+
+export interface ColumnFiltersI {
+  [columnKey: string]: ColumnFilterI[]
+}
+
+export interface ColumnFilterI {
+  expression: expressionType,
+  value: string | number
 }
 
 const slotStyles : CSSProperties = {
@@ -117,8 +128,9 @@ export default class UnityTable extends Component<TablePropsI> {
       onEndReached,
       onHighlight,
       onExpandedChange,
-      columnFilter,
+      columnFilters,
       onColumnSort,
+      onColumnFilter
     } = this.props
     const {
       data: oldData,
@@ -134,8 +146,9 @@ export default class UnityTable extends Component<TablePropsI> {
       onEndReached: oldOnEndReached,
       onHighlight: oldOnHighlight,
       onExpandedChange: oldOnExpandedChange,
-      columnFilter: oldColumnFilter,
-      onColumnSort: oldOnColumnSort
+      columnFilters: oldColumnFilters,
+      onColumnSort: oldOnColumnSort,
+      onColumnFilter: oldOnColumnFilter
     } : TablePropsI = oldProps
 
     const unityTable = this.tableRef.current
@@ -183,12 +196,16 @@ export default class UnityTable extends Component<TablePropsI> {
       if (oldOnExpandedChange !== onExpandedChange) {
         unityTable.onExpandedChange = onExpandedChange
       }
-      if (oldColumnFilter !== columnFilter) {
-        unityTable.columnFilter = columnFilter
+      if (oldColumnFilters !== columnFilters) {
+        unityTable.columnFilters = columnFilters
       }
 
       if (oldOnColumnSort !== onColumnSort) {
         unityTable.onColumnSort = onColumnSort
+      }
+
+      if (oldOnColumnFilter !== onColumnFilter) {
+        unityTable.onColumnFilter = onColumnFilter
       }
     }
   }
@@ -269,7 +286,6 @@ export default class UnityTable extends Component<TablePropsI> {
       headless,
       startExpanded,
       disableColumnResize,
-      hideFilterIcons,
       style,
       // function and complex objects, destructured so that they are not added as props
       data,
@@ -285,9 +301,10 @@ export default class UnityTable extends Component<TablePropsI> {
       onEndReached,
       onHighlight,
       onExpandedChange,
-      columnFilter,
+      columnFilters,
       rightActionsContent,
       onColumnSort,
+      onColumnFilter,
       ...otherProps
     } = this.props
     let booleanProps : TablePropsI = {}
@@ -310,9 +327,6 @@ export default class UnityTable extends Component<TablePropsI> {
     }
     if (disableColumnResize) {
       booleanProps.disableColumnResize = disableColumnResize
-    }
-    if (hideFilterIcons) {
-      booleanProps.hideFilterIcons = hideFilterIcons
     }
     return ( 
       <unity-table
