@@ -25,7 +25,7 @@ export interface TablePropsI extends HTMLAttributes<HTMLElement> {
   compact?: boolean
   headless?: boolean
   startExpanded?: boolean
-  columnFilter?: Object[]
+  columnFilters?: Object
   rightActionsContent?: ReactElement | HTMLElement
   disableColumnResize?: boolean
   hideFilterIcons?: boolean
