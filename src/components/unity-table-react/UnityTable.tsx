@@ -78,6 +78,10 @@ export interface TableColumnI {
 export type expressionType = 'eq' | 'neq' | 'gt' | 'gte' | 'lt' | 'lte'
 
 export interface ColumnFiltersI {
+  [columnKey: string]: ColumnFilterI[]
+}
+
+export interface ColumnFilterI {
   expression: expressionType,
   value: string | number
 }
