@@ -1476,10 +1476,10 @@
     lit-element "^2.5.1"
     sortablejs "^1.10.2"
 
-"@bit/smartworks.unity.unity-core@^2.0.0":
-  version "2.0.0"
-  resolved "https://node.bit.dev/smartworks.unity.unity-core/-/smartworks.unity.unity-core-2.0.0.tgz#7503c14532fe4f5f642cdd6e0956c42eb6bce4bc"
-  integrity sha1-dQPBRTL+T19kLN1uCVbELra85Lw=
+"@bit/smartworks.unity.unity-core@^2.0.7":
+  version "2.0.7"
+  resolved "https://node.bit.dev/smartworks.unity.unity-core/-/smartworks.unity.unity-core-2.0.7.tgz#524d1fb7fa7718f6a10ea39431eb01f2b7643a67"
+  integrity sha1-Uk0ft/p3GPahDqOUMesB8rdkOmc=
   dependencies:
     "@bit/smartworks.unity.table-cell-base" "1.0.3"
     "@bit/smartworks.unity.unity-button" "1.1.15"
@@ -1487,7 +1487,7 @@
     "@bit/smartworks.unity.unity-checkbox" "1.0.8"
     "@bit/smartworks.unity.unity-column-editor" "1.1.15"
     "@bit/smartworks.unity.unity-default-theme-styles" "1.3.6"
-    "@bit/smartworks.unity.unity-dropdown" "1.6.8"
+    "@bit/smartworks.unity.unity-dropdown" "1.6.9"
     "@bit/smartworks.unity.unity-dropzone" "1.0.8"
     "@bit/smartworks.unity.unity-global-nav-base" "1.6.3"
     "@bit/smartworks.unity.unity-global-nav-inner-item" "1.3.5"
@@ -1498,7 +1498,8 @@
     "@bit/smartworks.unity.unity-multi-pane" "1.0.14"
     "@bit/smartworks.unity.unity-notification" "1.1.9"
     "@bit/smartworks.unity.unity-notifications-handler" "1.3.7"
-    "@bit/smartworks.unity.unity-page-header" "1.2.13"
+    "@bit/smartworks.unity.unity-page-header" "1.2.14"
+    "@bit/smartworks.unity.unity-pagination-controls" "0.0.3"
     "@bit/smartworks.unity.unity-popover" "1.0.16"
     "@bit/smartworks.unity.unity-progress" "1.0.7"
     "@bit/smartworks.unity.unity-search-bar" "1.0.13"
@@ -1506,7 +1507,7 @@
     "@bit/smartworks.unity.unity-select-menu" "1.4.10"
     "@bit/smartworks.unity.unity-split-pane" "1.2.4"
     "@bit/smartworks.unity.unity-stepper" "1.1.5"
-    "@bit/smartworks.unity.unity-table" "2.0.0"
+    "@bit/smartworks.unity.unity-table" "2.0.2"
     "@bit/smartworks.unity.unity-table-cell" "1.0.15"
     "@bit/smartworks.unity.unity-table-export" "1.0.11"
     "@bit/smartworks.unity.unity-tag" "1.1.8"
@@ -1524,10 +1525,10 @@
   dependencies:
     lit-element "^2.5.1"
 
-"@bit/smartworks.unity.unity-dropdown@1.6.8":
-  version "1.6.8"
-  resolved "https://node.bit.dev/smartworks.unity.unity-dropdown/-/smartworks.unity.unity-dropdown-1.6.8.tgz"
-  integrity sha1-2k6jxFDUoEn1nUZzisT+OVp/JhI=
+"@bit/smartworks.unity.unity-dropdown@1.6.9":
+  version "1.6.9"
+  resolved "https://node.bit.dev/smartworks.unity.unity-dropdown/-/smartworks.unity.unity-dropdown-1.6.9.tgz#d4a18abd4d105609c1a15cbff8f4cda7988501d6"
+  integrity sha1-1KGKvU0QVgnBoVy/+PTNp5iFAdY=
   dependencies:
     "@polymer/iron-icon" "^3.0.1"
     "@polymer/paper-dialog" "^3.0.1"
@@ -1608,12 +1609,19 @@
   dependencies:
     lit-element "^2.5.1"
 
-"@bit/smartworks.unity.unity-page-header@1.2.13":
-  version "1.2.13"
-  resolved "https://node.bit.dev/smartworks.unity.unity-page-header/-/smartworks.unity.unity-page-header-1.2.13.tgz"
-  integrity sha1-iVktxnbyMreERIpVq/xs9WitqOk=
+"@bit/smartworks.unity.unity-page-header@1.2.14":
+  version "1.2.14"
+  resolved "https://node.bit.dev/smartworks.unity.unity-page-header/-/smartworks.unity.unity-page-header-1.2.14.tgz#eebc927960fa8f2081f0e3b400e695738746cf8d"
+  integrity sha1-7rySeWD6jyCB8OO0AOaVc4dGz40=
   dependencies:
     "@polymer/paper-tabs" "^3.1.0"
+    lit-element "^2.5.1"
+
+"@bit/smartworks.unity.unity-pagination-controls@0.0.3":
+  version "0.0.3"
+  resolved "https://node.bit.dev/smartworks.unity.unity-pagination-controls/-/smartworks.unity.unity-pagination-controls-0.0.3.tgz#c25856ad20e3a6d2668cca1ad13de137d72ef1dd"
+  integrity sha1-wlhWrSDjptJmjMoa0T3hN9cu8d0=
+  dependencies:
     lit-element "^2.5.1"
 
 "@bit/smartworks.unity.unity-popover@1.0.16":
@@ -1686,10 +1694,10 @@
     "@polymer/paper-icon-button" "^3.0.2"
     lit-element "^2.5.1"
 
-"@bit/smartworks.unity.unity-table@2.0.0":
-  version "2.0.0"
-  resolved "https://node.bit.dev/smartworks.unity.unity-table/-/smartworks.unity.unity-table-2.0.0.tgz#56373768ac024ae6e1ae684307e9ec7725622166"
-  integrity sha1-Vjc3aKwCSubhrmhDB+nsdyViIWY=
+"@bit/smartworks.unity.unity-table@2.0.2":
+  version "2.0.2"
+  resolved "https://node.bit.dev/smartworks.unity.unity-table/-/smartworks.unity.unity-table-2.0.2.tgz#e829bf51041c4da2be3e65d0416d0b77c7a78a73"
+  integrity sha1-6Cm/UQQcTaK+PmXQQW0Ld8eninM=
   dependencies:
     "@bit/smartworks.unity.unity-popover" "1.0.16"
     "@bit/smartworks.unity.unity-text-input" "1.4.0"
