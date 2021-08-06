@@ -17,6 +17,7 @@ import {
   UnityTypography,
   headerStyleTypes,
   UnityPageHeader,
+  UnityPaginationControls,
   UnitySection,
   UnityDropdown,
   UnityToggleSwitch,
@@ -41,6 +42,7 @@ import {
   NavStyles,
   UnityUtilityBelt
 } from './components/unity-core-react'
+
 import { devices, fakeYaml, selectMenuItems } from './fakeData'
 import moment from 'moment'
 import UnityGlobalNav, { NavItemsConfigI } from './components/unity-global-nav-react/UnityGlobalNav'
@@ -985,6 +987,8 @@ class App extends React.Component {
                           show={showColumnEditor}
                           onClose={() => this.toggleColumnEditor(false)}
                         />
+
+                        <UnityPaginationControls/>
                       </div>
                     </UnitySection>
                 </div>
