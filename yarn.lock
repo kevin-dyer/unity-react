@@ -1321,6 +1321,14 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
+"@bit/smartworks.unity-react.unity-pagination-controls-react@^0.0.1":
+  version "0.0.1"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-pagination-controls-react/-/smartworks.unity-react.unity-pagination-controls-react-0.0.1.tgz#fa483feaafd6fa36f0c41ee79f426c64e501cbb4"
+  integrity sha1-+kg/6q/W+jbwxB7nn0JsZOUBy7Q=
+  dependencies:
+    "@types/react" "16.9.11"
+    react "^16.12.0"
+
 "@bit/smartworks.unity-react.unity-popover-react@1.0.4", "@bit/smartworks.unity-react.unity-popover-react@^1.0.4":
   version "1.0.4"
   resolved "https://node.bit.dev/smartworks.unity-react.unity-popover-react/-/smartworks.unity-react.unity-popover-react-1.0.4.tgz"
