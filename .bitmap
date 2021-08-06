@@ -529,6 +529,29 @@
         "origin": "AUTHORED",
         "exported": true
     },
+    "smartworks.unity-react/unity-pagination-controls-react@0.0.1": {
+        "files": [
+            {
+                "relativePath": "src/components/unity-pagination-controls-react/UnityPaginationControls.tsx",
+                "test": false,
+                "name": "UnityPaginationControls.tsx"
+            },
+            {
+                "relativePath": "src/components/unity-pagination-controls-react/declarations.d.ts",
+                "test": false,
+                "name": "declarations.d.ts"
+            },
+            {
+                "relativePath": "src/components/unity-pagination-controls-react/unity-pagination-controls-react.md",
+                "test": false,
+                "name": "unity-pagination-controls-react.md"
+            }
+        ],
+        "mainFile": "src/components/unity-pagination-controls-react/UnityPaginationControls.tsx",
+        "trackDir": "src/components/unity-pagination-controls-react",
+        "origin": "AUTHORED",
+        "exported": true
+    },
     "smartworks.unity-react/unity-popover-react@1.0.4": {
         "files": [
             {

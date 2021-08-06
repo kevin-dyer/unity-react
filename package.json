@@ -20,6 +20,7 @@
     "@bit/smartworks.unity-react.unity-notification-react": "^1.0.3",
     "@bit/smartworks.unity-react.unity-notifications-handler-react": "^1.1.2",
     "@bit/smartworks.unity-react.unity-page-header-react": "^1.1.2",
+    "@bit/smartworks.unity-react.unity-pagination-controls-react": "^0.0.1",
     "@bit/smartworks.unity-react.unity-popover-react": "^1.0.4",
     "@bit/smartworks.unity-react.unity-progress-react": "^0.2.2",
     "@bit/smartworks.unity-react.unity-search-bar-react": "^1.0.2",
