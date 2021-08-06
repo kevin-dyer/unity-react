@@ -34,7 +34,7 @@
     "@bit/smartworks.unity-react.unity-toggle-switch-react": "^0.2.2",
     "@bit/smartworks.unity-react.unity-typography-react": "^1.0.1",
     "@bit/smartworks.unity-react.unity-utility-belt-react": "0.0.6",
-    "@bit/smartworks.unity.unity-core": "^2.0.0",
+    "@bit/smartworks.unity.unity-core": "^2.0.7",
     "@bit/smartworks.unity.unity-virtual-table": "^0.0.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
