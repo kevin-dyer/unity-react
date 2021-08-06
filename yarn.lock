@@ -1188,10 +1188,10 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-core-react@2.4.3":
-  version "2.4.3"
-  resolved "https://node.bit.dev/smartworks.unity-react.unity-core-react/-/smartworks.unity-react.unity-core-react-2.4.3.tgz#f8202c522b635e51d4dc84ed844dd5929a53c8af"
-  integrity sha1-+CAsUitjXlHU3ITthE3VkppTyK8=
+"@bit/smartworks.unity-react.unity-core-react@2.4.4":
+  version "2.4.4"
+  resolved "https://node.bit.dev/smartworks.unity-react.unity-core-react/-/smartworks.unity-react.unity-core-react-2.4.4.tgz#eb194b80a901090defa76bb82d237d09b5fc26ad"
+  integrity sha1-6xlLgKkBCQ3vp2u4LSN9CbX8Jq0=
   dependencies:
     "@bit/smartworks.unity-react.unity-button-react" "1.1.4"
     "@bit/smartworks.unity-react.unity-card-react" "0.0.1"
@@ -1209,6 +1209,7 @@
     "@bit/smartworks.unity-react.unity-notification-react" "1.0.3"
     "@bit/smartworks.unity-react.unity-notifications-handler-react" "1.1.2"
     "@bit/smartworks.unity-react.unity-page-header-react" "1.1.2"
+    "@bit/smartworks.unity-react.unity-pagination-controls-react" "0.0.1"
     "@bit/smartworks.unity-react.unity-popover-react" "1.0.4"
     "@bit/smartworks.unity-react.unity-progress-react" "0.2.2"
     "@bit/smartworks.unity-react.unity-search-bar-react" "1.0.2"
@@ -1321,7 +1322,7 @@
     "@types/react" "16.9.11"
     react "^16.12.0"
 
-"@bit/smartworks.unity-react.unity-pagination-controls-react@^0.0.1":
+"@bit/smartworks.unity-react.unity-pagination-controls-react@0.0.1", "@bit/smartworks.unity-react.unity-pagination-controls-react@^0.0.1":
   version "0.0.1"
   resolved "https://node.bit.dev/smartworks.unity-react.unity-pagination-controls-react/-/smartworks.unity-react.unity-pagination-controls-react-0.0.1.tgz#fa483feaafd6fa36f0c41ee79f426c64e501cbb4"
   integrity sha1-+kg/6q/W+jbwxB7nn0JsZOUBy7Q=
