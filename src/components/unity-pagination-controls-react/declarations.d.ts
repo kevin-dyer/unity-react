@@ -10,9 +10,13 @@ declare module '@bit/smartworks.unity.unity-core/unity-pagination-controls' {
     itemsPerPage?: number,
     hasPrevPage?: boolean,
     hasNextPage?: boolean,
+    showLastPage?: boolean,
+    currentPage?: number,
+    pageCount?: number,
     onFirstPageClick?: Function,
     onPrevPageClick?: Function,
     onNextPageClick?: Function,
+    onLastPageClick?: Function,
     onItemsPerPageUpdate?: Function,
     style?: React.CSSProperties
   }

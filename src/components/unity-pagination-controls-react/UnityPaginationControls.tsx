@@ -6,9 +6,13 @@ export interface paginationControlsProps extends HTMLAttributes<HTMLElement>{
   itemsPerPage?: number,
   hasPrevPage?: boolean,
   hasNextPage?: boolean,
+  showLastPage?: boolean,
+  currentPage?: number,
+  pageCount?: number,
   onFirstPageClick?: Function,
   onPrevPageClick?: Function,
   onNextPageClick?: Function,
+  onLastPageClick?: Function,
   onItemsPerPageUpdate?: Function,
   style?: paginationControlsStylesTypes
 }
@@ -35,12 +39,14 @@ export default class UnityPaginationControls extends Component<paginationControl
       onFirstPageClick: oldOnFirstPageClick,
       onPrevPageClick: oldOnPrevPageClick,
       onNextPageClick: oldOnNextPageClick,
+      onLastPageClick: oldOnLastPageClick,
       onItemsPerPageUpdate: oldOnItemsPerPageUpdate
     } = oldProps
     const {
       onFirstPageClick,
       onPrevPageClick,
       onNextPageClick,
+      onLastPageClick,
       onItemsPerPageUpdate
     } = this.props
     const headerElement = this.headerRef.current
@@ -56,6 +62,9 @@ export default class UnityPaginationControls extends Component<paginationControl
     if (oldOnNextPageClick !== onNextPageClick) {
       headerElement.onNextPageClick = onNextPageClick
     }
+    if (oldOnLastPageClick !== onLastPageClick) {
+      headerElement.onLastPageClick = onLastPageClick
+    }
     if (oldOnItemsPerPageUpdate !== onItemsPerPageUpdate) {
       headerElement.onItemsPerPageUpdate = onItemsPerPageUpdate
     }
@@ -67,12 +76,16 @@ export default class UnityPaginationControls extends Component<paginationControl
       itemsPerPage,
       hasPrevPage,
       hasNextPage,
+      showLastPage,
+      currentPage,
+      pageCount,
       style
     } = this.props
-    const propsToAdd: paginationControlsProps = {id, itemsPerPage, style} 
+    const propsToAdd: paginationControlsProps = {id, currentPage, pageCount, itemsPerPage, style}
 
     if (hasPrevPage) propsToAdd.hasPrevPage = true
     if (hasNextPage) propsToAdd.hasNextPage = true
+    if (showLastPage) propsToAdd.showLastPage = true
 
     return <unity-pagination-controls
       ref={this.headerRef}
