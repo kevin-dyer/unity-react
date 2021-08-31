@@ -134,7 +134,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-core-react@2.4.4": {
+    "smartworks.unity-react/unity-core-react@2.4.5": {
         "files": [
             {
                 "name": "index.js",
@@ -534,7 +534,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-pagination-controls-react@0.0.1": {
+    "smartworks.unity-react/unity-pagination-controls-react@0.0.2": {
         "files": [
             {
                 "relativePath": "src/components/unity-pagination-controls-react/UnityPaginationControls.tsx",
