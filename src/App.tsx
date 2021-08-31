@@ -988,7 +988,7 @@ class App extends React.Component {
                           onClose={() => this.toggleColumnEditor(false)}
                         />
 
-                        <UnityPaginationControls/>
+                        <UnityPaginationControls currentPage={2} pageCount={10} showLastPage={true}/>
                       </div>
                     </UnitySection>
                 </div>
