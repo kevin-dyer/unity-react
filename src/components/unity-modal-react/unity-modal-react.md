@@ -2,6 +2,9 @@
 
 ## Changelog:
 
+### v1.0.1
+- no longer passes in empty div when given no element
+
 ### v1.0.0
 - update to proper v1.0.0, add missing internal ref for attaching functions
 

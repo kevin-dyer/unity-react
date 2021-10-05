@@ -25,6 +25,9 @@ export * from "@bit/smartworks.unity-react.<component-path>" //Export named expo
 
 ## Changelog:
 
+### v2.4.6
+- update unity-modal-ract v1.0.1
+
 ### v2.4.0
 - Fixed UnitySelectMenu path export
 - Added UnityPopover path export
