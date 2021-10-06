@@ -134,7 +134,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-core-react@2.4.5": {
+    "smartworks.unity-react/unity-core-react@2.4.6": {
         "files": [
             {
                 "name": "index.js",
@@ -411,7 +411,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "smartworks.unity-react/unity-modal-react@1.0.0": {
+    "smartworks.unity-react/unity-modal-react@1.0.1": {
         "files": [
             {
                 "name": "UnityModal.tsx",
