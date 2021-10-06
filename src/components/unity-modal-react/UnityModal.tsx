@@ -40,16 +40,16 @@ export default class UnityModal extends Component<ModalPropsI> {
       <unity-modal
         ref={this.modalRef}
         {...modalProps}
-      >
-         <div slot="top">
+      >``
+         {!!top && (<div slot="top">
           {top}
-        </div>
-        <div slot="body">
+        </div>)}
+        {!!body && (<div slot="body">
           {body}
-        </div>
-        <div slot="bottom">
+        </div>)}
+        {!!bottom && (<div slot="bottom">
           {bottom}
-        </div>
+        </div>)}
       </unity-modal>
     )
   }
